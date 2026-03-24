@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fotograf Spalder | Fotograf i Ringsaker – Kjæledyr, portrett og bryllup</title>
+
+  <meta name="description" content="Fotograf i Ringsaker som spesialiserer seg på kjæledyrsfotografering, portrettfoto, familiefoto og bryllup. Book din fotografering hos Fotograf Spalder.">
+
+  <meta name="author" content="Henrik Spalder">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (Facebook osv) -->
+  <meta property="og:title" content="Fotograf Spalder">
+  <meta property="og:description" content="Fotograf i Ringsaker – kjæledyr, portrett og ekte øyeblikk.">
+  <meta property="og:image" content="https://DITT-DOMENE.no/images/hund2.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Ekstra SEO -->
+  <meta name="theme-color" content="#0f172a">
+
+  <style>    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: rgba(255,255,255,0.08);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(255,255,255,0.12);
+      --accent: #f59e0b;
+      --accent-dark: #d97706;
+      --max: 1200px;
+      --shadow: 0 18px 40px rgba(0,0,0,0.25);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(245,158,11,0.18), transparent 30%),
+        linear-gradient(180deg, #0b1120 0%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(11,17,32,0.75);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .brand strong {
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.8rem 1.15rem;
+      border-radius: 999px;
+      border: 0;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #111827;
+      box-shadow: var(--shadow);
+    }
+
+    .button.primary:hover {
+      background: #fbbf24;
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .button.secondary:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(245,158,11,0.4);
+      background: rgba(245,158,11,0.12);
+      color: #fde68a;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 1rem;
+      line-height: 1.15;
+    }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 4.8rem); }
+    h2 { font-size: clamp(1.8rem, 3vw, 3rem); }
+    h3 { font-size: 1.2rem; }
+
+    .lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-placeholder {
+      min-height: 420px;
+      border-radius: calc(var(--radius) - 8px);
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.3), rgba(255,255,255,0.05)),
+  url('images/meg.jpg') center/cover;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-placeholder::after {
+      content: "Henrik Spalder";
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      background: rgba(17,24,39,0.8);
+      border: 1px solid var(--line);
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-head {
+      margin-bottom: 2rem;
+      max-width: 70ch;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card p,
+    .card li,
+    .contact-box p,
+    .price-card p,
+    .about p,
+    .faq-item p,
+    .footer p {
+      color: var(--muted);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      aspect-ratio: 4 / 5;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(255,255,255,0.04));
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .price-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 900;
+      margin: 0.5rem 0 1rem;
+      color: #fde68a;
+    }
+
+    .price-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .price-card li::before {
+      content: "✓ ";
+      color: #fbbf24;
+      font-weight: 800;
+    }
+
+    .contact-box {
+  position: relative;
+}
+
+.contact-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 180px;   /* bredde på logo */
+  height: auto;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+    .contact-list {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .contact-list a {
+      color: #fde68a;
+      font-weight: 700;
+    }
+
+    .faq {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.25rem;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0 3rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 0.65rem 0.9rem;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .about,
+      .contact-box,
+      .cards,
+      .gallery,
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        padding: 1rem 0;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+      }
+
+      .nav-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.75rem;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--line);
+        padding: 1rem;
+        border-radius: 18px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Fotograf Spalder",
+  "image": "https://DITT-DOMENE.no/images/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ringsaker",
+    "addressCountry": "NO"
+  },
+  "email": "fotograf.spalder@outlook.com",
+  "telephone": "+4799535760"
+}
+</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Fotograf Spalder hjem">
+        <strong>Fotograf Spalder</strong>
+        <span>Kjæledyr, portrett og bryllup</span>
+      </a>
+
+      <div class="nav-wrap">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Åpne meny">Meny</button>
+        <nav class="nav-links" id="navLinks">
+          <a href="#om">Om</a>
+          <a href="#tjenester">Tjenester</a>
+          <a href="#galleri">Galleri</a>
+          <a href="#priser">Priser</a>
+          <a href="#kontakt">Kontakt</a>
+          <a class="button primary" href="#kontakt">Book fotografering</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Fotograf i Ringsaker og omegn</div>
+          <h1>Fotograf i Ringsaker – Kjæledyr, portrett og bryllup</h1>
+          <p class="lead">
+Jeg er fotograf i Ringsaker og tilbyr kjæledyrsfotografering, portrettfoto, familiebilder og bryllup i hele Innlandet. Målet mitt er å skape ekte, naturlige bilder du vil ha for resten av livet.
+</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#kontakt">Send forespørsel</a>
+            <a class="button secondary" href="#galleri">Se galleri</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>Kjæledyr</strong>
+              <span>Min tydeligste nisje og største lidenskap.</span>
+            </div>
+            <div class="stat">
+              <strong>Ringsaker</strong>
+              <span>Lokal fotograf med oppdrag i Innlandet og omegn.</span>
+            </div>
+            <div class="stat">
+              <strong>Fleksibelt</strong>
+              <span>Utefotografering, hjemmemiljø eller avtalt lokasjon.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="photo-placeholder" role="img" aria-label="Plassholder for hovedbilde"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="om">
+      <div class="container">
+        <div class="section-head">
+          <h2>Om Fotograf Spalder</h2>
+        </div>
+
+        <div class="about">
+          <div class="card">
+            <h3>Hvem jeg er</h3>
+            <p>
+              Jeg er Henrik Spalder, fotograf fra Ringsaker. Jeg startet Fotograf Spalder fordi jeg ønsker
+              å gjøre profesjonell fotografering mer tilgjengelig, uten at det går på bekostning av kvalitet,
+              opplevelse eller uttrykk.
+            </p>
+            <p>
+              Jeg jobber med mennesker og dyr slik de faktisk er. Det gir bildeserier med varme, personlighet og ekte stemning.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Hva du kan forvente</h3>
+            <p>
+              Du trenger ikke være vant til kamera. Jeg legger opp fotograferingen slik at den føles rolig, naturlig og trygg.
+              Målet er ikke stive poseringer, men bilder som føles som deg.
+            </p>
+            <p>
+              Dette passer godt både for familier, kjæledyreiere, enkeltpersoner og par som ønsker noe mer personlig enn standard bilder.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tjenester">
+      <div class="container">
+        <div class="section-head">
+          <h2>Tjenester</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Kjæledyrsfotografering</h3>
+            <p>For hunder, katter og andre dyr. Fokus på personlighet, uttrykk og samspillet mellom dyr og eier.</p>
+          </article>
+
+          <article class="card">
+            <h3>Portrett og familie</h3>
+            <p>Naturlige portretter ute eller i avtalt miljø. Passer både enkeltpersoner, par og familier.</p>
+          </article>
+
+          <article class="card">
+            <h3>Bryllup og spesielle anledninger</h3>
+            <p>Dokumentarisk og stemningsfull fotografering av store dager, med fokus på ekte øyeblikk.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galleri">
+      <div class="container">
+        <div class="section-head">
+          <h2>Galleri</h2>
+          <p class="lead">Tre bilder som viser noen av bildene mine.</p>
+        </div>
+
+        <div class="gallery">
+          <div class="gallery-item"><img src="images/bryllup.jpg" alt="Bryllup i Ringsaker"></div>
+          <div class="gallery-item"><img src="images/konfirmant.jpg" alt="Konfirmasjonsfoto i Ringsaker"></div>
+          <div class="gallery-item"><img src="images/hund2.jpg" alt="Hund fotografert utendørs i Ringsaker av Fotograf Spalder"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="priser">
+      <div class="container">
+        <div class="section-head">
+          <h2>Eksempel på priser</h2>
+        </div>
+
+        <div class="price-grid">
+          <article class="price-card">
+            <h3>Kjæledyr mini</h3>
+            <div class="price">1500 kr</div>
+            <ul>
+              <li>Kort og effektiv fotografering</li>
+              <li>Passer for ett dyr</li>
+              <li>Fin inngangspakke</li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <h3>Kjæledyr standard</h3>
+            <div class="price">2500 kr</div>
+            <ul>
+              <li>Mer tid og større variasjon</li>
+              <li>God balanse mellom pris og innhold</li>
+              <li>Passer de fleste kunder</li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <h3>Bryllup</h3>
+            <div class="price">6000 kr</div>
+            <ul>
+              <li>For mindre bryllupsoppdrag</li>
+              <li>Fokus på viktige øyeblikk</li>
+              <li>Kan tilpasses ved forespørsel</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Ofte stilte spørsmål</h2>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item">
+            <h3>Hva får jeg i fotopakkene?</h3>
+            <p>Du får minst 1 gratis digital bilde i høyeste kvalitet på de billigste pakkene. Dyrere pakke gir flere gratis digitale bilder.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Hvordan booker jeg?</h3>
+            <p>Du kan ta kontakt via e-post, Facebook, Instagram eller sms.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Kan du fotografere dyr som ikke er vant til kamera?</h3>
+            <p>Ja. Jeg jobber rolig og tilpasser tempoet til dyret slik at opplevelsen blir trygg og god.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-logo">
+  <img src="images/logo.png" alt="Fotograf Spalder logo">
+</div>
+          <div>
+            <h2>Klar for å booke?</h2>
+            <p>
+              Ta kontakt for priser, ledige tider eller spørsmål om fotografering.
+            </p>
+            <div class="contact-list">
+              <div><strong>E-post:</strong> <a href="mailto:fotograf.spalder@outlook.com">fotograf.spalder@outlook.com</a></div>
+              <div><strong>Telefon:</strong> <a href="sms:+4799535760">+47 99 53 57 60</a></div>
+              <div><strong>Facebook:</strong> <a href="https://www.facebook.com/FotoSpalder">Fotograf Spalder</a></div>
+              <div><strong>Instagram:</strong> <a href="https://www.instagram.com/fotografspalder">@fotografspalder</a></div>
+            </div>
+          </div>
+
+         </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>© <span id="year"></span> Fotograf Spalder. Alle rettigheter reservert.</p>
+      
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
