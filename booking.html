@@ -42,9 +42,8 @@
 
 <h1>Book fotografering</h1>
 
-<form action="https://formspree.io/f/xeepjwnb" method="POST">
-<input type="hidden" name="_redirect" value="https://fotograf-spalder.com/takk.html">
-<input type="hidden" name="_next" value="https://fotograf-spalder.com/takk.html">
+<form id="bookingForm">
+
 <input type="hidden" name="_subject" value="Ny booking forespørsel">
 
 <input type="text" name="navn" placeholder="Navn" required>
@@ -84,6 +83,28 @@
   <button type="submit">Send forespørsel</button>
 
 </form>
+<script>
+const form = document.getElementById("bookingForm");
 
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  const response = await fetch("https://formspree.io/f/xeepjwnb", {
+    method: "POST",
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    window.location.href = "takk.html";
+  } else {
+    alert("Noe gikk galt. Prøv igjen.");
+  }
+});
+</script>
 </body>
 </html>
