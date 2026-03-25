@@ -59,16 +59,50 @@
 
   <input type="tel" name="telefon" placeholder="Telefonnummer">
 
-  <label>Hva ønsker du?</label>
-  <select name="pakke" required>
-    <option value="">Velg pakke</option>
-    <option>Kjæledyr mini (1500 kr)</option>
-    <option>Kjæledyr standard (2500 kr)</option>
-    <option>Kjæledyr premium (4000 kr)</option>
-    <option>Portrett (1200 kr)</option>
-    <option>Familiefoto (1800 kr)</option>
-    <option>Bryllup (6000 kr)</option>
-  </select>
+ <label>Hva ønsker du å booke?</label>
+<select name="pakke" required>
+  <option value="">Velg type fotografering eller pakke</option>
+
+  <optgroup label="Vanlige fotoshoots">
+    <option>Grunnpakke – 2500 kr</option>
+    <option>Favorittpakke – 4500 kr</option>
+    <option>Totalpakke – 8000 kr</option>
+  </optgroup>
+
+  <optgroup label="Kjæledyr">
+    <option>Kjæledyr mini – 1500 kr</option>
+    <option>Kjæledyr standard – 2500 kr</option>
+    <option>Kjæledyr premium – 4000 kr</option>
+  </optgroup>
+
+  <optgroup label="Portrett og familie">
+    <option>Portrett – 1200 kr</option>
+    <option>Familiefoto – 1800 kr</option>
+  </optgroup>
+
+  <optgroup label="Arrangement">
+    <option>Konfirmasjon – fra 2000 kr</option>
+    <option>Dåp – fra 2000 kr</option>
+    <option>Bryllup – fra 6000 kr</option>
+    <option>Slektsfotografering – 5500 kr</option>
+  </optgroup>
+
+  <optgroup label="Cosplay">
+    <option>Cosplay Grunnpakke – 1200 kr</option>
+    <option>Cosplay Magipakke – 1800 kr</option>
+    <option>Cosplay Epos – 2800 kr</option>
+  </optgroup>
+</select>
+
+  <label>Hva ønsker du mest informasjon om?</label>
+<select name="ønske">
+  <option value="">Velg gjerne</option>
+  <option>Pris og innhold</option>
+  <option>Ledig dato</option>
+  <option>Hvilken pakke som passer best</option>
+  <option>Redigering og bildefiler</option>
+  <option>Vet ikke helt enda</option>
+</select>
 
   <label>Hvor mange personer/dyr?</label>
   <input type="number" name="antall" min="1">
@@ -83,8 +117,8 @@
     <option>Vet ikke enda</option>
   </select>
 
-  <label>Beskriv kort hva du ønsker</label>
-  <textarea name="melding" rows="4"></textarea>
+ <label>Beskriv kort hva du ønsker</label>
+<textarea name="melding" rows="5" placeholder="Fortell gjerne hva slags fotografering du ønsker, hvor mange som skal være med, ønsket sted og dato, og om det gjelder bryllup, dåp eller konfirmasjon hvor du ønsker tilpasset tilbud."></textarea>
 
   <!-- spam filter -->
   <input type="text" name="_gotcha" style="display:none">
