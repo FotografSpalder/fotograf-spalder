@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Book fotografering | Fotograf Spalder</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    form {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    input, select, textarea {
+      padding: 0.7rem;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background: #111827;
+      color: white;
+    }
+
+    button {
+      padding: 0.9rem;
+      background: #f59e0b;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Book fotografering</h1>
+
+<form action="https://formspree.io/f/xeepjwnb" method="POST">
+
+  <input type="text" name="navn" placeholder="Navn" required>
+
+  <input type="email" name="email" placeholder="E-post" required>
+
+  <input type="tel" name="telefon" placeholder="Telefonnummer">
+
+  <label>Hva ønsker du?</label>
+  <select name="pakke" required>
+    <option value="">Velg pakke</option>
+    <option>Kjæledyr mini (1500 kr)</option>
+    <option>Kjæledyr standard (2500 kr)</option>
+    <option>Kjæledyr premium (4000 kr)</option>
+    <option>Portrett (1200 kr)</option>
+    <option>Familiefoto (1800 kr)</option>
+    <option>Bryllup (6000 kr)</option>
+  </select>
+
+  <label>Hvor mange personer/dyr?</label>
+  <input type="number" name="antall" min="1">
+
+  <label>Ønsket dato</label>
+  <input type="date" name="dato">
+
+  <label>Hvor skal fotograferingen skje?</label>
+  <select name="sted">
+    <option>Utendørs</option>
+    <option>Hjemme hos meg</option>
+    <option>Vet ikke enda</option>
+  </select>
+
+  <label>Beskriv kort hva du ønsker</label>
+  <textarea name="melding" rows="4"></textarea>
+
+  <!-- spam filter -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <button type="submit">Send forespørsel</button>
+
+</form>
+
+</body>
+</html>
