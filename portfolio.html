@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portefølje | Fotograf Spalder</title>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FHTXJM4638"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FHTXJM4638');
+</script>
+
+<style>
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.tab {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #f59e0b;
+  color: black;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.button {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.8rem 1.2rem;
+  background: #f59e0b;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Portefølje</h1>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('dyr')">Kjæledyr</div>
+  <div class="tab" onclick="showTab('portrett')">Portrett</div>
+  <div class="tab" onclick="showTab('familie')">Familie</div>
+  <div class="tab" onclick="showTab('bryllup')">Bryllup</div>
+  <div class="tab" onclick="showTab('cosplay')">Cosplay</div>
+</div>
+
+<!-- KJÆLEDYR -->
+<div id="dyr" class="section active">
+  <div class="gallery">
+    <img src="hund2.jpg">
+    <img src="hund1.jpg">
+  </div>
+</div>
+
+<!-- PORTRETT -->
+<div id="portrett" class="section">
+  <div class="gallery">
+    <img src="konfirmant.jpg">
+  </div>
+</div>
+
+<!-- FAMILIE -->
+<div id="familie" class="section">
+  <div class="gallery">
+    <img src="familie1.jpg">
+  </div>
+</div>
+
+<!-- BRYLLUP -->
+<div id="bryllup" class="section">
+  <div class="gallery">
+    <img src="bryllup.jpg">
+  </div>
+</div>
+
+<!-- COSPLAY -->
+<div id="cosplay" class="section">
+  <div class="gallery">
+    <img src="cosplay1.jpg">
+  </div>
+</div>
+
+<a href="booking.html" class="button">Book fotografering</a>
+
+</div>
+
+<script>
+function showTab(tab) {
+  document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+
+  document.getElementById(tab).classList.add("active");
+  event.target.classList.add("active");
+}
+</script>
+
+</body>
+</html>
