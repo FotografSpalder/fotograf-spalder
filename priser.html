@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priser | Fotograf Spalder</title>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FHTXJM4638"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FHTXJM4638');
+</script>
+
+<style>
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.tab {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #f59e0b;
+  color: black;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  border: 2px solid #f59e0b;
+}
+
+.price {
+  font-size: 1.8rem;
+  color: #f59e0b;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background: #f59e0b;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Priser</h1>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('dyr')">Kjæledyr</div>
+  <div class="tab" onclick="showTab('portrett')">Portrett & Familie</div>
+  <div class="tab" onclick="showTab('event')">Arrangement</div>
+  <div class="tab" onclick="showTab('cosplay')">Cosplay</div>
+  <div class="tab" onclick="showTab('tillegg')">Tillegg</div>
+</div>
+
+<!-- KJÆLEDYR -->
+<div id="dyr" class="section active">
+  <div class="card">
+    <h2>Kjæledyr Mini</h2>
+    <div class="price">1500 kr</div>
+    <p>1 digitalt bilde inkludert</p>
+  </div>
+
+  <div class="card highlight">
+    <h2>Kjæledyr Standard (Mest populær)</h2>
+    <div class="price">2500 kr</div>
+    <p>3 digitale bilder inkludert</p>
+  </div>
+
+  <div class="card">
+    <h2>Kjæledyr Premium</h2>
+    <div class="price">4000 kr</div>
+    <p>5 digitale bilder inkludert</p>
+  </div>
+</div>
+
+<!-- PORTRETT -->
+<div id="portrett" class="section">
+  <div class="card">
+    <h2>Portrett</h2>
+    <div class="price">1200 kr</div>
+  </div>
+
+  <div class="card">
+    <h2>Familiefoto</h2>
+    <div class="price">1800 kr</div>
+  </div>
+
+  <div class="card">
+    <h2>Grunnpakke</h2>
+    <div class="price">2500 kr</div>
+  </div>
+
+  <div class="card highlight">
+    <h2>Favorittpakke</h2>
+    <div class="price">4500 kr</div>
+    <p>Flere bilder og lengre shoot</p>
+  </div>
+
+  <div class="card">
+    <h2>Totalpakke</h2>
+    <div class="price">8000 kr</div>
+  </div>
+</div>
+
+<!-- EVENT -->
+<div id="event" class="section">
+  <div class="card">
+    <h2>Bryllup</h2>
+    <div class="price">Fra 6000 kr</div>
+    <p>Tilpasses etter behov og dekning av dagen</p>
+  </div>
+
+  <div class="card">
+    <h2>Konfirmasjon</h2>
+    <div class="price">Fra 2000 kr</div>
+  </div>
+
+  <div class="card">
+    <h2>Dåp</h2>
+    <div class="price">Fra 2000 kr</div>
+  </div>
+
+  <div class="card highlight">
+    <h2>Slektsfotografering</h2>
+    <div class="price">5500 kr</div>
+    <p>3 timer + familieportretter</p>
+  </div>
+</div>
+
+<!-- COSPLAY -->
+<div id="cosplay" class="section">
+  <div class="card">
+    <h2>Cosplay Grunnpakke</h2>
+    <div class="price">1200 kr</div>
+  </div>
+
+  <div class="card highlight">
+    <h2>Cosplay Magipakke</h2>
+    <div class="price">1800 kr</div>
+    <p>Mer redigering og effekter</p>
+  </div>
+
+  <div class="card">
+    <h2>Cosplay Epos</h2>
+    <div class="price">2800 kr</div>
+    <p>Avansert redigering og visuelle effekter</p>
+  </div>
+</div>
+
+<!-- TILLEGG -->
+<div id="tillegg" class="section">
+  <div class="card">
+    <p>Ekstra person: +200 kr</p>
+    <p>Ekstra 30 min: +400 kr</p>
+    <p>Reise: +5 kr/km over 2 mil</p>
+    <p>Ekspress (48t): +500 kr</p>
+  </div>
+</div>
+
+<a href="booking.html" class="button">Book fotografering</a>
+
+</div>
+
+<script>
+function showTab(tab) {
+  document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+
+  document.getElementById(tab).classList.add("active");
+  event.target.classList.add("active");
+}
+</script>
+
+</body>
+</html>
