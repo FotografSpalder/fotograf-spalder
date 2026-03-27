@@ -58,7 +58,9 @@
 
 <input type="text" name="navn" placeholder="Navn" required>
 
-  <input type="tel" name="telefon" placeholder="Telefonnummer">
+  <input type="email" name="email" placeholder="E-post" required>
+
+  <input type="tel" name="telefon" placeholder="Telefonnummer" required>
 
  <label>Hva ønsker du å booke?</label>
 <select name="pakke" required>
@@ -105,6 +107,13 @@
   <option>Vet ikke helt enda</option>
 </select>
 
+  <label>Er du klar til å booke innen kort tid?</label>
+<select name="klar" required>
+  <option value="">Velg</option>
+  <option>Ja</option>
+  <option>Vurderer fortsatt</option>
+</select>
+
   <label>Hvor mange personer/dyr?</label>
   <input type="number" name="antall" min="1">
 
@@ -119,16 +128,21 @@
   </select>
 
  <label>Beskriv kort hva du ønsker</label>
-<textarea name="melding" rows="5" placeholder="Fortell gjerne hva slags fotografering du ønsker, hvor mange som skal være med, ønsket sted og dato, og om det gjelder bryllup, dåp eller konfirmasjon hvor du ønsker tilpasset tilbud."></textarea>
+<textarea name="melding" rows="5" required minlength="20"
+placeholder="Fortell hva du ønsker (hvem/dyr, sted, dato, stil osv)"></textarea>
 
   <!-- spam filter -->
   <input type="text" name="_gotcha" style="display:none">
 
   <p style="font-size:0.9rem; color:#cbd5e1; margin-top:1rem;">
-Et depositum på 30% av totalprisen må betales for å sikre booking. Resterende betales etter fotograferingen. Enten på stedet, eller senere når bildene er klare.
+For å sikre booking betales et forskudd på 30% av totalprisen. 
+Beløpet trekkes fra totalsummen. Ved avbestilling refunderes ikke forskuddet.
 </p>
 
-  <button type="submit">Send forespørsel</button>
+  <button type="submit">Send bookingforespørsel</button>
+  <p style="font-size:0.85rem; color:#cbd5e1;">
+Svar vanligvis innen 24 timer
+</p>
 
 </form>
 <script>
