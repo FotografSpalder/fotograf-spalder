@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FHTXJM4638"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FHTXJM4638');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om Fotograf Spalder | Historien bak</title>
+  <link rel="icon" type="image/png" href="Untitled-1.png">
+
+  <meta name="description" content="Les historien bak Fotograf Spalder, omtale i Ringsaker Blad og Hamar Arbeiderblad, og reisen gjennom det første året som fotograf.">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: rgba(255,255,255,0.08);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(255,255,255,0.12);
+      --accent: #f59e0b;
+      --max: 1100px;
+      --radius: 22px;
+      --shadow: 0 18px 40px rgba(0,0,0,0.25);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(245,158,11,0.14), transparent 35%),
+        linear-gradient(180deg, #0b1120 0%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .media-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background: white;
+  padding: 8px;
+}
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(11,17,32,0.75);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .brand strong {
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.8rem 1.15rem;
+      border-radius: 999px;
+      border: 0;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #111827;
+      box-shadow: var(--shadow);
+    }
+
+    .button.primary:hover {
+      background: #fbbf24;
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .button.secondary:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(245,158,11,0.4);
+      background: rgba(245,158,11,0.12);
+      color: #fde68a;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 1rem;
+      line-height: 1.15;
+    }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 4rem); }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); }
+    h3 { font-size: 1.2rem; }
+
+    .lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .hero-card,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 1rem;
+    }
+
+    .portrait {
+      min-height: 420px;
+      border-radius: calc(var(--radius) - 8px);
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.26), rgba(255,255,255,0.04)),
+        url('meg.jpg') center/cover;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portrait::after {
+      content: "Henrik Spalder";
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      background: rgba(17,24,39,0.82);
+      border: 1px solid var(--line);
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .section-head {
+      margin-bottom: 2rem;
+      max-width: 70ch;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .card {
+      padding: 1.4rem;
+    }
+
+    .card p,
+    .timeline p,
+    .quote p,
+    .highlight p {
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 16px;
+      padding: 1rem 1.15rem;
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: #fde68a;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .quote {
+      padding: 1.4rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .quote mark {
+      background: rgba(245,158,11,0.18);
+      color: #fde68a;
+      padding: 0.1rem 0.3rem;
+      border-radius: 6px;
+    }
+
+    .highlight {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.25rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.8rem;
+      color: #fde68a;
+      margin-bottom: 0.25rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(180deg, rgba(245,158,11,0.10), rgba(255,255,255,0.04));
+      border: 1px solid rgba(245,158,11,0.22);
+      border-radius: 28px;
+      padding: 1.75rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 auto 1rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0 3rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 0.65rem 0.9rem;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .grid-2,
+      .media-grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        padding: 1rem 0;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+      }
+
+      .nav-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.75rem;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--line);
+        padding: 1rem;
+        border-radius: 18px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Fotograf Spalder hjem">
+        <strong>Fotograf Spalder</strong>
+        <span>Kjæledyr, portrett og bryllup</span>
+      </a>
+
+      <div class="nav-wrap">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Åpne meny">Meny</button>
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Forside</a>
+          <a href="portfolio.html">Portefølje</a>
+          <a href="priser.html">Priser</a>
+          <a href="booking.html">Booking</a>
+          <a class="button primary" href="booking.html">Book fotografering</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Historien bak Fotograf Spalder</div>
+          <h1>Fra idé til fotograf – og et første år som fikk oppmerksomhet.</h1>
+          <p class="lead">
+            Fotograf Spalder ble bygget med et enkelt mål: å gjøre profesjonell fotografering mer tilgjengelig, uten at det går på bekostning av kvalitet, opplevelse eller ekte uttrykk.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="booking.html">Book fotografering</a>
+            <a class="button secondary" href="#omtale">Se omtale</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="portrait" role="img" aria-label="Henrik Spalder portrett"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Om reisen</h2>
+          <p class="lead">
+            Bak Fotograf Spalder står Henrik Spalder fra Ringsaker – familiefar, gårdsarbeider og fotograf. Bedriften vokste fram fra en sterk vilje til å satse på noe eget og skape bilder med varme, nærhet og personlighet.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Mer enn bare et kamera</h3>
+            <p>
+              Fotograf Spalder handler ikke bare om å ta fine bilder. Det handler om å fange det som er ekte – blikket til et kjæledyr, samspillet i en familie eller øyeblikkene fra en stor dag som aldri kommer tilbake.
+            </p>
+            <p>
+              Målet har hele tiden vært å gjøre profesjonell fotografering mer tilgjengelig for vanlige folk, samtidig som opplevelsen skal føles trygg, personlig og gjennomført.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Et første år med vekst</h3>
+            <p>
+              Allerede i løpet av det første året fikk Fotograf Spalder oppmerksomhet både fra kunder og lokal presse. Det ga en tydelig bekreftelse på at det finnes plass for en fotograf som kombinerer tilgjengelighet, personlighet og kvalitet.
+            </p>
+            <p>
+              Det første året la grunnlaget for videre vekst – med nye oppdrag, sterkere synlighet og en tydeligere plass i lokalmiljøet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="omtale">
+  <div class="container">
+    <div class="section-head">
+      <h2>Omtale og synlighet</h2>
+      <p class="lead">
+        Fotograf Spalder har blitt omtalt i lokalpressen allerede i løpet av det første året.
+        Dette gir deg ekstra trygghet – du velger en fotograf som har blitt sett og løftet frem i lokalmiljøet.
+      </p>
+    </div>
+
+    <div class="media-grid">
+
+      <!-- Ringsaker Blad -->
+      <div class="quote">
+        <img src="rb.png" alt="Ringsaker Blad logo" class="media-logo">
+
+        <p>
+          Omtalt i <strong>Ringsaker Blad</strong> i forbindelse med etableringen og reisen som fotograf.
+        </p>
+
+        <a href="https://www.ringsaker-blad.no/henrik-36-er-klar-17-ar-etter-at-kjarligheten-stoppet-ham/s/5-79-891804"
+           target="_blank"
+           class="button secondary">
+           Les artikkelen →
+        </a>
+      </div>
+
+      <!-- Hamar Arbeiderblad -->
+      <div class="quote">
+        <img src="ha.png" alt="Hamar Arbeiderblad logo" class="media-logo">
+
+        <p>
+          Omtalt i <strong>Hamar Arbeiderblad</strong> – en historie om å satse på drømmen.
+        </p>
+
+        <a href="https://www.h-a.no/etter-28-ar-gar-henrik-36-for-drommen-vennene-mine-trenger-ikke-a-sporre-en-gang/f/5-139-1714067"
+           target="_blank"
+           class="button secondary">
+           Les artikkelen →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Tidslinje</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Oppstart</strong>
+            <p>Fotograf Spalder ble startet med mål om å bygge noe eget, ekte og tilgjengelig i Ringsaker.</p>
+          </div>
+
+          <div class="timeline-item">
+            <strong>Første oppdrag og synlighet</strong>
+            <p>De første oppdragene kom raskt, og bedriften fikk tidlig oppmerksomhet i lokalmiljøet.</p>
+          </div>
+
+          <div class="timeline-item">
+            <strong>Medieomtale</strong>
+            <p>Omtale i Ringsaker Blad og Hamar Arbeiderblad ga en sterk bekreftelse på at Fotograf Spalder traff noe viktig.</p>
+          </div>
+
+          <div class="timeline-item">
+            <strong>Videre vekst</strong>
+            <p>Det første året la grunnlaget for videre utvikling innen kjæledyrsfoto, portrett og spesielle anledninger.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Første år i korte trekk</h2>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>2</strong>
+            <span>Lokalaviser med omtale</span>
+          </div>
+
+          <div class="stat">
+            <strong>1</strong>
+            <span>År med oppbygging og vekst</span>
+          </div>
+
+          <div class="stat">
+            <strong>Målet</strong>
+            <span>Ekte bilder som betyr noe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="highlight">
+          <h3>Hvorfor dette betyr noe for deg som kunde</h3>
+          <p>
+            Når du velger Fotograf Spalder, velger du ikke bare en fotograf. Du velger en lokal bedrift med en tydelig historie, ekte engasjement og et ønske om å levere bilder som faktisk varer.
+          </p>
+          <p>
+            For mange kunder handler dette ikke bare om pris eller type fotografering – men om trygghet, tillit og å føle at man blir sett.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-box">
+          <h2>Klar for å skape dine egne minner?</h2>
+          <p>
+            Enten du ønsker bilder av kjæledyret ditt, familien din eller en viktig dag i livet, er neste steg enkelt: send en bookingforespørsel og fortell hva du ser for deg.
+          </p>
+          <div class="cta-actions">
+            <a class="button primary" href="booking.html">Book fotografering</a>
+            <a class="button secondary" href="portfolio.html">Se portefølje</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>© <span id="year"></span> Fotograf Spalder. Alle rettigheter reservert.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
