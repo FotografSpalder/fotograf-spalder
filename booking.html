@@ -66,6 +66,18 @@
       font-weight: bold;
       cursor: pointer;
     }
+    .button.secondary {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+  background: transparent;
+  border: 1px solid #444;
+  color: #cbd5e1;
+}
+
+.button.secondary:hover {
+  background: rgba(255,255,255,0.08);
+}
   </style>
 </head>
 
@@ -178,6 +190,10 @@ Svar vanligvis innen 24 timer
 </p>
 
 </form>
+  <p style="text-align:center; color:#cbd5e1; font-size:0.85rem;">
+Vil du se mer før du bestemmer deg?
+</p>
+  <a href="index.html" class="button secondary">← Tilbake til forsiden</a>
 <script>
 const form = document.getElementById("bookingForm");
 
