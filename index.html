@@ -451,6 +451,37 @@
       .nav-links.open {
         display: flex;
       }
+      /* 🐣 PÅSKE CTA */
+.easter-cta {
+  background: linear-gradient(90deg, #f59e0b, #fde68a);
+  color: #111827;
+  text-align: center;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+.easter-cta a {
+  margin-left: 10px;
+  color: black;
+  text-decoration: underline;
+}
+
+/* ✨ LITT EKSTRA PREMIUM GLOW */
+body {
+  background:
+    radial-gradient(circle at top, rgba(245,158,11,0.12), transparent 35%),
+    radial-gradient(circle at bottom, rgba(253,230,138,0.05), transparent 50%),
+    linear-gradient(180deg, #0b1120 0%, #111827 100%);
+}
+
+/* ✨ litt ekstra hover-effekt */
+.button.primary:hover {
+  box-shadow: 0 0 25px rgba(245,158,11,0.35);
+}
     }
   </style>
 <script type="application/ld+json">
@@ -470,6 +501,10 @@
 </script>
 </head>
 <body>
+  <div class="easter-cta">
+  🐣 Påsketilbud: Få <strong>1 ekstra digitalt bilde inkludert</strong> ved booking
+  <a href="booking.html">Book nå →</a>
+</div>
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Fotograf Spalder hjem">
@@ -495,7 +530,8 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Fotograf i Ringsaker og omegn</div>
+          /* PÅSKE-EDIT */
+          <div class="eyebrow">🐣 Begrenset påsketilbud – ekstra bilde inkludert</div>
           <h1>Fotograf i Ringsaker – Kjæledyr, portrett og bryllup</h1>
           <p class="lead">
 Jeg hjelper deg å få bilder som faktisk betyr noe – enten det er kjæledyret ditt, familien din eller en viktig dag i livet ditt. Naturlig, ekte og uten stive poseringer.
