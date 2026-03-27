@@ -30,6 +30,11 @@
   font-size: 0.85rem;
   opacity: 0.8;
 }
+
+    .required {
+  color: #ef4444;
+  font-weight: bold;
+}
     
     body {
       font-family: Arial;
@@ -75,13 +80,20 @@
 
 <form id="bookingForm">
 
+  <p style="font-size:0.85rem; color:#cbd5e1;">
+Felt merket med <span style="color:#ef4444">*</span> er obligatoriske
+</p>
+
 <input type="hidden" name="_subject" value="Ny booking forespørsel – Fotograf Spalder">
 
-<input type="text" name="navn" placeholder="Navn" required>
+  <label>Navn <span class="required">*</span></label>
+<input type="text" name="navn" placeholder="Ditt navn" required>
 
-  <input type="email" name="email" placeholder="E-post" required>
+  <label>E-post <span class="required">*</span></label>
+<input type="email" name="email" placeholder="Din e-postadresse" required>
 
-  <input type="tel" name="telefon" placeholder="Telefonnummer" required>
+  <label>Telefonnummer <span class="required">*</span></label>
+<input type="tel" name="telefon" required pattern="[0-9]{8} placeholder="Ditt telefonnummer" required>
 
  <label>Hva ønsker du å booke?</label>
 <select name="pakke" required>
