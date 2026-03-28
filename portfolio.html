@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portefølje | Fotograf Spalder</title>
-  <link rel="icon" type="image/png" href="Untitled-1.png">
 
+<title>Portefølje | Fotograf Spalder – Bilder fra Ringsaker</title>
+<meta name="description" content="Se porteføljen til Fotograf Spalder. Kjæledyr, portrett, familie, bryllup og cosplayfoto fra Ringsaker og Innlandet.">
+<link rel="icon" type="image/png" href="Untitled-1.png">
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FHTXJM4638"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -15,21 +18,43 @@ gtag('config', 'G-FHTXJM4638');
 </script>
 
 <style>
+:root {
+  --bg: #0f172a;
+  --card: rgba(255,255,255,0.08);
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --line: rgba(255,255,255,0.12);
+  --accent: #f59e0b;
+  --shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+* { box-sizing: border-box; }
+
 body {
-  font-family: Arial;
-  background: #0f172a;
-  color: white;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(245,158,11,0.12), transparent 35%),
+    linear-gradient(180deg, #0b1120 0%, #111827 100%);
+  color: var(--text);
   padding: 2rem;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.lead {
+  text-align: center;
+  color: var(--muted);
+  max-width: 70ch;
+  margin: 0 auto 2rem;
 }
 
 .tabs {
@@ -41,28 +66,16 @@ h1 {
 }
 
 .tab {
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1rem;
   border-radius: 999px;
   background: rgba(255,255,255,0.08);
   cursor: pointer;
+  font-weight: 700;
 }
 
 .tab.active {
-  background: #f59e0b;
+  background: var(--accent);
   color: black;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
 }
 
 .section {
@@ -73,16 +86,44 @@ h1 {
   display: block;
 }
 
-.button {
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 6px;
+  box-shadow: var(--shadow);
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
   display: block;
-  margin: 2rem auto;
+  border-radius: 12px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 2rem;
   padding: 0.8rem 1.2rem;
-  background: #f59e0b;
+  background: var(--accent);
   color: black;
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
   font-weight: bold;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 </style>
 </head>
@@ -90,77 +131,100 @@ h1 {
 <body>
 
 <div class="container">
+  <h1>Portefølje</h1>
+  <p class="lead">
+    Her kan du se et utvalg av bilder fra ulike typer fotograferinger. Klikk deg gjennom kategoriene og få en følelse av stil, uttrykk og hvordan jeg jobber.
+  </p>
 
-<h1>Portefølje</h1>
+  <div class="tabs">
+    <div class="tab active" onclick="showTab(event, 'dyr')">Kjæledyr</div>
+    <div class="tab" onclick="showTab(event, 'portrett')">Portrett</div>
+    <div class="tab" onclick="showTab(event, 'familie')">Familie</div>
+    <div class="tab" onclick="showTab(event, 'bryllup')">Bryllup</div>
+    <div class="tab" onclick="showTab(event, 'cosplay')">Cosplay</div>
+  </div>
 
-<div class="tabs">
-  <div class="tab active" onclick="showTab('dyr')">Kjæledyr</div>
-  <div class="tab" onclick="showTab('portrett')">Portrett</div>
-  <div class="tab" onclick="showTab('familie')">Familie</div>
-  <div class="tab" onclick="showTab('bryllup')">Bryllup</div>
-  <div class="tab" onclick="showTab('cosplay')">Cosplay</div>
-</div>
+  <!-- KJÆLEDYR -->
+  <div id="dyr" class="section active">
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="hund1.jpg" alt="Hund fotografert utendørs i Ringsaker av Fotograf Spalder" title="Kjæledyrfotograf Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="hund2.jpg" alt="Portrett av hund i naturlig lys i Ringsaker av Fotograf Spalder" title="Hundebilder Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="hund3.jpg" alt="Kjæledyrfoto av hund i Ringsaker av Fotograf Spalder" title="Kjæledyrfotografering Innlandet">
+      </div>
+      <div class="gallery-item">
+        <img src="hund4.jpg" alt="Hund fotografert i bevegelse utendørs av Fotograf Spalder" title="Hund fotograf Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="hund5.jpg" alt="Naturlig hundeportrett tatt i Ringsaker av Fotograf Spalder" title="Profesjonell hundefotograf">
+      </div>
+      <div class="gallery-item">
+        <img src="hund6.jpg" alt="Stemningsfullt kjæledyrfoto i Innlandet av Fotograf Spalder" title="Kjæledyrfoto Innlandet">
+      </div>
+    </div>
+  </div>
 
-<!-- KJÆLEDYR -->
-<div id="dyr" class="section active">
-  <div class="gallery">
-    <img src="hund2.jpg">
-    <img src="hund1.jpg">
-    <img src="hund3.jpg">
-    <img src="hund4.jpg">
-    <img src="hund5.jpg">
-    <img src="hund6.jpg">
-    <img src="hund7.jpg">
-    <img src="hund8.jpg">
-    <img src="hund9.jpg">
-    <img src="hund10.jpg">
-    <img src="hund11.jpg">
-    <img src="katt1.jpg">
+  <!-- PORTRETT -->
+  <div id="portrett" class="section">
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="konfirmant.jpg" alt="Portrettfoto i Ringsaker av Fotograf Spalder" title="Portrettfotograf Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="konfirmasjon2.jpg" alt="Naturlig portrett utendørs i Innlandet av Fotograf Spalder" title="Portrettfoto Innlandet">
+      </div>
+    </div>
+  </div>
+
+  <!-- FAMILIE -->
+  <div id="familie" class="section">
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="familie1.jpg" alt="Familiefoto utendørs i Ringsaker av Fotograf Spalder" title="Familiefotograf Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="familie2.jpg" alt="Naturlig familiebilde i Innlandet av Fotograf Spalder" title="Familiefoto Innlandet">
+      </div>
+    </div>
+  </div>
+
+  <!-- BRYLLUP -->
+  <div id="bryllup" class="section">
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="bryllup.jpg" alt="Bryllupsfotografering i Ringsaker av Fotograf Spalder" title="Bryllupsfotograf Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="bryllup2.jpg" alt="Brudepar fotografert utendørs i Innlandet av Fotograf Spalder" title="Bryllupsfoto Innlandet">
+      </div>
+      <div class="gallery-item">
+        <img src="bryllup3.jpg" alt="Dokumentarisk bryllupsbilde tatt av Fotograf Spalder" title="Bryllupsbilder Ringsaker">
+    </div>
+  </div>
+
+  <!-- COSPLAY -->
+  <div id="cosplay" class="section">
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="cosplay1.jpg" alt="Cosplay fotografering i Ringsaker av Fotograf Spalder" title="Cosplay fotograf Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="cospaly2.jpg" alt="Cosplay portrett med effekter fotografert av Fotograf Spalder" title="Cosplay foto Innlandet">
+    </div>
+  </div>
+
+  <div class="button-row">
+    <a href="booking.html" class="button">Book fotografering</a>
+    <a href="index.html" class="button">Tilbake til forsiden</a>
   </div>
 </div>
-
-<!-- PORTRETT -->
-<div id="portrett" class="section">
-  <div class="gallery">
-    <img src="konfirmant.jpg">
-    <img src="konfirmasjon2.jpg">
-  </div>
-</div>
-
-<!-- FAMILIE -->
-<div id="familie" class="section">
-  <div class="gallery">
-    <img src="familie1.jpg">
-    <img src="familie2.jpg">
-  </div>
-</div>
-
-<!-- BRYLLUP -->
-<div id="bryllup" class="section">
-  <div class="gallery">
-    <img src="bryllup.jpg">
-    <img src="bryllup1.jpg">
-    <img src="bryllup2.jpg">
-    <img src="bryllup3.jpg">
-  </div>
-</div>
-
-<!-- COSPLAY -->
-<div id="cosplay" class="section">
-  <div class="gallery">
-    <img src="cosplay1.jpg">
-    <img src="cospaly2.jpg">
-  </div>
-</div>
-
-<a href="booking.html" class="button">Book fotografering</a>
-
-</div>
-
-  <a class="button" href="index.html">Tilbake til forsiden</a>
 
 <script>
-function showTab(tab) {
+function showTab(event, tab) {
   document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
   document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
 
