@@ -11,6 +11,7 @@
   gtag('config', 'G-FHTXJM4638');
 </script>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book fotografering | Fotograf Spalder</title>
   <link rel="icon" type="image/png" href="Untitled-1.png">
 
@@ -37,13 +38,18 @@
 }
     
     body {
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-      padding: 2rem;
-      max-width: 600px;
-      margin: auto;
-    }
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  margin: 0;
+  padding: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
 
     form {
       display: grid;
@@ -51,7 +57,8 @@
     }
 
     input, select, textarea {
-      padding: 0.7rem;
+      padding: 1rem;
+      font-size: 1rem;
       border-radius: 8px;
       border: 1px solid #444;
       background: #111827;
@@ -59,7 +66,8 @@
     }
 
     button {
-      padding: 0.9rem;
+      padding: 1.2rem;
+      font-size: 1rem;
       background: #f59e0b;
       border: none;
       border-radius: 8px;
@@ -78,10 +86,36 @@
 .button.secondary:hover {
   background: rgba(255,255,255,0.08);
 }
+    @media (max-width: 600px) {
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  body {
+    padding: 1rem 0.8rem;
+  }
+
+  form {
+    gap: 1rem;
+  }
+
+  .easter-offer {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+}
   </style>
 </head>
 
 <body>
+
+  <div class="container">
 
 <h1>Book fotografering</h1>
 
@@ -179,8 +213,8 @@ placeholder="Fortell hva du ønsker (hvem/dyr, sted, dato, stil osv)"></textarea
   <!-- spam filter -->
   <input type="text" name="_gotcha" style="display:none">
 
-  <label style="font-size:0.85rem;">
-  <input type="checkbox" required>
+  <label style="font-size:0.85rem; display:flex; gap:8px; align-items:flex-start;">
+  <input type="checkbox" required style="margin-top:4px;">
   Jeg har lest og godtar <a href="#vilkar">vilkårene</a><span class="required">*</span>
 </label>
 
@@ -194,7 +228,7 @@ Beløpet trekkes fra totalsummen. Ved avbestilling refunderes ikke forskuddet.
 Svar vanligvis innen 24 timer
 </p>
 
-  <div id="vilkar" style="margin-top:2rem; font-size:0.85rem; color:#cbd5e1;">
+  <div id="vilkar" style="margin-top:2rem; font-size:0.9rem; line-height:1.6;">
   <h3>Vilkår</h3>
 
   ⌚️ Gi beskjed minst 24 timer før ved avbestilling eller endring<br>
@@ -246,5 +280,6 @@ form.addEventListener("submit", async function(e) {
   }
 });
 </script>
+</div>
 </body>
 </html>
