@@ -86,6 +86,28 @@ h1 {
   text-decoration: none;
   font-weight: bold;
 }
+  @media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .tab {
+    flex: 1 1 45%;
+    text-align: center;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+}
 </style>
 </head>
 
@@ -94,13 +116,16 @@ h1 {
 <div class="container">
 
 <h1>Priser</h1>
+  <p style="text-align:center; color:#fde68a; font-weight:600;">
+De fleste velger Kjæledyr Standard eller Favorittpakken
+</p>
 
 <div class="tabs">
-  <div class="tab active" onclick="showTab('dyr')">Kjæledyr</div>
-  <div class="tab" onclick="showTab('portrett')">Portrett & Familie</div>
-  <div class="tab" onclick="showTab('event')">Arrangement</div>
-  <div class="tab" onclick="showTab('cosplay')">Cosplay</div>
-  <div class="tab" onclick="showTab('tillegg')">Tillegg</div>
+  <div class="tab active" onclick="showTab(event, 'dyr')">Kjæledyr</div>
+  <div class="tab" onclick="showTab(event, 'portrett')">Portrett & Familie</div>
+  <div class="tab" onclick="showTab(event, 'event')">Arrangement</div>
+  <div class="tab" onclick="showTab(event, 'cosplay')">Cosplay</div>
+  <div class="tab" onclick="showTab(event, 'tillegg')">Tillegg</div>
 </div>
 
 <!-- KJÆLEDYR -->
@@ -212,14 +237,24 @@ For å sikre booking betales et forskudd på 30% av totalprisen.
 Beløpet trekkes fra totalsummen. Ved avbestilling refunderes ikke forskuddet.
 </p>
 
-<a href="booking.html" class="button">Book fotografering</a>
+<div style="text-align:center; margin-top:2rem;">
+
+  <p style="color:#cbd5e1;">
+    Klar for å sikre deg tid?
+  </p>
+
+  <a href="booking.html" class="button" style="display:block; margin-bottom:1rem;">
+    Book fotografering →
+  </a>
+
+  <a href="index.html" class="button" style="background:transparent; color:#cbd5e1; border:1px solid #444;">
+    ← Tilbake til forsiden
+  </a>
 
 </div>
 
-  <a class="button" href="index.html">Tilbake til forsiden</a>
-
 <script>
-function showTab(tab) {
+function showTab(event, tab) {
   document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
   document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
 
