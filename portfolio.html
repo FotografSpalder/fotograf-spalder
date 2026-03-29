@@ -125,6 +125,20 @@ h1 {
   gap: 1rem;
   flex-wrap: wrap;
 }
+  @media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .tab {
+    flex: 1 1 45%;
+    text-align: center;
+  }
+}
 </style>
 </head>
 
@@ -135,6 +149,9 @@ h1 {
   <p class="lead">
     Her kan du se et utvalg av bilder fra ulike typer fotograferinger. Klikk deg gjennom kategoriene og få en følelse av stil, uttrykk og hvordan jeg jobber.
   </p>
+  <p style="text-align:center; color:#fde68a; font-weight:600;">
+De fleste velger kjæledyr- eller familiefotografering
+</p>
 
   <div class="tabs">
     <div class="tab active" onclick="showTab(event, 'dyr')">Kjæledyr</div>
@@ -148,22 +165,22 @@ h1 {
   <div id="dyr" class="section active">
     <div class="gallery">
       <div class="gallery-item">
-        <img src="hund1.jpg" alt="Hund fotografert utendørs i Ringsaker av Fotograf Spalder" title="Kjæledyrfotograf Ringsaker">
+        <img src="hund1.jpg" loading="lazy" alt="Hund fotografert utendørs i Ringsaker av Fotograf Spalder" title="Kjæledyrfotograf Ringsaker">
       </div>
       <div class="gallery-item">
-        <img src="hund2.jpg" alt="Portrett av hund i naturlig lys i Ringsaker av Fotograf Spalder" title="Hundebilder Ringsaker">
+        <img src="hund2.jpg" loading="lazy" alt="Portrett av hund i naturlig lys i Ringsaker av Fotograf Spalder" title="Hundebilder Ringsaker">
       </div>
       <div class="gallery-item">
-        <img src="hund3.jpg" alt="Kjæledyrfoto av hund i Ringsaker av Fotograf Spalder" title="Kjæledyrfotografering Innlandet">
+        <img src="hund3.jpg" loading="lazy" alt="Kjæledyrfoto av hund i Ringsaker av Fotograf Spalder" title="Kjæledyrfotografering Innlandet">
       </div>
       <div class="gallery-item">
-        <img src="hund4.jpg" alt="Hund fotografert i bevegelse utendørs av Fotograf Spalder" title="Hund fotograf Ringsaker">
+        <img src="hund4.jpg" loading="lazy" alt="Hund fotografert i bevegelse utendørs av Fotograf Spalder" title="Hund fotograf Ringsaker">
       </div>
       <div class="gallery-item">
-        <img src="hund5.jpg" alt="Naturlig hundeportrett tatt i Ringsaker av Fotograf Spalder" title="Profesjonell hundefotograf">
+        <img src="hund5.jpg" loading="lazy" alt="Naturlig hundeportrett tatt i Ringsaker av Fotograf Spalder" title="Profesjonell hundefotograf">
       </div>
       <div class="gallery-item">
-        <img src="hund6.jpg" alt="Stemningsfullt kjæledyrfoto i Innlandet av Fotograf Spalder" title="Kjæledyrfoto Innlandet">
+        <img src="hund6.jpg" loading="lazy" alt="Stemningsfullt kjæledyrfoto i Innlandet av Fotograf Spalder" title="Kjæledyrfoto Innlandet">
       </div>
     </div>
   </div>
@@ -172,10 +189,10 @@ h1 {
   <div id="portrett" class="section">
     <div class="gallery">
       <div class="gallery-item">
-        <img src="konfirmant.jpg" alt="Portrettfoto i Ringsaker av Fotograf Spalder" title="Portrettfotograf Ringsaker">
+        <img src="konfirmant.jpg" loading="lazy" alt="Portrettfoto i Ringsaker av Fotograf Spalder" title="Portrettfotograf Ringsaker">
       </div>
       <div class="gallery-item">
-        <img src="konfirmasjon2.jpg" alt="Naturlig portrett utendørs i Innlandet av Fotograf Spalder" title="Portrettfoto Innlandet">
+        <img src="konfirmasjon2.jpg" loading="lazy" alt="Naturlig portrett utendørs i Innlandet av Fotograf Spalder" title="Portrettfoto Innlandet">
       </div>
     </div>
   </div>
@@ -184,43 +201,52 @@ h1 {
   <div id="familie" class="section">
     <div class="gallery">
       <div class="gallery-item">
-        <img src="familie1.jpg" alt="Familiefoto utendørs i Ringsaker av Fotograf Spalder" title="Familiefotograf Ringsaker">
+        <img src="familie1.jpg" loading="lazy" alt="Familiefoto utendørs i Ringsaker av Fotograf Spalder" title="Familiefotograf Ringsaker">
       </div>
       <div class="gallery-item">
-        <img src="familie2.jpg" alt="Naturlig familiebilde i Innlandet av Fotograf Spalder" title="Familiefoto Innlandet">
+        <img src="familie2.jpg" loading="lazy" alt="Naturlig familiebilde i Innlandet av Fotograf Spalder" title="Familiefoto Innlandet">
       </div>
     </div>
   </div>
 
   <!-- BRYLLUP -->
-  <div id="bryllup" class="section">
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="bryllup.jpg" alt="Bryllupsfotografering i Ringsaker av Fotograf Spalder" title="Bryllupsfotograf Ringsaker">
-      </div>
-      <div class="gallery-item">
-        <img src="bryllup2.jpg" alt="Brudepar fotografert utendørs i Innlandet av Fotograf Spalder" title="Bryllupsfoto Innlandet">
-      </div>
-      <div class="gallery-item">
-        <img src="bryllup3.jpg" alt="Dokumentarisk bryllupsbilde tatt av Fotograf Spalder" title="Bryllupsbilder Ringsaker">
+ <div id="bryllup" class="section">
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="bryllup.jpg" loading="lazy" alt="Bryllupsfotografering i Ringsaker av Fotograf Spalder">
+    </div>
+    <div class="gallery-item">
+      <img src="bryllup2.jpg" loading="lazy" alt="Brudepar fotografert utendørs i Innlandet av Fotograf Spalder">
+    </div>
+    <div class="gallery-item">
+      <img src="bryllup3.jpg" loading="lazy" alt="Dokumentarisk bryllupsbilde tatt av Fotograf Spalder">
     </div>
   </div>
+</div>
 
   <!-- COSPLAY -->
   <div id="cosplay" class="section">
     <div class="gallery">
       <div class="gallery-item">
-        <img src="cosplay2.jpg" alt="Cosplay fotografering i Ringsaker av Fotograf Spalder" title="Cosplay fotograf Ringsaker">
+        <img src="cosplay2.jpg" loading="lazy" alt="Cosplay fotografering i Ringsaker av Fotograf Spalder" title="Cosplay fotograf Ringsaker">
       </div>
       <div class="gallery-item">
-        <img src="cospaly1.jpg" alt="Cosplay portrett med effekter fotografert av Fotograf Spalder" title="Cosplay foto Innlandet">
+        <img src="cospaly1.jpg" loading="lazy" alt="Cosplay portrett med effekter fotografert av Fotograf Spalder" title="Cosplay foto Innlandet">
     </div>
   </div>
 
-  <div class="button-row">
-    <a href="booking.html" class="button">Book fotografering</a>
-    <a href="index.html" class="button">Tilbake til forsiden</a>
-  </div>
+  <div style="text-align:center; margin-top:2rem;">
+  <p style="color:#cbd5e1;">
+    Likte du det du så?
+  </p>
+
+  <a href="booking.html" class="button" style="display:block; margin-bottom:1rem;">
+    Book fotografering →
+  </a>
+
+  <a href="index.html" class="button" style="background:transparent; color:#cbd5e1; border:1px solid #444;">
+    ← Tilbake til forsiden
+  </a>
 </div>
 
 <script>
