@@ -3,12 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta property="og:title" content="Priser | Fotograf i Ringsaker – Fotograf Spalder">
-<meta property="og:description" content="Se priser for kjæledyrfoto, familie, portrett, bryllup og cosplay i Ringsaker og Brumunddal.">
+<meta property="og:description" content="Se priser for kjæledyrfoto, familie, portrett, bryllup, dåp, konfirmasjon og cosplay i Ringsaker og Brumunddal.">
 <meta property="og:image" content="https://www.fotograf-spalder.com/hund2.jpg">
-<meta property="og:type" content="website">  
+<meta property="og:type" content="website">
+
 <title>Priser fotograf Ringsaker | Kjæledyr, familie og portrett – Fotograf Spalder</title>
-  <link rel="icon" type="image/png" href="Untitled-1.png">
+<link rel="icon" type="image/png" href="Untitled-1.png">
+
+<meta name="description" content="Priser for fotograf i Ringsaker og Brumunddal. Kjæledyrfoto, familiefoto, portrett, konfirmasjon, dåp, bryllup og cosplay hos Fotograf Spalder.">
+<meta name="robots" content="index, follow">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FHTXJM4638"></script>
 <script>
@@ -19,24 +24,68 @@ gtag('config', 'G-FHTXJM4638');
 </script>
 
 <style>
+:root {
+  --bg: #0f172a;
+  --bg-soft: #111827;
+  --card: rgba(255,255,255,0.08);
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --line: rgba(255,255,255,0.12);
+  --accent: #f59e0b;
+  --accent-light: #fde68a;
+  --max: 900px;
+  --radius: 20px;
+  --shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background:
     radial-gradient(circle at top, rgba(245,158,11,0.12), transparent 35%),
     linear-gradient(180deg, #0b1120 0%, #111827 100%);
-  color: white;
+  color: var(--text);
   margin: 0;
   padding: 1rem;
   line-height: 1.6;
 }
 
 .container {
-  width: min(100% - 1rem, 900px);
+  width: min(100% - 1rem, var(--max));
   margin: auto;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
 }
 
 h1 {
   text-align: center;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.intro {
+  text-align: center;
+  color: var(--muted);
+  max-width: 70ch;
+  margin: 0 auto 1rem;
+}
+
+.notice {
+  background: rgba(245,158,11,0.12);
+  border: 1px solid rgba(245,158,11,0.35);
+  color: var(--accent-light);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin: 1.5rem 0;
+}
+
+.notice strong {
+  color: #fff;
 }
 
 .tabs {
@@ -48,15 +97,21 @@ h1 {
 }
 
 .tab {
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1rem;
   border-radius: 999px;
   background: rgba(255,255,255,0.08);
   cursor: pointer;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.tab:hover {
+  border-color: var(--line);
 }
 
 .tab.active {
-  background: #f59e0b;
-  color: black;
+  background: var(--accent);
+  color: #111827;
 }
 
 .section {
@@ -68,34 +123,83 @@ h1 {
 }
 
 .card {
-  background: rgba(255,255,255,0.08);
+  background: var(--card);
+  border: 1px solid var(--line);
   padding: 1.5rem;
-  border-radius: 15px;
+  border-radius: var(--radius);
   margin-bottom: 1rem;
+  box-shadow: var(--shadow);
 }
 
 .highlight {
-  border: 2px solid #f59e0b;
+  border: 2px solid var(--accent);
 }
 
 .price {
   font-size: 1.8rem;
-  color: #f59e0b;
+  color: var(--accent);
+  font-weight: 900;
+  margin: 0.5rem 0;
+}
+
+.card p,
+.card li {
+  color: var(--muted);
+}
+
+.card ul {
+  padding-left: 1.2rem;
+  margin-bottom: 0;
+}
+
+.info-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.info-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.info-box p,
+.info-box li {
+  color: var(--muted);
 }
 
 .button {
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
   margin-top: 1rem;
   padding: 0.9rem 1rem;
-  background: #f59e0b;
-  color: black;
+  background: var(--accent);
+  color: #111827;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 900;
 }
-  @media (max-width: 600px) {
+
+.button.secondary {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+.button:hover {
+  filter: brightness(1.08);
+}
+
+.small {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
   body {
     padding: 0.75rem;
   }
@@ -106,7 +210,6 @@ h1 {
 
   h1 {
     font-size: 1.7rem;
-    line-height: 1.2;
   }
 
   .tabs {
@@ -116,7 +219,7 @@ h1 {
   .tab {
     flex: 1 1 100%;
     text-align: center;
-    padding: 0.8rem 1rem;
+    padding: 0.85rem 1rem;
   }
 
   .card {
@@ -136,10 +239,18 @@ h1 {
 <div class="container">
 
 <h1>Priser på fotograf i Ringsaker og Brumunddal</h1>
-<p style="text-align:center; color:#cbd5e1; max-width:70ch; margin:0 auto 1rem;">
+
+<p class="intro">
 Her finner du priser på kjæledyrfotografering, portrett, familiefoto, bryllup, dåp, konfirmasjon og cosplay hos Fotograf Spalder.
-</p>  
-  <p style="text-align:center; color:#fde68a; font-weight:600;">
+</p>
+
+<div class="notice">
+  <strong>Viktig om digitale bilder:</strong><br>
+  Fotopakkene inkluderer et bestemt antall digitale webbilder. Webbilder passer godt til mobil, deling med familie og bruk på sosiale medier.
+  Ønsker du flere bilder, originalfiler i full oppløsning eller hele bildegalleriet digitalt, kan dette kjøpes separat etter fotograferingen via kundegalleriet.
+</div>
+
+<p style="text-align:center; color:#fde68a; font-weight:700;">
 De fleste velger Kjæledyr Standard eller Favorittpakken
 </p>
 
@@ -151,128 +262,258 @@ De fleste velger Kjæledyr Standard eller Favorittpakken
   <div class="tab" onclick="showTab(event, 'tillegg')">Tillegg</div>
 </div>
 
-<!-- KJÆLEDYR -->
 <div id="dyr" class="section active">
   <div class="card">
     <h2>Kjæledyr Mini</h2>
     <div class="price">1500 kr</div>
-    <p>1 digitalt bilde inkludert</p>
+    <ul>
+      <li>Kort fotografering av kjæledyr</li>
+      <li>Privat nettgalleri</li>
+      <li>1 digitalt webbilde inkludert</li>
+      <li>Flere bilder kan kjøpes separat</li>
+    </ul>
   </div>
 
   <div class="card highlight">
-    <h2>⭐ Kjæledyr Standard (Mest valgt)</h2>
+    <h2>⭐ Kjæledyr Standard</h2>
     <div class="price">2500 kr</div>
-    <p>3 digitale bilder inkludert</p>
+    <ul>
+      <li>Fotografering av kjæledyr</li>
+      <li>Privat nettgalleri</li>
+      <li>3 digitale webbilder inkludert</li>
+      <li>Flere bilder kan kjøpes separat</li>
+    </ul>
   </div>
 
   <div class="card">
     <h2>Kjæledyr Premium</h2>
     <div class="price">4000 kr</div>
-    <p>5 digitale bilder inkludert</p>
+    <ul>
+      <li>Lengre fotografering</li>
+      <li>Privat nettgalleri</li>
+      <li>5 digitale webbilder inkludert</li>
+      <li>Flere bilder kan kjøpes separat</li>
+    </ul>
   </div>
 </div>
 
-<!-- PORTRETT -->
 <div id="portrett" class="section">
   <div class="card">
     <h2>Portrett</h2>
     <div class="price">1200 kr</div>
+    <ul>
+      <li>Portrettfotografering av én person</li>
+      <li>Privat nettgalleri</li>
+      <li>1 digitalt webbilde inkludert</li>
+      <li>Flere bilder kan kjøpes separat</li>
+    </ul>
   </div>
 
   <div class="card">
     <h2>Familiefoto</h2>
     <div class="price">1800 kr</div>
+    <ul>
+      <li>Familiefotografering ute eller på avtalt lokasjon</li>
+      <li>Privat nettgalleri</li>
+      <li>2 digitale webbilder inkludert</li>
+      <li>Flere bilder kan kjøpes separat</li>
+    </ul>
   </div>
 
   <div class="card">
     <h2>Grunnpakke</h2>
     <div class="price">2500 kr</div>
+    <ul>
+      <li>Fotografering av person, par eller liten familie</li>
+      <li>Privat nettgalleri</li>
+      <li>3 digitale webbilder inkludert</li>
+      <li>Flere bilder kan kjøpes separat</li>
+    </ul>
   </div>
 
   <div class="card highlight">
     <h2>⭐ Favorittpakke</h2>
     <div class="price">4500 kr</div>
-    <p>Flere bilder og lengre shoot</p>
+    <ul>
+      <li>Lengre fotografering</li>
+      <li>Passer godt til familie, portrett eller kombinasjon</li>
+      <li>Privat nettgalleri</li>
+      <li>5 digitale webbilder inkludert</li>
+      <li>Flere bilder kan kjøpes separat</li>
+    </ul>
   </div>
 
   <div class="card">
     <h2>Totalpakke</h2>
     <div class="price">8000 kr</div>
+    <ul>
+      <li>Utvidet fotografering</li>
+      <li>Passer for større familier eller flere bildetyper</li>
+      <li>Privat nettgalleri</li>
+      <li>10 digitale webbilder inkludert</li>
+      <li>Mulighet for rabattert kjøp av hele galleriet</li>
+    </ul>
   </div>
 </div>
 
-<!-- EVENT -->
 <div id="event" class="section">
   <div class="card">
     <h2>Bryllup</h2>
     <div class="price">Fra 6000 kr</div>
-    <p>Tilpasses etter behov og dekning av dagen</p>
+    <ul>
+      <li>Tilpasses etter behov og dekning av dagen</li>
+      <li>Privat nettgalleri</li>
+      <li>5 ferdig redigerte digitale webbilder inkludert</li>
+      <li>Flere bilder og originalfiler kan kjøpes separat</li>
+    </ul>
   </div>
 
   <div class="card">
     <h2>Konfirmasjon</h2>
     <div class="price">Fra 2000 kr</div>
+    <ul>
+      <li>Portretter av konfirmanten</li>
+      <li>Mulighet for familiebilder</li>
+      <li>Privat nettgalleri</li>
+      <li>2 digitale webbilder inkludert</li>
+      <li>Flere bilder kan kjøpes separat</li>
+    </ul>
   </div>
 
   <div class="card">
     <h2>Dåp</h2>
     <div class="price">Fra 2000 kr</div>
+    <ul>
+      <li>Fotografering før, under eller etter dåp etter avtale</li>
+      <li>Privat nettgalleri</li>
+      <li>2 digitale webbilder inkludert</li>
+      <li>Flere bilder kan kjøpes separat</li>
+    </ul>
   </div>
 
   <div class="card highlight">
     <h2>Slektsfotografering</h2>
     <div class="price">5500 kr</div>
-    <p>3 timer + familieportretter</p>
+    <ul>
+      <li>Inntil 3 timer fotografering</li>
+      <li>Familie- og gruppeportretter</li>
+      <li>Privat nettgalleri</li>
+      <li>5 digitale webbilder inkludert</li>
+      <li>Flere bilder og originalfiler kan kjøpes separat</li>
+    </ul>
   </div>
 </div>
 
-<!-- COSPLAY -->
 <div id="cosplay" class="section">
   <div class="card">
     <h2>Cosplay Grunnpakke</h2>
     <div class="price">1200 kr</div>
+    <ul>
+      <li>Kort cosplay-fotografering</li>
+      <li>Privat nettgalleri</li>
+      <li>1 digitalt webbilde inkludert</li>
+      <li>Flere bilder kan kjøpes separat</li>
+    </ul>
   </div>
 
   <div class="card highlight">
     <h2>Cosplay Magipakke</h2>
     <div class="price">1800 kr</div>
-    <p>Mer redigering og effekter</p>
+    <ul>
+      <li>Mer tid til posering og uttrykk</li>
+      <li>Privat nettgalleri</li>
+      <li>2 digitale webbilder inkludert</li>
+      <li>Flere bilder kan kjøpes separat</li>
+    </ul>
   </div>
 
   <div class="card">
     <h2>Cosplay Epos</h2>
     <div class="price">2800 kr</div>
-    <p>Avansert redigering og visuelle effekter</p>
+    <ul>
+      <li>Utvidet cosplay-fotografering</li>
+      <li>Mer avansert redigering og visuelle effekter</li>
+      <li>Privat nettgalleri</li>
+      <li>3 digitale webbilder inkludert</li>
+      <li>Flere bilder kan kjøpes separat</li>
+    </ul>
   </div>
 </div>
 
-<!-- TILLEGG -->
 <div id="tillegg" class="section">
   <div class="card">
-    <p>Ekstra person: +200 kr</p>
-    <p>Ekstra 30 min: +400 kr</p>
-    <p>Reise: +5 kr/km over 2 mil</p>
-    <p>Ekspress (48t): +500 kr</p>
+    <h2>Tillegg</h2>
+    <ul>
+      <li>Ekstra person: +200 kr</li>
+      <li>Ekstra 30 minutter: +400 kr</li>
+      <li>Reise: +5 kr/km over 2 mil fra Ringsaker</li>
+      <li>Ekspressredigering innen 48 timer: +500 kr</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Ekstra digitale bilder</h2>
+    <ul>
+      <li>Ekstra digitale webbilder kan kjøpes i kundegalleriet</li>
+      <li>Originalfiler i full oppløsning kan kjøpes separat</li>
+      <li>Pakkepris for hele galleriet kan tilbys ved større bestillinger</li>
+    </ul>
+    <p class="small">
+      Prisene for ekstra bilder vises i kundegalleriet etter fotograferingen.
+    </p>
   </div>
 </div>
-  <p style="margin-top:2rem; color:#cbd5e1; text-align:center;">
-For å sikre booking betales et forskudd på 30% av totalprisen. 
-Beløpet trekkes fra totalsummen. Ved avbestilling refunderes ikke forskuddet.
-</p>
+
+<div class="info-grid">
+
+  <div class="info-box">
+    <h2>Hva er et webbilde?</h2>
+    <p>
+      Et webbilde er en ferdig redigert digital fil som passer godt til mobil, deling med familie og bruk på sosiale medier.
+      Dette er ikke det samme som originalfil i full oppløsning.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h2>Hva er en originalfil?</h2>
+    <p>
+      En originalfil leveres i høyere oppløsning og passer bedre dersom du ønsker større utskrifter, produkter eller maksimal bildekvalitet.
+      Originalfiler kjøpes separat via kundegalleriet.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h2>Hvordan fungerer bildegalleriet?</h2>
+    <p>
+      Etter fotograferingen får du tilgang til et privat nettgalleri. Der kan du se bildene, velge de inkluderte bildene dine og eventuelt kjøpe flere bilder, originalfiler eller bildeprodukter.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h2>Booking og forskudd</h2>
+    <p>
+      For å sikre booking betales et forskudd på 30% av totalprisen. Beløpet trekkes fra totalsummen.
+      Ved avbestilling refunderes ikke forskuddet.
+    </p>
+  </div>
+
+</div>
 
 <div style="text-align:center; margin-top:2rem;">
 
   <p style="color:#cbd5e1;">
-  Klar for å sikre deg tid? Send en bookingforespørsel for fotografering i Ringsaker, Brumunddal eller resten av Innlandet.
-</p>
+    Klar for å sikre deg tid? Send en bookingforespørsel for fotografering i Ringsaker, Brumunddal eller resten av Innlandet.
+  </p>
 
-  <a href="booking.html" class="button" style="display:block; margin-bottom:1rem;">
+  <a href="booking.html" class="button">
     Book fotografering →
   </a>
 
-  <a href="index.html" class="button" style="background:transparent; color:#cbd5e1; border:1px solid #444;">
+  <a href="index.html" class="button secondary">
     ← Tilbake til forsiden
   </a>
+
+</div>
 
 </div>
 
