@@ -550,12 +550,12 @@ body {
       <div class="nav-wrap">
         <button class="mobile-toggle" id="mobileToggle" aria-label="Åpne meny">Meny</button>
         <nav class="nav-links" id="navLinks">
-          <a href="om.html">Om</a>
+          <a href="om">Om</a>
           <a href="#tjenester">Tjenester</a>
-          <a href="portfolio.html">Portefølje</a>
-          <a href="priser.html">Priser</a>
+          <a href="portfolio">Portefølje</a>
+          <a href="priser">Priser</a>
           <a href="#kontakt">Kontakt</a>
-          <a class="button primary" href="booking.html">Book fotografering</a>
+          <a class="button primary" href="booking">Book fotografering</a>
         </nav>
       </div>
     </div>
@@ -571,8 +571,8 @@ body {
 Jeg hjelper deg å få bilder som faktisk betyr noe – enten det er kjæledyret ditt, familien din eller en viktig dag i livet ditt. Naturlig, ekte og uten stive poseringer.
 </p>
           <div class="hero-actions">
-            <a class="button primary" href="booking.html">Book fotografering</a>
-            <a class="button secondary" href="portfolio.html">Se portefølje</a>
+            <a class="button primary" href="booking">Book fotografering</a>
+            <a class="button secondary" href="portfolio">Se portefølje</a>
           </div>
 
           <div class="stats">
@@ -629,7 +629,7 @@ Jeg hjelper deg å få bilder som faktisk betyr noe – enten det er kjæledyret
       <div class="card">
         <h3>📰 Medieomtale</h3>
         <p>Omtalt i Ringsaker Blad og Hamar Arbeiderblad.</p>
-        <a href="om.html" class="button secondary">Les mer</a>
+        <a href="om" class="button secondary">Les mer</a>
       </div>
 
       <div class="card">
@@ -666,7 +666,7 @@ Jeg hjelper deg å få bilder som faktisk betyr noe – enten det er kjæledyret
           <article class="card">
   <h3>Konfirmasjonsfotografering</h3>
   <p>Naturlige og stemningsfulle bilder av konfirmanten, familien og de viktige øyeblikkene fra dagen.</p>
-  <a href="Konfirmasjon.html" class="button secondary">Les mer</a>
+  <a href="Konfirmasjon" class="button secondary">Les mer</a>
 </article>
 
           <article class="card">
@@ -706,19 +706,19 @@ Jeg hjelper deg å få bilder som faktisk betyr noe – enten det er kjæledyret
       <article class="card">
         <h3>Portefølje</h3>
         <p>Se flere bilder og få en følelse av stilen og uttrykket jeg jobber med.</p>
-        <a href="portfolio.html" class="button primary">Se bilder</a>
+        <a href="portfolio" class="button primary">Se bilder</a>
       </article>
 
       <article class="card">
         <h3>Priser</h3>
         <p>Få full oversikt over pakker, priser og hva du får inkludert.</p>
-        <a href="priser.html" class="button primary">Se priser</a>
+        <a href="priser" class="button primary">Se priser</a>
       </article>
 
       <article class="card">
         <h3>Book fotografering</h3>
         <p>Send en forespørsel direkte – raskt, enkelt og uforpliktende.</p>
-        <a href="booking.html" class="button primary">Book nå</a>
+        <a href="booking" class="button primary">Book nå</a>
       </article>
 
     </div>
