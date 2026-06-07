@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FHTXJM4638"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FHTXJM4638');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Kjæledyrsfotograf i Ringsaker | Hund, katt og dyr – Fotograf Spalder</title>
+  <link rel="icon" type="image/png" href="IMG_8929.jpg">
+
+  <meta name="description" content="Kjæledyrsfotograf i Ringsaker og Brumunddal. Profesjonelle bilder av hunder, katter og andre kjæledyr. Naturlig, rolig og dyrevennlig fotografering.">
+  <meta name="author" content="Henrik Spalder">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Kjæledyrsfotograf i Ringsaker | Fotograf Spalder">
+  <meta property="og:description" content="Naturlige og personlige bilder av hunder, katter og andre kjæledyr i Ringsaker, Brumunddal og Innlandet.">
+  <meta property="og:image" content="https://www.fotograf-spalder.com/hund2.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.fotograf-spalder.com/kjaeledyrsfotograf-ringsaker.html">
+
+  <meta name="theme-color" content="#0f172a">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: rgba(255,255,255,0.08);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --line: rgba(255,255,255,0.12);
+      --accent: #f59e0b;
+      --accent-light: #fbbf24;
+      --max: 1200px;
+      --shadow: 0 18px 40px rgba(0,0,0,0.25);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(245,158,11,0.14), transparent 34%),
+        radial-gradient(circle at bottom, rgba(253,230,138,0.05), transparent 50%),
+        linear-gradient(180deg, #0b1120 0%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(11,17,32,0.82);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .brand strong {
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 0.65rem 0.9rem;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.8rem 1.15rem;
+      border-radius: 999px;
+      border: 0;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #111827;
+      box-shadow: var(--shadow);
+    }
+
+    .button.primary:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+      box-shadow: 0 0 25px rgba(245,158,11,0.35);
+    }
+
+    .button.secondary {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .button.secondary:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .hero {
+      padding: 5rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(245,158,11,0.4);
+      background: rgba(245,158,11,0.12);
+      color: #fde68a;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 1rem;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4.6rem);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 65ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-photo {
+      min-height: 460px;
+      border-radius: calc(var(--radius) - 8px);
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.20), rgba(255,255,255,0.04)),
+        url('IMG_8950.1.jpg') center/cover;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-photo::after {
+      content: "Kjæledyrsfoto i Ringsaker";
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      background: rgba(17,24,39,0.82);
+      border: 1px solid var(--line);
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
+    }
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-head {
+      margin-bottom: 2rem;
+      max-width: 75ch;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .card,
+    .price-card,
+    .faq-item,
+    .info-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card p,
+    .price-card p,
+    .price-card li,
+    .faq-item p,
+    .info-box p,
+    .contact-box p {
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0 0;
+      display: grid;
+      gap: 0.7rem;
+      color: var(--muted);
+    }
+
+    .check-list li::before {
+      content: "✓ ";
+      color: var(--accent-light);
+      font-weight: 900;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      aspect-ratio: 4 / 5;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(255,255,255,0.04));
+      position: relative;
+    }
+
+    .gallery-item.wide {
+      aspect-ratio: 16 / 10;
+      grid-column: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .price-card.featured {
+      border-color: rgba(245,158,11,0.65);
+      box-shadow: 0 0 0 1px rgba(245,158,11,0.15), var(--shadow);
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 900;
+      margin: 0.5rem 0 1rem;
+      color: #fde68a;
+    }
+
+    .price-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .price-card li::before {
+      content: "✓ ";
+      color: var(--accent-light);
+      font-weight: 800;
+    }
+
+    .faq {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-box {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .contact-list a {
+      color: #fde68a;
+      font-weight: 700;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0 3rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer p {
+      color: var(--muted);
+    }
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .split,
+      .cards,
+      .gallery,
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item.wide {
+        grid-column: span 1;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        padding: 1rem 0;
+      }
+
+      .nav-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.75rem;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        min-width: 260px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--line);
+        padding: 1rem;
+        border-radius: 18px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero-photo {
+        min-height: 360px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Fotograf Spalder",
+    "image": "https://www.fotograf-spalder.com/Untitled-1.png",
+    "url": "https://www.fotograf-spalder.com/kjaeledyrsfotograf-ringsaker.html",
+    "telephone": "+4799535760",
+    "email": "fotograf.spalder@outlook.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ringsaker",
+      "addressRegion": "Innlandet",
+      "addressCountry": "NO"
+    },
+    "areaServed": [
+      "Ringsaker",
+      "Brumunddal",
+      "Moelv",
+      "Hamar",
+      "Gjøvik",
+      "Lillehammer",
+      "Innlandet"
+    ],
+    "description": "Kjæledyrsfotograf i Ringsaker som tilbyr fotografering av hunder, katter og andre kjæledyr. Naturlige bilder ute, hjemme eller på avtalt lokasjon.",
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.facebook.com/FotoSpalder",
+      "https://www.instagram.com/fotografspalder"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Kjæledyrsfotografering",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Kjæledyr Mini",
+          "price": "1800",
+          "priceCurrency": "NOK"
+        },
+        {
+          "@type": "Offer",
+          "name": "Kjæledyr Standard",
+          "price": "3000",
+          "priceCurrency": "NOK"
+        },
+        {
+          "@type": "Offer",
+          "name": "Kjæledyr Premium",
+          "price": "4000",
+          "priceCurrency": "NOK"
+        }
+      ]
+    },
+    "knowsAbout": [
+      "Kjæledyrsfotografering",
+      "Hundefotografering",
+      "Hundebilder",
+      "Kattefotografering",
+      "Dyrefotografering",
+      "Portrett av dyr"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Fotograf Spalder hjem">
+        <strong>Fotograf Spalder</strong>
+        <span>Kjæledyr, portrett og bryllup</span>
+      </a>
+
+      <div class="nav-wrap">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Åpne meny">Meny</button>
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Hjem</a>
+          <a href="om.html">Om</a>
+          <a href="portfolio.html">Portefølje</a>
+          <a href="priser.html">Priser</a>
+          <a href="#faq">Spørsmål</a>
+          <a href="#kontakt">Kontakt</a>
+          <a class="button primary" href="booking.html">Book fotografering</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Kjæledyrsfotograf i Ringsaker og Brumunddal</div>
+          <h1>Bilder av hunder, katter og kjæledyr som faktisk viser hvem de er</h1>
+          <p class="lead">
+            Kjæledyret ditt er ikke bare et dyr. Det er en del av familien. Hos Fotograf Spalder får du naturlige, rolige og personlige bilder som viser uttrykket, personligheten og båndet mellom deg og dyret ditt.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="booking.html">Book kjæledyrsfoto</a>
+            <a class="button secondary" href="priser.html">Se priser</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>Hund</strong>
+              <span>Min tydeligste nisje og største fotointeresse.</span>
+            </div>
+            <div class="stat">
+              <strong>Trygt tempo</strong>
+              <span>Fotograferingen tilpasses dyret, ikke motsatt.</span>
+            </div>
+            <div class="stat">
+              <strong>Innlandet</strong>
+              <span>Oppdrag i Ringsaker, Brumunddal og omegn.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-photo" role="img" aria-label="Hund fotografert av Fotograf Spalder"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="section-head">
+          <h2>Kjæledyrsfoto med ro, tålmodighet og forståelse for dyr</h2>
+          <p class="lead">
+            Dyr kan ikke instrueres på samme måte som mennesker. De beveger seg, lukter, lytter, mister fokus og gjør ting på sine egne premisser. Det er nettopp derfor kjæledyrsfotografering krever ro, timing og evne til å lese situasjonen.
+          </p>
+          <p class="lead">
+            Jeg jobber med dyret slik det er. Målet er ikke stive poseringer, men ekte uttrykk, kontakt og bilder som føles levende.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3>Dette får du</h3>
+          <ul class="check-list">
+            <li>Fotografering tilpasset dyrets tempo</li>
+            <li>Mulighet for bilder av dyret alene</li>
+            <li>Mulighet for bilder sammen med eier</li>
+            <li>Privat nettgalleri etter fotograferingen</li>
+            <li>Ferdig redigerte digitale bilder</li>
+            <li>Mulighet til å bestille flere bilder og originalfiler</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="dyr">
+      <div class="container">
+        <div class="section-head">
+          <h2>Hvilke dyr kan fotograferes?</h2>
+          <p class="lead">
+            De fleste kjæledyr kan fotograferes, så lenge vi legger opp fotograferingen etter dyrets personlighet, trygghet og energinivå.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Hundefotografering</h3>
+            <p>
+              Hunder er min tydeligste nisje. Enten du har valp, voksen hund, seniorhund, familiehund eller brukshund, kan vi lage bilder som viser hundens uttrykk og personlighet.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Kattefotografering</h3>
+            <p>
+              Katter fotograferes best på egne premisser. Ofte fungerer det godt hjemme eller i et kjent miljø der katten føler seg trygg.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Andre kjæledyr</h3>
+            <p>
+              Kaniner, hester og andre dyr kan også fotograferes. Ta kontakt, så finner vi en praktisk løsning som passer dyret og situasjonen.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galleri">
+      <div class="container">
+        <div class="section-head">
+          <h2>Eksempler på kjæledyrsbilder</h2>
+          <p class="lead">
+            Bruk denne delen til å vise frem dine sterkeste dyrebilder. Bytt gjerne bildefilene under med nye favoritter etter hvert.
+          </p>
+        </div>
+
+        <div class="gallery">
+          <div class="gallery-item"><img src="hund2.jpg" alt="Hund fotografert utendørs i Ringsaker av Fotograf Spalder"></div>
+          <div class="gallery-item"><img src="hund.jpg" alt="Portrett av hund fotografert av Fotograf Spalder"></div>
+          <div class="gallery-item"><img src="raikou.jpg" alt="Shiba Inu fotografert av Fotograf Spalder"></div>
+          <div class="gallery-item wide"><img src="hund-portrett.jpg" alt="Stemningsfullt hundeportrett i naturlig lys"></div>
+          <div class="gallery-item"><img src="kjaeledyr.jpg" alt="Kjæledyrsfotografering i Innlandet"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prosess">
+      <div class="container">
+        <div class="section-head">
+          <h2>Slik foregår fotograferingen</h2>
+          <p class="lead">
+            En god opplevelse gir bedre bilder. Derfor legger jeg opp fotograferingen på en måte som gjør det enklest mulig for både dyr og eier.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>1. Før fotograferingen</h3>
+            <p>
+              Vi avtaler sted, tidspunkt og hva slags bilder du ønsker. Jeg spør gjerne litt om dyret på forhånd, slik at jeg vet hva vi bør ta hensyn til.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>2. Under fotograferingen</h3>
+            <p>
+              Vi bruker god tid og lar dyret få pauser ved behov. Noen dyr trenger ro, andre trenger aktivitet. Begge deler kan gi gode bilder.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>3. Etter fotograferingen</h3>
+            <p>
+              Bildene redigeres og leveres i privat nettgalleri. Der kan du velge inkluderte bilder og eventuelt kjøpe flere.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="priser">
+      <div class="container">
+        <div class="section-head">
+          <h2>Priser på kjæledyrsfotografering</h2>
+          <p class="lead">
+            Dette er en enkel oversikt. Full prisliste og detaljer finner du på prissiden.
+          </p>
+        </div>
+
+        <div class="price-grid">
+          <article class="price-card">
+            <h3>Kjæledyr Mini</h3>
+            <div class="price">1800 kr</div>
+            <ul>
+              <li>Kort fotografering av ett kjæledyr</li>
+              <li>Privat nettgalleri</li>
+              <li>1 digitalt web-bilde inkludert</li>
+              <li>Flere bilder kan kjøpes separat</li>
+            </ul>
+          </article>
+
+          <article class="price-card featured">
+            <h3>Kjæledyr Standard</h3>
+            <div class="price">3000 kr</div>
+            <ul>
+              <li>Fotografering av kjæledyr</li>
+              <li>God tid til variasjon</li>
+              <li>Privat nettgalleri</li>
+              <li>3 digitale web-bilder inkludert</li>
+              <li>Flere bilder kan kjøpes separat</li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <h3>Kjæledyr Premium</h3>
+            <div class="price">4000 kr</div>
+            <ul>
+              <li>Lengre fotografering</li>
+              <li>Passer for flere motiver og uttrykk</li>
+              <li>Privat nettgalleri</li>
+              <li>5 digitale web-bilder inkludert</li>
+              <li>Flere bilder kan kjøpes separat</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="hero-actions" style="margin-top: 2rem;">
+          <a class="button primary" href="booking.html">Book fotografering</a>
+          <a class="button secondary" href="priser.html">Se full prisliste</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="info-box">
+          <h2>Hvor kan fotograferingen skje?</h2>
+          <p>
+            Kjæledyrsfotografering kan gjøres ute i naturen, hjemme hos deg eller på en avtalt lokasjon. For mange dyr fungerer det best med et kjent og rolig miljø.
+          </p>
+          <p>
+            Jeg tar oppdrag i Ringsaker, Brumunddal, Moelv, Hamar, Gjøvik, Lillehammer og resten av Innlandet.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h2>Hva bør du ta med?</h2>
+          <ul class="check-list">
+            <li>Godbit eller favorittleke</li>
+            <li>Bånd eller sele ved behov</li>
+            <li>Vann til dyret</li>
+            <li>Eventuelt børste eller klut</li>
+            <li>Tålmodighet og godt humør</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ofte stilte spørsmål om kjæledyrsfoto</h2>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item">
+            <h3>Må hunden kunne sitte stille?</h3>
+            <p>
+              Nei. Mange gode bilder kommer når hunden beveger seg, leker eller følger med på noe. Jeg tilpasser fotograferingen etter dyret.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Kan eier være med på bildene?</h3>
+            <p>
+              Ja. Mange ønsker bilder sammen med kjæledyret sitt. Det kan ofte gi sterke og personlige bilder.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Hva om dyret er nervøst?</h3>
+            <p>
+              Da tar vi det rolig. Jeg legger ikke opp til stress eller press. Målet er at dyret skal føle seg tryggest mulig.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Hva skjer hvis været blir dårlig?</h3>
+            <p>
+              Ved dårlig vær kan fotograferingen flyttes. Det avtales i dialog før oppdraget.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Får jeg alle bildene?</h3>
+            <p>
+              Du får et privat nettgalleri der du kan velge bilder. Noen bilder er inkludert i pakken, og flere bilder eller originalfiler kan kjøpes separat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Klar for å forevige kjæledyret ditt?</h2>
+          <p>
+            Send en forespørsel, så finner vi en løsning som passer for deg og dyret ditt.
+          </p>
+
+          <div class="contact-list">
+            <div><strong>E-post:</strong> <a href="mailto:fotograf.spalder@outlook.com">fotograf.spalder@outlook.com</a></div>
+            <div><strong>Telefon:</strong> <a href="sms:+4799535760">+47 99 53 57 60</a></div>
+            <div><strong>Facebook:</strong> <a href="https://www.facebook.com/FotoSpalder">Fotograf Spalder</a></div>
+            <div><strong>Instagram:</strong> <a href="https://www.instagram.com/fotografspalder">@fotografspalder</a></div>
+          </div>
+
+          <div class="contact-actions">
+            <a class="button primary" href="booking.html">Book kjæledyrsfotografering</a>
+            <a class="button secondary" href="portfolio.html">Se portefølje</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>© <span id="year"></span> Fotograf Spalder. Alle rettigheter reservert.</p>
+      <p>Kjæledyrsfotograf i Ringsaker, Brumunddal og Innlandet.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
