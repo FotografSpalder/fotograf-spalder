@@ -7,22 +7,27 @@
   </url>
 
   <url>
-    <loc>https://www.fotograf-spalder.com/portefolje.html</loc>
+    <loc>https://www.fotograf-spalder.com/portefolje</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.fotograf-spalder.com/priser.html</loc>
+    <loc>https://www.fotograf-spalder.com/priser</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.fotograf-spalder.com/booking.html</loc>
+    <loc>https://www.fotograf-spalder.com/booking</loc>
     <priority>1.0</priority>
   </url>
 
    <url>
-    <loc>https://www.fotograf-spalder.com/Konfirmasjon.html</loc>
+    <loc>https://www.fotograf-spalder.com/Konfirmasjon</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fotograf-spalder.com/kjaeledyrsfotograf-ringsaker</loc>
     <priority>1.0</priority>
   </url>
 
