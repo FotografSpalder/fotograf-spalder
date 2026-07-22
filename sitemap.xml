@@ -21,13 +21,18 @@
     <priority>1.0</priority>
   </url>
 
-   <url>
+  <url>
     <loc>https://www.fotograf-spalder.com/Konfirmasjon.html</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.fotograf-spalder.com/kjaeledyrsfotograf-ringsaker.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fotograf-spalder.com/sommerfotografering.html</loc>
     <priority>1.0</priority>
   </url>
 
