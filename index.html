@@ -268,6 +268,39 @@
       box-shadow: var(--shadow);
     }
 
+    .season-card {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 1.5rem;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(255,255,255,0.06));
+      border: 1px solid rgba(245,158,11,0.35);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .season-card p {
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .season-badge {
+      justify-self: end;
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 20px;
+      background: rgba(15,23,42,0.65);
+      border: 1px solid var(--line);
+      min-width: 220px;
+    }
+
+    .season-badge strong {
+      display: block;
+      font-size: 1.5rem;
+      color: #fde68a;
+    }
+
     .card p,
     .card li,
     .contact-box p,
@@ -348,7 +381,7 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-  width: 180px;   /* bredde på logo */
+  width: 180px;
   height: auto;
   padding: 10px;
   border-radius: 12px;
@@ -413,8 +446,14 @@
       .contact-box,
       .cards,
       .gallery,
-      .price-grid {
+      .price-grid,
+      .season-card {
         grid-template-columns: 1fr;
+      }
+
+      .season-badge {
+        justify-self: stretch;
+        min-width: 0;
       }
 
       .stats {
@@ -451,7 +490,6 @@
       .nav-links.open {
         display: flex;
       }
-      /* ✨ LITT EKSTRA PREMIUM GLOW */
 body {
   background:
     radial-gradient(circle at top, rgba(245,158,11,0.12), transparent 35%),
@@ -459,7 +497,6 @@ body {
     linear-gradient(180deg, #0b1120 0%, #111827 100%);
 }
 
-/* ✨ litt ekstra hover-effekt */
 .button.primary:hover {
   box-shadow: 0 0 25px rgba(245,158,11,0.35);
 }
@@ -470,7 +507,7 @@ body {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Fotograf Spalder",
-  
+
   "aggregateRating": {
   "@type": "AggregateRating",
   "ratingValue": "5",
@@ -551,8 +588,9 @@ body {
         <button class="mobile-toggle" id="mobileToggle" aria-label="Åpne meny">Meny</button>
         <nav class="nav-links" id="navLinks">
           <a href="om.html">Om</a>
-          <a href="#tjenester.html">Tjenester</a>
+          <a href="#tjenester">Tjenester</a>
           <a href="portfolio.html">Portefølje</a>
+          <a href="sommerfotografering.html">Sommerfoto</a>
           <a href="kjaeledyrsfotograf-ringsaker.html">Kjæledyr</a>
           <a href="Konfirmasjon.html">Konfirmasjon</a>
           <a href="priser.html">Priser</a>
@@ -594,7 +632,24 @@ Jeg hjelper deg å få bilder som faktisk betyr noe – enten det er kjæledyret
         </div>
 
         <div class="hero-card">
-          <div class="photo-placeholder" role="img" aria-label="Plassholder for hovedbilde"></div>
+          <div class="photo-placeholder" role="img" aria-label="Henrik Spalder, fotograf i Ringsaker"></div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="sommerfoto-tittel">
+      <div class="container">
+        <div class="season-card">
+          <div>
+            <div class="eyebrow">Aktuelt denne sommeren</div>
+            <h2 id="sommerfoto-tittel">Sommerfotografering i Ringsaker</h2>
+            <p>Sommeren gir grønt landskap, varme kvelder og naturlige omgivelser som passer godt til familie-, portrett- og kjæledyrsfotografering. Se forslag til fotografering, steder og praktisk informasjon.</p>
+            <a class="button primary" href="sommerfotografering.html">Se sommerfotografering</a>
+          </div>
+          <div class="season-badge" aria-label="Sommerfotografering for familie, portrett og kjæledyr">
+            <strong>Sommerfoto</strong>
+            <span>Familie · portrett · kjæledyr</span>
+          </div>
         </div>
       </div>
     </section>
@@ -609,7 +664,7 @@ Jeg hjelper deg å få bilder som faktisk betyr noe – enten det er kjæledyret
 
   <p style="color:#cbd5e1;">
     Som fotograf i Ringsaker jobber jeg ute i naturlige omgivelser for å skape ekte og levende bilder. 
-    Enten du ønsker bilder av hunden din, familien din eller en spesiell anledning, får du en personlig og trygg opplevelse.
+    Enten du ønsker bilder av hunden din, familien din eller en spesiell anledning, får du en personlig og trygg opplevelse. Om sommeren kan du lese mer om <a href="sommerfotografering.html" style="color:#fde68a;font-weight:700;">sommerfotografering i Ringsaker</a>.
   </p>
 
   <p style="color:#cbd5e1;">
@@ -664,6 +719,7 @@ Jeg hjelper deg å få bilder som faktisk betyr noe – enten det er kjæledyret
           <article class="card">
             <h3>Portrett og familie</h3>
             <p>Naturlige portretter ute eller i avtalt miljø. Passer både enkeltpersoner, par og familier.</p>
+            <a href="sommerfotografering.html" class="button secondary">Se sommerfoto</a>
           </article>
 
           <article class="card">
@@ -781,7 +837,7 @@ Se / legg igjen anmeldelser
   <footer class="footer">
     <div class="container footer-row">
       <p>© <span id="year"></span> Fotograf Spalder. Alle rettigheter reservert.</p>
-      
+
     </div>
   </footer>
 
