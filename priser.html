@@ -6,11 +6,11 @@
 
 <title>Priser fotograf Ringsaker | Kjæledyr, familie og portrett – Fotograf Spalder</title>
 
-<meta name="description" content="Priser for fotograf i Ringsaker og Brumunddal. Kjæledyrfoto, familiefoto, portrett, konfirmasjon, dåp, bryllup, kulturarrangement og cosplay hos Fotograf Spalder.">
+<meta name="description" content="Priser for fotograf i Ringsaker og Brumunddal. Se tydelig hva fotograferingsprisen inkluderer, hvor mange bilder som følger med og hva som kjøpes separat.">
 <meta name="robots" content="index, follow">
 
 <meta property="og:title" content="Priser | Fotograf i Ringsaker – Fotograf Spalder">
-<meta property="og:description" content="Se priser for kjæledyrfoto, familie, portrett, bryllup, dåp, konfirmasjon, kulturarrangement og cosplay i Ringsaker og Brumunddal.">
+<meta property="og:description" content="Se priser for fotografering og få tydelig informasjon om inkluderte bilder, kundegalleri og tilleggskjøp.">
 <meta property="og:image" content="https://www.fotograf-spalder.com/hund2.jpg">
 <meta property="og:type" content="website">
 
@@ -39,9 +39,7 @@ gtag('config', 'G-FHTXJM4638');
   --shadow: 0 18px 40px rgba(0,0,0,0.25);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -59,9 +57,7 @@ body {
   margin: auto;
 }
 
-h1, h2, h3 {
-  line-height: 1.2;
-}
+h1, h2, h3 { line-height: 1.2; }
 
 h1 {
   text-align: center;
@@ -77,17 +73,46 @@ h1 {
 }
 
 .notice {
-  background: rgba(245,158,11,0.12);
-  border: 1px solid rgba(245,158,11,0.35);
+  background: rgba(245,158,11,0.14);
+  border: 2px solid rgba(245,158,11,0.65);
   color: var(--accent-light);
-  padding: 1rem;
+  padding: 1.25rem;
   border-radius: var(--radius);
   margin: 1.5rem 0;
+  box-shadow: var(--shadow);
 }
 
-.notice strong {
-  color: #fff;
+.notice strong { color: #fff; }
+.notice p { margin: 0.5rem 0 0; }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
 }
+
+.step {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+}
+
+.step-number {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #111827;
+  font-weight: 900;
+  margin-bottom: 0.65rem;
+}
+
+.step p { color: var(--muted); margin-bottom: 0; }
 
 .tabs {
   display: flex;
@@ -107,22 +132,11 @@ h1 {
   user-select: none;
 }
 
-.tab:hover {
-  border-color: var(--line);
-}
+.tab:hover { border-color: var(--line); }
+.tab.active { background: var(--accent); color: #111827; }
 
-.tab.active {
-  background: var(--accent);
-  color: #111827;
-}
-
-.section {
-  display: none;
-}
-
-.section.active {
-  display: block;
-}
+.section { display: none; }
+.section.active { display: block; }
 
 .card {
   background: var(--card);
@@ -133,8 +147,15 @@ h1 {
   box-shadow: var(--shadow);
 }
 
-.highlight {
-  border: 2px solid var(--accent);
+.highlight { border: 2px solid var(--accent); }
+
+.price-label {
+  color: var(--accent-light);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: -0.35rem;
 }
 
 .price {
@@ -144,14 +165,38 @@ h1 {
   margin: 0.5rem 0;
 }
 
-.card p,
-.card li {
-  color: var(--muted);
+.included-badge,
+.separate-badge {
+  display: inline-block;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin: 0.2rem 0 0.7rem;
 }
 
-.card ul {
-  padding-left: 1.2rem;
-  margin-bottom: 0;
+.included-badge {
+  background: rgba(34,197,94,0.14);
+  border: 1px solid rgba(34,197,94,0.35);
+  color: #bbf7d0;
+}
+
+.separate-badge {
+  background: rgba(245,158,11,0.12);
+  border: 1px solid rgba(245,158,11,0.35);
+  color: var(--accent-light);
+}
+
+.card p,
+.card li { color: var(--muted); }
+.card ul { padding-left: 1.2rem; margin-bottom: 0; }
+
+.card-note {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+  color: var(--accent-light) !important;
+  font-weight: 700;
 }
 
 .info-grid {
@@ -168,9 +213,7 @@ h1 {
 }
 
 .info-box p,
-.info-box li {
-  color: var(--muted);
-}
+.info-box li { color: var(--muted); }
 
 .button {
   display: flex;
@@ -192,52 +235,33 @@ h1 {
   border: 1px solid var(--line);
 }
 
-.button:hover {
-  filter: brightness(1.08);
-}
+.button:hover { filter: brightness(1.08); }
+.small { font-size: 0.95rem; color: var(--muted); }
 
-.small {
-  font-size: 0.95rem;
-  color: var(--muted);
+@media (max-width: 700px) {
+  .steps { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-  body {
-    padding: 0.75rem;
-  }
-
-  .container {
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 1.7rem;
-  }
-
-  .tabs {
-    gap: 8px;
-  }
-
+  body { padding: 0.75rem; }
+  .container { width: 100%; }
+  h1 { font-size: 1.7rem; }
+  .tabs { gap: 8px; }
   .tab {
     flex: 1 1 100%;
     text-align: center;
     padding: 0.85rem 1rem;
   }
-
   .card {
     padding: 1rem;
     border-radius: 18px;
   }
-
-  .price {
-    font-size: 1.45rem;
-  }
+  .price { font-size: 1.45rem; }
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
 <h1>Priser på fotograf i Ringsaker og Brumunddal</h1>
@@ -247,10 +271,31 @@ Her finner du priser på kjæledyrfotografering, portrett, familiefoto, bryllup,
 </p>
 
 <div class="notice">
-  <strong>Viktig om digitale bilder:</strong><br>
-  Etter fotograferingen mottar du et utvalg gratis lavoppløselige delingsbilder med vannmerke som passer til mobil og sosiale medier.
-  Fotopakkene inkluderer i tillegg et bestemt antall ferdig redigerte digitale bilder i høy kvalitet uten vannmerke.
-  Ønsker du flere bilder, originalfiler i full oppløsning eller hele bildegalleriet digitalt, kan dette kjøpes separat via kundegalleriet.
+  <strong>Viktig: Prisen du ser er først og fremst prisen for fotograferingsoppdraget.</strong>
+  <p>
+    Pakkeprisen dekker planlegging, tiden under fotograferingen, utvelgelse, redigering og tilgang til privat nettgalleri. Hver pakke inneholder også et tydelig oppgitt antall digitale bilder i høy kvalitet.
+  </p>
+  <p>
+    <strong>Flere bilder enn det som står inkludert i pakken, originalfiler i full oppløsning og hele galleriet kjøpes separat.</strong>
+  </p>
+</div>
+
+<div class="steps" aria-label="Slik fungerer bestillingen">
+  <div class="step">
+    <div class="step-number">1</div>
+    <h2>Velg fotografering</h2>
+    <p>Du betaler for selve oppdraget. Se alltid linjen «inkludert i prisen» på hver pakke.</p>
+  </div>
+  <div class="step">
+    <div class="step-number">2</div>
+    <h2>Se bildene</h2>
+    <p>Etter fotograferingen får du et privat nettgalleri med de ferdig redigerte bildene.</p>
+  </div>
+  <div class="step">
+    <div class="step-number">3</div>
+    <h2>Velg eventuelle tillegg</h2>
+    <p>Du kan kjøpe flere bilder, originalfiler eller hele galleriet dersom du ønsker det.</p>
+  </div>
 </div>
 
 <p style="text-align:center; color:#fde68a; font-weight:700;">
@@ -266,219 +311,258 @@ De fleste velger Kjæledyr Standard, Familiefoto eller Favorittpakken
 </div>
 
 <div id="dyr" class="section active">
-
   <div class="card">
     <h2>Kjæledyr Mini</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">1800 kr</div>
+    <div class="included-badge">1 digitalt bilde inkludert</div>
     <ul>
       <li>Kort fotografering av kjæledyr</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>1 digitalt bilde i høy kvalitet inkludert</li>
-      <li>Flere bilder kan kjøpes separat</li>
+      <li>1 digitalt bilde i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder og originalfiler er ikke inkludert og kjøpes separat.</p>
   </div>
 
   <div class="card highlight">
     <h2>⭐ Kjæledyr Standard</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">3000 kr</div>
+    <div class="included-badge">3 digitale bilder inkludert</div>
     <ul>
       <li>Fotografering av kjæledyr</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>3 digitale bilder i høy kvalitet inkludert</li>
-      <li>Flere bilder kan kjøpes separat</li>
+      <li>3 digitale bilder i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder og originalfiler er ikke inkludert og kjøpes separat.</p>
   </div>
 
   <div class="card">
     <h2>Kjæledyr Premium</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">4000 kr</div>
+    <div class="included-badge">5 digitale bilder inkludert</div>
     <ul>
       <li>Lengre fotografering</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>5 digitale bilder i høy kvalitet inkludert</li>
-      <li>Flere bilder kan kjøpes separat</li>
+      <li>5 digitale bilder i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder og originalfiler er ikke inkludert og kjøpes separat.</p>
   </div>
-
 </div>
 
 <div id="portrett" class="section">
-
   <div class="card">
     <h2>Portrett</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">1500 kr</div>
+    <div class="included-badge">1 digitalt bilde inkludert</div>
     <ul>
       <li>Portrettfotografering av én person</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>1 digitalt bilde i høy kvalitet inkludert</li>
-      <li>Flere bilder kan kjøpes separat</li>
+      <li>1 digitalt bilde i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder og originalfiler er ikke inkludert og kjøpes separat.</p>
   </div>
 
   <div class="card">
     <h2>Familiefoto</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">2500 kr</div>
+    <div class="included-badge">2 digitale bilder inkludert</div>
     <ul>
       <li>Familiefotografering ute eller på avtalt lokasjon</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>2 digitale bilder i høy kvalitet inkludert</li>
-      <li>Flere bilder kan kjøpes separat</li>
+      <li>2 digitale bilder i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder og originalfiler er ikke inkludert og kjøpes separat.</p>
   </div>
 
   <div class="card">
     <h2>Grunnpakke</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">3200 kr</div>
+    <div class="included-badge">3 digitale bilder inkludert</div>
     <ul>
       <li>Fotografering av person, par eller liten familie</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>3 digitale bilder i høy kvalitet inkludert</li>
-      <li>Flere bilder kan kjøpes separat</li>
+      <li>3 digitale bilder i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder og originalfiler er ikke inkludert og kjøpes separat.</p>
   </div>
 
   <div class="card highlight">
     <h2>⭐ Favorittpakke</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">4500 kr</div>
+    <div class="included-badge">5 digitale bilder inkludert</div>
     <ul>
       <li>Lengre fotografering</li>
       <li>Passer godt til familie, portrett eller kombinasjon</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>5 digitale bilder i høy kvalitet inkludert</li>
-      <li>Flere bilder kan kjøpes separat</li>
+      <li>5 digitale bilder i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder og originalfiler er ikke inkludert og kjøpes separat.</p>
   </div>
 
   <div class="card">
     <h2>Totalpakke</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">8000 kr</div>
+    <div class="included-badge">10 digitale bilder inkludert</div>
     <ul>
       <li>Utvidet fotografering</li>
       <li>Passer for større familier eller flere bildetyper</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>10 digitale bilder i høy kvalitet inkludert</li>
-      <li>Mulighet for rabattert kjøp av hele galleriet</li>
+      <li>10 digitale bilder i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder, originalfiler og hele galleriet kjøpes separat.</p>
   </div>
-
 </div>
 
 <div id="event" class="section">
-
   <div class="card highlight">
     <h2>Bryllup</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">Fra 10 000 kr</div>
+    <div class="included-badge">8 digitale bilder inkludert</div>
     <ul>
       <li>Tilpasses etter behov, vielse, portretter og dekning av dagen</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>8 digitale bilder i høy kvalitet inkludert</li>
-      <li>Flere bilder og originalfiler kan kjøpes separat</li>
+      <li>8 digitale bilder i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder, originalfiler og hele galleriet kjøpes separat.</p>
   </div>
 
   <div class="card">
     <h2>Konfirmasjon</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">Fra 3000 kr</div>
+    <div class="included-badge">2 digitale bilder inkludert</div>
     <ul>
       <li>Portretter av konfirmanten</li>
       <li>Mulighet for familiebilder</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>2 digitale bilder i høy kvalitet inkludert</li>
-      <li>Flere bilder kan kjøpes separat</li>
+      <li>2 digitale bilder i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder og originalfiler er ikke inkludert og kjøpes separat.</p>
   </div>
 
   <div class="card">
     <h2>Dåp</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">Fra 3000 kr</div>
+    <div class="included-badge">2 digitale bilder inkludert</div>
     <ul>
       <li>Fotografering før, under eller etter dåp etter avtale</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>2 digitale bilder i høy kvalitet inkludert</li>
-      <li>Flere bilder kan kjøpes separat</li>
+      <li>2 digitale bilder i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder og originalfiler er ikke inkludert og kjøpes separat.</p>
   </div>
 
   <div class="card highlight">
     <h2>Slektsfotografering</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">7500 kr</div>
+    <div class="included-badge">5 digitale bilder inkludert</div>
     <ul>
       <li>Inntil 3 timer fotografering</li>
       <li>Familie- og gruppeportretter</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>5 digitale bilder i høy kvalitet inkludert</li>
-      <li>Flere bilder og originalfiler kan kjøpes separat</li>
+      <li>5 digitale bilder i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder, originalfiler og hele galleriet kjøpes separat.</p>
   </div>
 
   <div class="card">
     <h2>Kultur og arrangement – halv dag</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">Fra 4000–7000 kr</div>
+    <div class="separate-badge">Antall inkluderte bilder avtales skriftlig</div>
     <ul>
       <li>Fotografering av marked, kulturarrangement, utstilling eller lokalhistorisk arrangement</li>
       <li>Passer for kortere arrangementer eller avgrenset dekning</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>Antall inkluderte bilder avtales etter behov</li>
-      <li>Flere bilder og originalfiler kan kjøpes separat</li>
     </ul>
+    <p class="card-note">Antall inkluderte bilder og pris på eventuelle tillegg avklares før booking.</p>
   </div>
 
   <div class="card">
     <h2>Kultur og arrangement – heldag</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">Fra 7000–15 000 kr</div>
+    <div class="separate-badge">Antall inkluderte bilder avtales skriftlig</div>
     <ul>
       <li>Utvidet dokumentasjon av arrangement, mennesker, stemning, detaljer og miljø</li>
       <li>Passer for heldagsarrangementer, markeder, festivaler og større kulturprosjekter</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>Antall inkluderte bilder avtales etter behov</li>
-      <li>Flere bilder og originalfiler kan kjøpes separat</li>
     </ul>
+    <p class="card-note">Antall inkluderte bilder og pris på eventuelle tillegg avklares før booking.</p>
   </div>
-
 </div>
 
 <div id="cosplay" class="section">
-
   <div class="card">
     <h2>Cosplay Grunnpakke</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">1200 kr</div>
+    <div class="included-badge">1 digitalt bilde inkludert</div>
     <ul>
       <li>Kort cosplay-fotografering</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>1 digitalt bilde i høy kvalitet inkludert</li>
-      <li>Flere bilder kan kjøpes separat</li>
+      <li>1 digitalt bilde i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder og originalfiler er ikke inkludert og kjøpes separat.</p>
   </div>
 
   <div class="card highlight">
     <h2>Cosplay Magipakke</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">1800 kr</div>
+    <div class="included-badge">2 digitale bilder inkludert</div>
     <ul>
       <li>Mer tid til posering og uttrykk</li>
+      <li>Planlegging, fotografering og redigering</li>
       <li>Privat nettgalleri</li>
-      <li>2 digitale bilder i høy kvalitet inkludert</li>
-      <li>Flere bilder kan kjøpes separat</li>
+      <li>2 digitale bilder i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder og originalfiler er ikke inkludert og kjøpes separat.</p>
   </div>
 
   <div class="card">
     <h2>Cosplay Epos</h2>
+    <div class="price-label">Pris for fotograferingsoppdraget</div>
     <div class="price">2800 kr</div>
+    <div class="included-badge">3 digitale bilder inkludert</div>
     <ul>
       <li>Utvidet cosplay-fotografering</li>
       <li>Mer avansert redigering og visuelle effekter</li>
       <li>Privat nettgalleri</li>
-      <li>3 digitale bilder i høy kvalitet inkludert</li>
-      <li>Flere bilder kan kjøpes separat</li>
+      <li>3 digitale bilder i høy kvalitet uten vannmerke</li>
     </ul>
+    <p class="card-note">Flere bilder og originalfiler er ikke inkludert og kjøpes separat.</p>
   </div>
-
 </div>
 
 <div id="tillegg" class="section">
-
   <div class="card">
-    <h2>Tillegg</h2>
+    <h2>Tillegg til selve fotograferingen</h2>
     <ul>
       <li>Ekstra person: +300 kr</li>
       <li>Ekstra 30 minutter: +500 kr</li>
@@ -488,78 +572,75 @@ De fleste velger Kjæledyr Standard, Familiefoto eller Favorittpakken
   </div>
 
   <div class="card">
-    <h2>Ekstra digitale bilder</h2>
+    <h2>Bilder som kjøpes separat</h2>
+    <div class="separate-badge">Ikke inkludert utover antallet i valgt pakke</div>
     <ul>
       <li>Ekstra digitale bilder i høy kvalitet kan kjøpes i kundegalleriet</li>
       <li>Originalfiler i full oppløsning kan kjøpes separat</li>
       <li>Pakkepris for hele galleriet kan tilbys ved større bestillinger</li>
     </ul>
-    <p class="small">
-      Prisene for ekstra bilder vises i kundegalleriet etter fotograferingen.
-    </p>
+    <p class="small">Prisene for ekstra bilder vises i kundegalleriet etter fotograferingen.</p>
   </div>
-
 </div>
 
 <div class="info-grid">
+  <div class="info-box">
+    <h2>Er alle bildene inkludert i fotograferingsprisen?</h2>
+    <p>
+      Nei. Bare antallet digitale bilder som står oppført på den valgte pakken, er inkludert. Resten av bildene kan ses i kundegalleriet og kjøpes separat.
+    </p>
+  </div>
+
+  <div class="info-box">
+    <h2>Hva dekker fotograferingsprisen?</h2>
+    <p>
+      Prisen dekker planlegging, selve fotograferingen, utvelgelse, profesjonell redigering og opprettelse av privat nettgalleri. I tillegg følger det oppgitte antallet digitale bilder med pakken.
+    </p>
+  </div>
 
   <div class="info-box">
     <h2>Hva er et lavoppløselig delingsbilde?</h2>
     <p>
-      Etter fotograferingen mottar du gratis lavoppløselige delingsbilder med vannmerke.
-      Disse passer godt til mobil, Facebook og sosiale medier, men er ikke egnet til store utskrifter eller profesjonell bruk.
+      Etter fotograferingen kan du motta lavoppløselige delingsbilder med vannmerke. Disse passer til mobil, Facebook og sosiale medier, men er ikke ment for store utskrifter.
     </p>
   </div>
 
   <div class="info-box">
     <h2>Hva er et digitalt bilde i høy kvalitet?</h2>
     <p>
-      Et digitalt bilde i høy kvalitet leveres uten vannmerke og passer godt til vanlig digital bruk, deling og mindre utskrifter.
-      Disse bildene er inkludert i pakkene etter antallet som står oppført.
+      Dette er et ferdig redigert bilde uten vannmerke. Antallet som er inkludert, står tydelig på hver pakke.
     </p>
   </div>
 
   <div class="info-box">
     <h2>Hva er en originalfil?</h2>
     <p>
-      Originalfiler leveres i full oppløsning uten nedskalering og passer best til store utskrifter, veggbilder og maksimal bildekvalitet.
-      Disse kjøpes separat via kundegalleriet.
+      Originalfiler leveres i full oppløsning uten nedskalering og passer best til store utskrifter og maksimal bildekvalitet. Disse kjøpes separat.
     </p>
   </div>
 
   <div class="info-box">
     <h2>Hvordan fungerer bildegalleriet?</h2>
     <p>
-      Etter fotograferingen får du tilgang til et privat nettgalleri.
-      Der kan du se bildene, velge de inkluderte bildene dine og eventuelt kjøpe flere bilder, originalfiler eller bildeprodukter.
+      Etter fotograferingen får du tilgang til et privat nettgalleri. Der velger du de bildene som følger med pakken og kan kjøpe flere bilder eller originalfiler dersom du ønsker det.
     </p>
   </div>
 
   <div class="info-box">
     <h2>Booking og forskudd</h2>
     <p>
-      For å sikre booking betales et forskudd på 30 % av totalprisen.
-      Beløpet trekkes fra totalsummen.
-      Ved avbestilling refunderes ikke forskuddet.
+      For å sikre booking betales et forskudd på 30 % av fotograferingsprisen. Beløpet trekkes fra totalsummen. Ved avbestilling refunderes ikke forskuddet.
     </p>
   </div>
-
 </div>
 
 <div style="text-align:center; margin-top:2rem;">
-
   <p style="color:#cbd5e1;">
     Klar for å sikre deg tid? Send en bookingforespørsel for fotografering i Ringsaker, Brumunddal eller resten av Innlandet.
   </p>
 
-  <a href="booking.html" class="button">
-    Book fotografering →
-  </a>
-
-  <a href="index.html" class="button secondary">
-    ← Tilbake til forsiden
-  </a>
-
+  <a href="booking.html" class="button">Book fotografering →</a>
+  <a href="index.html" class="button secondary">← Tilbake til forsiden</a>
 </div>
 
 </div>
