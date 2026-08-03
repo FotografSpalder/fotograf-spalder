@@ -8,7 +8,7 @@ on:
       - '.github/workflows/august-update.yml'
       - '.github/scripts/august_update.py'
       - '.github/scripts/mobile_layout_fix.py'
-      - '.github/scripts/make_new_images_contact_sheet.py'
+      - '.github/scripts/kitten_portfolio_update.py'
       - 'IMG_*.jpg'
   pull_request:
     branches:
@@ -18,7 +18,7 @@ on:
       - '.github/scripts/inspect-new-images.txt'
       - '.github/scripts/august_update.py'
       - '.github/scripts/mobile_layout_fix.py'
-      - '.github/scripts/make_new_images_contact_sheet.py'
+      - '.github/scripts/kitten_portfolio_update.py'
       - 'IMG_*.jpg'
   workflow_dispatch:
 
@@ -46,19 +46,11 @@ jobs:
       - name: Installer bildeverktøy
         run: python -m pip install --upgrade pillow numpy
 
-      - name: Lag kontaktark for visuell kontroll
-        run: python .github/scripts/make_new_images_contact_sheet.py
-
-      - name: Last opp kontaktarket
-        uses: actions/upload-artifact@v4
-        with:
-          name: nye-bilder-kontaktark
-          path: new-images-contact-sheet.jpg
-          if-no-files-found: error
-          retention-days: 7
-
       - name: Velg og optimaliser bilder
         run: python .github/scripts/august_update.py
+
+      - name: Legg inn kattunger og fullstendig hero-bilde
+        run: python .github/scripts/kitten_portfolio_update.py
 
       - name: Rett mobilvisningen
         run: python .github/scripts/mobile_layout_fix.py
@@ -116,6 +108,10 @@ jobs:
           portfolio = Path('portfolio.html').read_text(encoding='utf-8')
           if 'id="natur"' not in portfolio or "showTab(event, 'natur')" not in portfolio:
               raise SystemExit('Natur- og dyrelivskategorien mangler i porteføljen')
+          if '<!-- KITTEN_GALLERY_START -->' not in portfolio:
+              raise SystemExit('Kattungebildene mangler i kjæledyrporteføljen')
+          if portfolio.count('kitten-item') < 7:
+              raise SystemExit('Færre enn sju kattungebilder er lagt inn')
 
           index = Path('index.html').read_text(encoding='utf-8')
           summer = Path('sommerfotografering.html').read_text(encoding='utf-8')
@@ -127,10 +123,12 @@ jobs:
               'mobilmeny på sensommersiden': '@media (max-width: 900px)' in summer and 'position: static;' in summer,
               'kortere praktisk-overskrift': 'Praktisk før fotograferingen' in summer,
               'sikker linjebryting': 'overflow-wrap: anywhere;' in index and 'overflow-wrap: anywhere;' in summer,
+              'fullstendig sensommerbilde': 'natur-og-dyreliv-ringsaker-01.webp' in summer and '<picture>' in summer,
+              'ingen croppet delingsfil i hero': "url('images/deling/sensommerfotografering-ringsaker.jpg')" not in summer.split('/* FULL_HERO_IMAGE_START */')[-1],
           }
           failed = [name for name, passed in checks.items() if not passed]
           if failed:
-              raise SystemExit('Mobilkontroll feilet: ' + ', '.join(failed))
+              raise SystemExit('Kontroll feilet: ' + ', '.join(failed))
 
           if 'aria-label="Sensommerfotografering i Ringsaker og Innlandet"' not in summer:
               raise SystemExit('Sensommerteksten er ikke oppdatert for skjermlesere')
@@ -149,5 +147,5 @@ jobs:
             echo "Ingen nye endringer å lagre."
             exit 0
           fi
-          git commit -m "Rett mobilvisning og augustinnhold"
+          git commit -m "Vis hele sensommerbildet og legg inn kattunger"
           git push
