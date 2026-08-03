@@ -1,0 +1,423 @@
+{
+  "generated": "2026-08-04",
+  "selected": [
+    {
+      "rank": 1,
+      "source": "IMG_0457.jpg",
+      "webp": "images/portfolio/natur/natur-og-dyreliv-ringsaker-01.webp",
+      "jpg": "images/portfolio/natur/natur-og-dyreliv-ringsaker-01.jpg",
+      "width": 1200,
+      "height": 1800,
+      "score": 43.1304
+    },
+    {
+      "rank": 2,
+      "source": "IMG_0362.jpg",
+      "webp": "images/portfolio/natur/natur-og-dyreliv-ringsaker-02.webp",
+      "jpg": "images/portfolio/natur/natur-og-dyreliv-ringsaker-02.jpg",
+      "width": 1800,
+      "height": 1200,
+      "score": 42.2563
+    },
+    {
+      "rank": 3,
+      "source": "IMG_0379.jpg",
+      "webp": "images/portfolio/natur/natur-og-dyreliv-ringsaker-03.webp",
+      "jpg": "images/portfolio/natur/natur-og-dyreliv-ringsaker-03.jpg",
+      "width": 1800,
+      "height": 1200,
+      "score": 42.0599
+    },
+    {
+      "rank": 4,
+      "source": "IMG_0842.jpg",
+      "webp": "images/portfolio/natur/natur-og-dyreliv-ringsaker-04.webp",
+      "jpg": "images/portfolio/natur/natur-og-dyreliv-ringsaker-04.jpg",
+      "width": 1800,
+      "height": 1200,
+      "score": 41.211
+    },
+    {
+      "rank": 5,
+      "source": "IMG_0556.jpg",
+      "webp": "images/portfolio/natur/natur-og-dyreliv-ringsaker-05.webp",
+      "jpg": "images/portfolio/natur/natur-og-dyreliv-ringsaker-05.jpg",
+      "width": 1800,
+      "height": 1200,
+      "score": 40.897
+    },
+    {
+      "rank": 6,
+      "source": "IMG_1006.jpg",
+      "webp": "images/portfolio/natur/natur-og-dyreliv-ringsaker-06.webp",
+      "jpg": "images/portfolio/natur/natur-og-dyreliv-ringsaker-06.jpg",
+      "width": 1800,
+      "height": 1728,
+      "score": 40.7362
+    },
+    {
+      "rank": 7,
+      "source": "IMG_1118.jpg",
+      "webp": "images/portfolio/natur/natur-og-dyreliv-ringsaker-07.webp",
+      "jpg": "images/portfolio/natur/natur-og-dyreliv-ringsaker-07.jpg",
+      "width": 1800,
+      "height": 1200,
+      "score": 40.3451
+    },
+    {
+      "rank": 8,
+      "source": "IMG_1165.jpg",
+      "webp": "images/portfolio/natur/natur-og-dyreliv-ringsaker-08.webp",
+      "jpg": "images/portfolio/natur/natur-og-dyreliv-ringsaker-08.jpg",
+      "width": 1800,
+      "height": 1706,
+      "score": 40.2142
+    },
+    {
+      "rank": 9,
+      "source": "IMG_0782.jpg",
+      "webp": "images/portfolio/natur/natur-og-dyreliv-ringsaker-09.webp",
+      "jpg": "images/portfolio/natur/natur-og-dyreliv-ringsaker-09.jpg",
+      "width": 1200,
+      "height": 1800,
+      "score": 39.4366
+    },
+    {
+      "rank": 10,
+      "source": "IMG_1246.jpg",
+      "webp": "images/portfolio/natur/natur-og-dyreliv-ringsaker-10.webp",
+      "jpg": "images/portfolio/natur/natur-og-dyreliv-ringsaker-10.jpg",
+      "width": 1537,
+      "height": 1800,
+      "score": 38.4074
+    },
+    {
+      "rank": 11,
+      "source": "IMG_1265.jpg",
+      "webp": "images/portfolio/natur/natur-og-dyreliv-ringsaker-11.webp",
+      "jpg": "images/portfolio/natur/natur-og-dyreliv-ringsaker-11.jpg",
+      "width": 1800,
+      "height": 1640,
+      "score": 37.3926
+    },
+    {
+      "rank": 12,
+      "source": "IMG_0906.jpg",
+      "webp": "images/portfolio/natur/natur-og-dyreliv-ringsaker-12.webp",
+      "jpg": "images/portfolio/natur/natur-og-dyreliv-ringsaker-12.jpg",
+      "width": 1575,
+      "height": 1800,
+      "score": 37.0272
+    }
+  ],
+  "all_images": [
+    {
+      "source": "IMG_0457.jpg",
+      "width": 3826,
+      "height": 5739,
+      "score": 43.1304,
+      "sharpness": 4372.9624,
+      "entropy": 7.7574,
+      "mean_luminance": 119.2359,
+      "clipping": 0.007225,
+      "selected": true
+    },
+    {
+      "source": "IMG_0362.jpg",
+      "width": 5625,
+      "height": 3750,
+      "score": 42.2563,
+      "sharpness": 4128.7412,
+      "entropy": 7.2639,
+      "mean_luminance": 133.5434,
+      "clipping": 0.000106,
+      "selected": true
+    },
+    {
+      "source": "IMG_0379.jpg",
+      "width": 5620,
+      "height": 3747,
+      "score": 42.0599,
+      "sharpness": 3524.677,
+      "entropy": 7.3809,
+      "mean_luminance": 124.1549,
+      "clipping": 0.000391,
+      "selected": true
+    },
+    {
+      "source": "IMG_0842.jpg",
+      "width": 6000,
+      "height": 4000,
+      "score": 41.211,
+      "sharpness": 2842.4851,
+      "entropy": 7.6494,
+      "mean_luminance": 92.8086,
+      "clipping": 5.8e-05,
+      "selected": true
+    },
+    {
+      "source": "IMG_0556.jpg",
+      "width": 6000,
+      "height": 4000,
+      "score": 40.897,
+      "sharpness": 3322.7061,
+      "entropy": 7.2157,
+      "mean_luminance": 94.1301,
+      "clipping": 0.000148,
+      "selected": true
+    },
+    {
+      "source": "IMG_1006.jpg",
+      "width": 4000,
+      "height": 3839,
+      "score": 40.7362,
+      "sharpness": 3483.6003,
+      "entropy": 7.1778,
+      "mean_luminance": 93.2854,
+      "clipping": 0.000142,
+      "selected": true
+    },
+    {
+      "source": "IMG_1118.jpg",
+      "width": 6000,
+      "height": 4000,
+      "score": 40.3451,
+      "sharpness": 3698.7593,
+      "entropy": 7.0771,
+      "mean_luminance": 69.1418,
+      "clipping": 0.001364,
+      "selected": true
+    },
+    {
+      "source": "IMG_1165.jpg",
+      "width": 4000,
+      "height": 3791,
+      "score": 40.2142,
+      "sharpness": 2884.6943,
+      "entropy": 7.2883,
+      "mean_luminance": 85.6922,
+      "clipping": 0.000358,
+      "selected": true
+    },
+    {
+      "source": "IMG_0782.jpg",
+      "width": 4000,
+      "height": 6000,
+      "score": 39.4366,
+      "sharpness": 2603.8574,
+      "entropy": 7.1244,
+      "mean_luminance": 67.9532,
+      "clipping": 0.000168,
+      "selected": true
+    },
+    {
+      "source": "IMG_1246.jpg",
+      "width": 3416,
+      "height": 4000,
+      "score": 38.4074,
+      "sharpness": 1590.0977,
+      "entropy": 7.2011,
+      "mean_luminance": 90.4098,
+      "clipping": 7.8e-05,
+      "selected": true
+    },
+    {
+      "source": "IMG_1265.jpg",
+      "width": 4144,
+      "height": 3776,
+      "score": 37.3926,
+      "sharpness": 1826.6853,
+      "entropy": 6.6915,
+      "mean_luminance": 67.4006,
+      "clipping": 0.005307,
+      "selected": true
+    },
+    {
+      "source": "IMG_0906.jpg",
+      "width": 4000,
+      "height": 4572,
+      "score": 37.0272,
+      "sharpness": 1119.4087,
+      "entropy": 6.9529,
+      "mean_luminance": 80.8185,
+      "clipping": 0.000119,
+      "selected": true
+    },
+    {
+      "source": "IMG_0688.jpg",
+      "width": 5136,
+      "height": 3640,
+      "score": 36.941,
+      "sharpness": 1175.3994,
+      "entropy": 7.0394,
+      "mean_luminance": 64.0823,
+      "clipping": 0.000633,
+      "selected": false
+    },
+    {
+      "source": "IMG_0764.jpg",
+      "width": 4000,
+      "height": 6000,
+      "score": 36.6866,
+      "sharpness": 880.2796,
+      "entropy": 7.2917,
+      "mean_luminance": 67.2525,
+      "clipping": 0.000184,
+      "selected": false
+    },
+    {
+      "source": "IMG_0684.jpg",
+      "width": 6000,
+      "height": 4000,
+      "score": 36.5125,
+      "sharpness": 1060.587,
+      "entropy": 6.9554,
+      "mean_luminance": 63.6805,
+      "clipping": 0.000631,
+      "selected": false
+    },
+    {
+      "source": "IMG_0737.jpg",
+      "width": 6399,
+      "height": 4629,
+      "score": 36.3235,
+      "sharpness": 772.7592,
+      "entropy": 7.1704,
+      "mean_luminance": 76.5383,
+      "clipping": 4.4e-05,
+      "selected": false
+    },
+    {
+      "source": "IMG_1157.jpg",
+      "width": 4000,
+      "height": 6000,
+      "score": 36.3159,
+      "sharpness": 667.6611,
+      "entropy": 7.07,
+      "mean_luminance": 101.3498,
+      "clipping": 1e-05,
+      "selected": false
+    },
+    {
+      "source": "IMG_0748.jpg",
+      "width": 6000,
+      "height": 4000,
+      "score": 35.7742,
+      "sharpness": 1043.0983,
+      "entropy": 6.7197,
+      "mean_luminance": 51.8914,
+      "clipping": 1e-06,
+      "selected": false
+    },
+    {
+      "source": "IMG_0958.jpg",
+      "width": 4000,
+      "height": 6000,
+      "score": 35.6247,
+      "sharpness": 765.916,
+      "entropy": 6.948,
+      "mean_luminance": 64.8939,
+      "clipping": 9.1e-05,
+      "selected": false
+    },
+    {
+      "source": "IMG_0945.jpg",
+      "width": 6000,
+      "height": 4000,
+      "score": 35.1032,
+      "sharpness": 593.9359,
+      "entropy": 7.0042,
+      "mean_luminance": 68.6112,
+      "clipping": 4e-06,
+      "selected": false
+    },
+    {
+      "source": "IMG_0629.jpg",
+      "width": 5963,
+      "height": 3975,
+      "score": 34.8793,
+      "sharpness": 1016.4919,
+      "entropy": 6.0316,
+      "mean_luminance": 69.6451,
+      "clipping": 1.3e-05,
+      "selected": false
+    },
+    {
+      "source": "IMG_0858.jpg",
+      "width": 4000,
+      "height": 6000,
+      "score": 34.4306,
+      "sharpness": 662.1005,
+      "entropy": 6.8566,
+      "mean_luminance": 48.2451,
+      "clipping": 0.016679,
+      "selected": false
+    },
+    {
+      "source": "IMG_0728.jpg",
+      "width": 5344,
+      "height": 4000,
+      "score": 34.0902,
+      "sharpness": 508.563,
+      "entropy": 6.9121,
+      "mean_luminance": 52.7168,
+      "clipping": 0.002931,
+      "selected": false
+    },
+    {
+      "source": "IMG_0703.jpg",
+      "width": 6000,
+      "height": 4000,
+      "score": 34.0252,
+      "sharpness": 488.44,
+      "entropy": 6.8708,
+      "mean_luminance": 56.183,
+      "clipping": 1.3e-05,
+      "selected": false
+    },
+    {
+      "source": "IMG_0678.jpg",
+      "width": 5832,
+      "height": 3440,
+      "score": 33.661,
+      "sharpness": 255.7392,
+      "entropy": 7.3656,
+      "mean_luminance": 79.9286,
+      "clipping": 0.000353,
+      "selected": false
+    },
+    {
+      "source": "IMG_0720.jpg",
+      "width": 5632,
+      "height": 4000,
+      "score": 33.3486,
+      "sharpness": 416.9126,
+      "entropy": 6.8081,
+      "mean_luminance": 51.5397,
+      "clipping": 0.000901,
+      "selected": false
+    },
+    {
+      "source": "IMG_0664.jpg",
+      "width": 5216,
+      "height": 3496,
+      "score": 31.9131,
+      "sharpness": 328.7946,
+      "entropy": 6.4865,
+      "mean_luminance": 45.037,
+      "clipping": 0.000757,
+      "selected": false
+    },
+    {
+      "source": "IMG_0616.jpg",
+      "width": 6000,
+      "height": 4000,
+      "score": 25.2335,
+      "sharpness": 59.502,
+      "entropy": 5.5767,
+      "mean_luminance": 30.3041,
+      "clipping": 0.000165,
+      "selected": false
+    }
+  ]
+}

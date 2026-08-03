@@ -24,7 +24,7 @@
   <!-- Open Graph (Facebook osv) -->
   <meta property="og:title" content="Fotograf i Ringsaker & Brumunddal | Fotograf Spalder">
   <meta property="og:description" content="Kjæledyr, familie og portrett i Ringsaker og Brumunddal. Se bilder og book fotografering hos Fotograf Spalder.">
-  <meta property="og:image" content="https://www.fotograf-spalder.com/header.jpg">
+  <meta property="og:image" content="https://www.fotograf-spalder.com/images/deling/portfolio-fotograf-ringsaker.jpg">
   <meta property="og:type" content="website">
 
   <!-- Ekstra SEO -->
@@ -501,7 +501,11 @@ body {
   box-shadow: 0 0 25px rgba(245,158,11,0.35);
 }
     }
-  </style>
+  
+/* AUGUST_GALLERY_MEDIA */
+.gallery picture { display: block; width: 100%; height: 100%; }
+.gallery picture img { width: 100%; height: 100%; object-fit: cover; }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -547,19 +551,19 @@ body {
       {
         "@type": "Offer",
         "name": "Kjæledyrsfotografering",
-        "price": "1500-4000",
+        "price": "1800-4000",
         "priceCurrency": "NOK"
       },
       {
         "@type": "Offer",
         "name": "Portrett og familiefoto",
-        "price": "1200-1800",
+        "price": "1500-2500",
         "priceCurrency": "NOK"
       },
       {
         "@type": "Offer",
         "name": "Bryllupsfotografering",
-        "price": "6000+",
+        "price": "10000+",
         "priceCurrency": "NOK"
       }
     ]
@@ -641,13 +645,13 @@ Jeg hjelper deg å få bilder som faktisk betyr noe – enten det er kjæledyret
       <div class="container">
         <div class="season-card">
           <div>
-            <div class="eyebrow">Aktuelt denne sommeren</div>
-            <h2 id="sommerfoto-tittel">Sommerfotografering i Ringsaker</h2>
-            <p>Sommeren gir grønt landskap, varme kvelder og naturlige omgivelser som passer godt til familie-, portrett- og kjæledyrsfotografering. Se forslag til fotografering, steder og praktisk informasjon.</p>
-            <a class="button primary" href="sommerfotografering.html">Se sommerfotografering</a>
+            <div class="eyebrow">Aktuelt i august</div>
+            <h2 id="sommerfoto-tittel">Sensommerfotografering i Ringsaker</h2>
+            <p>August gir modent grønt, åkre, roligere kvelder og et mykere sensommerlys. Det passer svært godt til familie-, portrett- og kjæledyrsfotografering – og nå kan du også sikre deg tid før høstfargene kommer.</p>
+            <a class="button primary" href="sommerfotografering.html">Se sensommerfotografering</a>
           </div>
-          <div class="season-badge" aria-label="Sommerfotografering for familie, portrett og kjæledyr">
-            <strong>Sommerfoto</strong>
+          <div class="season-badge" aria-label="Sensommerfotografering for familie, portrett og kjæledyr">
+            <strong>Sensommerfoto</strong>
             <span>Familie · portrett · kjæledyr</span>
           </div>
         </div>
@@ -740,13 +744,16 @@ Jeg hjelper deg å få bilder som faktisk betyr noe – enten det er kjæledyret
       <div class="container">
         <div class="section-head">
           <h2>Galleri</h2>
-          <p class="lead">Tre bilder som viser noen av bildene mine.</p>
+          <p class="lead">Et oppdatert utvalg av kjæledyr, mennesker, bryllup, natur og dyreliv.</p>
         </div>
 
         <div class="gallery">
-          <div class="gallery-item"><img src="bryllup.jpg" alt="Bryllup i Ringsaker"></div>
-          <div class="gallery-item"><img src="konfirmant.jpg" alt="Konfirmasjonsfoto i Ringsaker"></div>
-          <div class="gallery-item"><img src="hund2.jpg" alt="Hund fotografert utendørs i Ringsaker av Fotograf Spalder"></div>
+          <div class="gallery-item"><img src="hund2.jpg" loading="lazy" decoding="async" alt="Hund fotografert utendørs i Ringsaker av Fotograf Spalder"></div>
+          <div class="gallery-item"><img src="konfirmant.jpg" loading="lazy" decoding="async" alt="Konfirmasjonsfoto i Ringsaker av Fotograf Spalder"></div>
+          <div class="gallery-item"><img src="familie1.jpg" loading="lazy" decoding="async" alt="Familiefoto i Ringsaker av Fotograf Spalder"></div>
+          <div class="gallery-item"><img src="bryllup.jpg" loading="lazy" decoding="async" alt="Bryllupsfotografering i Ringsaker av Fotograf Spalder"></div>
+          <div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-01.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-01.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder"></picture></div>
+          <div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-02.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-02.jpg" loading="lazy" decoding="async" width="1800" height="1200" alt="Dyrefotografi fra Innlandet av Fotograf Spalder"></picture></div>
         </div>
       </div>
     </section>
