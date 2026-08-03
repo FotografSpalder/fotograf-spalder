@@ -1,1 +1,2 @@
 Kjør augustoppdateringen med bildeutvalg, optimalisering, sesongtekst og SEO-rettelser.
+Validering: kontroller bildeadresser, porteføljekategori og sitemap.
