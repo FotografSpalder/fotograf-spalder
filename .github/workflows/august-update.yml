@@ -69,11 +69,6 @@ jobs:
           ]
           for path in paths:
               text = path.read_text(encoding='utf-8')
-              if path.name == 'sommerfotografering.html':
-                  text = text.replace(
-                      'aria-label="Sommerfotografering i Ringsaker og Innlandet"',
-                      'aria-label="Sensommerfotografering i Ringsaker og Innlandet"',
-                  )
               text = '\n'.join(line.rstrip() for line in text.splitlines()) + '\n'
               path.write_text(text, encoding='utf-8')
           PY
@@ -124,14 +119,12 @@ jobs:
               'kortere praktisk-overskrift': 'Praktisk før fotograferingen' in summer,
               'sikker linjebryting': 'overflow-wrap: anywhere;' in index and 'overflow-wrap: anywhere;' in summer,
               'fullstendig sensommerbilde': 'natur-og-dyreliv-ringsaker-01.webp' in summer and '<picture>' in summer,
-              'ingen croppet delingsfil i hero': "url('images/deling/sensommerfotografering-ringsaker.jpg')" not in summer.split('/* FULL_HERO_IMAGE_START */')[-1],
+              'alternativtekst for hero-bildet': 'alt="Båtliv og landskap ved Mjøsa fotografert i full komposisjon av Fotograf Spalder"' in summer,
+              'ingen croppet delingsfil i hero-overstyringen': "url('images/deling/sensommerfotografering-ringsaker.jpg')" not in summer.split('/* FULL_HERO_IMAGE_START */')[-1],
           }
           failed = [name for name, passed in checks.items() if not passed]
           if failed:
               raise SystemExit('Kontroll feilet: ' + ', '.join(failed))
-
-          if 'aria-label="Sensommerfotografering i Ringsaker og Innlandet"' not in summer:
-              raise SystemExit('Sensommerteksten er ikke oppdatert for skjermlesere')
 
           sitemap = Path('sitemap.xml').read_text(encoding='utf-8')
           if 'portefolje.html' in sitemap or 'portfolio.html' not in sitemap or 'om.html' not in sitemap:
