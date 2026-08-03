@@ -1,0 +1,77 @@
+name: Augustoppdatering av nettsiden
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/august-update.yml'
+      - '.github/scripts/august_update.py'
+      - 'IMG_*.jpg'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Hent kildekoden
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sett opp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Installer bildeverktøy
+        run: python -m pip install --upgrade pillow numpy
+
+      - name: Velg og optimaliser bilder
+        run: python .github/scripts/august_update.py
+
+      - name: Kontroller endringer
+        run: |
+          git diff --check
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          required = [
+              Path('index.html'),
+              Path('portfolio.html'),
+              Path('sommerfotografering.html'),
+              Path('kjaeledyrsfotograf-ringsaker.html'),
+              Path('sitemap.xml'),
+          ]
+          for path in required:
+              if not path.exists() or path.stat().st_size == 0:
+                  raise SystemExit(f'Mangler eller tom fil: {path}')
+
+          for html_path in required[:-1]:
+              text = html_path.read_text(encoding='utf-8')
+              for ref in re.findall(r'(?:src|srcset)="([^"]+)"', text):
+                  ref = ref.split()[0]
+                  if ref.startswith(('http://', 'https://', 'data:')):
+                      continue
+                  if not Path(ref).exists():
+                      raise SystemExit(f'{html_path}: bildefilen finnes ikke: {ref}')
+          PY
+
+      - name: Lagre augustoppdateringen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html portfolio.html sommerfotografering.html kjaeledyrsfotograf-ringsaker.html sitemap.xml images/
+          if git diff --cached --quiet; then
+            echo "Ingen nye endringer å lagre."
+            exit 0
+          fi
+          git commit -m "Oppdater nettsiden for august"
+          git push
