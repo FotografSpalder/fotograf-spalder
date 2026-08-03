@@ -44,8 +44,32 @@ jobs:
       - name: Velg og optimaliser bilder
         run: python .github/scripts/august_update.py
 
+      - name: Normaliser oppdaterte tekstfiler
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          paths = [
+              Path('index.html'),
+              Path('portfolio.html'),
+              Path('sommerfotografering.html'),
+              Path('kjaeledyrsfotograf-ringsaker.html'),
+              Path('sitemap.xml'),
+          ]
+          for path in paths:
+              text = path.read_text(encoding='utf-8')
+              if path.name == 'sommerfotografering.html':
+                  text = text.replace(
+                      'aria-label="Sommerfotografering i Ringsaker og Innlandet"',
+                      'aria-label="Sensommerfotografering i Ringsaker og Innlandet"',
+                  )
+              text = '\n'.join(line.rstrip() for line in text.splitlines()) + '\n'
+              path.write_text(text, encoding='utf-8')
+          PY
+
       - name: Kontroller endringer
         run: |
+          git diff --check
           python - <<'PY'
           from pathlib import Path
           import re
@@ -73,6 +97,10 @@ jobs:
           portfolio = Path('portfolio.html').read_text(encoding='utf-8')
           if 'id="natur"' not in portfolio or "showTab(event, 'natur')" not in portfolio:
               raise SystemExit('Natur- og dyrelivskategorien mangler i porteføljen')
+
+          summer = Path('sommerfotografering.html').read_text(encoding='utf-8')
+          if 'aria-label="Sensommerfotografering i Ringsaker og Innlandet"' not in summer:
+              raise SystemExit('Sensommerteksten er ikke oppdatert for skjermlesere')
 
           sitemap = Path('sitemap.xml').read_text(encoding='utf-8')
           if 'portefolje.html' in sitemap or 'portfolio.html' not in sitemap or 'om.html' not in sitemap:
