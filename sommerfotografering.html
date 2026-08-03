@@ -28,7 +28,125 @@
     .hero{padding:5rem 0 3rem}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:2rem;align-items:center}.eyebrow{display:inline-block;padding:.35rem .75rem;border-radius:999px;border:1px solid rgba(245,158,11,.4);background:rgba(245,158,11,.12);color:#fde68a;font-size:.9rem;font-weight:700;margin-bottom:1rem}h1,h2,h3{margin:0 0 1rem;line-height:1.15}h1{font-size:clamp(2.2rem,5vw,4.4rem)}h2{font-size:clamp(1.8rem,3vw,2.8rem)}h3{font-size:1.25rem}.lead{font-size:1.1rem;color:var(--muted);max-width:62ch}.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}.hero-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}.hero-image{min-height:430px;border-radius:calc(var(--radius) - 8px);background:linear-gradient(135deg,rgba(0,0,0,.18),rgba(255,255,255,.03)),url('images/deling/sensommerfotografering-ringsaker.jpg') center/cover;position:relative;overflow:hidden}.hero-image::after{content:"Sensommerfotografering i Innlandet";position:absolute;left:1rem;bottom:1rem;background:rgba(17,24,39,.84);border:1px solid var(--line);padding:.5rem .75rem;border-radius:999px;font-size:.9rem}
     section{padding:4rem 0}.section-head{max-width:70ch;margin-bottom:2rem}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}.card,.info-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;box-shadow:var(--shadow)}.card p,.info-box p,.info-box li{color:var(--muted)}.card ul,.info-box ul{padding-left:1.15rem}.locations{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.step{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:18px;padding:1.2rem}.step strong{display:block;color:#fde68a;margin-bottom:.35rem}.cta{background:linear-gradient(180deg,rgba(245,158,11,.12),rgba(255,255,255,.04));border:1px solid rgba(245,158,11,.25);border-radius:28px;padding:2rem;text-align:center;box-shadow:var(--shadow)}.cta p{color:var(--muted);max-width:62ch;margin:0 auto 1rem}.cta-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}.footer{border-top:1px solid var(--line);padding:2rem 0 3rem}.footer p{color:var(--muted)}.mobile-toggle{display:none;background:transparent;border:1px solid var(--line);color:var(--text);padding:.65rem .9rem;border-radius:12px;font-weight:700}
     @media(max-width:900px){.hero-grid,.cards,.locations,.steps{grid-template-columns:1fr}.nav{align-items:flex-start;padding:1rem 0}.mobile-toggle{display:inline-flex}.nav-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:.75rem}.nav-links{display:none;flex-direction:column;align-items:flex-start;width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line);padding:1rem;border-radius:18px}.nav-links.open{display:flex}.hero{padding-top:3rem}}
-  </style>
+
+/* MOBILE_LAYOUT_FIX_START */
+.hero-grid > *,
+.info-box,
+.card,
+.step,
+.cta {
+  min-width: 0;
+}
+
+h1,
+h2,
+h3,
+.button {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.button {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    position: static;
+    backdrop-filter: none;
+  }
+
+  .nav {
+    align-items: center;
+    padding: 0.85rem 0;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+
+  .hero {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .info-box,
+  .card,
+  .step,
+  .cta,
+  .hero-card {
+    overflow: hidden;
+  }
+
+  .hero-image::after {
+    max-width: calc(100% - 2rem);
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  .cta {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: min(100% - 1.5rem, var(--max));
+  }
+
+  .brand strong {
+    font-size: 1rem;
+  }
+
+  .brand span {
+    font-size: 0.82rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 8vw, 2.15rem);
+  }
+
+  section {
+    padding: 2.5rem 0;
+  }
+
+  .hero {
+    padding: 2.25rem 0 2.5rem;
+  }
+
+  .hero-actions,
+  .cta-actions {
+    align-items: stretch;
+  }
+
+  .hero-actions .button,
+  .cta-actions .button {
+    width: 100%;
+  }
+
+  .info-box,
+  .card,
+  .step {
+    padding: 1.2rem;
+  }
+
+  .hero-image {
+    min-height: 360px;
+  }
+
+  .footer {
+    padding: 1.5rem 0 2rem;
+  }
+}
+/* MOBILE_LAYOUT_FIX_END */
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -57,10 +175,10 @@
 
   <section>
     <div class="container">
-      <div class="section-head"><h2>Hva passer best for deg?</h2><p class="lead">Sommerfotografering kan tilpasses både små og store oppdrag. Vi velger sted, tempo og uttrykk etter hvem som skal fotograferes.</p></div>
+      <div class="section-head"><h2>Hva passer best for deg?</h2><p class="lead">Sensommerfotografering kan tilpasses både små og store oppdrag. Vi velger sted, tempo og uttrykk etter hvem som skal fotograferes.</p></div>
       <div class="cards">
         <article class="card"><h3>Kjæledyr i naturen</h3><p>Naturlige portretter av hund, katt eller andre dyr i grønt landskap, skog eller ved vann. Jeg jobber rolig og tilpasser tempoet til dyret.</p></article>
-        <article class="card"><h3>Familie og barn</h3><p>Uformelle familiebilder med bevegelse, nærhet og ekte samspill. Passer godt når familien er samlet i ferien.</p></article>
+        <article class="card"><h3>Familie og barn</h3><p>Uformelle familiebilder med bevegelse, nærhet og ekte samspill. Passer godt når familien er samlet.</p></article>
         <article class="card"><h3>Portrett og par</h3><p>Personlige portretter eller bilder av par i kveldssol og naturlige omgivelser, uten stive poseringer.</p></article>
       </div>
     </div>
@@ -68,7 +186,7 @@
 
   <section>
     <div class="container">
-      <div class="section-head"><h2>Steder for sommerfotografering</h2><p class="lead">Vi kan fotografere på et sted du har tilknytning til, eller jeg kan foreslå en lokasjon ut fra ønsket uttrykk.</p></div>
+      <div class="section-head"><h2>Steder for sensommerfotografering</h2><p class="lead">Vi kan fotografere på et sted du har tilknytning til, eller jeg kan foreslå en lokasjon ut fra ønsket uttrykk.</p></div>
       <div class="locations">
         <div class="info-box"><h3>Ringsaker og Brumunddal</h3><ul><li>Mjøsparken og områdene ved Mjøsa</li><li>Skog, gårdsmiljø og åpne landskap</li><li>Helgøya og andre rolige naturområder</li></ul></div>
         <div class="info-box"><h3>Innlandet og omegn</h3><ul><li>Moelv, Hamar, Gjøvik og Lillehammer</li><li>Domkirkeodden og områder ved vann</li><li>Et avtalt sted som betyr noe for deg</li></ul></div>
@@ -89,7 +207,7 @@
 
   <section>
     <div class="container">
-      <div class="info-box"><h2>Praktisk før sensommerfotograferingen</h2><ul><li>Kveld og sen ettermiddag gir ofte det mykeste lyset.</li><li>Rolige farger og klær uten store logoer fungerer vanligvis best.</li><li>Ta gjerne med vann, godbiter og favorittleke til kjæledyr.</li><li>Ved dårlig vær flyttes fotograferingen kostnadsfritt til en ny dato.</li><li>Priser og inkluderte digitale bilder finner du på prissiden.</li></ul></div>
+      <div class="info-box"><h2>Praktisk før fotograferingen</h2><ul><li>Kveld og sen ettermiddag gir ofte det mykeste lyset.</li><li>Rolige farger og klær uten store logoer fungerer vanligvis best.</li><li>Ta gjerne med vann, godbiter og favorittleke til kjæledyr.</li><li>Ved dårlig vær flyttes fotograferingen kostnadsfritt til en ny dato.</li><li>Priser og inkluderte digitale bilder finner du på prissiden.</li></ul></div>
     </div>
   </section>
 
