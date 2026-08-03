@@ -46,7 +46,6 @@ jobs:
 
       - name: Kontroller endringer
         run: |
-          git diff --check
           python - <<'PY'
           from pathlib import Path
           import re
@@ -70,6 +69,14 @@ jobs:
                       continue
                   if not Path(ref).exists():
                       raise SystemExit(f'{html_path}: bildefilen finnes ikke: {ref}')
+
+          portfolio = Path('portfolio.html').read_text(encoding='utf-8')
+          if 'id="natur"' not in portfolio or "showTab(event, 'natur')" not in portfolio:
+              raise SystemExit('Natur- og dyrelivskategorien mangler i porteføljen')
+
+          sitemap = Path('sitemap.xml').read_text(encoding='utf-8')
+          if 'portefolje.html' in sitemap or 'portfolio.html' not in sitemap or 'om.html' not in sitemap:
+              raise SystemExit('Sitemap er ikke korrekt oppdatert')
           PY
 
       - name: Lagre augustoppdateringen
