@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/august-update.yml'
       - '.github/scripts/august_update.py'
+      - '.github/scripts/mobile_layout_fix.py'
       - 'IMG_*.jpg'
   pull_request:
     branches:
@@ -14,6 +15,7 @@ on:
     paths:
       - '.github/scripts/run-august-update.txt'
       - '.github/scripts/august_update.py'
+      - '.github/scripts/mobile_layout_fix.py'
       - 'IMG_*.jpg'
   workflow_dispatch:
 
@@ -43,6 +45,9 @@ jobs:
 
       - name: Velg og optimaliser bilder
         run: python .github/scripts/august_update.py
+
+      - name: Rett mobilvisningen
+        run: python .github/scripts/mobile_layout_fix.py
 
       - name: Normaliser oppdaterte tekstfiler
         run: |
@@ -98,7 +103,21 @@ jobs:
           if 'id="natur"' not in portfolio or "showTab(event, 'natur')" not in portfolio:
               raise SystemExit('Natur- og dyrelivskategorien mangler i porteføljen')
 
+          index = Path('index.html').read_text(encoding='utf-8')
           summer = Path('sommerfotografering.html').read_text(encoding='utf-8')
+
+          checks = {
+              'mobilmeny på forsiden': '@media (max-width: 950px)' in index and 'position: static;' in index,
+              'sensommerpanel innenfor rammen': '.season-card > *' in index and 'overflow: hidden;' in index,
+              'kontaktlogo i normal dokumentflyt': '.contact-logo' in index and 'position: static;' in index,
+              'mobilmeny på sensommersiden': '@media (max-width: 900px)' in summer and 'position: static;' in summer,
+              'kortere praktisk-overskrift': 'Praktisk før fotograferingen' in summer,
+              'sikker linjebryting': 'overflow-wrap: anywhere;' in index and 'overflow-wrap: anywhere;' in summer,
+          }
+          failed = [name for name, passed in checks.items() if not passed]
+          if failed:
+              raise SystemExit('Mobilkontroll feilet: ' + ', '.join(failed))
+
           if 'aria-label="Sensommerfotografering i Ringsaker og Innlandet"' not in summer:
               raise SystemExit('Sensommerteksten er ikke oppdatert for skjermlesere')
 
@@ -107,7 +126,7 @@ jobs:
               raise SystemExit('Sitemap er ikke korrekt oppdatert')
           PY
 
-      - name: Lagre augustoppdateringen
+      - name: Lagre nettsideoppdateringen
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -116,5 +135,5 @@ jobs:
             echo "Ingen nye endringer å lagre."
             exit 0
           fi
-          git commit -m "Oppdater nettsiden for august"
+          git commit -m "Rett mobilvisning og augustinnhold"
           git push
