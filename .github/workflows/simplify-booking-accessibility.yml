@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - '.github/workflows/simplify-booking-accessibility.yml'
+      - '.github/scripts/simplify_booking_accessibility.py'
 
 permissions:
   contents: write
