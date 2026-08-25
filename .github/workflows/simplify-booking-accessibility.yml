@@ -1,0 +1,71 @@
+name: Forenkle booking og forbedre tilgjengelighet
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/simplify-booking-accessibility.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hent bare nødvendige filer
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            booking.html
+            priser.html
+            portfolio.html
+            index.html
+            om.html
+            kjaeledyrsfotograf-ringsaker.html
+            Konfirmasjon.html
+            sommerfotografering.html
+            bryllupsfotograf-ringsaker.html
+            familie-portrettfotograf-ringsaker.html
+            .github/scripts/simplify_booking_accessibility.py
+
+      - name: Sett opp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Oppdater booking og tilgjengelighet
+        run: python .github/scripts/simplify_booking_accessibility.py
+
+      - name: Kontroller resultatet
+        shell: bash
+        run: |
+          ! grep -q 'Er du klar til å booke innen kort tid' booking.html
+          ! grep -q 'Hva ønsker du mest informasjon om' booking.html
+          grep -q 'Telefonnummer.*valgfritt' booking.html
+          grep -q 'markedsforing_samtykke' booking.html
+          grep -q 'role="tablist"' priser.html
+          grep -q 'role="tablist"' portfolio.html
+          grep -q 'role="tabpanel"' priser.html
+          grep -q 'role="tabpanel"' portfolio.html
+          grep -q 'ArrowRight' priser.html
+          grep -q 'ArrowRight' portfolio.html
+          for f in index.html om.html kjaeledyrsfotograf-ringsaker.html Konfirmasjon.html sommerfotografering.html bryllupsfotograf-ringsaker.html familie-portrettfotograf-ringsaker.html; do
+            grep -q 'aria-controls="navLinks"' "$f"
+            grep -q "event.key === 'Escape'" "$f"
+          done
+
+      - name: Lagre nettsideoppdateringen
+        shell: bash
+        run: |
+          if git diff --quiet && git diff --cached --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo 'Ingen endringer å lagre.'
+            exit 0
+          fi
+          git config user.name 'FotografSpalder'
+          git config user.email 'fotograf.spalder@outlook.com'
+          git add booking.html priser.html portfolio.html index.html om.html kjaeledyrsfotograf-ringsaker.html Konfirmasjon.html sommerfotografering.html bryllupsfotograf-ringsaker.html familie-portrettfotograf-ringsaker.html
+          git commit -m 'Forenkle booking og forbedre tilgjengelighet'
+          git push
