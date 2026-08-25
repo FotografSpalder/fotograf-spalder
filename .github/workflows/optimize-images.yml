@@ -1,0 +1,54 @@
+name: Optimaliser nettsidebilder
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '*.jpg'
+      - '*.jpeg'
+      - 'images/**/*.jpg'
+      - 'images/**/*.jpeg'
+      - '.github/scripts/optimize_site_images.py'
+      - '.github/workflows/optimize-images.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Hent nettstedet
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Sett opp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installer Pillow
+        run: python -m pip install --upgrade pillow
+
+      - name: Optimaliser store JPEG-er
+        run: python .github/scripts/optimize_site_images.py
+
+      - name: Kontroller filer
+        run: git diff --check
+
+      - name: Lagre optimaliserte bilder
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- '*.jpg' '*.jpeg' 'images/**/*.jpg' 'images/**/*.jpeg'
+          if git diff --cached --quiet; then
+            echo 'Ingen bilder trengte optimalisering.'
+            exit 0
+          fi
+          git commit -m 'Optimaliser nettsidebilder'
+          git push
