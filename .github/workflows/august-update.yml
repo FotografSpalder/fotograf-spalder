@@ -9,6 +9,7 @@ on:
       - '.github/scripts/august_update.py'
       - '.github/scripts/mobile_layout_fix.py'
       - '.github/scripts/kitten_portfolio_update.py'
+      - '.github/scripts/payment_flow_update.py'
       - 'IMG_*.jpg'
   pull_request:
     branches:
@@ -19,6 +20,7 @@ on:
       - '.github/scripts/august_update.py'
       - '.github/scripts/mobile_layout_fix.py'
       - '.github/scripts/kitten_portfolio_update.py'
+      - '.github/scripts/payment_flow_update.py'
       - 'IMG_*.jpg'
   workflow_dispatch:
 
@@ -55,6 +57,9 @@ jobs:
       - name: Rett mobilvisningen
         run: python .github/scripts/mobile_layout_fix.py
 
+      - name: Oppdater betalingsløpet
+        run: python .github/scripts/payment_flow_update.py
+
       - name: Normaliser oppdaterte tekstfiler
         run: |
           python - <<'PY'
@@ -65,6 +70,9 @@ jobs:
               Path('portfolio.html'),
               Path('sommerfotografering.html'),
               Path('kjaeledyrsfotograf-ringsaker.html'),
+              Path('priser.html'),
+              Path('booking.html'),
+              Path('takk.html'),
               Path('sitemap.xml'),
           ]
           for path in paths:
@@ -85,6 +93,9 @@ jobs:
               Path('portfolio.html'),
               Path('sommerfotografering.html'),
               Path('kjaeledyrsfotograf-ringsaker.html'),
+              Path('priser.html'),
+              Path('booking.html'),
+              Path('takk.html'),
               Path('sitemap.xml'),
           ]
           for path in required:
@@ -110,6 +121,9 @@ jobs:
 
           index = Path('index.html').read_text(encoding='utf-8')
           summer = Path('sommerfotografering.html').read_text(encoding='utf-8')
+          prices = Path('priser.html').read_text(encoding='utf-8')
+          booking = Path('booking.html').read_text(encoding='utf-8')
+          thanks = Path('takk.html').read_text(encoding='utf-8')
 
           checks = {
               'mobilmeny på forsiden': '@media (max-width: 950px)' in index and 'position: static;' in index,
@@ -121,6 +135,10 @@ jobs:
               'fullstendig sensommerbilde': 'natur-og-dyreliv-ringsaker-01.webp' in summer and '<picture>' in summer,
               'alternativtekst for hero-bildet': 'alt="Båtliv og landskap ved Mjøsa fotografert i full komposisjon av Fotograf Spalder"' in summer,
               'ingen croppet delingsfil i hero-overstyringen': "url('images/deling/sensommerfotografering-ringsaker.jpg')" not in summer.split('/* FULL_HERO_IMAGE_START */')[-1],
+              '30 prosent reserverer dato': '30 % av fotograferingsprisen' in prices and 'ønsket dato reservert' in prices,
+              '70 prosent betales i FotoSky': 'resterende 70 %' in prices and 'via FotoSky' in prices,
+              'booking krever betalingsforståelse': 'name="betalingsforstaelse"' in booking,
+              'takkesiden forklarer restbetaling': 'de resterende 70 % i FotoSky' in thanks,
           }
           failed = [name for name, passed in checks.items() if not passed]
           if failed:
@@ -135,10 +153,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html portfolio.html sommerfotografering.html kjaeledyrsfotograf-ringsaker.html sitemap.xml images/
+          git add index.html portfolio.html sommerfotografering.html kjaeledyrsfotograf-ringsaker.html priser.html booking.html takk.html sitemap.xml images/
           if git diff --cached --quiet; then
             echo "Ingen nye endringer å lagre."
             exit 0
           fi
-          git commit -m "Vis hele sensommerbildet og legg inn kattunger"
+          git commit -m "Oppdater betalingsflyt og nettsideinnhold"
           git push
