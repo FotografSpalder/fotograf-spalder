@@ -121,6 +121,14 @@ h1 {
   font-weight: 700;
   border: 1px solid transparent;
   user-select: none;
+  font: inherit;
+  color: var(--text);
+  appearance: none;
+}
+
+.tab:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .tab:hover { border-color: var(--line); }
@@ -300,15 +308,20 @@ Her finner du priser på kjæledyrfotografering, portrett, familiefoto, bryllup,
 De fleste velger Kjæledyr Standard, Familiefoto eller Favorittpakken
 </p>
 
-<div class="tabs">
-  <div class="tab active" onclick="showTab(event, 'dyr')">Kjæledyr</div>
+<div class="tabs" role="tablist" aria-label="Velg kategori">
+  <button type="button" id="tab-dyr" class="tab active" role="tab" aria-selected="true" aria-controls="dyr" tabindex="0">Kjæledyr</button>
+  <button type="button" id="tab-portrett" class="tab" role="tab" aria-selected="false" aria-controls="portrett" tabindex="-1">Portrett & familie</button>
+  <button type="button" id="tab-event" class="tab" role="tab" aria-selected="false" aria-controls="event" tabindex="-1">Arrangement</button>
+  <button type="button" id="tab-cosplay" class="tab" role="tab" aria-selected="false" aria-controls="cosplay" tabindex="-1">Cosplay</button>
+  <button type="button" id="tab-tillegg" class="tab" role="tab" aria-selected="false" aria-controls="tillegg" tabindex="-1">Tillegg</button>
+</div>
   <div class="tab" onclick="showTab(event, 'portrett')">Portrett & Familie</div>
   <div class="tab" onclick="showTab(event, 'event')">Arrangement</div>
   <div class="tab" onclick="showTab(event, 'cosplay')">Cosplay</div>
   <div class="tab" onclick="showTab(event, 'tillegg')">Tillegg</div>
 </div>
 
-<div id="dyr" class="section active">
+<div id="dyr" class="section active" role="tabpanel" aria-labelledby="tab-dyr">
   <div class="card">
     <h2>Kjæledyr Mini</h2>
     <div class="price-label">Pris for fotograferingsoppdraget</div>
@@ -352,7 +365,7 @@ De fleste velger Kjæledyr Standard, Familiefoto eller Favorittpakken
   </div>
 </div>
 
-<div id="portrett" class="section">
+<div id="portrett" class="section" role="tabpanel" aria-labelledby="tab-portrett" hidden>
   <div class="card">
     <h2>Portrett</h2>
     <div class="price-label">Pris for fotograferingsoppdraget</div>
@@ -426,7 +439,7 @@ De fleste velger Kjæledyr Standard, Familiefoto eller Favorittpakken
   </div>
 </div>
 
-<div id="event" class="section">
+<div id="event" class="section" role="tabpanel" aria-labelledby="tab-event" hidden>
   <div class="card highlight">
     <h2>Bryllup</h2>
     <div class="price-label">Pris for fotograferingsoppdraget</div>
@@ -514,7 +527,7 @@ De fleste velger Kjæledyr Standard, Familiefoto eller Favorittpakken
   </div>
 </div>
 
-<div id="cosplay" class="section">
+<div id="cosplay" class="section" role="tabpanel" aria-labelledby="tab-cosplay" hidden>
   <div class="card">
     <h2>Cosplay Grunnpakke</h2>
     <div class="price-label">Pris for fotograferingsoppdraget</div>
@@ -558,7 +571,7 @@ De fleste velger Kjæledyr Standard, Familiefoto eller Favorittpakken
   </div>
 </div>
 
-<div id="tillegg" class="section">
+<div id="tillegg" class="section" role="tabpanel" aria-labelledby="tab-tillegg" hidden>
   <div class="card">
     <h2>Tillegg til selve fotograferingen</h2>
     <ul>
@@ -644,17 +657,39 @@ De fleste velger Kjæledyr Standard, Familiefoto eller Favorittpakken
 </div>
 
 <script>
-function showTab(event, tab) {
-  document.querySelectorAll(".section").forEach(section => {
-    section.classList.remove("active");
-  });
+const tabList = document.querySelector('[role="tablist"]');
+if (tabList) {
+  const tabs = Array.from(tabList.querySelectorAll('[role="tab"]'));
 
-  document.querySelectorAll(".tab").forEach(button => {
-    button.classList.remove("active");
-  });
+  function activateTab(tab, moveFocus = false) {
+    tabs.forEach(button => {
+      const selected = button === tab;
+      button.classList.toggle('active', selected);
+      button.setAttribute('aria-selected', String(selected));
+      button.tabIndex = selected ? 0 : -1;
+      const panel = document.getElementById(button.getAttribute('aria-controls'));
+      if (panel) {
+        panel.classList.toggle('active', selected);
+        panel.hidden = !selected;
+      }
+    });
+    if (moveFocus) tab.focus();
+  }
 
-  document.getElementById(tab).classList.add("active");
-  event.target.classList.add("active");
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('keydown', event => {
+      let next = null;
+      if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
+      if (event.key === 'ArrowLeft') next = tabs[(index - 1 + tabs.length) % tabs.length];
+      if (event.key === 'Home') next = tabs[0];
+      if (event.key === 'End') next = tabs[tabs.length - 1];
+      if (next) {
+        event.preventDefault();
+        activateTab(next, true);
+      }
+    });
+  });
 }
 </script>
 

@@ -168,8 +168,14 @@ h1 {
 De fleste velger kjæledyr- eller familiefotografering
 </p>
 
-  <div class="tabs">
-    <div class="tab active" onclick="showTab(event, 'dyr')">Kjæledyr</div>
+  <div class="tabs" role="tablist" aria-label="Velg kategori">
+  <button type="button" id="tab-dyr" class="tab active" role="tab" aria-selected="true" aria-controls="dyr" tabindex="0">Kjæledyr</button>
+  <button type="button" id="tab-portrett" class="tab" role="tab" aria-selected="false" aria-controls="portrett" tabindex="-1">Portrett</button>
+  <button type="button" id="tab-familie" class="tab" role="tab" aria-selected="false" aria-controls="familie" tabindex="-1">Familie</button>
+  <button type="button" id="tab-bryllup" class="tab" role="tab" aria-selected="false" aria-controls="bryllup" tabindex="-1">Bryllup</button>
+  <button type="button" id="tab-cosplay" class="tab" role="tab" aria-selected="false" aria-controls="cosplay" tabindex="-1">Cosplay</button>
+  <button type="button" id="tab-natur" class="tab" role="tab" aria-selected="false" aria-controls="natur" tabindex="-1">Natur og dyreliv</button>
+</div>
     <div class="tab" onclick="showTab(event, 'portrett')">Portrett</div>
     <div class="tab" onclick="showTab(event, 'familie')">Familie</div>
     <div class="tab" onclick="showTab(event, 'bryllup')">Bryllup</div>
@@ -178,7 +184,7 @@ De fleste velger kjæledyr- eller familiefotografering
   </div>
 
   <!-- KJÆLEDYR -->
-  <div id="dyr" class="section active">
+  <div id="dyr" class="section active" role="tabpanel" aria-labelledby="tab-dyr">
     <div class="gallery">
       <div class="gallery-item">
         <img src="hund1.jpg" loading="lazy" alt="Hund fotografert utendørs i Ringsaker av Fotograf Spalder" title="Kjæledyrfotograf Ringsaker">
@@ -252,7 +258,7 @@ De fleste velger kjæledyr- eller familiefotografering
   </div>
 
   <!-- PORTRETT -->
-  <div id="portrett" class="section">
+  <div id="portrett" class="section" role="tabpanel" aria-labelledby="tab-portrett" hidden>
     <div class="gallery">
       <div class="gallery-item">
         <img src="konfirmant.jpg" loading="lazy" alt="Portrettfoto i Ringsaker av Fotograf Spalder" title="Portrettfotograf Ringsaker">
@@ -268,7 +274,7 @@ De fleste velger kjæledyr- eller familiefotografering
   </div>
 
   <!-- FAMILIE -->
-  <div id="familie" class="section">
+  <div id="familie" class="section" role="tabpanel" aria-labelledby="tab-familie" hidden>
     <div class="gallery">
       <div class="gallery-item">
         <img src="familie1.jpg" loading="lazy" alt="Familiefoto utendørs i Ringsaker av Fotograf Spalder" title="Familiefotograf Ringsaker">
@@ -281,7 +287,7 @@ De fleste velger kjæledyr- eller familiefotografering
   </div>
 
   <!-- BRYLLUP -->
- <div id="bryllup" class="section">
+ <div id="bryllup" class="section" role="tabpanel" aria-labelledby="tab-bryllup" hidden>
   <div class="gallery">
     <div class="gallery-item">
       <img src="bryllup.jpg" loading="lazy" alt="Bryllupsfotografering i Ringsaker av Fotograf Spalder">
@@ -297,7 +303,7 @@ De fleste velger kjæledyr- eller familiefotografering
 </div>
 
     <!-- COSPLAY -->
-  <div id="cosplay" class="section">
+  <div id="cosplay" class="section" role="tabpanel" aria-labelledby="tab-cosplay" hidden>
     <div class="gallery">
       <div class="gallery-item">
         <img src="cospaly2.jpg" loading="lazy" alt="Cosplay fotografering i Ringsaker av Fotograf Spalder" title="Cosplay fotograf Ringsaker">
@@ -308,7 +314,7 @@ De fleste velger kjæledyr- eller familiefotografering
     </div>
   </div>
   <!-- AUGUST_NATURE_START -->
-  <div id="natur" class="section">
+  <div id="natur" class="section" role="tabpanel" aria-labelledby="tab-natur" hidden>
     <div class="gallery">
       <div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-01.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-01.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 1"></picture></div>
 <div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-02.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-02.jpg" loading="lazy" decoding="async" width="1800" height="1200" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 2"></picture></div>
@@ -340,12 +346,39 @@ De fleste velger kjæledyr- eller familiefotografering
 </div>
 
 <script>
-function showTab(event, tab) {
-  document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
-  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+const tabList = document.querySelector('[role="tablist"]');
+if (tabList) {
+  const tabs = Array.from(tabList.querySelectorAll('[role="tab"]'));
 
-  document.getElementById(tab).classList.add("active");
-  event.target.classList.add("active");
+  function activateTab(tab, moveFocus = false) {
+    tabs.forEach(button => {
+      const selected = button === tab;
+      button.classList.toggle('active', selected);
+      button.setAttribute('aria-selected', String(selected));
+      button.tabIndex = selected ? 0 : -1;
+      const panel = document.getElementById(button.getAttribute('aria-controls'));
+      if (panel) {
+        panel.classList.toggle('active', selected);
+        panel.hidden = !selected;
+      }
+    });
+    if (moveFocus) tab.focus();
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('keydown', event => {
+      let next = null;
+      if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
+      if (event.key === 'ArrowLeft') next = tabs[(index - 1 + tabs.length) % tabs.length];
+      if (event.key === 'Home') next = tabs[0];
+      if (event.key === 'End') next = tabs[tabs.length - 1];
+      if (next) {
+        event.preventDefault();
+        activateTab(next, true);
+      }
+    });
+  });
 }
 </script>
 

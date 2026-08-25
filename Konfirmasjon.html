@@ -370,7 +370,13 @@
         display: flex;
       }
     }
-  </style>
+  
+.mobile-toggle:focus-visible,
+.nav-links a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+</style>
 
   <script type="application/ld+json">
   {
@@ -412,8 +418,8 @@
       </a>
 
       <div class="nav-wrap">
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Åpne meny">Meny</button>
-        <nav class="nav-links" id="navLinks">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Åpne meny" type="button" aria-controls="navLinks" aria-expanded="false">Meny</button>
+        <nav class="nav-links" id="navLinks" aria-label="Hovedmeny">
           <a href="om.html">Om</a>
           <a href="index.html#tjenester">Tjenester</a>
           <a href="portfolio.html">Portefølje</a>
@@ -609,18 +615,37 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  const yearElement = document.getElementById('year');
+  if (yearElement) yearElement.textContent = new Date().getFullYear();
 
-    const toggle = document.getElementById('mobileToggle');
-    const navLinks = document.getElementById('navLinks');
+  const mobileToggle = document.getElementById('mobileToggle');
+  const mobileNav = document.getElementById('navLinks');
 
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
+  if (mobileToggle && mobileNav) {
+    const setMenuState = (open) => {
+      mobileNav.classList.toggle('open', open);
+      mobileToggle.setAttribute('aria-expanded', String(open));
+      mobileToggle.setAttribute('aria-label', open ? 'Lukk meny' : 'Åpne meny');
+      mobileToggle.textContent = open ? 'Lukk' : 'Meny';
+    };
+
+    setMenuState(false);
+
+    mobileToggle.addEventListener('click', () => {
+      setMenuState(!mobileNav.classList.contains('open'));
     });
 
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => setMenuState(false));
     });
-  </script>
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
+        setMenuState(false);
+        mobileToggle.focus();
+      }
+    });
+  }
+</script>
 </body>
 </html>
