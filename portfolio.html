@@ -153,6 +153,23 @@ h1 {
 }
 /* KITTEN_GALLERY_STYLE_END */
 
+
+/* TAB_ACCESSIBILITY_FIX */
+.tabs button.tab {
+  border: 1px solid transparent;
+  font: inherit;
+  color: var(--text);
+  appearance: none;
+}
+
+.tabs button.tab:hover { border-color: var(--line); }
+.tabs button.tab:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+[role="tabpanel"][hidden] { display: none !important; }
+
 </style>
   <script src="samtykke.js" defer></script>
 </head>
@@ -176,12 +193,6 @@ De fleste velger kjæledyr- eller familiefotografering
   <button type="button" id="tab-cosplay" class="tab" role="tab" aria-selected="false" aria-controls="cosplay" tabindex="-1">Cosplay</button>
   <button type="button" id="tab-natur" class="tab" role="tab" aria-selected="false" aria-controls="natur" tabindex="-1">Natur og dyreliv</button>
 </div>
-    <div class="tab" onclick="showTab(event, 'portrett')">Portrett</div>
-    <div class="tab" onclick="showTab(event, 'familie')">Familie</div>
-    <div class="tab" onclick="showTab(event, 'bryllup')">Bryllup</div>
-    <div class="tab" onclick="showTab(event, 'cosplay')">Cosplay</div>
-    <div class="tab" onclick="showTab(event, 'natur')">Natur og dyreliv</div>
-  </div>
 
   <!-- KJÆLEDYR -->
   <div id="dyr" class="section active" role="tabpanel" aria-labelledby="tab-dyr">

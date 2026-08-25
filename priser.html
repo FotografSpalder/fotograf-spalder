@@ -257,6 +257,23 @@ h1 {
   }
   .price { font-size: 1.45rem; }
 }
+
+/* TAB_ACCESSIBILITY_FIX */
+.tabs button.tab {
+  border: 1px solid transparent;
+  font: inherit;
+  color: var(--text);
+  appearance: none;
+}
+
+.tabs button.tab:hover { border-color: var(--line); }
+.tabs button.tab:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+[role="tabpanel"][hidden] { display: none !important; }
+
 </style>
   <script src="samtykke.js" defer></script>
 </head>
@@ -314,11 +331,6 @@ De fleste velger Kjæledyr Standard, Familiefoto eller Favorittpakken
   <button type="button" id="tab-event" class="tab" role="tab" aria-selected="false" aria-controls="event" tabindex="-1">Arrangement</button>
   <button type="button" id="tab-cosplay" class="tab" role="tab" aria-selected="false" aria-controls="cosplay" tabindex="-1">Cosplay</button>
   <button type="button" id="tab-tillegg" class="tab" role="tab" aria-selected="false" aria-controls="tillegg" tabindex="-1">Tillegg</button>
-</div>
-  <div class="tab" onclick="showTab(event, 'portrett')">Portrett & Familie</div>
-  <div class="tab" onclick="showTab(event, 'event')">Arrangement</div>
-  <div class="tab" onclick="showTab(event, 'cosplay')">Cosplay</div>
-  <div class="tab" onclick="showTab(event, 'tillegg')">Tillegg</div>
 </div>
 
 <div id="dyr" class="section active" role="tabpanel" aria-labelledby="tab-dyr">
