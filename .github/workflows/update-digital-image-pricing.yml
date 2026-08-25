@@ -1,0 +1,72 @@
+name: Oppdater digitale bildepriser
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/update-digital-image-pricing.yml'
+      - '.github/scripts/update_digital_image_pricing.py'
+
+permissions:
+  contents: write
+
+jobs:
+  update-pricing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hent nødvendige filer
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            priser.html
+            booking.html
+            kjaeledyrsfotograf-ringsaker.html
+            familie-portrettfotograf-ringsaker.html
+            bryllupsfotograf-ringsaker.html
+            Konfirmasjon.html
+            sommerfotografering.html
+            sitemap.xml
+            .github/scripts/update_digital_image_pricing.py
+
+      - name: Sett opp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Oppdater bildepriser
+        run: python .github/scripts/update_digital_image_pricing.py
+
+      - name: Kontroller prisinformasjon
+        shell: bash
+        run: |
+          grep -q 'Mobil &amp; sosiale medier:</strong> 350 kr per bilde' priser.html
+          grep -q 'Høyoppløselig digitalt bilde:</strong> 500 kr per bilde' priser.html
+          grep -q 'Fulloppløselig ferdigredigert JPEG:</strong> 700 kr per bilde' priser.html
+          grep -q '6 500 kr ved ordinære fotograferinger og mindre private oppdrag' priser.html
+          grep -q 'Ved bryllup og større arrangementer avtales prisen for komplett galleri separat' priser.html
+          grep -q 'Gratis bilder' priser.html
+          grep -q '350 kr per bilde' bryllupsfotograf-ringsaker.html
+          grep -q 'Pris for komplett bryllupsgalleri avtales etter omfang' bryllupsfotograf-ringsaker.html
+          grep -q 'Komplett digital pakke – hele det ferdigredigerte galleriet: <strong>6 500 kr</strong>' familie-portrettfotograf-ringsaker.html
+          grep -q 'Komplett digital pakke – hele det ferdigredigerte galleriet: <strong>6 500 kr</strong>' kjaeledyrsfotograf-ringsaker.html
+          grep -q 'Komplett digital pakke ved ordinær konfirmant-/portrettfotografering: <strong>6 500 kr</strong>' Konfirmasjon.html
+          grep -q 'Ekstra bilder uten vannmerke koster 350 kr' booking.html
+          ! grep -qi 'originalfil' priser.html
+          ! grep -qi 'originalfil' booking.html
+          ! grep -qi 'originalfil' kjaeledyrsfotograf-ringsaker.html
+          git diff --check
+
+      - name: Lagre nettsideoppdateringen
+        shell: bash
+        run: |
+          git config user.name 'FotografSpalder'
+          git config user.email 'fotograf.spalder@outlook.com'
+          git add priser.html booking.html kjaeledyrsfotograf-ringsaker.html familie-portrettfotograf-ringsaker.html bryllupsfotograf-ringsaker.html Konfirmasjon.html sommerfotografering.html sitemap.xml
+          if git diff --cached --quiet; then
+            echo 'Ingen endringer å lagre.'
+            exit 0
+          fi
+          git commit -m 'Publiser tydelige priser for digitale bilder'
+          git push
