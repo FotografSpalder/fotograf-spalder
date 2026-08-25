@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - '.github/workflows/update-digital-image-pricing.yml'
-      - '.github/scripts/update_digital_image_pricing.py'
+      - '.github/scripts/update_digital_image_pricing_v2.py'
 
 permissions:
   contents: write
@@ -28,7 +28,7 @@ jobs:
             Konfirmasjon.html
             sommerfotografering.html
             sitemap.xml
-            .github/scripts/update_digital_image_pricing.py
+            .github/scripts/update_digital_image_pricing_v2.py
 
       - name: Sett opp Python
         uses: actions/setup-python@v5
@@ -36,7 +36,7 @@ jobs:
           python-version: '3.12'
 
       - name: Oppdater bildepriser
-        run: python .github/scripts/update_digital_image_pricing.py
+        run: python .github/scripts/update_digital_image_pricing_v2.py
 
       - name: Kontroller prisinformasjon
         shell: bash
