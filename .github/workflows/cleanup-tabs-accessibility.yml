@@ -1,0 +1,51 @@
+name: Rydd opp tilgjengelige tabs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/cleanup-tabs-accessibility.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup-tabs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hent nødvendige filer
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            priser.html
+            portfolio.html
+            .github/scripts/cleanup_tabs_accessibility.py
+
+      - name: Sett opp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Rydd opp tabs
+        run: python .github/scripts/cleanup_tabs_accessibility.py
+
+      - name: Kontroller HTML
+        shell: bash
+        run: |
+          ! grep -q 'onclick="showTab' priser.html
+          ! grep -q 'onclick="showTab' portfolio.html
+          grep -q 'role="tablist"' priser.html
+          grep -q 'role="tablist"' portfolio.html
+          grep -q 'TAB_ACCESSIBILITY_FIX' priser.html
+          grep -q 'TAB_ACCESSIBILITY_FIX' portfolio.html
+
+      - name: Lagre oppryddingen
+        shell: bash
+        run: |
+          git config user.name 'FotografSpalder'
+          git config user.email 'fotograf.spalder@outlook.com'
+          git add priser.html portfolio.html
+          git commit -m 'Rydd opp tabs etter tilgjengelighetsoppdatering'
+          git push
