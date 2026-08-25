@@ -45,7 +45,8 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- '*.jpg' '*.jpeg' 'images/**/*.jpg' 'images/**/*.jpeg'
+          git add -u -- '*.jpg' '*.jpeg' 'images/**/*.jpg' 'images/**/*.jpeg' || true
+          git ls-files --others --exclude-standard -z -- '*.jpg' '*.jpeg' 'images/**/*.jpg' 'images/**/*.jpeg' | xargs -0 -r git add --
           if git diff --cached --quiet; then
             echo 'Ingen bilder trengte optimalisering.'
             exit 0
