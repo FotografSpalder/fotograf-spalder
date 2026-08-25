@@ -12,12 +12,6 @@ def write(path, text):
     (ROOT / path).write_text(text, encoding='utf-8')
 
 
-def replace_once(text, old, new, label):
-    if old not in text:
-        raise SystemExit(f'Fant ikke forventet tekst: {label}')
-    return text.replace(old, new, 1)
-
-
 # 1) Forenkle bookingformularen.
 path = 'booking.html'
 text = read(path)
@@ -113,7 +107,6 @@ new_form = '''    <form id="bookingForm">
     </form>'''
 text = text[:form_start] + new_form + text[form_end:]
 
-# Litt bedre styling for details/fokus.
 css_extra = '''
 
     summary {
@@ -134,7 +127,6 @@ css_extra = '''
 '''
 text = text.replace('    @media (max-width: 600px) {', css_extra + '\n    @media (max-width: 600px) {', 1)
 
-# Bytt innsending til synlig statusmelding fremfor alert.
 script_pattern = re.compile(r'    <script>\s*const form = document\.getElementById\("bookingForm"\);.*?    </script>', re.S)
 new_script = '''    <script>
       const form = document.getElementById("bookingForm");
@@ -168,7 +160,6 @@ new_script = '''    <script>
           formStatus.textContent = "Noe gikk galt. Prøv igjen, eller kontakt Fotograf Spalder på e-post eller SMS.";
           submitButton.disabled = false;
           submitButton.textContent = "Send bookingforespørsel";
-          formStatus.focus?.();
         }
       });
     </script>'''
@@ -181,7 +172,7 @@ write(path, text)
 # 2) Gjør tabs semantiske og tastaturvennlige på priser og portefølje.
 def improve_tabs(path, tabs):
     text = read(path)
-    old_tabs_match = re.search(r'<div class="tabs">.*?</div>\s*\n\s*<div id="', text, re.S)
+    old_tabs_match = re.search(r'<div class="tabs">.*?</div>', text, re.S)
     if not old_tabs_match:
         raise SystemExit(f'Fant ikke tabs i {path}')
 
@@ -191,20 +182,18 @@ def improve_tabs(path, tabs):
         selected = 'true' if i == 0 else 'false'
         tab_index = '0' if i == 0 else '-1'
         buttons.append(f'  <button type="button" id="tab-{panel}" class="tab{active}" role="tab" aria-selected="{selected}" aria-controls="{panel}" tabindex="{tab_index}">{label}</button>')
-    new_tabs = '<div class="tabs" role="tablist" aria-label="Velg kategori">\n' + '\n'.join(buttons) + '\n</div>\n\n<div id="'
-    old = old_tabs_match.group(0)
-    text = text.replace(old, new_tabs, 1)
+    new_tabs = '<div class="tabs" role="tablist" aria-label="Velg kategori">\n' + '\n'.join(buttons) + '\n</div>'
+    text = text[:old_tabs_match.start()] + new_tabs + text[old_tabs_match.end():]
 
     for i, (panel, _) in enumerate(tabs):
-        # Panelene kan ha active eller ikke.
         pat = re.compile(rf'<div id="{re.escape(panel)}" class="section( active)?">')
         repl = f'<div id="{panel}" class="section' + (' active' if i == 0 else '') + f'" role="tabpanel" aria-labelledby="tab-{panel}"' + ('' if i == 0 else ' hidden') + '>'
         text, n = pat.subn(repl, text, count=1)
         if n != 1:
             raise SystemExit(f'Fant ikke panel {panel} i {path}')
 
-    # Knappene skal arve stil og ha tydelig tastaturfokus.
-    text = text.replace('  user-select: none;\n}', '  user-select: none;\n  font: inherit;\n  color: var(--text);\n  appearance: none;\n}\n\n.tab:focus-visible {\n  outline: 3px solid var(--accent);\n  outline-offset: 3px;\n}', 1)
+    if 'font: inherit;' not in text:
+        text = text.replace('  user-select: none;\n}', '  user-select: none;\n  font: inherit;\n  color: var(--text);\n  appearance: none;\n}\n\n.tab:focus-visible {\n  outline: 3px solid var(--accent);\n  outline-offset: 3px;\n}', 1)
 
     old_script = re.compile(r'<script>\s*function showTab\(event, tab\).*?</script>', re.S)
     new_script = '''<script>
@@ -315,7 +304,6 @@ menu_script = '''<script>
 for path in menu_pages:
     text = read(path)
 
-    # Sørg for korrekt kontrollkobling og initial tilstand.
     def button_repl(match):
         tag = match.group(0)
         if 'type=' not in tag:
@@ -332,12 +320,10 @@ for path in menu_pages:
 
     text = re.sub(r'<nav class="nav-links" id="navLinks"(?![^>]*aria-label)', '<nav class="nav-links" id="navLinks" aria-label="Hovedmeny"', text, count=1)
 
-    # Tydelig fokusmarkering.
     focus_css = '''\n.mobile-toggle:focus-visible,\n.nav-links a:focus-visible {\n  outline: 3px solid var(--accent);\n  outline-offset: 3px;\n}\n'''
     if '.mobile-toggle:focus-visible' not in text:
         text = text.replace('</style>', focus_css + '</style>', 1)
 
-    # Erstatt bare inline-scriptet som faktisk håndterer mobileToggle.
     blocks = list(re.finditer(r'<script>(.*?)</script>', text, re.S))
     target = None
     for block in blocks:
