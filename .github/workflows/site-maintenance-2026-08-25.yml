@@ -1,0 +1,60 @@
+name: Engangsvedlikehold bilder og teknisk SEO
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/site-maintenance-2026-08-25.yml'
+      - '.github/scripts/site_maintenance_2026_08_25.py'
+
+permissions:
+  contents: write
+
+jobs:
+  maintain-site:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Hent hele nettstedet
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sett opp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installer bildeverktøy
+        run: python -m pip install --upgrade pillow
+
+      - name: Optimaliser bilder, rydd SEO og fjern utdaterte workflows
+        run: python .github/scripts/site_maintenance_2026_08_25.py
+
+      - name: Kontroller endringene
+        run: |
+          git diff --check
+          test ! -f .github/workflows/august-update.yml
+          test ! -f .github/workflows/privacy-consent.yml
+          grep -q '<link rel="canonical" href="https://www.fotograf-spalder.com/">' index.html
+          grep -q '<meta property="og:url" content="https://www.fotograf-spalder.com/">' index.html
+          grep -q '<meta name="robots" content="noindex, nofollow">' takk.html
+          grep -q 'Sitemap: https://www.fotograf-spalder.com/sitemap.xml' robots.txt
+
+      - name: Lagre vedlikeholdet
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          # Engangsjobben sletter seg selv etter vellykket kjøring.
+          rm -f .github/workflows/site-maintenance-2026-08-25.yml
+          rm -f .github/scripts/site_maintenance_2026_08_25.py
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'Ingen endringer å lagre.'
+            exit 0
+          fi
+          git commit -m 'Optimaliser bilder og rydd teknisk SEO'
+          git push
