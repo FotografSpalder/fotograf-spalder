@@ -214,9 +214,15 @@
       Flere digitale bilder, originalfiler og eventuelle bildeprodukter kjøpes separat etter at du har sett bildene i ditt private nettgalleri.
     </div>
 
+    <!-- PAYMENT_FLOW_30_70 -->
     <div class="status-box">
       <strong>Dette er en forespørsel – ikke en ferdig reservasjon.</strong><br>
-      Tidspunktet er først bekreftet når du har mottatt skriftlig bekreftelse og forskuddet er betalt.
+      Når forespørselen er godkjent, betaler du 30 % av fotograferingsprisen i forskudd. Ønsket dato er først reservert når forskuddet er registrert betalt.
+    </div>
+
+    <div class="notice">
+      <strong>Slik betales resten:</strong><br>
+      Etter fotograferingen klargjøres det private galleriet hos FotoSky. De resterende 70 % av fotograferingsprisen betales via FotoSky før galleriet kan åpnes. Når restbeløpet er betalt, får du tilgang til galleriet og kan velge inkluderte bilder og eventuelle tillegg.
     </div>
 
     <form id="bookingForm">
@@ -320,7 +326,9 @@
           <li>Ved mer enn 15 minutters forsinkelse kan fotograferingen forkortes eller flyttes.</li>
           <li>Dårlig vær gir ny time uten ekstra kostnad.</li>
           <li>Booking bekreftes først etter skriftlig bekreftelse og forskuddsbetaling.</li>
-          <li>Forskuddet er 30 % av prisen for det valgte fotograferingsoppdraget, trekkes fra denne prisen og refunderes ikke ved avbestilling.</li>
+          <li>Forskuddet er 30 % av prisen for det valgte fotograferingsoppdraget. Forskuddet reserverer ønsket dato, trekkes fra fotograferingsprisen og refunderes ikke ved avbestilling.</li>
+          <li>De resterende 70 % av fotograferingsprisen betales via FotoSky etter fotograferingen og før det private galleriet kan åpnes.</li>
+          <li>Når restbeløpet på 70 % er registrert betalt, åpnes galleriet. Eventuelle kjøp av flere bilder eller andre tillegg kommer i tillegg.</li>
           <li>Leveringstid er normalt 1–3 uker via privat galleri.</li>
           <li>Kun antallet digitale bilder som står oppført for pakken er inkludert. Flere bilder og originalfiler kjøpes separat.</li>
           <li>Bilder kan brukes i markedsføring med mindre annet avtales skriftlig på forhånd.</li>
@@ -330,6 +338,11 @@
       <label class="checkbox-label">
         <input type="checkbox" name="prisforstaelse" value="Ja" required>
         <span>Jeg har lest prisinformasjonen og forstår hvilke digitale bilder som er inkludert, og at flere bilder kjøpes separat. <span class="required">*</span></span>
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" name="betalingsforstaelse" value="Ja" required>
+        <span>Jeg forstår betalingsløpet: 30 % betales for å reservere datoen, og de resterende 70 % betales via FotoSky etter fotograferingen før privatgalleriet åpnes. <span class="required">*</span></span>
       </label>
 
       <label class="checkbox-label">
