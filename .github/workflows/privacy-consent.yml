@@ -1,0 +1,52 @@
+name: Personvern og analysesamtykke
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/scripts/privacy_consent_update.py'
+      - '.github/workflows/privacy-consent.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-privacy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hent kildekoden
+        uses: actions/checkout@v4
+
+      - name: Sett opp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Oppdater personvern og samtykke
+        run: python .github/scripts/privacy_consent_update.py
+
+      - name: Kontroller at Analytics ikke lastes før samtykke
+        shell: bash
+        run: |
+          if grep -R --include='*.html' -n 'www.googletagmanager.com/gtag/js' .; then
+            echo 'Fant direkte lasting av Google Analytics i HTML.'
+            exit 1
+          fi
+          test -f samtykke.js
+          test -f personvern.html
+          grep -q 'personvern.html' sitemap.xml
+          grep -q 'BOOKING_PRIVACY_NOTICE' booking.html
+
+      - name: Lagre nettsideoppdateringen
+        shell: bash
+        run: |
+          if git diff --quiet && git diff --cached --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo 'Ingen endringer å lagre.'
+            exit 0
+          fi
+
+          git config user.name 'FotografSpalder'
+          git config user.email 'fotograf.spalder@outlook.com'
+          git add -- '*.html' sitemap.xml samtykke.js
+          git commit -m 'Innfør samtykke for analyse og personvernerklæring'
+          git push
