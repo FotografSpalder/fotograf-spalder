@@ -13,8 +13,18 @@ jobs:
   update-service-links:
     runs-on: ubuntu-latest
     steps:
-      - name: Hent kildekoden
+      - name: Hent bare filene som skal oppdateres
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            index.html
+            portfolio.html
+            sitemap.xml
+            bryllupsfotograf-ringsaker.html
+            familie-portrettfotograf-ringsaker.html
+            .github/scripts/add_service_pages_links.py
 
       - name: Sett opp Python
         uses: actions/setup-python@v5
