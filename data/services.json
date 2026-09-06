@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "currency": "NOK",
+  "categories": {
+    "pets": "Kjæledyr",
+    "portrait-family": "Portrett & familie",
+    "events": "Arrangement",
+    "cosplay": "Cosplay"
+  },
+  "services": {
+    "pet-mini": {
+      "name": "Kjæledyr Mini",
+      "price": 1800,
+      "included_images": 1,
+      "category": "pets",
+      "from_price": false,
+      "max_price": null,
+      "content": [
+        "Kort fotografering av kjæledyr",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.pet-mini.included_images | images }} i høy kvalitet uten vannmerke"
+      ],
+      "landing_content": [
+        "Kort fotografering av ett kjæledyr",
+        "{{ services.pet-mini.content.2 }}",
+        "{{ services.pet-mini.included_images | images }} i høy kvalitet uten vannmerke inkludert",
+        "Flere bilder kan kjøpes separat"
+      ]
+    },
+    "pet-standard": {
+      "name": "Kjæledyr Standard",
+      "price": 3000,
+      "included_images": 3,
+      "category": "pets",
+      "from_price": false,
+      "max_price": null,
+      "content": [
+        "Fotografering av kjæledyr",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.pet-standard.included_images | images }} i høy kvalitet uten vannmerke"
+      ],
+      "landing_content": [
+        "{{ services.pet-standard.content.0 }}",
+        "God tid til variasjon",
+        "{{ services.pet-standard.content.2 }}",
+        "{{ services.pet-standard.included_images | images }} i høy kvalitet uten vannmerke inkludert",
+        "Flere bilder kan kjøpes separat"
+      ]
+    },
+    "pet-premium": {
+      "name": "Kjæledyr Premium",
+      "price": 4000,
+      "included_images": 5,
+      "category": "pets",
+      "from_price": false,
+      "max_price": null,
+      "content": [
+        "Lengre fotografering",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.pet-premium.included_images | images }} i høy kvalitet uten vannmerke"
+      ],
+      "landing_content": [
+        "{{ services.pet-premium.content.0 }}",
+        "Passer for flere motiver og uttrykk",
+        "{{ services.pet-premium.content.2 }}",
+        "{{ services.pet-premium.included_images | images }} i høy kvalitet uten vannmerke inkludert",
+        "Flere bilder kan kjøpes separat"
+      ]
+    },
+    "portrait": {
+      "name": "Portrett",
+      "price": 1500,
+      "included_images": 1,
+      "category": "portrait-family",
+      "from_price": false,
+      "max_price": null,
+      "content": [
+        "Portrettfotografering av én person",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.portrait.included_images | images }} i høy kvalitet uten vannmerke"
+      ],
+      "landing_content": [
+        "Én person",
+        "{{ services.portrait.content.1 }}",
+        "{{ services.portrait.content.2 }}"
+      ]
+    },
+    "family": {
+      "name": "Familiefoto",
+      "price": 2500,
+      "included_images": 2,
+      "category": "portrait-family",
+      "from_price": false,
+      "max_price": null,
+      "content": [
+        "Familiefotografering ute eller på avtalt lokasjon",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.family.included_images | images }} i høy kvalitet uten vannmerke"
+      ],
+      "landing_content": [
+        "Familie ute eller på avtalt lokasjon",
+        "{{ services.family.content.1 }}",
+        "{{ services.family.content.2 }}"
+      ]
+    },
+    "basic": {
+      "name": "Grunnpakke",
+      "price": 3200,
+      "included_images": 3,
+      "category": "portrait-family",
+      "from_price": false,
+      "max_price": null,
+      "content": [
+        "Fotografering av person, par eller liten familie",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.basic.included_images | images }} i høy kvalitet uten vannmerke"
+      ],
+      "landing_content": [
+        "Person, par eller liten familie",
+        "{{ services.basic.content.1 }}",
+        "{{ services.basic.content.2 }}"
+      ]
+    },
+    "favorite": {
+      "name": "Favorittpakke",
+      "price": 4500,
+      "included_images": 5,
+      "category": "portrait-family",
+      "from_price": false,
+      "max_price": null,
+      "content": [
+        "Lengre fotografering",
+        "Passer godt til familie, portrett eller kombinasjon",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.favorite.included_images | images }} i høy kvalitet uten vannmerke"
+      ],
+      "landing_content": [
+        "{{ services.favorite.content.0 }}",
+        "{{ services.favorite.content.1 }}",
+        "{{ services.favorite.content.3 }}"
+      ]
+    },
+    "total": {
+      "name": "Totalpakke",
+      "price": 8000,
+      "included_images": 10,
+      "category": "portrait-family",
+      "from_price": false,
+      "max_price": null,
+      "content": [
+        "Utvidet fotografering",
+        "Passer for større familier eller flere bildetyper",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.total.included_images | images }} i høy kvalitet uten vannmerke"
+      ],
+      "landing_content": [
+        "{{ services.total.content.0 }}",
+        "Passer større familier eller flere bildetyper",
+        "{{ services.total.content.3 }}"
+      ]
+    },
+    "wedding": {
+      "name": "Bryllup",
+      "price": 10000,
+      "included_images": 8,
+      "category": "events",
+      "from_price": true,
+      "max_price": null,
+      "content": [
+        "Tilpasses etter behov, vielse, portretter og dekning av dagen",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.wedding.included_images | images }} i høy kvalitet uten vannmerke"
+      ],
+      "landing_content": [
+        "Tilpasses etter behov – for eksempel vielse, portretter og avtalt dekning av dagen",
+        "Planlegging før bryllupet",
+        "Fotografering og profesjonell redigering",
+        "Privat nettgalleri hos FotoSky",
+        "{{ services.wedding.included_images | images }} i høy kvalitet uten vannmerke inkludert"
+      ]
+    },
+    "confirmation": {
+      "name": "Konfirmasjon",
+      "price": 3000,
+      "included_images": 2,
+      "category": "events",
+      "from_price": true,
+      "max_price": null,
+      "content": [
+        "Portretter av konfirmanten",
+        "Mulighet for familiebilder",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.confirmation.included_images | images }} i høy kvalitet uten vannmerke"
+      ]
+    },
+    "baptism": {
+      "name": "Dåp",
+      "price": 3000,
+      "included_images": 2,
+      "category": "events",
+      "from_price": true,
+      "max_price": null,
+      "content": [
+        "Fotografering før, under eller etter dåp etter avtale",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.baptism.included_images | images }} i høy kvalitet uten vannmerke"
+      ]
+    },
+    "extended-family": {
+      "name": "Slektsfotografering",
+      "price": 7500,
+      "included_images": 5,
+      "category": "events",
+      "from_price": false,
+      "max_price": null,
+      "content": [
+        "Inntil {{ services.extended-family.duration_hours }} timer fotografering",
+        "Familie- og gruppeportretter",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.extended-family.included_images | images }} i høy kvalitet uten vannmerke"
+      ],
+      "duration_hours": 3
+    },
+    "event-half": {
+      "name": "Kultur og arrangement – halv dag",
+      "price": 4000,
+      "included_images": null,
+      "category": "events",
+      "from_price": true,
+      "max_price": 7000,
+      "content": [
+        "Fotografering av marked, kulturarrangement, utstilling eller lokalhistorisk arrangement",
+        "Passer for kortere arrangementer eller avgrenset dekning",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri"
+      ]
+    },
+    "event-full": {
+      "name": "Kultur og arrangement – heldag",
+      "price": 7000,
+      "included_images": null,
+      "category": "events",
+      "from_price": true,
+      "max_price": 15000,
+      "content": [
+        "Utvidet dokumentasjon av arrangement, mennesker, stemning, detaljer og miljø",
+        "Passer for heldagsarrangementer, markeder, festivaler og større kulturprosjekter",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri"
+      ]
+    },
+    "cosplay-basic": {
+      "name": "Cosplay Grunnpakke",
+      "price": 1200,
+      "included_images": 1,
+      "category": "cosplay",
+      "from_price": false,
+      "max_price": null,
+      "content": [
+        "Kort cosplay-fotografering",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.cosplay-basic.included_images | images }} i høy kvalitet uten vannmerke"
+      ]
+    },
+    "cosplay-magic": {
+      "name": "Cosplay Magipakke",
+      "price": 1800,
+      "included_images": 2,
+      "category": "cosplay",
+      "from_price": false,
+      "max_price": null,
+      "content": [
+        "Mer tid til posering og uttrykk",
+        "Planlegging, fotografering og redigering",
+        "Privat nettgalleri",
+        "{{ services.cosplay-magic.included_images | images }} i høy kvalitet uten vannmerke"
+      ]
+    },
+    "cosplay-epic": {
+      "name": "Cosplay Epos",
+      "price": 2800,
+      "included_images": 3,
+      "category": "cosplay",
+      "from_price": false,
+      "max_price": null,
+      "content": [
+        "Utvidet cosplay-fotografering",
+        "Mer avansert redigering og visuelle effekter",
+        "Privat nettgalleri",
+        "{{ services.cosplay-epic.included_images | images }} i høy kvalitet uten vannmerke"
+      ]
+    }
+  },
+  "booking_groups": [
+    {
+      "label": "Vanlige fotoshoots",
+      "services": [
+        "basic",
+        "favorite",
+        "total"
+      ]
+    },
+    {
+      "label": "Kjæledyr",
+      "services": [
+        "pet-mini",
+        "pet-standard",
+        "pet-premium"
+      ]
+    },
+    {
+      "label": "Portrett og familie",
+      "services": [
+        "portrait",
+        "family"
+      ]
+    },
+    {
+      "label": "Arrangement",
+      "services": [
+        "confirmation",
+        "baptism",
+        "wedding",
+        "extended-family",
+        "event-half",
+        "event-full"
+      ]
+    },
+    {
+      "label": "Cosplay",
+      "services": [
+        "cosplay-basic",
+        "cosplay-magic",
+        "cosplay-epic"
+      ]
+    }
+  ],
+  "extras": {
+    "person": {
+      "price": 300
+    },
+    "time": {
+      "price": 500,
+      "minutes": 30
+    },
+    "travel": {
+      "price": 5,
+      "included_mil": 2,
+      "origin": "Ringsaker"
+    },
+    "express": {
+      "price": 500,
+      "hours": 48
+    }
+  },
+  "digital": {
+    "mobile": {
+      "price": 350
+    },
+    "high_resolution": {
+      "price": 500
+    },
+    "full_resolution": {
+      "price": 700
+    },
+    "complete": {
+      "price": 6500,
+      "scope": "ordinære fotograferinger og mindre private oppdrag",
+      "separately_quoted": "bryllup og større arrangementer"
+    }
+  },
+  "rules": {
+    "deposit_percent": 30,
+    "balance_percent": 70,
+    "delivery_min_weeks": 1,
+    "delivery_max_weeks": 3,
+    "cancellation_notice_hours": 24,
+    "late_minutes": 15,
+    "deposit_refund_clause": "refunderes ikke ved avbestilling",
+    "weather_policy": "Dårlig vær gir ny time uten ekstra kostnad.",
+    "gallery_provider": "FotoSky",
+    "copy": {},
+    "booking_terms": [
+      "Gi beskjed minst {{ rules.cancellation_notice_hours }} timer før ved avbestilling eller endring.",
+      "Ved mer enn {{ rules.late_minutes }} minutters forsinkelse kan fotograferingen forkortes eller flyttes.",
+      "{{ rules.weather_policy }}",
+      "Booking bekreftes først etter skriftlig bekreftelse og betaling av {{ rules.deposit_percent }} % forskudd.",
+      "Forskuddet reserverer ønsket dato, trekkes fra fotograferingsprisen og {{ rules.deposit_refund_clause }}.",
+      "De resterende {{ rules.balance_percent }} % betales via FotoSky etter fotograferingen og før privatgalleriet åpnes.",
+      "Når restbeløpet er betalt, åpnes galleriet. Eventuelle tilleggskjøp kommer i tillegg.",
+      "Leveringstid er normalt {{ rules.delivery_min_weeks }}–{{ rules.delivery_max_weeks }} uker via privat galleri.",
+      "Kun antallet digitale bilder som står oppført for pakken er inkludert. Flere bilder og fulloppløselige filer kjøpes separat."
+    ]
+  }
+}
+

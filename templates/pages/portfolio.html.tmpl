@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+<title>Portefølje | Kjæledyr, familie og portrett – Fotograf i Ringsaker | Fotograf Spalder</title>
+  <link rel="canonical" href="https://www.fotograf-spalder.com/portfolio.html">
+<meta name="description" content="Se porteføljen til Fotograf Spalder med kjæledyr, familie, portrett, bryllup, konfirmasjon og naturbilder fra Ringsaker og Innlandet.">
+<meta property="og:title" content="Portefølje | Fotograf i Ringsaker – Fotograf Spalder">
+<meta property="og:description" content="Se bilder fra kjæledyr, familie, portrett, bryllup, cosplay, natur og dyreliv i Ringsaker og Innlandet.">
+<meta property="og:image" content="https://www.fotograf-spalder.com/images/deling/portfolio-fotograf-ringsaker.jpg">
+<meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.fotograf-spalder.com/portfolio.html">
+  <link rel="icon" type="image/png" href="Untitled-1.png">
+<style>
+:root {
+  --bg: #0f172a;
+  --card: rgba(255,255,255,0.08);
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --line: rgba(255,255,255,0.12);
+  --accent: #f59e0b;
+  --shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(245,158,11,0.12), transparent 35%),
+    linear-gradient(180deg, #0b1120 0%, #111827 100%);
+  color: var(--text);
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.lead {
+  text-align: center;
+  color: var(--muted);
+  max-width: 70ch;
+  margin: 0 auto 2rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.tab {
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tab.active {
+  background: var(--accent);
+  color: black;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 6px;
+  box-shadow: var(--shadow);
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.2rem;
+  background: var(--accent);
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+  @media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .tab {
+    flex: 1 1 45%;
+    text-align: center;
+  }
+}
+
+/* AUGUST_GALLERY_MEDIA */
+.gallery picture { display: block; width: 100%; }
+.gallery img { aspect-ratio: auto; }
+
+/* KITTEN_GALLERY_STYLE_START */
+.kitten-item picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.kitten-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #111827;
+}
+/* KITTEN_GALLERY_STYLE_END */
+
+
+/* TAB_ACCESSIBILITY_FIX */
+.tabs button.tab {
+  border: 1px solid transparent;
+  font: inherit;
+  color: var(--text);
+  appearance: none;
+}
+
+.tabs button.tab:hover { border-color: var(--line); }
+.tabs button.tab:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+[role="tabpanel"][hidden] { display: none !important; }
+
+</style>
+  <script src="samtykke.js" defer></script>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Portefølje – fotograf i Ringsaker for kjæledyr, familie og portrett</h1>
+  <p class="lead">
+  Her kan du se et utvalg av bilder fra kjæledyrfotografering, familiefoto, portrett, bryllup og cosplay. Klikk deg gjennom kategoriene og få en følelse av stil, uttrykk og hvordan jeg jobber som fotograf i Ringsaker og Innlandet.
+</p>
+  <p style="text-align:center; color:#fde68a; font-weight:600;">
+De fleste velger kjæledyr- eller familiefotografering
+</p>
+
+  <div class="tabs" role="tablist" aria-label="Velg kategori">
+  <button type="button" id="tab-dyr" class="tab active" role="tab" aria-selected="true" aria-controls="dyr" tabindex="0">Kjæledyr</button>
+  <button type="button" id="tab-portrett" class="tab" role="tab" aria-selected="false" aria-controls="portrett" tabindex="-1">Portrett</button>
+  <button type="button" id="tab-familie" class="tab" role="tab" aria-selected="false" aria-controls="familie" tabindex="-1">Familie</button>
+  <button type="button" id="tab-bryllup" class="tab" role="tab" aria-selected="false" aria-controls="bryllup" tabindex="-1">Bryllup</button>
+  <button type="button" id="tab-cosplay" class="tab" role="tab" aria-selected="false" aria-controls="cosplay" tabindex="-1">Cosplay</button>
+  <button type="button" id="tab-natur" class="tab" role="tab" aria-selected="false" aria-controls="natur" tabindex="-1">Natur og dyreliv</button>
+</div>
+
+  <!-- KJÆLEDYR -->
+  <div id="dyr" class="section active" role="tabpanel" aria-labelledby="tab-dyr">
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="hund1.jpg" loading="lazy" alt="Hund fotografert utendørs i Ringsaker av Fotograf Spalder" title="Kjæledyrfotograf Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="hund2.jpg" loading="lazy" alt="Portrett av hund i naturlig lys i Ringsaker av Fotograf Spalder" title="Hundebilder Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="hund3.jpg" loading="lazy" alt="Kjæledyrfoto av hund i Ringsaker av Fotograf Spalder" title="Kjæledyrfotografering Innlandet">
+      </div>
+      <div class="gallery-item">
+        <img src="hund4.jpg" loading="lazy" alt="Hund fotografert i bevegelse utendørs av Fotograf Spalder" title="Hund fotograf Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="hund5.jpg" loading="lazy" alt="Naturlig hundeportrett tatt i Ringsaker av Fotograf Spalder" title="Profesjonell hundefotograf">
+      </div>
+      <div class="gallery-item">
+        <img src="hund6.jpg" loading="lazy" alt="Stemningsfullt kjæledyrfoto i Innlandet av Fotograf Spalder" title="Kjæledyrfoto Innlandet">
+      </div>
+      <div class="gallery-item">
+        <img src="IMG_8929.jpg" loading="lazy" alt="Stemningsfullt kjæledyrfoto i Innlandet av Fotograf Spalder" title="Kjæledyrfoto Innlandet">
+      </div>
+      <div class="gallery-item">
+        <img src="IMG_8950.1.jpg" loading="lazy" alt="Stemningsfullt kjæledyrfoto i Innlandet av Fotograf Spalder" title="Kjæledyrfoto Innlandet">
+      </div>
+      <!-- KITTEN_GALLERY_START -->
+      <div class="gallery-item kitten-item">
+        <picture>
+          <source srcset="images/portfolio/kjaeledyr/kattunger/hvit-kattunge-ringsaker-01.webp" type="image/webp">
+          <img src="images/portfolio/kjaeledyr/kattunger/hvit-kattunge-ringsaker-01.jpg" loading="lazy" decoding="async" width="1800" height="1206" alt="Hvit kattunge fotografert i mykt lys i Ringsaker av Fotograf Spalder" title="Kattungefotografering i Ringsaker">
+        </picture>
+      </div>
+      <div class="gallery-item kitten-item">
+        <picture>
+          <source srcset="images/portfolio/kjaeledyr/kattunger/hvit-kattunge-ringsaker-02.webp" type="image/webp">
+          <img src="images/portfolio/kjaeledyr/kattunger/hvit-kattunge-ringsaker-02.jpg" loading="lazy" decoding="async" width="1800" height="1062" alt="Hvit kattunge på mørkt pledd fotografert av Fotograf Spalder" title="Kattungefotografering i Ringsaker">
+        </picture>
+      </div>
+      <div class="gallery-item kitten-item">
+        <picture>
+          <source srcset="images/portfolio/kjaeledyr/kattunger/gra-kattunge-ringsaker-01.webp" type="image/webp">
+          <img src="images/portfolio/kjaeledyr/kattunger/gra-kattunge-ringsaker-01.jpg" loading="lazy" decoding="async" width="1800" height="1200" alt="Grå kattunge fotografert i Ringsaker av Fotograf Spalder" title="Kattungefotografering i Ringsaker">
+        </picture>
+      </div>
+      <div class="gallery-item kitten-item">
+        <picture>
+          <source srcset="images/portfolio/kjaeledyr/kattunger/brun-kattunge-ringsaker-01.webp" type="image/webp">
+          <img src="images/portfolio/kjaeledyr/kattunger/brun-kattunge-ringsaker-01.jpg" loading="lazy" decoding="async" width="1800" height="1276" alt="Brun kattunge fotografert på pledd av Fotograf Spalder" title="Kattungefotografering i Ringsaker">
+        </picture>
+      </div>
+      <div class="gallery-item kitten-item">
+        <picture>
+          <source srcset="images/portfolio/kjaeledyr/kattunger/hvit-kattunge-ringsaker-03.webp" type="image/webp">
+          <img src="images/portfolio/kjaeledyr/kattunger/hvit-kattunge-ringsaker-03.jpg" loading="lazy" decoding="async" width="1800" height="1200" alt="Nærbilde av hvit kattunge fotografert av Fotograf Spalder" title="Kattungefotografering i Ringsaker">
+        </picture>
+      </div>
+      <div class="gallery-item kitten-item">
+        <picture>
+          <source srcset="images/portfolio/kjaeledyr/kattunger/kattungekull-ringsaker-01.webp" type="image/webp">
+          <img src="images/portfolio/kjaeledyr/kattunger/kattungekull-ringsaker-01.jpg" loading="lazy" decoding="async" width="1800" height="1278" alt="Kattungekull fotografert sammen i Ringsaker av Fotograf Spalder" title="Kattungefotografering i Ringsaker">
+        </picture>
+      </div>
+      <div class="gallery-item kitten-item">
+        <picture>
+          <source srcset="images/portfolio/kjaeledyr/kattunger/kattungekull-ringsaker-02.webp" type="image/webp">
+          <img src="images/portfolio/kjaeledyr/kattunger/kattungekull-ringsaker-02.jpg" loading="lazy" decoding="async" width="1800" height="1347" alt="Fem kattunger samlet til kjæledyrfotografering i Ringsaker" title="Kattungefotografering i Ringsaker">
+        </picture>
+      </div>
+      <!-- KITTEN_GALLERY_END -->
+    </div>
+  </div>
+
+  <!-- PORTRETT -->
+  <div id="portrett" class="section" role="tabpanel" aria-labelledby="tab-portrett" hidden>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="konfirmant.jpg" loading="lazy" alt="Portrettfoto i Ringsaker av Fotograf Spalder" title="Portrettfotograf Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="konfirmasjon2.jpg" loading="lazy" alt="Naturlig portrett utendørs i Innlandet av Fotograf Spalder" title="Portrettfoto Innlandet">
+      </div>
+      <div class="gallery-item">
+        <img src="konfirmant3.jpg" loading="lazy" alt="Ekslusivt portrett innendørs i Innlandet av Fotograf Spalder" title="Portrettfotograf Innlandet">
+      </div>
+    </div>
+    <div class="button-row"><a class="button" href="familie-portrettfotograf-ringsaker.html">Les om portrettfotografering</a></div>
+  </div>
+
+  <!-- FAMILIE -->
+  <div id="familie" class="section" role="tabpanel" aria-labelledby="tab-familie" hidden>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="familie1.jpg" loading="lazy" alt="Familiefoto utendørs i Ringsaker av Fotograf Spalder" title="Familiefotograf Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="familie2.jpg" loading="lazy" alt="Naturlig familiebilde i Innlandet av Fotograf Spalder" title="Familiefoto Innlandet">
+      </div>
+    </div>
+    <div class="button-row"><a class="button" href="familie-portrettfotograf-ringsaker.html">Les om familiefotografering</a></div>
+  </div>
+
+  <!-- BRYLLUP -->
+ <div id="bryllup" class="section" role="tabpanel" aria-labelledby="tab-bryllup" hidden>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="bryllup.jpg" loading="lazy" alt="Bryllupsfotografering i Ringsaker av Fotograf Spalder">
+    </div>
+    <div class="gallery-item">
+      <img src="bryllup2.jpg" loading="lazy" alt="Brudepar fotografert utendørs i Innlandet av Fotograf Spalder">
+    </div>
+    <div class="gallery-item">
+      <img src="bryllup3.jpg" loading="lazy" alt="Dokumentarisk bryllupsbilde tatt av Fotograf Spalder">
+    </div>
+  </div>
+  <div class="button-row"><a class="button" href="bryllupsfotograf-ringsaker.html">Les om bryllupsfotografering</a></div>
+</div>
+
+    <!-- COSPLAY -->
+  <div id="cosplay" class="section" role="tabpanel" aria-labelledby="tab-cosplay" hidden>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="cospaly2.jpg" loading="lazy" alt="Cosplay fotografering i Ringsaker av Fotograf Spalder" title="Cosplay fotograf Ringsaker">
+      </div>
+      <div class="gallery-item">
+        <img src="cosplay1.jpg" loading="lazy" alt="Cosplay portrett med effekter fotografert av Fotograf Spalder" title="Cosplay foto Innlandet">
+      </div>
+    </div>
+  </div>
+  <!-- AUGUST_NATURE_START -->
+  <div id="natur" class="section" role="tabpanel" aria-labelledby="tab-natur" hidden>
+    <div class="gallery">
+      <div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-01.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-01.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 1"></picture></div>
+<div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-02.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-02.jpg" loading="lazy" decoding="async" width="1800" height="1200" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 2"></picture></div>
+<div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-03.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-03.jpg" loading="lazy" decoding="async" width="1800" height="1200" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 3"></picture></div>
+<div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-04.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-04.jpg" loading="lazy" decoding="async" width="1800" height="1200" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 4"></picture></div>
+<div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-05.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-05.jpg" loading="lazy" decoding="async" width="1800" height="1200" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 5"></picture></div>
+<div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-06.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-06.jpg" loading="lazy" decoding="async" width="1800" height="1728" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 6"></picture></div>
+<div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-07.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-07.jpg" loading="lazy" decoding="async" width="1800" height="1200" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 7"></picture></div>
+<div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-08.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-08.jpg" loading="lazy" decoding="async" width="1800" height="1706" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 8"></picture></div>
+<div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-09.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-09.jpg" loading="lazy" decoding="async" width="1200" height="1800" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 9"></picture></div>
+<div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-10.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-10.jpg" loading="lazy" decoding="async" width="1537" height="1800" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 10"></picture></div>
+<div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-11.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-11.jpg" loading="lazy" decoding="async" width="1800" height="1640" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 11"></picture></div>
+<div class="gallery-item"><picture><source srcset="images/portfolio/natur/natur-og-dyreliv-ringsaker-12.webp" type="image/webp"><img src="images/portfolio/natur/natur-og-dyreliv-ringsaker-12.jpg" loading="lazy" decoding="async" width="1575" height="1800" alt="Natur- og dyreliv fotografert i Ringsaker av Fotograf Spalder, bilde 12"></picture></div>
+    </div>
+  </div>
+  <!-- AUGUST_NATURE_END -->
+  <div style="text-align:center; margin-top:2rem;">
+  <p style="color:#cbd5e1;">
+  Likte du det du så? Send en forespørsel og book fotografering i Ringsaker, Brumunddal eller resten av Innlandet.
+</p>
+
+  <a href="booking.html" class="button" style="display:block; margin-bottom:1rem;">
+    Book fotografering →
+  </a>
+
+  <a href="index.html" class="button" style="background:transparent; color:#cbd5e1; border:1px solid #444;">
+    ← Tilbake til forsiden
+  </a>
+</div>
+
+<script>
+const tabList = document.querySelector('[role="tablist"]');
+if (tabList) {
+  const tabs = Array.from(tabList.querySelectorAll('[role="tab"]'));
+
+  function activateTab(tab, moveFocus = false) {
+    tabs.forEach(button => {
+      const selected = button === tab;
+      button.classList.toggle('active', selected);
+      button.setAttribute('aria-selected', String(selected));
+      button.tabIndex = selected ? 0 : -1;
+      const panel = document.getElementById(button.getAttribute('aria-controls'));
+      if (panel) {
+        panel.classList.toggle('active', selected);
+        panel.hidden = !selected;
+      }
+    });
+    if (moveFocus) tab.focus();
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('keydown', event => {
+      let next = null;
+      if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
+      if (event.key === 'ArrowLeft') next = tabs[(index - 1 + tabs.length) % tabs.length];
+      if (event.key === 'Home') next = tabs[0];
+      if (event.key === 'End') next = tabs[tabs.length - 1];
+      if (next) {
+        event.preventDefault();
+        activateTab(next, true);
+      }
+    });
+  });
+}
+</script>
+
+</body>
+</html>
+
