@@ -34,7 +34,7 @@
     "name":"Familie- og portrettfotografering i Ringsaker",
     "provider":{"@type":"ProfessionalService","name":"Fotograf Spalder","url":"https://www.fotograf-spalder.com/"},
     "areaServed":["Ringsaker","Brumunddal","Hamar","Innlandet"],
-    "offers":{"@type":"AggregateOffer","lowPrice":"1500","highPrice":"8000","priceCurrency":"NOK"},
+    "offers":{"@type":"AggregateOffer","lowPrice":{{ derived.family_low | json_string }},"highPrice":{{ derived.family_high | json_string }},"priceCurrency":{{ currency | json_string }}},
     "url":"https://www.fotograf-spalder.com/familie-portrettfotograf-ringsaker.html"
   }
   </script>
@@ -112,20 +112,20 @@
       <div class="container">
         <div class="section-head"><h2>Pakker for familie og portrett</h2><p class="lead">Prisen er først og fremst for selve fotograferingsoppdraget – planlegging, fotografering, utvelgelse, redigering og privat galleri. Antallet inkluderte digitale bilder står på hver pakke.</p></div>
         <div class="price-grid">
-          <article class="price-card"><h3>Portrett</h3><div class="price">1 500 kr</div><span class="included">1 digitalt bilde inkludert</span><ul><li>Én person</li><li>Planlegging, fotografering og redigering</li><li>Privat nettgalleri</li></ul></article>
-          <article class="price-card"><h3>Familiefoto</h3><div class="price">2 500 kr</div><span class="included">2 digitale bilder inkludert</span><ul><li>Familie ute eller på avtalt lokasjon</li><li>Planlegging, fotografering og redigering</li><li>Privat nettgalleri</li></ul></article>
-          <article class="price-card"><h3>Grunnpakke</h3><div class="price">3 200 kr</div><span class="included">3 digitale bilder inkludert</span><ul><li>Person, par eller liten familie</li><li>Planlegging, fotografering og redigering</li><li>Privat nettgalleri</li></ul></article>
-          <article class="price-card highlight"><h3>Favorittpakke</h3><div class="price">4 500 kr</div><span class="included">5 digitale bilder inkludert</span><ul><li>Lengre fotografering</li><li>Passer godt til familie, portrett eller kombinasjon</li><li>Privat nettgalleri</li></ul></article>
-          <article class="price-card"><h3>Totalpakke</h3><div class="price">8 000 kr</div><span class="included">10 digitale bilder inkludert</span><ul><li>Utvidet fotografering</li><li>Passer større familier eller flere bildetyper</li><li>Privat nettgalleri</li></ul></article>
+          <article class="price-card"><h3>{{ services.portrait.name }}</h3><div class="price">{{ services.portrait | price_grouped }} kr</div><span class="included">{{ services.portrait.included_images | images }} inkludert</span><ul><li>{{ services.portrait.landing_content.0 }}</li><li>{{ services.portrait.landing_content.1 }}</li><li>{{ services.portrait.landing_content.2 }}</li></ul></article>
+          <article class="price-card"><h3>{{ services.family.name }}</h3><div class="price">{{ services.family | price_grouped }} kr</div><span class="included">{{ services.family.included_images | images }} inkludert</span><ul><li>{{ services.family.landing_content.0 }}</li><li>{{ services.family.landing_content.1 }}</li><li>{{ services.family.landing_content.2 }}</li></ul></article>
+          <article class="price-card"><h3>{{ services.basic.name }}</h3><div class="price">{{ services.basic | price_grouped }} kr</div><span class="included">{{ services.basic.included_images | images }} inkludert</span><ul><li>{{ services.basic.landing_content.0 }}</li><li>{{ services.basic.landing_content.1 }}</li><li>{{ services.basic.landing_content.2 }}</li></ul></article>
+          <article class="price-card highlight"><h3>{{ services.favorite.name }}</h3><div class="price">{{ services.favorite | price_grouped }} kr</div><span class="included">{{ services.favorite.included_images | images }} inkludert</span><ul><li>{{ services.favorite.landing_content.0 }}</li><li>{{ services.favorite.landing_content.1 }}</li><li>{{ services.favorite.landing_content.2 }}</li></ul></article>
+          <article class="price-card"><h3>{{ services.total.name }}</h3><div class="price">{{ services.total | price_grouped }} kr</div><span class="included">{{ services.total.included_images | images }} inkludert</span><ul><li>{{ services.total.landing_content.0 }}</li><li>{{ services.total.landing_content.1 }}</li><li>{{ services.total.landing_content.2 }}</li></ul></article>
         </div>
         <div class="info-box" style="margin-top:1rem">
           <h3>Flere bilder og komplett galleri</h3>
           <p>Bildene som følger med pakken velges uten ekstra kostnad. Ønsker du flere bilder uten vannmerke, gjelder disse prisene i FotoSky:</p>
           <ul>
-            <li>Mobil &amp; sosiale medier: <strong>350 kr per bilde</strong></li>
-            <li>Høyoppløselig digitalt bilde: <strong>500 kr per bilde</strong></li>
-            <li>Fulloppløselig ferdigredigert JPEG: <strong>700 kr per bilde</strong></li>
-            <li>Komplett digital pakke – hele det ferdigredigerte galleriet: <strong>6 500 kr</strong></li>
+            <li>Mobil &amp; sosiale medier: <strong>{{ digital.mobile.price }} kr per bilde</strong></li>
+            <li>Høyoppløselig digitalt bilde: <strong>{{ digital.high_resolution.price }} kr per bilde</strong></li>
+            <li>Fulloppløselig ferdigredigert JPEG: <strong>{{ digital.full_resolution.price }} kr per bilde</strong></li>
+            <li>Komplett digital pakke – hele det ferdigredigerte galleriet: <strong>{{ digital.complete.price | grouped }} kr</strong></li>
           </ul>
           <p>Utvalgte delingsbilder med Fotograf Spalder-vannmerke legges i egen «Gratis bilder»-fane og kan lastes ned uten ekstra betaling.</p>
           <p><a href="priser.html" style="color:#fde68a;font-weight:800;">Se full prisliste og vilkår</a>.</p>
@@ -137,9 +137,9 @@
       <div class="container">
         <div class="section-head"><h2>Slik fungerer betaling og levering</h2></div>
         <div class="steps">
-          <div class="step"><strong>1. 30 % reserverer datoen</strong><span>Etter at forespørselen er godkjent betales 30 % av fotograferingsprisen. Datoen er først reservert når forskuddet er registrert.</span></div>
-          <div class="step"><strong>2. Fotograferingen gjennomføres</strong><span>Vi fotograferer som avtalt. De resterende 70 % betales etter fotograferingen.</span></div>
-          <div class="step"><strong>3. 70 % via FotoSky</strong><span>Når det private galleriet er klart, betales restbeløpet på 70 % via FotoSky for å åpne galleriet.</span></div>
+          <div class="step"><strong>1. {{ rules.deposit_percent }} % reserverer datoen</strong><span>Etter at forespørselen er godkjent betales {{ rules.deposit_percent }} % av fotograferingsprisen. Datoen er først reservert når forskuddet er registrert.</span></div>
+          <div class="step"><strong>2. Fotograferingen gjennomføres</strong><span>Vi fotograferer som avtalt. De resterende {{ rules.balance_percent }} % betales etter fotograferingen.</span></div>
+          <div class="step"><strong>3. {{ rules.balance_percent }} % via FotoSky</strong><span>Når det private galleriet er klart, betales restbeløpet på {{ rules.balance_percent }} % via FotoSky for å åpne galleriet.</span></div>
           <div class="step"><strong>4. Velg bildene</strong><span>Når galleriet er åpnet velger du bildene som følger med pakken og kan kjøpe eventuelle tillegg separat.</span></div>
         </div>
       </div>
@@ -152,7 +152,7 @@
           <div class="faq-item"><h3>Jeg er ukomfortabel foran kamera. Er det et problem?</h3><p>Nei. Jeg gir konkrete og enkle instrukser underveis. Målet er ikke at du skal kunne posere, men at jeg skal hjelpe deg inn i situasjoner som fungerer på bilde.</p></div>
           <div class="faq-item"><h3>Hva hvis barna ikke vil sitte stille?</h3><p>Da bygger vi fotograferingen rundt bevegelse, korte sekvenser og pauser. Familiebilder trenger ikke være basert på at alle sitter stille og ser rett i kamera samtidig.</p></div>
           <div class="faq-item"><h3>Hvor fotograferer du?</h3><p>Jeg tar oppdrag i Ringsaker, Brumunddal, Hamar og ellers i Innlandet etter avtale. Oppgi gjerne ønsket sted i bookingforespørselen.</p></div>
-          <div class="faq-item"><h3>Når er datoen reservert?</h3><p>Når bookingforespørselen er godkjent og forskuddet på 30 % er registrert betalt. Resten betales via FotoSky etter fotograferingen før privatgalleriet åpnes.</p></div>
+          <div class="faq-item"><h3>Når er datoen reservert?</h3><p>Når bookingforespørselen er godkjent og forskuddet på {{ rules.deposit_percent }} % er registrert betalt. Resten betales via FotoSky etter fotograferingen før privatgalleriet åpnes.</p></div>
         </div>
       </div>
     </section>

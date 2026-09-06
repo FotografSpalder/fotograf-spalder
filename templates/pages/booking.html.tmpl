@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Send en enkel bookingforespørsel til Fotograf Spalder for kjæledyr, familie, portrett, bryllup, konfirmasjon og andre fotooppdrag i Innlandet.">
+  <meta property="og:title" content="Book fotograf i Ringsaker & Brumunddal | Fotograf Spalder">
+  <meta property="og:description" content="Enkel og trygg booking for kjæledyr, familie, portrett og bryllup hos Fotograf Spalder.">
+  <meta property="og:image" content="https://www.fotograf-spalder.com/hund2.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.fotograf-spalder.com/booking.html">
+  <title>Book fotograf i Ringsaker & Brumunddal | Fotograf Spalder</title>
+  <link rel="canonical" href="https://www.fotograf-spalder.com/booking.html">
+  <link rel="icon" type="image/png" href="Untitled-1.png">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: rgba(255,255,255,0.06);
+      --text: #ffffff;
+      --muted: #cbd5e1;
+      --line: rgba(255,255,255,0.14);
+      --accent: #f59e0b;
+      --accent-light: #fde68a;
+      --danger: #ef4444;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(245,158,11,0.12), transparent 35%),
+        linear-gradient(180deg, #0b1120 0%, #111827 100%);
+      color: var(--text);
+      margin: 0;
+      padding: 1rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 680px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    h2, h3 { line-height: 1.25; }
+
+    .intro {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .notice,
+    .status-box,
+    .terms-box {
+      border-radius: 16px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .notice {
+      background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.45);
+      color: var(--accent-light);
+    }
+
+    .notice strong,
+    .status-box strong {
+      color: #fff;
+    }
+
+    .notice a,
+    .terms-box a,
+    label a {
+      color: var(--accent-light);
+      font-weight: 700;
+    }
+
+    .status-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    form {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    label {
+      font-weight: 700;
+    }
+
+    .required {
+      color: var(--danger);
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid #475569;
+      background: var(--bg-soft);
+      color: white;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .small {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .checkbox-label {
+      font-size: 0.9rem;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-weight: 400;
+    }
+
+    .checkbox-label input {
+      width: auto;
+      margin-top: 5px;
+    }
+
+    .terms-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+
+    .terms-box ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+    }
+
+    button {
+      padding: 1.2rem;
+      font-size: 1rem;
+      background: var(--accent);
+      color: #111827;
+      border: none;
+      border-radius: 999px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    button:hover { filter: brightness(1.08); }
+
+    button:disabled {
+      opacity: 0.65;
+      cursor: wait;
+    }
+
+    .button.secondary {
+      display: block;
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      text-align: center;
+      text-decoration: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .button.secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--accent-light);
+    }
+
+    summary:focus-visible,
+    button:focus-visible,
+    a:focus-visible,
+    input[type="checkbox"]:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .terms-box[open] summary { margin-bottom: 0.8rem; }
+
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.8rem; }
+      .container { width: 100%; }
+      form { gap: 1rem; }
+      label { font-size: 0.94rem; }
+    }
+  </style>
+  <script src="samtykke.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Book fotograf i Ringsaker og Brumunddal</h1>
+    <p class="intro">
+      Send en enkel og uforpliktende bookingforespørsel for kjæledyr, familie, portrett, bryllup eller andre fotograferinger.
+    </p>
+
+    <div class="notice">
+      <strong>Viktig om pris og bilder:</strong><br>
+      Prisen du velger under gjelder fotograferingsoppdraget og inkluderer kun det antallet digitale bilder som står oppført på <a href="priser.html">pris-siden</a>.
+      Ekstra bilder uten vannmerke koster {{ digital.mobile.price }} kr for mobil/sosiale medier, {{ digital.high_resolution.price }} kr i høy oppløsning eller {{ digital.full_resolution.price }} kr som fulloppløselig ferdigredigert JPEG. Komplett digital pakke koster {{ digital.complete.price | grouped }} kr ved {{ digital.complete.scope }}. Ved {{ digital.complete.separately_quoted }} avtales komplett galleri separat.
+      Utvalgte vannmerkede delingsbilder kan lastes ned gratis fra egen «Gratis bilder»-fane i FotoSky.
+    </div>
+
+    <!-- PAYMENT_FLOW_30_70 -->
+    <div class="status-box">
+      <strong>Dette er en forespørsel – ikke en ferdig reservasjon.</strong><br>
+      Når forespørselen er godkjent, betaler du {{ rules.deposit_percent }} % av fotograferingsprisen i forskudd. Ønsket dato er først reservert når forskuddet er registrert betalt.
+    </div>
+
+    <div class="notice">
+      <strong>Slik betales resten:</strong><br>
+      Etter fotograferingen klargjøres det private galleriet hos FotoSky. De resterende {{ rules.balance_percent }} % av fotograferingsprisen betales via FotoSky før galleriet kan åpnes. Når restbeløpet er betalt, får du tilgang til galleriet og kan velge inkluderte bilder og eventuelle tillegg.
+    </div>
+
+    <!-- BOOKING_PRIVACY_NOTICE -->
+    <div class="status-box">
+      <strong>Personvern:</strong><br>
+      Opplysningene du sender inn brukes for å svare på bookingforespørselen og planlegge et eventuelt fotooppdrag. Skjemaet sendes via Formspree. <a href="personvern.html">Les personvernerklæringen</a>.
+    </div>
+
+    <form id="bookingForm">
+      <p class="small">Felt merket med <span class="required">*</span> er obligatoriske. Du trenger ikke ha alle detaljer klare for å sende en forespørsel.</p>
+
+      <input type="hidden" name="_subject" value="Ny bookingforespørsel – Fotograf Spalder">
+
+      <label for="navn">Navn <span class="required">*</span></label>
+      <input id="navn" type="text" name="navn" placeholder="Ditt navn" autocomplete="name" required>
+
+      <label for="email">E-post <span class="required">*</span></label>
+      <input id="email" type="email" name="email" placeholder="Din e-postadresse" autocomplete="email" required>
+
+      <label for="telefon">Telefonnummer <span class="small">(valgfritt)</span></label>
+      <input id="telefon" type="tel" name="telefon" placeholder="F.eks. 98765432" autocomplete="tel" inputmode="tel">
+
+      <label for="pakke">Hva ønsker du å fotografere? <span class="required">*</span></label>
+      <select id="pakke" name="pakke" required>
+        <option value="">Velg fotografering eller pakke</option>
+        {{ derived.booking_options | raw }}
+      </select>
+      <p class="small">Usikker på pakke? Velg det som ligger nærmest. Vi kan avklare riktig løsning før booking. <a href="priser.html">Se alle priser</a>.</p>
+
+      <label for="dato">Ønsket dato <span class="small">(valgfritt)</span></label>
+      <input id="dato" type="date" name="dato">
+
+      <label for="sted">Sted eller område <span class="small">(valgfritt)</span></label>
+      <input id="sted" type="text" name="sted" placeholder="F.eks. Brumunddal, Moelv, Hamar eller vet ikke enda">
+
+      <label for="melding">Fortell kort hva du ønsker <span class="required">*</span></label>
+      <textarea id="melding" name="melding" rows="5" required placeholder="Hvem eller hva skal fotograferes, og er det noe jeg bør vite på forhånd?"></textarea>
+
+      <!-- spam filter -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <details id="vilkar" class="terms-box">
+        <summary>Se vilkår for booking og betaling</summary>
+        <ul>
+          <li>{{ rules.booking_terms.0 }}</li>
+          <li>{{ rules.booking_terms.1 }}</li>
+          <li>{{ rules.booking_terms.2 }}</li>
+          <li>{{ rules.booking_terms.3 }}</li>
+          <li>{{ rules.booking_terms.4 }}</li>
+          <li>{{ rules.booking_terms.5 }}</li>
+          <li>{{ rules.booking_terms.6 }}</li>
+          <li>{{ rules.booking_terms.7 }}</li>
+          <li>{{ rules.booking_terms.8 }}</li>
+        </ul>
+      </details>
+
+      <label class="checkbox-label">
+        <input type="checkbox" name="vilkar_godkjent" value="Ja" required>
+        <span>Jeg har lest og godtar <a href="#vilkar">vilkårene</a>, og forstår at {{ rules.deposit_percent }} % reserverer datoen og at resterende {{ rules.balance_percent }} % betales via FotoSky før galleriet åpnes. <span class="required">*</span></span>
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" name="markedsforing_samtykke" value="Ja">
+        <span>Ja, jeg samtykker til at utvalgte bilder fra oppdraget kan brukes i Fotograf Spalders portefølje, nettside og sosiale medier. Dette er frivillig og påvirker ikke bookingen.</span>
+      </label>
+
+      <p class="small">Opplysningene brukes for å behandle forespørselen. <a href="personvern.html">Les personvernerklæringen</a>.</p>
+      <button id="submitButton" type="submit">Send bookingforespørsel</button>
+      <p id="formStatus" class="small" role="status" aria-live="polite">Svar vanligvis innen 24 timer.</p>
+    </form>
+
+    <p style="text-align:center; color:#cbd5e1; font-size:0.85rem; margin-top:1.5rem;">
+      Dersom skjemaet ikke virker, kan du kontakte meg på
+      <a href="mailto:fotograf.spalder@outlook.com" style="color:#fde68a;">e-post</a>
+      eller SMS til <a href="sms:+4799535760" style="color:#fde68a;">+47 99 53 57 60</a>.
+    </p>
+
+    <a href="priser.html" class="button secondary">Se priser og pakkeinnhold</a>
+    <a href="index.html" class="button secondary">← Tilbake til forsiden</a>
+
+    <script>
+      const form = document.getElementById("bookingForm");
+      const submitButton = document.getElementById("submitButton");
+      const formStatus = document.getElementById("formStatus");
+
+      form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+        submitButton.disabled = true;
+        submitButton.textContent = "Sender ...";
+        formStatus.textContent = "Sender forespørselen ...";
+
+        try {
+          const data = new FormData(form);
+          const response = await fetch("https://formspree.io/f/xeepjwnb", {
+            method: "POST",
+            body: data,
+            headers: { "Accept": "application/json" }
+          });
+
+          if (!response.ok) throw new Error("Formspree returnerte feilstatus");
+
+          if (typeof window.gtag === "function") {
+            window.gtag("event", "booking_sent", {
+              event_category: "booking",
+              event_label: "booking_form"
+            });
+          }
+          window.location.href = "takk.html";
+        } catch (error) {
+          formStatus.textContent = "Noe gikk galt. Prøv igjen, eller kontakt Fotograf Spalder på e-post eller SMS.";
+          submitButton.disabled = false;
+          submitButton.textContent = "Send bookingforespørsel";
+        }
+      });
+    </script>
+  </div>
+</body>
+</html>

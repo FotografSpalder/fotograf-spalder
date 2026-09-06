@@ -34,7 +34,7 @@
     "name":"Bryllupsfotografering i Ringsaker og Innlandet",
     "provider":{"@type":"ProfessionalService","name":"Fotograf Spalder","url":"https://www.fotograf-spalder.com/"},
     "areaServed":["Ringsaker","Brumunddal","Hamar","Innlandet"],
-    "offers":{"@type":"Offer","price":"10000","priceCurrency":"NOK","description":"Bryllupsfotografering fra 10 000 kr. Endelig pris avtales etter omfang."},
+    "offers":{"@type":"Offer","price":{{ services.wedding.price | json_string }},"priceCurrency":{{ currency | json_string }},"description":"Bryllupsfotografering {{ services.wedding | price_grouped_lower }} kr. Endelig pris avtales etter omfang."},
     "url":"https://www.fotograf-spalder.com/bryllupsfotograf-ringsaker.html"
   }
   </script>
@@ -111,14 +111,14 @@
         <div class="section-head"><h2>Pris og hva som er inkludert</h2><p class="lead">Bryllup varierer mye i omfang. Derfor er dette en fra-pris, og endelig opplegg avtales før booking.</p></div>
         <div class="price-card">
           <h3>Bryllupsfotografering</h3>
-          <div class="price">Fra 10 000 kr</div>
-          <span class="included">8 digitale bilder inkludert</span>
+          <div class="price">{{ services.wedding | price }} kr</div>
+          <span class="included">{{ services.wedding.included_images | images }} inkludert</span>
           <ul>
-            <li>Tilpasses etter behov – for eksempel vielse, portretter og avtalt dekning av dagen</li>
-            <li>Planlegging før bryllupet</li>
-            <li>Fotografering og profesjonell redigering</li>
-            <li>Privat nettgalleri hos FotoSky</li>
-            <li>8 digitale bilder i høy kvalitet uten vannmerke inkludert</li>
+            <li>{{ services.wedding.landing_content.0 }}</li>
+            <li>{{ services.wedding.landing_content.1 }}</li>
+            <li>{{ services.wedding.landing_content.2 }}</li>
+            <li>{{ services.wedding.landing_content.3 }}</li>
+            <li>{{ services.wedding.landing_content.4 }}</li>
           </ul>
           <p><strong>Flere bilder og andre tillegg kjøpes separat.</strong> Se alltid oppdatert oversikt på <a href="priser.html" style="color:#fde68a;font-weight:800;">prissiden</a>.</p>
         </div>
@@ -130,11 +130,11 @@
         <div class="section-head"><h2>Pris på flere bryllupsbilder</h2><p class="lead">Dere kan se prisene før booking og trenger ikke be om et eget prisoverslag for enkeltbilder.</p></div>
         <div class="info-box">
           <ul>
-            <li>Mobil &amp; sosiale medier uten vannmerke: <strong>350 kr per bilde</strong></li>
-            <li>Høyoppløselig digitalt bilde uten vannmerke: <strong>500 kr per bilde</strong></li>
-            <li>Fulloppløselig ferdigredigert JPEG uten vannmerke: <strong>700 kr per bilde</strong></li>
+            <li>Mobil &amp; sosiale medier uten vannmerke: <strong>{{ digital.mobile.price }} kr per bilde</strong></li>
+            <li>Høyoppløselig digitalt bilde uten vannmerke: <strong>{{ digital.high_resolution.price }} kr per bilde</strong></li>
+            <li>Fulloppløselig ferdigredigert JPEG uten vannmerke: <strong>{{ digital.full_resolution.price }} kr per bilde</strong></li>
           </ul>
-          <p><strong>Komplett bryllupsgalleri:</strong> prisen avtales separat ut fra hvor stor del av dagen som fotograferes og hvor mange ferdigredigerte bilder galleriet inneholder. Den faste komplette galleri-pakken på 6 500 kr gjelder ordinære fotograferinger og mindre private oppdrag, ikke større bryllupsgallerier.</p>
+          <p><strong>Komplett bryllupsgalleri:</strong> prisen avtales separat ut fra hvor stor del av dagen som fotograferes og hvor mange ferdigredigerte bilder galleriet inneholder. Den faste komplette galleri-pakken på {{ digital.complete.price | grouped }} kr gjelder {{ digital.complete.scope }}, ikke større bryllupsgallerier.</p>
           <p>Utvalgte vannmerkede delingsbilder legges i egen «Gratis bilder»-fane i FotoSky og kan lastes ned uten ekstra betaling.</p>
         </div>
       </div>
@@ -144,9 +144,9 @@
       <div class="container">
         <div class="section-head"><h2>Slik fungerer betaling og levering</h2></div>
         <div class="steps">
-          <div class="step"><strong>1. 30 % reserverer datoen</strong><span>Etter at forespørselen er godkjent betales 30 % av fotograferingsprisen. Datoen er først reservert når forskuddet er registrert.</span></div>
-          <div class="step"><strong>2. Bryllupet fotograferes</strong><span>Fotograferingen gjennomføres etter avtalt omfang. De resterende 70 % betales etter fotograferingen.</span></div>
-          <div class="step"><strong>3. 70 % via FotoSky</strong><span>Når det private galleriet er klargjort, betales de resterende 70 % via FotoSky for å åpne galleriet.</span></div>
+          <div class="step"><strong>1. {{ rules.deposit_percent }} % reserverer datoen</strong><span>Etter at forespørselen er godkjent betales {{ rules.deposit_percent }} % av fotograferingsprisen. Datoen er først reservert når forskuddet er registrert.</span></div>
+          <div class="step"><strong>2. Bryllupet fotograferes</strong><span>Fotograferingen gjennomføres etter avtalt omfang. De resterende {{ rules.balance_percent }} % betales etter fotograferingen.</span></div>
+          <div class="step"><strong>3. {{ rules.balance_percent }} % via FotoSky</strong><span>Når det private galleriet er klargjort, betales de resterende {{ rules.balance_percent }} % via FotoSky for å åpne galleriet.</span></div>
           <div class="step"><strong>4. Velg bildene</strong><span>Når galleriet er åpnet velger dere de inkluderte bildene og kan kjøpe eventuelle tillegg separat.</span></div>
         </div>
       </div>
@@ -156,9 +156,9 @@
       <div class="container">
         <div class="section-head"><h2>Ofte stilte spørsmål</h2></div>
         <div class="faq">
-          <div class="faq-item"><h3>Når er datoen vår faktisk reservert?</h3><p>Når bookingforespørselen er godkjent og forskuddet på 30 % er registrert betalt. En forespørsel alene holder ikke datoen av.</p></div>
-          <div class="faq-item"><h3>Hvor mange bilder følger med?</h3><p>Bryllupspakken inkluderer 8 ferdigredigerte digitale bilder i høy kvalitet. Flere bilder koster 350, 500 eller 700 kr per bilde avhengig av filtype. Pris for komplett bryllupsgalleri avtales etter omfang.</p></div>
-          <div class="faq-item"><h3>Kan dekningen tilpasses?</h3><p>Ja. Bryllup er forskjellige, så omfanget avtales ut fra hva dere faktisk ønsker dokumentert. Det er også grunnen til at prisen oppgis fra 10 000 kr.</p></div>
+          <div class="faq-item"><h3>Når er datoen vår faktisk reservert?</h3><p>Når bookingforespørselen er godkjent og forskuddet på {{ rules.deposit_percent }} % er registrert betalt. En forespørsel alene holder ikke datoen av.</p></div>
+          <div class="faq-item"><h3>Hvor mange bilder følger med?</h3><p>Bryllupspakken inkluderer {{ services.wedding.included_images }} ferdigredigerte digitale bilder i høy kvalitet. Flere bilder koster {{ digital.mobile.price }}, {{ digital.high_resolution.price }} eller {{ digital.full_resolution.price }} kr per bilde avhengig av filtype. Pris for komplett bryllupsgalleri avtales etter omfang.</p></div>
+          <div class="faq-item"><h3>Kan dekningen tilpasses?</h3><p>Ja. Bryllup er forskjellige, så omfanget avtales ut fra hva dere faktisk ønsker dokumentert. Det er også grunnen til at prisen oppgis {{ services.wedding | price_grouped_lower }} kr.</p></div>
           <div class="faq-item"><h3>Hvor fotograferer du?</h3><p>Jeg tar oppdrag i Ringsaker, Brumunddal, Hamar og ellers i Innlandet etter avtale. Oppgi sted i forespørselen, så avklarer vi det før booking.</p></div>
         </div>
       </div>

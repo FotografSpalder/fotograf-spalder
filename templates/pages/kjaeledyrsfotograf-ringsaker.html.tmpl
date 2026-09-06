@@ -541,21 +541,21 @@
       "itemListElement": [
         {
           "@type": "Offer",
-          "name": "Kjæledyr Mini",
-          "price": "1800",
-          "priceCurrency": "NOK"
+          "name": {{ services.pet-mini.name | json_string }},
+          "price": {{ services.pet-mini.price | json_string }},
+          "priceCurrency": {{ currency | json_string }}
         },
         {
           "@type": "Offer",
-          "name": "Kjæledyr Standard",
-          "price": "3000",
-          "priceCurrency": "NOK"
+          "name": {{ services.pet-standard.name | json_string }},
+          "price": {{ services.pet-standard.price | json_string }},
+          "priceCurrency": {{ currency | json_string }}
         },
         {
           "@type": "Offer",
-          "name": "Kjæledyr Premium",
-          "price": "4000",
-          "priceCurrency": "NOK"
+          "name": {{ services.pet-premium.name | json_string }},
+          "price": {{ services.pet-premium.price | json_string }},
+          "priceCurrency": {{ currency | json_string }}
         }
       ]
     },
@@ -753,37 +753,37 @@
 
         <div class="price-grid">
           <article class="price-card">
-            <h3>Kjæledyr Mini</h3>
-            <div class="price">1800 kr</div>
+            <h3>{{ services.pet-mini.name }}</h3>
+            <div class="price">{{ services.pet-mini | price }} kr</div>
             <ul>
-              <li>Kort fotografering av ett kjæledyr</li>
-              <li>Privat nettgalleri</li>
-              <li>1 digitalt bilde i høy kvalitet uten vannmerke inkludert</li>
-              <li>Flere bilder kan kjøpes separat</li>
+              <li>{{ services.pet-mini.landing_content.0 }}</li>
+              <li>{{ services.pet-mini.landing_content.1 }}</li>
+              <li>{{ services.pet-mini.landing_content.2 }}</li>
+              <li>{{ services.pet-mini.landing_content.3 }}</li>
             </ul>
           </article>
 
           <article class="price-card featured">
-            <h3>Kjæledyr Standard</h3>
-            <div class="price">3000 kr</div>
+            <h3>{{ services.pet-standard.name }}</h3>
+            <div class="price">{{ services.pet-standard | price }} kr</div>
             <ul>
-              <li>Fotografering av kjæledyr</li>
-              <li>God tid til variasjon</li>
-              <li>Privat nettgalleri</li>
-              <li>3 digitale bilder i høy kvalitet uten vannmerke inkludert</li>
-              <li>Flere bilder kan kjøpes separat</li>
+              <li>{{ services.pet-standard.landing_content.0 }}</li>
+              <li>{{ services.pet-standard.landing_content.1 }}</li>
+              <li>{{ services.pet-standard.landing_content.2 }}</li>
+              <li>{{ services.pet-standard.landing_content.3 }}</li>
+              <li>{{ services.pet-standard.landing_content.4 }}</li>
             </ul>
           </article>
 
           <article class="price-card">
-            <h3>Kjæledyr Premium</h3>
-            <div class="price">4000 kr</div>
+            <h3>{{ services.pet-premium.name }}</h3>
+            <div class="price">{{ services.pet-premium | price }} kr</div>
             <ul>
-              <li>Lengre fotografering</li>
-              <li>Passer for flere motiver og uttrykk</li>
-              <li>Privat nettgalleri</li>
-              <li>5 digitale bilder i høy kvalitet uten vannmerke inkludert</li>
-              <li>Flere bilder kan kjøpes separat</li>
+              <li>{{ services.pet-premium.landing_content.0 }}</li>
+              <li>{{ services.pet-premium.landing_content.1 }}</li>
+              <li>{{ services.pet-premium.landing_content.2 }}</li>
+              <li>{{ services.pet-premium.landing_content.3 }}</li>
+              <li>{{ services.pet-premium.landing_content.4 }}</li>
             </ul>
           </article>
         </div>
@@ -792,10 +792,10 @@
           <h3>Flere digitale bilder</h3>
           <p>Bildene som følger med valgt kjæledyrspakke velges uten ekstra kostnad. Flere bilder uten vannmerke kjøpes i FotoSky:</p>
           <ul class="check-list">
-            <li>Mobil &amp; sosiale medier: <strong>350 kr per bilde</strong></li>
-            <li>Høyoppløselig digitalt bilde: <strong>500 kr per bilde</strong></li>
-            <li>Fulloppløselig ferdigredigert JPEG: <strong>700 kr per bilde</strong></li>
-            <li>Komplett digital pakke – hele det ferdigredigerte galleriet: <strong>6 500 kr</strong></li>
+            <li>Mobil &amp; sosiale medier: <strong>{{ digital.mobile.price }} kr per bilde</strong></li>
+            <li>Høyoppløselig digitalt bilde: <strong>{{ digital.high_resolution.price }} kr per bilde</strong></li>
+            <li>Fulloppløselig ferdigredigert JPEG: <strong>{{ digital.full_resolution.price }} kr per bilde</strong></li>
+            <li>Komplett digital pakke – hele det ferdigredigerte galleriet: <strong>{{ digital.complete.price | grouped }} kr</strong></li>
           </ul>
           <p>Utvalgte delingsbilder med vannmerke ligger i egen «Gratis bilder»-fane og kan lastes ned uten ekstra betaling.</p>
         </div>
@@ -870,7 +870,7 @@
           <div class="faq-item">
             <h3>Får jeg alle bildene?</h3>
             <p>
-              Du får et privat nettgalleri der du kan velge bilder. Noen bilder er inkludert i pakken. Flere bilder uten vannmerke kan kjøpes for 350, 500 eller 700 kr per bilde, og komplett digital pakke koster 6 500 kr.
+              Du får et privat nettgalleri der du kan velge bilder. Noen bilder er inkludert i pakken. Flere bilder uten vannmerke kan kjøpes for {{ digital.mobile.price }}, {{ digital.high_resolution.price }} eller {{ digital.full_resolution.price }} kr per bilde, og komplett digital pakke koster {{ digital.complete.price | grouped }} kr.
             </p>
           </div>
         </div>
