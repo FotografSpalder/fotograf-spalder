@@ -1,0 +1,1013 @@
+{
+  "source_commit": "010de7af5271a3eda3399ece97d49317104a479b",
+  "review_note": "Phase 1 only. Exact existing debt; remove resolved entries. Protected snapshots are review fixtures, not the future commercial source of truth. Do not regenerate automatically in CI.",
+  "known_findings": [
+    {
+      "code": "dimensions",
+      "page": "Konfirmasjon.html",
+      "detail": "konfirmant.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "Konfirmasjon.html",
+      "detail": "bryllup.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "Konfirmasjon.html",
+      "detail": "hund2.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "bryllupsfotograf-ringsaker.html",
+      "detail": "bryllup.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "bryllupsfotograf-ringsaker.html",
+      "detail": "bryllup2.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "bryllupsfotograf-ringsaker.html",
+      "detail": "bryllup3.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "familie-portrettfotograf-ringsaker.html",
+      "detail": "familie1.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "familie-portrettfotograf-ringsaker.html",
+      "detail": "familie2.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "familie-portrettfotograf-ringsaker.html",
+      "detail": "konfirmant3.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "familie-portrettfotograf-ringsaker.html",
+      "detail": "konfirmant.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "familie-portrettfotograf-ringsaker.html",
+      "detail": "konfirmasjon2.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "index.html",
+      "detail": "hund2.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "index.html",
+      "detail": "konfirmant.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "index.html",
+      "detail": "familie1.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "index.html",
+      "detail": "bryllup.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "index.html",
+      "detail": "logo.png"
+    },
+    {
+      "code": "dimensions",
+      "page": "kjaeledyrsfotograf-ringsaker.html",
+      "detail": "hund2.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "kjaeledyrsfotograf-ringsaker.html",
+      "detail": "hund1.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "kjaeledyrsfotograf-ringsaker.html",
+      "detail": "IMG_8950.1.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "kjaeledyrsfotograf-ringsaker.html",
+      "detail": "hund5.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "kjaeledyrsfotograf-ringsaker.html",
+      "detail": "katt1.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "om.html",
+      "detail": "rb.png"
+    },
+    {
+      "code": "dimensions",
+      "page": "om.html",
+      "detail": "ha.png"
+    },
+    {
+      "code": "dimensions",
+      "page": "om.html",
+      "detail": "ha.png"
+    },
+    {
+      "code": "dimensions",
+      "page": "om.html",
+      "detail": "rb.png"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "hund1.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "hund2.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "hund3.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "hund4.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "hund5.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "hund6.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "IMG_8929.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "IMG_8950.1.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "konfirmant.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "konfirmasjon2.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "konfirmant3.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "familie1.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "familie2.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "bryllup.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "bryllup2.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "bryllup3.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "cospaly2.jpg"
+    },
+    {
+      "code": "dimensions",
+      "page": "portfolio.html",
+      "detail": "cosplay1.jpg"
+    },
+    {
+      "code": "canonical",
+      "page": "takk.html",
+      "detail": "Expected https://www.fotograf-spalder.com/takk.html"
+    }
+  ],
+  "case_collisions": [
+    [
+      "Meg.jpg",
+      "meg.jpg"
+    ]
+  ],
+  "protected": {
+    "Konfirmasjon.html": {
+      "title": [
+        "Konfirmasjonsfotograf i Ringsaker | Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "description": "Konfirmasjonsfotograf i Ringsaker, Brumunddal og Mjøsområdet. Portretter, familiebilder og stemningsbilder med tydelige priser og privat galleri.",
+        "author": "Henrik Spalder",
+        "robots": "index, follow",
+        "og:title": "Konfirmasjonsfotograf i Ringsaker | Fotograf Spalder",
+        "og:description": "Naturlige og stemningsfulle konfirmasjonsbilder i Ringsaker, Brumunddal, Hamar og Mjøsområdet.",
+        "og:image": "https://www.fotograf-spalder.com/konfirmant.jpg",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/Konfirmasjon.html",
+        "theme-color": "#0f172a"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/Konfirmasjon.html"
+      ],
+      "json_ld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Konfirmasjonsfotograf i Ringsaker",
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "Fotograf Spalder",
+            "url": "https://www.fotograf-spalder.com",
+            "telephone": "+4799535760",
+            "email": "fotograf.spalder@outlook.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ringsaker",
+              "addressRegion": "Innlandet",
+              "addressCountry": "NO"
+            }
+          },
+          "areaServed": [
+            "Ringsaker",
+            "Brumunddal",
+            "Moelv",
+            "Hamar",
+            "Innlandet"
+          ],
+          "description": "Konfirmasjonsfotografering i Ringsaker, Brumunddal, Hamar og Mjøsområdet med portretter, familiebilder og stemningsbilder."
+        }
+      ],
+      "commercial": [
+        "Konfirmasjonsfotografering starter fra 3 000 kr og inkluderer 2 ferdigredigerte digitale bilder i høy kvalitet uten vannmerke.",
+        "Bilder utover de 2 inkluderte",
+        "Mobil & sosiale medier uten vannmerke: 350 kr per bilde",
+        "Høyoppløselig digitalt bilde uten vannmerke: 500 kr per bilde",
+        "Fulloppløselig ferdigredigert JPEG uten vannmerke: 700 kr per bilde",
+        "Komplett digital pakke ved ordinær konfirmant-/portrettfotografering: 6 500 kr",
+        "Normal leveringstid er 1–3 uker via privat nettgalleri.",
+        "Hva skjer ved dårlig vær?"
+      ],
+      "booking_options": [],
+      "forms": []
+    },
+    "booking.html": {
+      "title": [
+        "Book fotograf i Ringsaker & Brumunddal | Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "robots": "index, follow",
+        "description": "Send en enkel bookingforespørsel til Fotograf Spalder for kjæledyr, familie, portrett, bryllup, konfirmasjon og andre fotooppdrag i Innlandet.",
+        "og:title": "Book fotograf i Ringsaker & Brumunddal | Fotograf Spalder",
+        "og:description": "Enkel og trygg booking for kjæledyr, familie, portrett og bryllup hos Fotograf Spalder.",
+        "og:image": "https://www.fotograf-spalder.com/hund2.jpg",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/booking.html"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/booking.html"
+      ],
+      "json_ld": [],
+      "commercial": [
+        "Viktig om pris og bilder: Prisen du velger under gjelder fotograferingsoppdraget og inkluderer kun det antallet digitale bilder som står oppført på pris-siden. Ekstra bilder uten vannmerke koster 350 kr for mobil/sosiale medier, 500 kr i høy oppløsning eller 700 kr som fulloppløselig ferdigredigert JPEG. Komplett digital pakke koster 6 500 kr ved ordinære fotograferinger og mindre private oppdrag. Ved bryllup og større arrangementer avtales komplett galleri separat. Utvalgte vannmerkede delingsbilder kan lastes ned gratis fra egen «Gratis bilder»-fane i FotoSky.",
+        "Dette er en forespørsel – ikke en ferdig reservasjon. Når forespørselen er godkjent, betaler du 30 % av fotograferingsprisen i forskudd. Ønsket dato er først reservert når forskuddet er registrert betalt.",
+        "Slik betales resten: Etter fotograferingen klargjøres det private galleriet hos FotoSky. De resterende 70 % av fotograferingsprisen betales via FotoSky før galleriet kan åpnes. Når restbeløpet er betalt, får du tilgang til galleriet og kan velge inkluderte bilder og eventuelle tillegg.",
+        "Grunnpakke – 3200 kr – 3 bilder inkludert",
+        "Favorittpakke – 4500 kr – 5 bilder inkludert",
+        "Totalpakke – 8000 kr – 10 bilder inkludert",
+        "Kjæledyr Mini – 1800 kr – 1 bilde inkludert",
+        "Kjæledyr Standard – 3000 kr – 3 bilder inkludert",
+        "Kjæledyr Premium – 4000 kr – 5 bilder inkludert",
+        "Portrett – 1500 kr – 1 bilde inkludert",
+        "Familiefoto – 2500 kr – 2 bilder inkludert",
+        "Konfirmasjon – fra 3000 kr – 2 bilder inkludert",
+        "Dåp – fra 3000 kr – 2 bilder inkludert",
+        "Bryllup – fra 10 000 kr – 8 bilder inkludert",
+        "Slektsfotografering – 7500 kr – 5 bilder inkludert",
+        "Kultur og arrangement – halv dag, fra 4000–7000 kr",
+        "Kultur og arrangement – heldag, fra 7000–15 000 kr",
+        "Cosplay Grunnpakke – 1200 kr – 1 bilde inkludert",
+        "Cosplay Magipakke – 1800 kr – 2 bilder inkludert",
+        "Cosplay Epos – 2800 kr – 3 bilder inkludert",
+        "Gi beskjed minst 24 timer før ved avbestilling eller endring.",
+        "Ved mer enn 15 minutters forsinkelse kan fotograferingen forkortes eller flyttes.",
+        "Dårlig vær gir ny time uten ekstra kostnad.",
+        "Booking bekreftes først etter skriftlig bekreftelse og betaling av 30 % forskudd.",
+        "Forskuddet reserverer ønsket dato, trekkes fra fotograferingsprisen og refunderes ikke ved avbestilling.",
+        "De resterende 70 % betales via FotoSky etter fotograferingen og før privatgalleriet åpnes.",
+        "Når restbeløpet er betalt, åpnes galleriet. Eventuelle tilleggskjøp kommer i tillegg.",
+        "Leveringstid er normalt 1–3 uker via privat galleri.",
+        "Kun antallet digitale bilder som står oppført for pakken er inkludert. Flere bilder og fulloppløselige filer kjøpes separat.",
+        "Jeg har lest og godtar vilkårene, og forstår at 30 % reserverer datoen og at resterende 70 % betales via FotoSky før galleriet åpnes. *"
+      ],
+      "booking_options": [
+        "Velg fotografering eller pakke",
+        "Grunnpakke – 3200 kr – 3 bilder inkludert",
+        "Favorittpakke – 4500 kr – 5 bilder inkludert",
+        "Totalpakke – 8000 kr – 10 bilder inkludert",
+        "Kjæledyr Mini – 1800 kr – 1 bilde inkludert",
+        "Kjæledyr Standard – 3000 kr – 3 bilder inkludert",
+        "Kjæledyr Premium – 4000 kr – 5 bilder inkludert",
+        "Portrett – 1500 kr – 1 bilde inkludert",
+        "Familiefoto – 2500 kr – 2 bilder inkludert",
+        "Konfirmasjon – fra 3000 kr – 2 bilder inkludert",
+        "Dåp – fra 3000 kr – 2 bilder inkludert",
+        "Bryllup – fra 10 000 kr – 8 bilder inkludert",
+        "Slektsfotografering – 7500 kr – 5 bilder inkludert",
+        "Kultur og arrangement – halv dag, fra 4000–7000 kr",
+        "Kultur og arrangement – heldag, fra 7000–15 000 kr",
+        "Cosplay Grunnpakke – 1200 kr – 1 bilde inkludert",
+        "Cosplay Magipakke – 1800 kr – 2 bilder inkludert",
+        "Cosplay Epos – 2800 kr – 3 bilder inkludert"
+      ],
+      "forms": [
+        {
+          "tag": "form",
+          "id": "bookingForm"
+        },
+        {
+          "tag": "input",
+          "type": "hidden",
+          "name": "_subject",
+          "value": "Ny bookingforespørsel – Fotograf Spalder"
+        },
+        {
+          "tag": "input",
+          "id": "navn",
+          "type": "text",
+          "name": "navn",
+          "placeholder": "Ditt navn",
+          "autocomplete": "name",
+          "required": null
+        },
+        {
+          "tag": "input",
+          "id": "email",
+          "type": "email",
+          "name": "email",
+          "placeholder": "Din e-postadresse",
+          "autocomplete": "email",
+          "required": null
+        },
+        {
+          "tag": "input",
+          "id": "telefon",
+          "type": "tel",
+          "name": "telefon",
+          "placeholder": "F.eks. 98765432",
+          "autocomplete": "tel",
+          "inputmode": "tel"
+        },
+        {
+          "tag": "select",
+          "id": "pakke",
+          "name": "pakke",
+          "required": null
+        },
+        {
+          "tag": "input",
+          "id": "dato",
+          "type": "date",
+          "name": "dato"
+        },
+        {
+          "tag": "input",
+          "id": "sted",
+          "type": "text",
+          "name": "sted",
+          "placeholder": "F.eks. Brumunddal, Moelv, Hamar eller vet ikke enda"
+        },
+        {
+          "tag": "textarea",
+          "id": "melding",
+          "name": "melding",
+          "rows": "5",
+          "required": null,
+          "placeholder": "Hvem eller hva skal fotograferes, og er det noe jeg bør vite på forhånd?"
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "_gotcha",
+          "style": "display:none",
+          "tabindex": "-1",
+          "autocomplete": "off",
+          "aria-hidden": "true"
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "name": "vilkar_godkjent",
+          "value": "Ja",
+          "required": null
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "name": "markedsforing_samtykke",
+          "value": "Ja"
+        },
+        {
+          "tag": "button",
+          "id": "submitButton",
+          "type": "submit"
+        }
+      ]
+    },
+    "bryllupsfotograf-ringsaker.html": {
+      "title": [
+        "Bryllupsfotograf i Ringsaker og Innlandet | Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "description": "Bryllupsfotograf i Ringsaker, Brumunddal, Hamar og Innlandet. Se bryllupsbilder, priser, betalingsløp og hvordan dekningen kan tilpasses.",
+        "robots": "index, follow",
+        "author": "Henrik Spalder",
+        "theme-color": "#0f172a",
+        "og:title": "Bryllupsfotograf i Ringsaker | Fotograf Spalder",
+        "og:description": "Dokumentariske og stemningsfulle bryllupsbilder i Ringsaker og Innlandet. Se stil, pris og hvordan fotograferingen foregår.",
+        "og:image": "https://www.fotograf-spalder.com/bryllup.jpg",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/bryllupsfotograf-ringsaker.html"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/bryllupsfotograf-ringsaker.html"
+      ],
+      "json_ld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Bryllupsfotografering i Ringsaker og Innlandet",
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "Fotograf Spalder",
+            "url": "https://www.fotograf-spalder.com/"
+          },
+          "areaServed": [
+            "Ringsaker",
+            "Brumunddal",
+            "Hamar",
+            "Innlandet"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "10000",
+            "priceCurrency": "NOK",
+            "description": "Bryllupsfotografering fra 10 000 kr. Endelig pris avtales etter omfang."
+          },
+          "url": "https://www.fotograf-spalder.com/bryllupsfotograf-ringsaker.html"
+        }
+      ],
+      "commercial": [
+        "Pris og hva som er inkludert",
+        "Fra 10 000 kr",
+        "8 digitale bilder inkludert",
+        "8 digitale bilder i høy kvalitet uten vannmerke inkludert",
+        "Mobil & sosiale medier uten vannmerke: 350 kr per bilde",
+        "Høyoppløselig digitalt bilde uten vannmerke: 500 kr per bilde",
+        "Fulloppløselig ferdigredigert JPEG uten vannmerke: 700 kr per bilde",
+        "Komplett bryllupsgalleri: prisen avtales separat ut fra hvor stor del av dagen som fotograferes og hvor mange ferdigredigerte bilder galleriet inneholder. Den faste komplette galleri-pakken på 6 500 kr gjelder ordinære fotograferinger og mindre private oppdrag, ikke større bryllupsgallerier.",
+        "1. 30 % reserverer datoenEtter at forespørselen er godkjent betales 30 % av fotograferingsprisen. Datoen er først reservert når forskuddet er registrert.",
+        "Etter at forespørselen er godkjent betales 30 % av fotograferingsprisen. Datoen er først reservert når forskuddet er registrert.",
+        "2. Bryllupet fotograferesFotograferingen gjennomføres etter avtalt omfang. De resterende 70 % betales etter fotograferingen.",
+        "Fotograferingen gjennomføres etter avtalt omfang. De resterende 70 % betales etter fotograferingen.",
+        "3. 70 % via FotoSkyNår det private galleriet er klargjort, betales de resterende 70 % via FotoSky for å åpne galleriet.",
+        "Når det private galleriet er klargjort, betales de resterende 70 % via FotoSky for å åpne galleriet.",
+        "4. Velg bildeneNår galleriet er åpnet velger dere de inkluderte bildene og kan kjøpe eventuelle tillegg separat.",
+        "Når galleriet er åpnet velger dere de inkluderte bildene og kan kjøpe eventuelle tillegg separat.",
+        "Når bookingforespørselen er godkjent og forskuddet på 30 % er registrert betalt. En forespørsel alene holder ikke datoen av.",
+        "Bryllupspakken inkluderer 8 ferdigredigerte digitale bilder i høy kvalitet. Flere bilder koster 350, 500 eller 700 kr per bilde avhengig av filtype. Pris for komplett bryllupsgalleri avtales etter omfang.",
+        "Ja. Bryllup er forskjellige, så omfanget avtales ut fra hva dere faktisk ønsker dokumentert. Det er også grunnen til at prisen oppgis fra 10 000 kr."
+      ],
+      "booking_options": [],
+      "forms": []
+    },
+    "familie-portrettfotograf-ringsaker.html": {
+      "title": [
+        "Familie- og portrettfotograf i Ringsaker | Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "description": "Familie- og portrettfotograf i Ringsaker, Brumunddal og Innlandet. Se pakker, bildepriser, portefølje og send en bookingforespørsel.",
+        "robots": "index, follow",
+        "author": "Henrik Spalder",
+        "theme-color": "#0f172a",
+        "og:title": "Familie- og portrettfotograf i Ringsaker | Fotograf Spalder",
+        "og:description": "Naturlige familie- og portrettbilder i Ringsaker og Innlandet. Se stil, priser og hvordan fotograferingen foregår.",
+        "og:image": "https://www.fotograf-spalder.com/familie1.jpg",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/familie-portrettfotograf-ringsaker.html"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/familie-portrettfotograf-ringsaker.html"
+      ],
+      "json_ld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Familie- og portrettfotografering i Ringsaker",
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "Fotograf Spalder",
+            "url": "https://www.fotograf-spalder.com/"
+          },
+          "areaServed": [
+            "Ringsaker",
+            "Brumunddal",
+            "Hamar",
+            "Innlandet"
+          ],
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "1500",
+            "highPrice": "8000",
+            "priceCurrency": "NOK"
+          },
+          "url": "https://www.fotograf-spalder.com/familie-portrettfotograf-ringsaker.html"
+        }
+      ],
+      "commercial": [
+        "Portretter, parbilder og familiefoto ute eller på avtalt lokasjon. Jeg gir nok veiledning til at dere vet hva dere skal gjøre, men lar det være rom for uttrykk, samspill og øyeblikk som ikke er planlagt.",
+        "Prisen er først og fremst for selve fotograferingsoppdraget – planlegging, fotografering, utvelgelse, redigering og privat galleri. Antallet inkluderte digitale bilder står på hver pakke.",
+        "Portrett1 500 kr1 digitalt bilde inkludertÉn personPlanlegging, fotografering og redigeringPrivat nettgalleri Familiefoto2 500 kr2 digitale bilder inkludertFamilie ute eller på avtalt lokasjonPlanlegging, fotografering og redigeringPrivat nettgalleri Grunnpakke3 200 kr3 digitale bilder inkludertPerson, par eller liten familiePlanlegging, fotografering og redigeringPrivat nettgalleri Favorittpakke4 500 kr5 digitale bilder inkludertLengre fotograferingPasser godt til familie, portrett eller kombinasjonPrivat nettgalleri Totalpakke8 000 kr10 digitale bilder inkludertUtvidet fotograferingPasser større familier eller flere bildetyperPrivat nettgalleri",
+        "1 500 kr",
+        "1 digitalt bilde inkludert",
+        "2 500 kr",
+        "2 digitale bilder inkludert",
+        "3 200 kr",
+        "3 digitale bilder inkludert",
+        "4 500 kr",
+        "5 digitale bilder inkludert",
+        "8 000 kr",
+        "10 digitale bilder inkludert",
+        "Mobil & sosiale medier: 350 kr per bilde",
+        "Høyoppløselig digitalt bilde: 500 kr per bilde",
+        "Fulloppløselig ferdigredigert JPEG: 700 kr per bilde",
+        "Komplett digital pakke – hele det ferdigredigerte galleriet: 6 500 kr",
+        "1. 30 % reserverer datoenEtter at forespørselen er godkjent betales 30 % av fotograferingsprisen. Datoen er først reservert når forskuddet er registrert.",
+        "Etter at forespørselen er godkjent betales 30 % av fotograferingsprisen. Datoen er først reservert når forskuddet er registrert.",
+        "2. Fotograferingen gjennomføresVi fotograferer som avtalt. De resterende 70 % betales etter fotograferingen.",
+        "Vi fotograferer som avtalt. De resterende 70 % betales etter fotograferingen.",
+        "3. 70 % via FotoSkyNår det private galleriet er klart, betales restbeløpet på 70 % via FotoSky for å åpne galleriet.",
+        "Når det private galleriet er klart, betales restbeløpet på 70 % via FotoSky for å åpne galleriet.",
+        "Når bookingforespørselen er godkjent og forskuddet på 30 % er registrert betalt. Resten betales via FotoSky etter fotograferingen før privatgalleriet åpnes."
+      ],
+      "booking_options": [],
+      "forms": []
+    },
+    "index.html": {
+      "title": [
+        "Fotograf i Ringsaker & Brumunddal | Kjæledyr, familie og portrett – Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "description": "Profesjonell fotograf i Ringsaker og Brumunddal. Spesialisert på kjæledyr, familie og portrett. Se bilder, priser og book fotografering hos Fotograf Spalder.",
+        "author": "Henrik Spalder",
+        "robots": "index, follow",
+        "og:title": "Fotograf i Ringsaker & Brumunddal | Fotograf Spalder",
+        "og:description": "Kjæledyr, familie og portrett i Ringsaker og Brumunddal. Se bilder og book fotografering hos Fotograf Spalder.",
+        "og:image": "https://www.fotograf-spalder.com/images/deling/portfolio-fotograf-ringsaker.jpg",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/",
+        "theme-color": "#0f172a"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/"
+      ],
+      "json_ld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "Fotograf Spalder",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "1"
+          },
+          "image": "https://www.fotograf-spalder.com/header.jpg",
+          "url": "https://www.fotograf-spalder.com",
+          "telephone": "+4799535760",
+          "email": "fotograf.spalder@outlook.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ringsaker",
+            "addressRegion": "Innlandet",
+            "addressCountry": "NO"
+          },
+          "areaServed": {
+            "@type": "Place",
+            "name": "Innlandet, Norge"
+          },
+          "description": "Fotograf i Ringsaker som tilbyr kjæledyrsfotografering, portrettfoto, familiefoto og bryllup. Spesialisert på naturlige og ekte øyeblikk.",
+          "priceRange": "$$",
+          "sameAs": [
+            "https://www.facebook.com/FotoSpalder",
+            "https://www.instagram.com/fotografspalder"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Fototjenester",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Kjæledyrsfotografering",
+                "price": "1800-4000",
+                "priceCurrency": "NOK"
+              },
+              {
+                "@type": "Offer",
+                "name": "Portrett og familiefoto",
+                "price": "1500-2500",
+                "priceCurrency": "NOK"
+              },
+              {
+                "@type": "Offer",
+                "name": "Bryllupsfotografering",
+                "price": "10000+",
+                "priceCurrency": "NOK"
+              }
+            ]
+          },
+          "knowsAbout": [
+            "Kjæledyrsfotografering",
+            "Hundebilder",
+            "Portrettfoto",
+            "Familiefoto",
+            "Bryllupsfoto",
+            "Naturlig fotografering"
+          ]
+        }
+      ],
+      "commercial": [
+        "Portefølje Se flere bilder og få en følelse av stilen og uttrykket jeg jobber med. Se bilder Priser Få full oversikt over pakker, priser og hva du får inkludert. Se priser Book fotografering Send en forespørsel direkte – raskt, enkelt og uforpliktende. Book nå",
+        "Få full oversikt over pakker, priser og hva du får inkludert."
+      ],
+      "booking_options": [],
+      "forms": []
+    },
+    "kjaeledyrsfotograf-ringsaker.html": {
+      "title": [
+        "Kjæledyrsfotograf i Ringsaker | Hund, katt og dyr – Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "description": "Kjæledyrsfotograf i Ringsaker og Brumunddal for hund, katt og andre dyr. Se priser, eksempler og hvordan fotograferingen foregår.",
+        "author": "Henrik Spalder",
+        "robots": "index, follow",
+        "og:title": "Kjæledyrsfotograf i Ringsaker | Fotograf Spalder",
+        "og:description": "Naturlige og personlige bilder av hunder, katter og andre kjæledyr i Ringsaker, Brumunddal og Innlandet.",
+        "og:image": "https://www.fotograf-spalder.com/images/deling/kjaeledyrsfotograf-ringsaker.jpg",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/kjaeledyrsfotograf-ringsaker.html",
+        "theme-color": "#0f172a"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/kjaeledyrsfotograf-ringsaker.html"
+      ],
+      "json_ld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "Fotograf Spalder",
+          "image": "https://www.fotograf-spalder.com/images/deling/kjaeledyrsfotograf-ringsaker.jpg",
+          "url": "https://www.fotograf-spalder.com/kjaeledyrsfotograf-ringsaker.html",
+          "telephone": "+4799535760",
+          "email": "fotograf.spalder@outlook.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ringsaker",
+            "addressRegion": "Innlandet",
+            "addressCountry": "NO"
+          },
+          "areaServed": [
+            "Ringsaker",
+            "Brumunddal",
+            "Moelv",
+            "Hamar",
+            "Gjøvik",
+            "Lillehammer",
+            "Innlandet"
+          ],
+          "description": "Kjæledyrsfotograf i Ringsaker som tilbyr fotografering av hunder, katter og andre kjæledyr. Naturlige bilder ute, hjemme eller på avtalt lokasjon.",
+          "priceRange": "$$",
+          "sameAs": [
+            "https://www.facebook.com/FotoSpalder",
+            "https://www.instagram.com/fotografspalder"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Kjæledyrsfotografering",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Kjæledyr Mini",
+                "price": "1800",
+                "priceCurrency": "NOK"
+              },
+              {
+                "@type": "Offer",
+                "name": "Kjæledyr Standard",
+                "price": "3000",
+                "priceCurrency": "NOK"
+              },
+              {
+                "@type": "Offer",
+                "name": "Kjæledyr Premium",
+                "price": "4000",
+                "priceCurrency": "NOK"
+              }
+            ]
+          },
+          "knowsAbout": [
+            "Kjæledyrsfotografering",
+            "Hundefotografering",
+            "Hundebilder",
+            "Kattefotografering",
+            "Dyrefotografering",
+            "Portrett av dyr"
+          ]
+        }
+      ],
+      "commercial": [
+        "1. Før fotograferingen Vi avtaler sted, tidspunkt og hva slags bilder du ønsker. Jeg spør gjerne litt om dyret på forhånd, slik at jeg vet hva vi bør ta hensyn til. 2. Under fotograferingen Vi bruker god tid og lar dyret få pauser ved behov. Noen dyr trenger ro, andre trenger aktivitet. Begge deler kan gi gode bilder. 3. Etter fotograferingen Bildene redigeres og leveres i privat nettgalleri. Der kan du velge inkluderte bilder og eventuelt kjøpe flere.",
+        "Bildene redigeres og leveres i privat nettgalleri. Der kan du velge inkluderte bilder og eventuelt kjøpe flere.",
+        "Kjæledyr Mini 1800 kr Kort fotografering av ett kjæledyr Privat nettgalleri 1 digitalt bilde i høy kvalitet uten vannmerke inkludert Flere bilder kan kjøpes separat Kjæledyr Standard 3000 kr Fotografering av kjæledyr God tid til variasjon Privat nettgalleri 3 digitale bilder i høy kvalitet uten vannmerke inkludert Flere bilder kan kjøpes separat Kjæledyr Premium 4000 kr Lengre fotografering Passer for flere motiver og uttrykk Privat nettgalleri 5 digitale bilder i høy kvalitet uten vannmerke inkludert Flere bilder kan kjøpes separat",
+        "1800 kr",
+        "1 digitalt bilde i høy kvalitet uten vannmerke inkludert",
+        "3000 kr",
+        "3 digitale bilder i høy kvalitet uten vannmerke inkludert",
+        "4000 kr",
+        "5 digitale bilder i høy kvalitet uten vannmerke inkludert",
+        "Mobil & sosiale medier: 350 kr per bilde",
+        "Høyoppløselig digitalt bilde: 500 kr per bilde",
+        "Fulloppløselig ferdigredigert JPEG: 700 kr per bilde",
+        "Komplett digital pakke – hele det ferdigredigerte galleriet: 6 500 kr",
+        "Ved dårlig vær kan fotograferingen flyttes. Det avtales i dialog før oppdraget.",
+        "Du får et privat nettgalleri der du kan velge bilder. Noen bilder er inkludert i pakken. Flere bilder uten vannmerke kan kjøpes for 350, 500 eller 700 kr per bilde, og komplett digital pakke koster 6 500 kr."
+      ],
+      "booking_options": [],
+      "forms": []
+    },
+    "om.html": {
+      "title": [
+        "Om Fotograf Spalder | Fotograf i Ringsaker og Brumunddal"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "robots": "index, follow",
+        "description": "Bli kjent med Fotograf Spalder i Ringsaker, arbeidsmåten, bakgrunnen og fotografier som er publisert i lokale medier.",
+        "og:title": "Om Fotograf Spalder | Fotograf i Ringsaker og Brumunddal",
+        "og:description": "Bli kjent med Henrik Spalder, historien bak Fotograf Spalder og se omtale og bilder publisert i lokale medier.",
+        "og:image": "https://www.fotograf-spalder.com/Fotografen.jpg",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/om.html"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/om.html"
+      ],
+      "json_ld": [],
+      "commercial": [],
+      "booking_options": [],
+      "forms": []
+    },
+    "personvern.html": {
+      "title": [
+        "Personvern og informasjonskapsler | Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "description": "Les hvordan Fotograf Spalder behandler personopplysninger, bookingdata, informasjonskapsler og samtykke til analyse på nettstedet.",
+        "robots": "index, follow",
+        "og:title": "Personvern og informasjonskapsler | Fotograf Spalder",
+        "og:description": "Slik behandler Fotograf Spalder personopplysninger og analysevalg på nettsiden.",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/personvern.html",
+        "theme-color": "#0f172a"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/personvern.html"
+      ],
+      "json_ld": [],
+      "commercial": [],
+      "booking_options": [],
+      "forms": []
+    },
+    "portfolio.html": {
+      "title": [
+        "Portefølje | Kjæledyr, familie og portrett – Fotograf i Ringsaker | Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "robots": "index, follow",
+        "description": "Se porteføljen til Fotograf Spalder med kjæledyr, familie, portrett, bryllup, konfirmasjon og naturbilder fra Ringsaker og Innlandet.",
+        "og:title": "Portefølje | Fotograf i Ringsaker – Fotograf Spalder",
+        "og:description": "Se bilder fra kjæledyr, familie, portrett, bryllup, cosplay, natur og dyreliv i Ringsaker og Innlandet.",
+        "og:image": "https://www.fotograf-spalder.com/images/deling/portfolio-fotograf-ringsaker.jpg",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/portfolio.html"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/portfolio.html"
+      ],
+      "json_ld": [],
+      "commercial": [],
+      "booking_options": [],
+      "forms": []
+    },
+    "priser.html": {
+      "title": [
+        "Priser fotograf Ringsaker | Kjæledyr, familie og portrett – Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "description": "Se priser for fotografering og digitale bilder hos Fotograf Spalder i Ringsaker og Brumunddal, med tydelig informasjon om hva som er inkludert.",
+        "robots": "index, follow",
+        "og:title": "Priser | Fotograf i Ringsaker – Fotograf Spalder",
+        "og:description": "Se priser for fotografering og få tydelig informasjon om inkluderte bilder, kundegalleri og tilleggskjøp.",
+        "og:image": "https://www.fotograf-spalder.com/hund2.jpg",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/priser.html"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/priser.html"
+      ],
+      "json_ld": [],
+      "commercial": [
+        "Bildene som er inkludert i pakken velges uten ekstra kostnad. Flere bilder uten vannmerke og eventuell komplett digital pakke kjøpes separat i FotoSky.",
+        "Når bookingen er godkjent, betaler du 30 % av fotograferingsprisen i forskudd. Først når forskuddet er betalt, er ønsket dato reservert.",
+        "Vi gjennomfører fotograferingen som avtalt. De resterende 70 % betales ikke før etter fotograferingen.",
+        "Betal 70 % i FotoSky",
+        "Når det private galleriet er klargjort, betaler du de resterende 70 % av fotograferingsprisen via FotoSky for å åpne galleriet.",
+        "Når restbeløpet er betalt, får du tilgang til galleriet. Der velger du bildene som er inkludert i pakken og kan kjøpe eventuelle tillegg separat.",
+        "1800 kr",
+        "1 digitalt bilde inkludert",
+        "Flere bilder og fulloppløselige bilder er ikke inkludert og kjøpes separat.",
+        "3000 kr",
+        "3 digitale bilder inkludert",
+        "Flere bilder og fulloppløselige bilder er ikke inkludert og kjøpes separat.",
+        "4000 kr",
+        "5 digitale bilder inkludert",
+        "Flere bilder og fulloppløselige bilder er ikke inkludert og kjøpes separat.",
+        "1500 kr",
+        "1 digitalt bilde inkludert",
+        "Flere bilder og fulloppløselige bilder er ikke inkludert og kjøpes separat.",
+        "2500 kr",
+        "2 digitale bilder inkludert",
+        "Flere bilder og fulloppløselige bilder er ikke inkludert og kjøpes separat.",
+        "3200 kr",
+        "3 digitale bilder inkludert",
+        "Flere bilder og fulloppløselige bilder er ikke inkludert og kjøpes separat.",
+        "4500 kr",
+        "5 digitale bilder inkludert",
+        "Flere bilder og fulloppløselige bilder er ikke inkludert og kjøpes separat.",
+        "8000 kr",
+        "10 digitale bilder inkludert",
+        "Mobil & sosiale medier: 350 kr per bilde",
+        "Høyoppløselig digitalt bilde: 500 kr per bilde",
+        "Fulloppløselig ferdigredigert JPEG: 700 kr per bilde",
+        "Komplett digital pakke koster 6 500 kr ved ordinære fotograferinger og mindre private oppdrag. Ved bryllup og større arrangementer avtales komplett galleri separat ut fra omfang og antall ferdigredigerte bilder.",
+        "Fra 10 000 kr",
+        "8 digitale bilder inkludert",
+        "Fra 3000 kr",
+        "2 digitale bilder inkludert",
+        "Flere bilder og fulloppløselige bilder er ikke inkludert og kjøpes separat.",
+        "Fra 3000 kr",
+        "2 digitale bilder inkludert",
+        "Flere bilder og fulloppløselige bilder er ikke inkludert og kjøpes separat.",
+        "7500 kr",
+        "5 digitale bilder inkludert",
+        "Fra 4000–7000 kr",
+        "Antall inkluderte bilder avtales skriftlig",
+        "Antall inkluderte bilder og pris på eventuelle tillegg avklares før booking.",
+        "Fra 7000–15 000 kr",
+        "Antall inkluderte bilder avtales skriftlig",
+        "Antall inkluderte bilder og pris på eventuelle tillegg avklares før booking.",
+        "1200 kr",
+        "1 digitalt bilde inkludert",
+        "Flere bilder og fulloppløselige bilder er ikke inkludert og kjøpes separat.",
+        "1800 kr",
+        "2 digitale bilder inkludert",
+        "Flere bilder og fulloppløselige bilder er ikke inkludert og kjøpes separat.",
+        "2800 kr",
+        "3 digitale bilder inkludert",
+        "Flere bilder og fulloppløselige bilder er ikke inkludert og kjøpes separat.",
+        "Ekstra person: +300 kr",
+        "Ekstra 30 minutter: +500 kr",
+        "Reise: +5 kr/km over 2 mil fra Ringsaker",
+        "Ekspressredigering innen 48 timer: +500 kr",
+        "Mobil & sosiale medier: 350 kr per bilde",
+        "Høyoppløselig digitalt bilde: 500 kr per bilde",
+        "Fulloppløselig ferdigredigert JPEG: 700 kr per bilde",
+        "Komplett digital pakke – hele det ferdigredigerte galleriet: 6 500 kr ved ordinære fotograferinger og mindre private oppdrag",
+        "Er alle bildene inkludert i fotograferingsprisen?",
+        "Nei. Bare antallet digitale bilder som står oppført på den valgte pakken, er inkludert. Resten av bildene kan ses i kundegalleriet og kjøpes separat.",
+        "Dette er et ferdig redigert bilde uten vannmerke. Antallet som er inkludert, står tydelig på hver pakke.",
+        "Etter fotograferingen klargjøres et privat galleri hos FotoSky. Galleriet er låst frem til de resterende 70 % av fotograferingsprisen er betalt via FotoSky. Når betalingen er registrert, åpnes galleriet. Der velger du bildene som følger med pakken og kan kjøpe flere bilder eller andre tillegg separat.",
+        "Betaling: 30 % + 70 %",
+        "Når bookingen er godkjent, betales 30 % av fotograferingsprisen i forskudd for å reservere ønsket dato. Forskuddet trekkes fra fotograferingsprisen og refunderes ikke ved avbestilling. Etter fotograferingen betales de resterende 70 % via FotoSky før det private galleriet kan åpnes. Eventuelle kjøp av flere bilder eller andre tillegg i galleriet kommer i tillegg til fotograferingsprisen."
+      ],
+      "booking_options": [],
+      "forms": []
+    },
+    "sommerfotografering.html": {
+      "title": [
+        "Sensommerfotografering i Ringsaker og Brumunddal | Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "description": "Sesongfotografering i Ringsaker og ved Mjøsa med naturlige portretter, familie-, kjæledyr- og naturbilder hos Fotograf Spalder.",
+        "robots": "index, follow",
+        "og:title": "Sensommerfotografering i Ringsaker og Brumunddal | Fotograf Spalder",
+        "og:description": "Naturlige sensommerbilder av kjæledyr, familie, par og portrett i Ringsaker og Innlandet.",
+        "og:image": "https://www.fotograf-spalder.com/images/deling/sensommerfotografering-ringsaker.jpg",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/sommerfotografering.html",
+        "theme-color": "#0f172a"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/sommerfotografering.html"
+      ],
+      "json_ld": [],
+      "commercial": [
+        "3. Fotografering og leveringBildene leveres normalt innen 1–3 uker via et privat galleri.",
+        "Bildene leveres normalt innen 1–3 uker via et privat galleri.",
+        "Ved dårlig vær flyttes fotograferingen kostnadsfritt til en ny dato.",
+        "Priser og inkluderte digitale bilder finner du på prissiden."
+      ],
+      "booking_options": [],
+      "forms": []
+    },
+    "takk.html": {
+      "title": [
+        "Forespørsel mottatt | Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "robots": "noindex, nofollow",
+        "description": "Bekreftelse på mottatt bookingforespørsel hos Fotograf Spalder."
+      },
+      "canonical": [],
+      "json_ld": [],
+      "commercial": [
+        "Dette er ikke en bekreftet booking ennå. Jeg svarer vanligvis innen 24 timer. Når forespørselen er godkjent, betaler du 30 % av fotograferingsprisen i forskudd. Først når forskuddet er registrert betalt, er ønsket dato reservert.",
+        "2. Du mottar svar og betaler 30 %Når forespørselen er godkjent, får du betalingsinformasjon. Datoen reserveres når forskuddet på 30 % er betalt.",
+        "4. Du betaler de resterende 70 % i FotoSkyNår det private galleriet er klargjort, betales restbeløpet via FotoSky før galleriet kan åpnes.",
+        "5. Privatgalleriet åpnesNår restbeløpet er registrert betalt, får du tilgang til galleriet. Der velger du inkluderte bilder og kan kjøpe eventuelle tillegg separat."
+      ],
+      "booking_options": [],
+      "forms": []
+    }
+  }
+}
