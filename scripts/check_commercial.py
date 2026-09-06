@@ -34,4 +34,3 @@ if __name__ == '__main__':
     if errors:
         raise SystemExit('\n'.join(errors))
     print('Commercial source and generated HTML verified; no literal prices in templates.')
-

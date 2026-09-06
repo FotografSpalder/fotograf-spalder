@@ -28,4 +28,3 @@ Ved tilsiktede endringer i priser, regler eller SEO må det gjennomgåtte testgr
 - [Fase 2: kommersielle data og statisk generering](docs/phase-2-business-data.md)
 
 Repoet har to historiske bildefiler med navnene `Meg.jpg` og `meg.jpg`. De kan ikke begge representeres riktig i en vanlig Windows-kopi. Ikke inkluder den kunstige bildeendringen fra dette i commits; bruk et case-sensitivt filsystem før arbeid på disse bildene.
-

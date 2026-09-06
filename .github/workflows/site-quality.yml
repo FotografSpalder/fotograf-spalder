@@ -39,4 +39,3 @@ jobs:
         with:
           name: site-audit
           path: site-audit.json
-

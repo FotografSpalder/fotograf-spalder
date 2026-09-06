@@ -80,4 +80,3 @@ Ingen ekte booking er sendt. Visuell nettleser-/mobiltest og produksjonsnettverk
 Opprettet: `data/services.json`, `scripts/build_site.py`, `scripts/check_commercial.py`, 12 filer under `templates/pages/`, `.github/scripts/test_business_data.py` og denne rapporten. CI-workflowen er utvidet med byggkontroll og kommersiell kontroll. Fem HTML-filer har kun fått fjernet mellomrom på én tom linje hver. Ingen produksjonsfunksjonalitet er fjernet. En .gitignore utelater Python-cache og lokal auditrapport, og README dokumenterer redigering og bygg.
 
 Fase 3–4 gjenstår: trekke felles CSS/JS og header/footer ut av malene, med kontroll av dagens ulike layoutvarianter. Deretter bildearkitektur, sesongkonfigurasjon og videre QA. Augustinnholdet, bildeoptimaliseringen og Meg.jpg/meg.jpg-kollisjonen er fortsatt registrert teknisk gjeld. Git-historikken er ikke omskrevet.
-
