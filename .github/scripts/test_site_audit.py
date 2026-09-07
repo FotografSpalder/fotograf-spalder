@@ -74,6 +74,16 @@ class RegressionTests(unittest.TestCase):
         self.edit('index.html', '</body>', '<script src="https://www.googletagmanager.com/gtag/js?id=x"></script></body>')
         self.rejected('analytics-direct')
 
+    def test_executable_inline_script(self):
+        self.edit('index.html', '</body>', '<script>console.log("inline")</script></body>')
+        self.rejected('inline-script')
+
+    def test_shared_assets_are_required(self):
+        self.edit('index.html', 'assets/js/site.js', 'assets/js/missing.js')
+        self.rejected('shared-js')
+        self.edit('index.html', 'assets/css/site.css', 'assets/css/missing.css')
+        self.rejected('shared-css')
+
     def test_analytics_external(self):
         (self.root / 'bad.js').write_text("fetch('https://www.google-analytics.com/collect')")
         self.rejected('analytics-direct')

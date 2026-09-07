@@ -135,6 +135,12 @@ def audit(root=ROOT):
             issue('noindex', name, 'Thank-you page must remain noindex')
         if not any(n.attrs.get('src') == 'samtykke.js' for n in page.tags('script')):
             issue('consent-script', name, 'Missing shared consent script')
+        if not any(n.attrs.get('src') == 'assets/js/site.js' for n in page.tags('script')):
+            issue('shared-js', name, 'Missing shared site script')
+        if not any(n.attrs.get('href') == 'assets/css/site.css' and n.attrs.get('rel', '').lower() == 'stylesheet' for n in page.tags('link')):
+            issue('shared-css', name, 'Missing shared stylesheet')
+        if name == 'booking.html' and not any(n.attrs.get('src') == 'assets/js/booking.js' for n in page.tags('script')):
+            issue('booking-script', name, 'Missing booking handler')
         ids = Counter(n.attrs['id'] for n in page.nodes if 'id' in n.attrs)
         for value, count in ids.items():
             if count > 1:
@@ -169,7 +175,9 @@ def audit(root=ROOT):
                     schemas.append(json.loads(n.text()))
                 except json.JSONDecodeError as exc:
                     issue('json-ld', name, str(exc))
-            elif re.search(r'googletagmanager\.com|google-analytics\.com', n.attrs.get('src', '') + n.text(), re.I):
+            elif not n.attrs.get('src') and n.text().strip():
+                issue('inline-script', name, 'Executable JavaScript must live under assets/js')
+            if re.search(r'googletagmanager\.com|google-analytics\.com', n.attrs.get('src', '') + n.text(), re.I):
                 issue('analytics-direct', name, 'Analytics code outside consent module')
         styles = '\n'.join(n.text() for n in page.tags('style'))
         for ref in css_refs(styles):
