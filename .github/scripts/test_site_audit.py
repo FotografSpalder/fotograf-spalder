@@ -14,9 +14,12 @@ class RegressionTests(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)
         self.addCleanup(self.tmp.cleanup)
-        # Sparse fixture with every actual HTML/CSS/JS file and placeholder assets.
-        for item in a.ROOT.rglob('*'):
-            rel = item.relative_to(a.ROOT)
+        # Sparse fixture from the actual Astro production output.
+        source_root = a.ROOT / 'dist'
+        if not source_root.exists():
+            self.fail('Run the Astro build before audit mutation tests')
+        for item in source_root.rglob('*'):
+            rel = item.relative_to(source_root)
             if not item.is_file() or '.git' in rel.parts or '.github' in rel.parts:
                 continue
             target = self.root / rel

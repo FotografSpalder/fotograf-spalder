@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "currency": "NOK",
   "categories": {
     "pets": "Kjæledyr",
@@ -19,12 +19,21 @@
         "Kort fotografering av kjæledyr",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.pet-mini.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ],
       "landing_content": [
         "Kort fotografering av ett kjæledyr",
-        "{{ services.pet-mini.content.2 }}",
-        "{{ services.pet-mini.included_images | images }} i høy kvalitet uten vannmerke inkludert",
+        {
+          "kind": "content-ref",
+          "index": 2
+        },
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke inkludert"
+        },
         "Flere bilder kan kjøpes separat"
       ]
     },
@@ -39,13 +48,25 @@
         "Fotografering av kjæledyr",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.pet-standard.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ],
       "landing_content": [
-        "{{ services.pet-standard.content.0 }}",
+        {
+          "kind": "content-ref",
+          "index": 0
+        },
         "God tid til variasjon",
-        "{{ services.pet-standard.content.2 }}",
-        "{{ services.pet-standard.included_images | images }} i høy kvalitet uten vannmerke inkludert",
+        {
+          "kind": "content-ref",
+          "index": 2
+        },
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke inkludert"
+        },
         "Flere bilder kan kjøpes separat"
       ]
     },
@@ -60,13 +81,25 @@
         "Lengre fotografering",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.pet-premium.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ],
       "landing_content": [
-        "{{ services.pet-premium.content.0 }}",
+        {
+          "kind": "content-ref",
+          "index": 0
+        },
         "Passer for flere motiver og uttrykk",
-        "{{ services.pet-premium.content.2 }}",
-        "{{ services.pet-premium.included_images | images }} i høy kvalitet uten vannmerke inkludert",
+        {
+          "kind": "content-ref",
+          "index": 2
+        },
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke inkludert"
+        },
         "Flere bilder kan kjøpes separat"
       ]
     },
@@ -81,12 +114,21 @@
         "Portrettfotografering av én person",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.portrait.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ],
       "landing_content": [
         "Én person",
-        "{{ services.portrait.content.1 }}",
-        "{{ services.portrait.content.2 }}"
+        {
+          "kind": "content-ref",
+          "index": 1
+        },
+        {
+          "kind": "content-ref",
+          "index": 2
+        }
       ]
     },
     "family": {
@@ -100,12 +142,21 @@
         "Familiefotografering ute eller på avtalt lokasjon",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.family.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ],
       "landing_content": [
         "Familie ute eller på avtalt lokasjon",
-        "{{ services.family.content.1 }}",
-        "{{ services.family.content.2 }}"
+        {
+          "kind": "content-ref",
+          "index": 1
+        },
+        {
+          "kind": "content-ref",
+          "index": 2
+        }
       ]
     },
     "basic": {
@@ -119,12 +170,21 @@
         "Fotografering av person, par eller liten familie",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.basic.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ],
       "landing_content": [
         "Person, par eller liten familie",
-        "{{ services.basic.content.1 }}",
-        "{{ services.basic.content.2 }}"
+        {
+          "kind": "content-ref",
+          "index": 1
+        },
+        {
+          "kind": "content-ref",
+          "index": 2
+        }
       ]
     },
     "favorite": {
@@ -139,12 +199,24 @@
         "Passer godt til familie, portrett eller kombinasjon",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.favorite.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ],
       "landing_content": [
-        "{{ services.favorite.content.0 }}",
-        "{{ services.favorite.content.1 }}",
-        "{{ services.favorite.content.3 }}"
+        {
+          "kind": "content-ref",
+          "index": 0
+        },
+        {
+          "kind": "content-ref",
+          "index": 1
+        },
+        {
+          "kind": "content-ref",
+          "index": 3
+        }
       ]
     },
     "total": {
@@ -159,12 +231,21 @@
         "Passer for større familier eller flere bildetyper",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.total.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ],
       "landing_content": [
-        "{{ services.total.content.0 }}",
+        {
+          "kind": "content-ref",
+          "index": 0
+        },
         "Passer større familier eller flere bildetyper",
-        "{{ services.total.content.3 }}"
+        {
+          "kind": "content-ref",
+          "index": 3
+        }
       ]
     },
     "wedding": {
@@ -178,14 +259,20 @@
         "Tilpasses etter behov, vielse, portretter og dekning av dagen",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.wedding.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ],
       "landing_content": [
         "Tilpasses etter behov – for eksempel vielse, portretter og avtalt dekning av dagen",
         "Planlegging før bryllupet",
         "Fotografering og profesjonell redigering",
         "Privat nettgalleri hos FotoSky",
-        "{{ services.wedding.included_images | images }} i høy kvalitet uten vannmerke inkludert"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke inkludert"
+        }
       ]
     },
     "confirmation": {
@@ -200,7 +287,10 @@
         "Mulighet for familiebilder",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.confirmation.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ]
     },
     "baptism": {
@@ -214,7 +304,10 @@
         "Fotografering før, under eller etter dåp etter avtale",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.baptism.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ]
     },
     "extended-family": {
@@ -225,11 +318,18 @@
       "from_price": false,
       "max_price": null,
       "content": [
-        "Inntil {{ services.extended-family.duration_hours }} timer fotografering",
+        {
+          "kind": "duration-hours",
+          "prefix": "Inntil ",
+          "suffix": " timer fotografering"
+        },
         "Familie- og gruppeportretter",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.extended-family.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ],
       "duration_hours": 3
     },
@@ -272,7 +372,10 @@
         "Kort cosplay-fotografering",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.cosplay-basic.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ]
     },
     "cosplay-magic": {
@@ -286,7 +389,10 @@
         "Mer tid til posering og uttrykk",
         "Planlegging, fotografering og redigering",
         "Privat nettgalleri",
-        "{{ services.cosplay-magic.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ]
     },
     "cosplay-epic": {
@@ -300,7 +406,10 @@
         "Utvidet cosplay-fotografering",
         "Mer avansert redigering og visuelle effekter",
         "Privat nettgalleri",
-        "{{ services.cosplay-epic.included_images | images }} i høy kvalitet uten vannmerke"
+        {
+          "kind": "included-images",
+          "suffix": " i høy kvalitet uten vannmerke"
+        }
       ]
     }
   },
@@ -394,15 +503,15 @@
     "gallery_provider": "FotoSky",
     "copy": {},
     "booking_terms": [
-      "Gi beskjed minst {{ rules.cancellation_notice_hours }} timer før ved avbestilling eller endring.",
-      "Ved mer enn {{ rules.late_minutes }} minutters forsinkelse kan fotograferingen forkortes eller flyttes.",
-      "{{ rules.weather_policy }}",
-      "Booking bekreftes først etter skriftlig bekreftelse og betaling av {{ rules.deposit_percent }} % forskudd.",
-      "Forskuddet reserverer ønsket dato, trekkes fra fotograferingsprisen og {{ rules.deposit_refund_clause }}.",
-      "De resterende {{ rules.balance_percent }} % betales via FotoSky etter fotograferingen og før privatgalleriet åpnes.",
-      "Når restbeløpet er betalt, åpnes galleriet. Eventuelle tilleggskjøp kommer i tillegg.",
-      "Leveringstid er normalt {{ rules.delivery_min_weeks }}–{{ rules.delivery_max_weeks }} uker via privat galleri.",
-      "Kun antallet digitale bilder som står oppført for pakken er inkludert. Flere bilder og fulloppløselige filer kjøpes separat."
+      "cancellation",
+      "late-arrival",
+      "weather",
+      "deposit",
+      "deposit-refund",
+      "balance",
+      "gallery",
+      "delivery",
+      "included-images"
     ]
   }
 }

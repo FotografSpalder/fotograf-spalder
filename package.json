@@ -1,0 +1,17 @@
+{
+  "name": "fotograf-spalder",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "build": "astro check && astro build",
+    "check": "astro check",
+    "test": "node --test tests/*.test.mjs",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "astro": "7.3.1",
+    "typescript": "^5.9.3"
+  }
+}

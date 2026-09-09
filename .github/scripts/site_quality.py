@@ -1,3 +1,4 @@
+import argparse
 from pathlib import Path
 import re
 
@@ -18,27 +19,31 @@ INDEXABLE = {
 }
 
 
-def local_image_refs():
+def local_image_refs(root=ROOT):
     refs = set()
     patterns = [
         re.compile(r'(?:src|href)=["\']([^"\']+\.(?:jpe?g|png|webp))(?:\?[^"\']*)?["\']', re.I),
         re.compile(r'url\(["\']?([^"\')]+\.(?:jpe?g|png|webp))(?:\?[^"\')]+)?["\']?\)', re.I),
     ]
-    for html in ROOT.glob('*.html'):
+    for html in root.glob('*.html'):
         text = html.read_text(encoding='utf-8')
         for pattern in patterns:
             for ref in pattern.findall(text):
                 if not ref.startswith(('http://', 'https://', 'data:')):
-                    refs.add(ROOT / ref.lstrip('/'))
+                    refs.add(root / ref.lstrip('/'))
     return refs
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--root', type=Path, default=ROOT)
+    args = parser.parse_args()
+    root = args.root
     errors = []
-    sitemap = (ROOT / 'sitemap.xml').read_text(encoding='utf-8')
+    sitemap = (root / 'sitemap.xml').read_text(encoding='utf-8')
 
     for filename, path in INDEXABLE.items():
-        file = ROOT / filename
+        file = root / filename
         if not file.exists():
             errors.append(f'Mangler side: {filename}')
             continue
@@ -57,28 +62,29 @@ def main():
         if canonical not in sitemap:
             errors.append(f'{filename}: mangler i sitemap')
 
-    thanks = (ROOT / 'takk.html').read_text(encoding='utf-8')
+    thanks = (root / 'takk.html').read_text(encoding='utf-8')
     if '<meta name="robots" content="noindex, nofollow">' not in thanks:
         errors.append('takk.html må være noindex, nofollow')
     if BASE + '/takk.html' in sitemap:
         errors.append('takk.html skal ikke være i sitemap')
 
-    robots = (ROOT / 'robots.txt').read_text(encoding='utf-8')
+    robots = (root / 'robots.txt').read_text(encoding='utf-8')
     if f'Sitemap: {BASE}/sitemap.xml' not in robots:
         errors.append('robots.txt mangler sitemap')
 
-    for html in ROOT.glob('*.html'):
+    for html in root.glob('*.html'):
         text = html.read_text(encoding='utf-8')
         if 'www.googletagmanager.com/gtag/js' in text:
             errors.append(f'{html}: Google Analytics lastes direkte før samtykke')
 
-    for ref in local_image_refs():
+    for ref in local_image_refs(root):
         if not ref.exists():
             errors.append(f'Manglende bildefil: {ref}')
         elif ref.suffix.lower() in {'.jpg', '.jpeg'} and ref.stat().st_size > 1_800_000:
             errors.append(f'For stor aktiv JPEG: {ref} ({ref.stat().st_size/1024/1024:.1f} MB)')
 
-    if (ROOT / '.github/workflows/august-update.yml').exists():
+    repository_root = root.parent if root.name == 'dist' else root
+    if (repository_root / '.github/workflows/august-update.yml').exists():
         errors.append('Utdatert august-update.yml finnes fortsatt')
 
     if errors:

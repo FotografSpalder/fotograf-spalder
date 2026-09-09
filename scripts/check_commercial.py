@@ -7,12 +7,15 @@ from build_site import ROOT, TOKEN, build, load_data
 
 def check(root=ROOT):
     errors = []
-    for path in sorted((root / 'templates/pages').glob('*.tmpl')):
+    sources = list((root / 'templates/pages').glob('*.tmpl')) + list((root / 'src/pages').glob('*.astro'))
+    for path in sorted(sources):
         source = path.read_text(encoding='utf-8')
+        source = re.sub(r'^---.*?---', '', source, flags=re.S)
         source = re.sub(r'<style\b[^>]*>.*?</style>', '', source, flags=re.S | re.I)
         # Keep JSON-LD in scope, omit executable code with unrelated numeric constants.
         source = re.sub(r'<script(?![^>]*application/ld\+json)[^>]*>.*?</script>', '', source, flags=re.S | re.I)
         source = TOKEN.sub('DATA', source)
+        source = re.sub(r'\$?\{[^{}\n]+\}', 'DATA', source)
         patterns = {
             'literal price': r'\b\d[\d \u00a0]*(?:[–-]\d[\d ]*)?\s*kr\b',
             'literal payment percentage': r'\b(?:30|70)\s*%',

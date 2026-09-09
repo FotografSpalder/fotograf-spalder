@@ -89,6 +89,8 @@ def css_refs(text):
 
 
 def audit(root=ROOT):
+    root = root.resolve()
+    repository_root = root.parent if root.name == 'dist' and (root.parent / '.git').exists() else root
     files = {p.relative_to(root).as_posix(): p for p in root.rglob('*') if p.is_file() and not {'.git', '__pycache__'}.intersection(p.relative_to(root).parts)}
     pages = {name: Page(p.read_text(encoding='utf-8')) for name, p in sorted(files.items()) if name.endswith('.html')}
     findings, inventory, refs = [], {}, []
@@ -225,7 +227,9 @@ def audit(root=ROOT):
             issue('large-image', name, 'Active image exceeds 1,800,000 bytes')
     # Check the tracked tree too: Windows cannot represent both Meg.jpg and meg.jpg.
     try:
-        tree = subprocess.check_output(['git', '-c', 'safe.directory=' + root.resolve().as_posix(), 'ls-tree', '-rlz', 'HEAD'], cwd=root).decode()
+        if not (repository_root / '.git').exists():
+            raise OSError('No repository metadata for fixture')
+        tree = subprocess.check_output(['git', '-c', 'safe.directory=' + repository_root.as_posix(), 'ls-tree', '-rlz', 'HEAD'], cwd=repository_root, stderr=subprocess.DEVNULL).decode()
         tracked = []
         groups = defaultdict(list)
         for entry in tree.split('\0'):
@@ -277,7 +281,8 @@ def main():
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)
         args.report.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    baseline = json.loads((args.root / '.github/site-baseline.json').read_text(encoding='utf-8'))
+    baseline_root = args.root.parent if args.root.name == 'dist' else args.root
+    baseline = json.loads((baseline_root / '.github/site-baseline.json').read_text(encoding='utf-8'))
     errors = check(result, baseline)
     if args.strict:
         errors.extend(finding_key(f) for f in result['findings'])

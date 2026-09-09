@@ -21,7 +21,7 @@ def load_data(root=ROOT):
 
 
 def validate(data):
-    if data.get('schema_version') != 1 or data.get('currency') != 'NOK':
+    if data.get('schema_version') != 2 or data.get('currency') != 'NOK':
         raise ValueError('Unsupported schema or currency')
     def integer(value, label, minimum=0):
         if type(value) is not int or value < minimum:
@@ -41,6 +41,20 @@ def validate(data):
             integer(service['included_images'], key + '.included_images')
         if not service['content']:
             raise ValueError('Missing package contents: ' + key)
+        for collection in ('content', 'landing_content'):
+            for index, part in enumerate(service.get(collection, [])):
+                if isinstance(part, str):
+                    if not part.strip() or '{{' in part:
+                        raise ValueError(f'{key}.{collection}.{index} must contain plain copy')
+                    continue
+                if not isinstance(part, dict) or part.get('kind') not in ('included-images', 'content-ref', 'duration-hours'):
+                    raise ValueError(f'Invalid copy part: {key}.{collection}.{index}')
+                if part['kind'] == 'included-images' and not isinstance(part.get('suffix'), str):
+                    raise ValueError('Invalid included-images copy part')
+                if part['kind'] == 'content-ref':
+                    integer(part.get('index'), 'content-ref.index')
+                if part['kind'] == 'duration-hours' and not all(isinstance(part.get(field), str) for field in ('prefix', 'suffix')):
+                    raise ValueError('Invalid duration-hours copy part')
     rules = data['rules']
     for key in ('deposit_percent', 'balance_percent'):
         integer(rules[key], key)
@@ -66,9 +80,20 @@ def validate(data):
     offered = [key for group in data['booking_groups'] for key in group['services']]
     if len(offered) != len(set(offered)) or set(offered) != set(services):
         raise ValueError('Each service must appear once in booking groups')
+    kinds = {'cancellation', 'late-arrival', 'weather', 'deposit', 'deposit-refund',
+             'balance', 'gallery', 'delivery', 'included-images'}
+    if set(rules['booking_terms']) != kinds or len(rules['booking_terms']) != len(kinds):
+        raise ValueError('Booking terms are invalid')
 
 
 def lookup(data, path):
+    content_match = re.fullmatch(r'services\.([\w-]+)\.(content|landing_content)\.(\d+)', path)
+    if content_match:
+        service_key, collection, index = content_match.groups()
+        return render_content_part(data['services'][service_key], collection, int(index))
+    term_match = re.fullmatch(r'rules\.booking_terms\.(\d+)', path)
+    if term_match:
+        return booking_terms(data)[int(term_match.group(1))]
     value = data
     for part in path.split('.'):
         try:
@@ -76,6 +101,38 @@ def lookup(data, path):
         except (KeyError, IndexError, TypeError) as exc:
             raise ValueError('Unknown data reference: ' + path) from exc
     return value
+
+
+def render_content_part(service, collection, index):
+    part = service[collection][index]
+    if isinstance(part, str):
+        return part
+    if part['kind'] == 'included-images':
+        count = service['included_images']
+        if count is None:
+            raise ValueError('Included-image copy requires an image count')
+        return f'{count} ' + ('digitalt bilde' if count == 1 else 'digitale bilder') + part['suffix']
+    if part['kind'] == 'content-ref':
+        return render_content_part(service, 'content', part['index'])
+    if 'duration_hours' not in service:
+        raise ValueError('Duration copy requires duration_hours')
+    return part['prefix'] + str(service['duration_hours']) + part['suffix']
+
+
+def booking_terms(data):
+    r = data['rules']
+    terms = {
+        'cancellation': f"Gi beskjed minst {r['cancellation_notice_hours']} timer før ved avbestilling eller endring.",
+        'late-arrival': f"Ved mer enn {r['late_minutes']} minutters forsinkelse kan fotograferingen forkortes eller flyttes.",
+        'weather': r['weather_policy'],
+        'deposit': f"Booking bekreftes først etter skriftlig bekreftelse og betaling av {r['deposit_percent']} % forskudd.",
+        'deposit-refund': f"Forskuddet reserverer ønsket dato, trekkes fra fotograferingsprisen og {r['deposit_refund_clause']}.",
+        'balance': f"De resterende {r['balance_percent']} % betales via FotoSky etter fotograferingen og før privatgalleriet åpnes.",
+        'gallery': 'Når restbeløpet er betalt, åpnes galleriet. Eventuelle tilleggskjøp kommer i tillegg.',
+        'delivery': f"Leveringstid er normalt {r['delivery_min_weeks']}–{r['delivery_max_weeks']} uker via privat galleri.",
+        'included-images': 'Kun antallet digitale bilder som står oppført for pakken er inkludert. Flere bilder og fulloppløselige filer kjøpes separat.',
+    }
+    return [terms[kind] for kind in r['booking_terms']]
 
 
 def grouped(value):
