@@ -23,16 +23,24 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+      - name: Installer Astro
+        run: pnpm install --frozen-lockfile
       - name: Test sikkerhetsnettet og eksisterende brukerflyt
         run: |
           python scripts/build_site.py --check
           python scripts/check_commercial.py
+          pnpm build
           python -m unittest discover -s .github/scripts -p 'test_*.py' -v
           node .github/scripts/test_runtime.cjs
+          pnpm test
+          python scripts/compare_astro_output.py
       - name: Kontroller nettsiden
         run: |
-          python .github/scripts/site_quality.py
-          python .github/scripts/site_audit.py --report site-audit.json
+          python .github/scripts/site_quality.py --root dist
+          python .github/scripts/site_audit.py --root dist --report site-audit.json
           git diff --check
       - uses: actions/upload-artifact@v4
         if: always()

@@ -1,0 +1,6 @@
+---
+import { bookingLabel, type Service, type ServiceKey } from '../lib/services';
+interface Props { groups: Array<{ label: string; services: ServiceKey[] }>; services: Record<ServiceKey, Service>; }
+const { groups, services } = Astro.props;
+---
+{groups.map((group) => <optgroup label={group.label}>{group.services.map((key) => <option>{bookingLabel(services[key])}</option>)}</optgroup>)}
