@@ -1,0 +1,6 @@
+/* Shared behavior styles. Component consolidation continues from this safe base. */
+.mobile-toggle:focus-visible,
+.nav-links a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}

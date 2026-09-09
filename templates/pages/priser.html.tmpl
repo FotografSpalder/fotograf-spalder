@@ -277,7 +277,9 @@ h1 {
 [role="tabpanel"][hidden] { display: none !important; }
 
 </style>
+  <link rel="stylesheet" href="assets/css/site.css">
   <script src="samtykke.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
 </head>
 
 <body>
@@ -693,43 +695,6 @@ De fleste velger {{ services.pet-standard.name }}, Familiefoto eller Favorittpak
 </div>
 
 </div>
-
-<script>
-const tabList = document.querySelector('[role="tablist"]');
-if (tabList) {
-  const tabs = Array.from(tabList.querySelectorAll('[role="tab"]'));
-
-  function activateTab(tab, moveFocus = false) {
-    tabs.forEach(button => {
-      const selected = button === tab;
-      button.classList.toggle('active', selected);
-      button.setAttribute('aria-selected', String(selected));
-      button.tabIndex = selected ? 0 : -1;
-      const panel = document.getElementById(button.getAttribute('aria-controls'));
-      if (panel) {
-        panel.classList.toggle('active', selected);
-        panel.hidden = !selected;
-      }
-    });
-    if (moveFocus) tab.focus();
-  }
-
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => activateTab(tab));
-    tab.addEventListener('keydown', event => {
-      let next = null;
-      if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
-      if (event.key === 'ArrowLeft') next = tabs[(index - 1 + tabs.length) % tabs.length];
-      if (event.key === 'Home') next = tabs[0];
-      if (event.key === 'End') next = tabs[tabs.length - 1];
-      if (next) {
-        event.preventDefault();
-        activateTab(next, true);
-      }
-    });
-  });
-}
-</script>
 
 </body>
 </html>

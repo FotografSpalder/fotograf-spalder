@@ -21,11 +21,6 @@
     @media(max-width:920px){.site-header{position:static}.hero-grid,.cards,.gallery,.price-grid,.steps{grid-template-columns:1fr}.hero-photo{min-height:430px}.mobile-toggle{display:inline-flex}.nav{align-items:flex-start;padding:1rem 0}.nav-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:.7rem}.nav-links{display:none;flex-direction:column;align-items:flex-start;width:100%;padding:1rem;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:18px}.nav-links.open{display:flex}.hero{padding-top:3rem}}
     @media(max-width:600px){.container{width:min(100% - 1.4rem,var(--max))}section{padding:2.75rem 0}.hero{padding:2.75rem 0 2rem}.hero-photo{min-height:350px}.hero-actions .button,.cta-actions .button{width:100%}.card,.price-card,.info-box,.faq-item,.media-proof{padding:1.05rem}}
 
-.mobile-toggle:focus-visible,
-.nav-links a:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 3px;
-}
 </style>
   <script type="application/ld+json">
   {
@@ -38,7 +33,9 @@
     "url":"https://www.fotograf-spalder.com/familie-portrettfotograf-ringsaker.html"
   }
   </script>
+  <link rel="stylesheet" href="assets/css/site.css">
   <script src="samtykke.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -169,38 +166,5 @@
   </main>
 
   <footer class="footer"><div class="container footer-row"><p>© <span id="year"></span> Fotograf Spalder. Alle rettigheter reservert.</p><p><a href="personvern.html">Personvern og informasjonskapsler</a></p></div></footer>
-  <script>
-  const yearElement = document.getElementById('year');
-  if (yearElement) yearElement.textContent = new Date().getFullYear();
-
-  const mobileToggle = document.getElementById('mobileToggle');
-  const mobileNav = document.getElementById('navLinks');
-
-  if (mobileToggle && mobileNav) {
-    const setMenuState = (open) => {
-      mobileNav.classList.toggle('open', open);
-      mobileToggle.setAttribute('aria-expanded', String(open));
-      mobileToggle.setAttribute('aria-label', open ? 'Lukk meny' : 'Åpne meny');
-      mobileToggle.textContent = open ? 'Lukk' : 'Meny';
-    };
-
-    setMenuState(false);
-
-    mobileToggle.addEventListener('click', () => {
-      setMenuState(!mobileNav.classList.contains('open'));
-    });
-
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => setMenuState(false));
-    });
-
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
-        setMenuState(false);
-        mobileToggle.focus();
-      }
-    });
-  }
-</script>
 </body>
 </html>

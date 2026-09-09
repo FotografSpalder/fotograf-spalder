@@ -646,11 +646,6 @@ body {
 }
 /* MOBILE_LAYOUT_FIX_END */
 
-.mobile-toggle:focus-visible,
-.nav-links a:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 3px;
-}
 </style>
 <script type="application/ld+json">
 {
@@ -725,7 +720,9 @@ body {
   ]
 }
 </script>
+  <link rel="stylesheet" href="assets/css/site.css">
   <script src="samtykke.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -996,39 +993,5 @@ Se / legg igjen anmeldelser
       <p><a href="personvern.html" style="color:#fde68a;">Personvern og informasjonskapsler</a></p>
     </div>
   </footer>
-
-  <script>
-  const yearElement = document.getElementById('year');
-  if (yearElement) yearElement.textContent = new Date().getFullYear();
-
-  const mobileToggle = document.getElementById('mobileToggle');
-  const mobileNav = document.getElementById('navLinks');
-
-  if (mobileToggle && mobileNav) {
-    const setMenuState = (open) => {
-      mobileNav.classList.toggle('open', open);
-      mobileToggle.setAttribute('aria-expanded', String(open));
-      mobileToggle.setAttribute('aria-label', open ? 'Lukk meny' : 'Åpne meny');
-      mobileToggle.textContent = open ? 'Lukk' : 'Meny';
-    };
-
-    setMenuState(false);
-
-    mobileToggle.addEventListener('click', () => {
-      setMenuState(!mobileNav.classList.contains('open'));
-    });
-
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => setMenuState(false));
-    });
-
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
-        setMenuState(false);
-        mobileToggle.focus();
-      }
-    });
-  }
-</script>
 </body>
 </html>
