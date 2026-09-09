@@ -550,15 +550,15 @@
       <div class="container">
         <div class="section-head">
           <h2>Pris og flere digitale bilder</h2>
-          <p class="lead">Konfirmasjonsfotografering starter fra 3 000 kr og inkluderer 2 ferdigredigerte digitale bilder i høy kvalitet uten vannmerke.</p>
+          <p class="lead">Konfirmasjonsfotografering starter {{ services.confirmation | price_grouped_lower }} kr og inkluderer {{ services.confirmation.included_images }} ferdigredigerte digitale bilder i høy kvalitet uten vannmerke.</p>
         </div>
         <div class="card highlight">
-          <h3>Bilder utover de 2 inkluderte</h3>
+          <h3>Bilder utover de {{ services.confirmation.included_images }} inkluderte</h3>
           <ul>
-            <li>Mobil &amp; sosiale medier uten vannmerke: <strong>350 kr per bilde</strong></li>
-            <li>Høyoppløselig digitalt bilde uten vannmerke: <strong>500 kr per bilde</strong></li>
-            <li>Fulloppløselig ferdigredigert JPEG uten vannmerke: <strong>700 kr per bilde</strong></li>
-            <li>Komplett digital pakke ved ordinær konfirmant-/portrettfotografering: <strong>6 500 kr</strong></li>
+            <li>Mobil &amp; sosiale medier uten vannmerke: <strong>{{ digital.mobile.price }} kr per bilde</strong></li>
+            <li>Høyoppløselig digitalt bilde uten vannmerke: <strong>{{ digital.high_resolution.price }} kr per bilde</strong></li>
+            <li>Fulloppløselig ferdigredigert JPEG uten vannmerke: <strong>{{ digital.full_resolution.price }} kr per bilde</strong></li>
+            <li>Komplett digital pakke ved ordinær konfirmant-/portrettfotografering: <strong>{{ digital.complete.price | grouped }} kr</strong></li>
           </ul>
           <p>Hvis oppdraget omfatter større deler av selve feiringen som et større arrangement, avtales pris for komplett galleri separat ut fra omfang og antall ferdigredigerte bilder.</p>
           <p>Utvalgte bilder med Fotograf Spalder-vannmerke kan lastes ned gratis fra egen «Gratis bilder»-fane i FotoSky.</p>
@@ -600,7 +600,7 @@
 
           <div class="faq-item">
             <h3>Hvor lang tid tar det før bildene er klare?</h3>
-            <p>Normal leveringstid er 1–3 uker via privat nettgalleri.</p>
+            <p>Normal leveringstid er {{ rules.delivery_min_weeks }}–{{ rules.delivery_max_weeks }} uker via privat nettgalleri.</p>
           </div>
 
           <div class="faq-item">

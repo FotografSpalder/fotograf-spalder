@@ -25,6 +25,8 @@ jobs:
           node-version: '22'
       - name: Test sikkerhetsnettet og eksisterende brukerflyt
         run: |
+          python scripts/build_site.py --check
+          python scripts/check_commercial.py
           python -m unittest discover -s .github/scripts -p 'test_*.py' -v
           node .github/scripts/test_runtime.cjs
       - name: Kontroller nettsiden
