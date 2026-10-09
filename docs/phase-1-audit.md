@@ -1,5 +1,7 @@
 # Fase 1 – kartlegging og sikkerhetsnett
 
+> Historisk rapport fra før Astro-migreringen. Dagens autoritative arkitektur og kommandoer er dokumentert i README og `docs/astro-parity.md`.
+
 Dato: 6. september 2026. Repo: FotografSpalder/fotograf-spalder.
 Kontrollert kildecommit: `010de7af5271a3eda3399ece97d49317104a479b`.
 
@@ -69,7 +71,7 @@ Dupliseringskart:
 - Betalingsregler: priser.html, booking.html, takk.html, familie- og bryllupsiden.
 - Levering/vær: booking.html, Konfirmasjon.html, sommerfotografering.html og deler av kjæledyrsiden.
 
-Fase 2 bør bruke et lite Python-build med data/services.json og enkle HTML-maler. Eksisterende HTML-URL-er kan beholdes. Dette gir tydelig gevinst uten Astro eller SPA. Datafilen bør inneholde tjeneste-ID, visningsnavn, pris/fra/intervall, antall bilder eller avtalt antall, pakkeinnhold, tillegg og eksplisitte unntak. Generer priskort, bookingvalg og tilbud i JSON-LD fra samme data. Baseline-filen i fase 1 er et kontrollgrunnlag og er IKKE denne sannhetskilden.
+Den opprinnelige faseplanen anbefalte en liten mellomløsning rundt `data/services.json`. Datamodellen ble senere migrert til Astro: datafilen inneholder tjeneste-ID, visningsnavn, pris/fra/intervall, antall bilder eller avtalt antall, pakkeinnhold, tillegg og eksplisitte unntak. Astro bygger priskort, bookingvalg og tilbud i JSON-LD fra samme data. Baseline-filen er et kontrollgrunnlag og er ikke sannhetskilden.
 
 ## CSS, navigasjon og footer
 
@@ -122,7 +124,7 @@ site-quality.yml kjøres nå også ved pull requests. Det kjører eksisterende k
 
 Nåværende tracked tree er 46.86 MiB. GitHub rapporterte repository size 468 340 KiB (omtrent 457 MiB). Det tyder på at historikk/lagring utgjør mye mer enn nåværende filer, men API-størrelsen er ikke en presis summering av gamle bilder. Kopien er shallow; største historiske blobs og andelen gamle bildeversjoner er derfor ikke fastslått. Ikke anslå differansen som dokumentert bildestørrelse. I fase 12 kan en separat mirror-kopi analyseres med rev-list --objects --all og cat-file --batch-check. Eventuell git filter-repo krever separat eksplisitt beslutning, sikkerhetskopi og koordinering av kloner.
 
-Neste logiske steg er fase 2: migrere priser/regler til én strukturert kilde og generere dagens HTML-uttrykk. Deretter felles CSS/JS og navigasjon med visuelle før/etter-kontroller, før bilde-/sesongarbeid. Ingen større kommersiell avklaring er nødvendig for å starte datamodellen; bevar alle eksisterende unntak.
+De foreslåtte første stegene er senere gjennomført: priser/regler ligger i én strukturert kilde, Astro bygger dagens HTML-uttrykk, og felles JavaScript/CSS-ressurser er tatt i bruk. Videre komponent-, bilde- og sesongarbeid må fortsatt behandles som separate faser med visuelle før/etter-kontroller.
 
 Største filer i nåværende tree:
 

@@ -273,7 +273,7 @@ def check(result, baseline):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--root', type=Path, default=ROOT)
+    parser.add_argument('--root', type=Path, default=ROOT / 'dist')
     parser.add_argument('--report', type=Path)
     parser.add_argument('--strict', action='store_true', help='Fail on existing debt as well as regressions')
     args = parser.parse_args()
