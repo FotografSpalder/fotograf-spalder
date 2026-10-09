@@ -22,6 +22,9 @@ export interface ServicesData {
 function integer(value: unknown, label: string, minimum = 0): asserts value is number {
   if (!Number.isInteger(value) || (value as number) < minimum) throw new TypeError(`${label} must be an integer >= ${minimum}`);
 }
+function text(value: unknown, label: string): asserts value is string {
+  if (typeof value !== 'string' || !value.trim()) throw new TypeError(`${label} must contain text`);
+}
 function validatePart(part: unknown, label: string): asserts part is CopyPart {
   if (typeof part === 'string') { if (!part.trim() || part.includes('{{')) throw new TypeError(`${label} must contain plain copy`); return; }
   if (!part || typeof part !== 'object' || !('kind' in part)) throw new TypeError(`${label} is invalid`);
@@ -46,10 +49,18 @@ export function validateServicesData(value: unknown): asserts value is ServicesD
     service.content.forEach((part, index) => validatePart(part, `${key}.content.${index}`));
     service.landing_content?.forEach((part, index) => validatePart(part, `${key}.landing_content.${index}`));
   }
+  integer(data.extras.person.price, 'extras.person.price');
+  integer(data.extras.time.price, 'extras.time.price'); integer(data.extras.time.minutes, 'extras.time.minutes', 1);
+  integer(data.extras.travel.price, 'extras.travel.price'); integer(data.extras.travel.included_mil, 'extras.travel.included_mil'); text(data.extras.travel.origin, 'extras.travel.origin');
+  integer(data.extras.express.price, 'extras.express.price'); integer(data.extras.express.hours, 'extras.express.hours', 1);
+  integer(data.digital.mobile.price, 'digital.mobile.price'); integer(data.digital.high_resolution.price, 'digital.high_resolution.price');
+  integer(data.digital.full_resolution.price, 'digital.full_resolution.price'); integer(data.digital.complete.price, 'digital.complete.price');
+  text(data.digital.complete.scope, 'digital.complete.scope'); text(data.digital.complete.separately_quoted, 'digital.complete.separately_quoted');
   integer(data.rules.deposit_percent, 'deposit_percent'); integer(data.rules.balance_percent, 'balance_percent');
   if (data.rules.deposit_percent + data.rules.balance_percent !== 100) throw new TypeError('Deposit and balance must sum to 100');
   for (const key of ['delivery_min_weeks','delivery_max_weeks','cancellation_notice_hours','late_minutes'] as const) integer(data.rules[key], key, 1);
   if (data.rules.delivery_max_weeks < data.rules.delivery_min_weeks) throw new TypeError('Invalid delivery range');
+  text(data.rules.deposit_refund_clause, 'deposit_refund_clause'); text(data.rules.weather_policy, 'weather_policy'); text(data.rules.gallery_provider, 'gallery_provider');
   const offered = data.booking_groups.flatMap((group) => group.services);
   if (offered.length !== new Set(offered).size || offered.length !== Object.keys(data.services).length || offered.some((key) => !(key in data.services))) throw new TypeError('Each service must appear once in booking groups');
   const allowed = new Set<BookingTermKind>(['cancellation','late-arrival','weather','deposit','deposit-refund','balance','gallery','delivery','included-images']);

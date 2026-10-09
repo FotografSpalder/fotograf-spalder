@@ -2,7 +2,7 @@ import argparse
 from pathlib import Path
 import re
 
-ROOT = Path('.')
+ROOT = Path('dist')
 BASE = 'https://www.fotograf-spalder.com'
 INDEXABLE = {
     'index.html': '/',

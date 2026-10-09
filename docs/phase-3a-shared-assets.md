@@ -6,7 +6,7 @@ Dato: 6. september 2026. Bygger på fase 2, draft-PR #4.
 
 Alle 12 statiske sider laster nå `assets/js/site.js` og `assets/css/site.css`. Mobilmenyen som var kopiert på sju sider, årstallsoppdateringen og de identiske fanekontrollene fra pris- og portfoliosiden er samlet i ett nettstedsskript. Bookingens Formspree-kode er flyttet uendret i funksjon til `assets/js/booking.js`.
 
-Det finnes ikke lenger kjørbar inline-JavaScript i HTML eller sidemalene. JSON-LD forblir inline fordi det er strukturerte data, ikke programkode. `samtykke.js` forblir en egen felles modul og lastes fortsatt med `defer` på alle sider.
+Det finnes ikke lenger kjørbar inline-JavaScript i sidene. JSON-LD forblir inline fordi det er strukturerte data, ikke programkode. `samtykke.js` forblir en egen felles modul og lastes fortsatt med `defer` på alle sider.
 
 Den felles CSS-filen inneholder foreløpig den identiske focus-visible-regelen som var kopiert på sju sider. Regelen er fjernet fra disse inline-stilblokkene. På de øvrige sidene gjør selektoren ingenting med mindre de samme navigasjonselementene finnes. CSS-konsolideringen fortsetter i neste, separat gjennomgåbare endring; denne fasen påstår ikke at all felles CSS allerede er flyttet.
 
@@ -24,12 +24,12 @@ Den felles CSS-filen inneholder foreløpig den identiske focus-visible-regelen s
 
 Runtime-testene kjører den faktiske nye JavaScript-koden i en minimal DOM-modell og dekker årstall, menyåpning, lenkelukking, Escape/fokus, tab-klikk og tastaturnavigasjon. Booking testes fortsatt for suksess, HTTP-feil og nettverksfeil uten å sende et virkelig skjema. Samtykket testes for ukjent, avvist, godkjent, tilbakekalt og gjentatt valg samt blokkert localStorage.
 
-Det statiske bygget, kontrollen av kommersielle data, alle Python-tester, runtime-testene, eksisterende kvalitetskontroll, den utvidede auditen og `git diff --check` skal bestå før PR-en regnes som ferdig.
+Det statiske Astro-bygget, kontrollen av kommersielle data, audit-testene, runtime-testene, eksisterende kvalitetskontroll, den utvidede auditen og `git diff --check` skal bestå før en endring regnes som ferdig.
 
 En lokal nettleserkontroll på desktop omfattet forsiden, bookingsiden, porteføljesiden og prissiden. Forsiden og bookingskjemaet beholdt layout og innhold. På porteføljesiden ble fanen «Natur og dyreliv» aktivert og viste riktig panel med 12 bilder. På prissiden ble fanen «Arrangement» aktivert og viste riktig panel og priser. I begge tilfeller fulgte synlig markering, `aria-selected` og panelinnhold hverandre. Analyse ble avvist i personvernvalget under kontrollen, og bookingskjemaet ble ikke sendt.
 
 ## Filendringer
 
-Opprettet: `assets/js/site.js`, `assets/js/booking.js`, `assets/css/site.css` og denne rapporten. Endret: alle 12 sidemaler og genererte HTML-sider, runtime-testene, audit-koden og audit-testene. Endringene i HTML er ressurslenker og fjerning av de flyttede blokkene.
+Fasen opprettet `assets/js/site.js`, `assets/js/booking.js`, `assets/css/site.css` og denne rapporten. Den oppdaterte de 12 daværende sidekildene, runtime-testene, audit-koden og audit-testene. Etter Astro-cutover ligger sidekildene under `src/pages/`, mens de samme offentlige ressurs-URL-ene er bevart i `public/`.
 
 Neste steg er fase 3b: flytte og konsolidere felles variabler, grunnstil, container, header/nav, knapper, kort, grid, typografi, footer og responsive regler med nettleserbasert før/etter-kontroll. Deretter følger autoritativ header/footer i fase 4.

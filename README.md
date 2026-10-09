@@ -1,31 +1,39 @@
 # Fotograf Spalder
 
-Statisk nettsted for www.fotograf-spalder.com på GitHub Pages.
+Statisk Astro-nettsted for www.fotograf-spalder.com på GitHub Pages. Astro er repositoryets og produksjonens eneste autoritative nettstedssystem.
 
-## Redigering og bygg
+## Autoritative kilder
 
-- Kommersielle data: `data/services.json`.
-- HTML-kilder: `templates/pages/*.html.tmpl`.
-- Generert nettsted: de eksisterende HTML-filene i roten. Rediger malene, ikke de genererte filene.
+- Sider og metadata: `src/pages/*.astro`.
+- Delte Astro-hjelpere og typesikker kommersiell modell: `src/lib/` og `src/components/`.
+- Priser, pakker og forretningsregler: `data/services.json`.
+- Offentlige filer med stabile URL-er: `public/`.
+- Produksjonsartefakt: `dist/`, bygget av Astro og ikke sjekket inn.
+
+Endre aldri kommersielle verdier direkte i sidene. `.github/site-baseline.json` er den gjennomgåtte produksjonskontrakten for SEO, kommersiell tekst, booking og kjente avvik. Baseline skal bare oppdateres etter konkret gjennomgang, aldri automatisk for å skjule en feil.
+
+## Lokal bygging og kontroll
 
 ```text
-python scripts/build_site.py
-python scripts/build_site.py --check
-python scripts/check_commercial.py
-python -m unittest discover -s .github/scripts -p "test_*.py"
+pnpm install --frozen-lockfile
+pnpm check
+pnpm build
+pnpm test
+python -m unittest discover -s .github/scripts -p "test_*.py" -v
 node .github/scripts/test_runtime.cjs
 python .github/scripts/site_quality.py
-python .github/scripts/site_audit.py
+python .github/scripts/site_audit.py --report site-audit.json
+git diff --check
 ```
 
-Bygget bruker Python 3.12+ uten tredjepartspakker. Node 22 brukes kun i tester. HTML sjekkes inn sammen med endringer i datakilde/maler, slik at eksisterende GitHub Pages-oppsett fortsatt kan publisere rotens statiske filer. CI kontrollerer at data, maler og generert HTML stemmer overens.
+Kvalitets- og auditverktøyene leser `dist/` som standard. Bygget bruker Node 22 og pnpm. Python brukes kun til repositoryets uavhengige audit- og kvalitetssikkerhetsnett.
 
-Ved tilsiktede endringer i priser, regler eller SEO må det gjennomgåtte testgrunnlaget også oppdateres. Ikke regenerer baseline automatisk for å skjule en testfeil. Se [datamodell, arbeidsflyt og begrensninger](docs/phase-2-business-data.md).
+## Dokumentasjon
 
-## Kartlegging
-
-- [Fase 1: audit og sikkerhetsnett](docs/phase-1-audit.md)
-- [Fase 2: kommersielle data og statisk generering](docs/phase-2-business-data.md)
+- [Fase 1: opprinnelig audit og sikkerhetsnett](docs/phase-1-audit.md)
+- [Fase 2: kommersielle data](docs/phase-2-business-data.md)
 - [Fase 3a: felles JavaScript og CSS-grunnlag](docs/phase-3a-shared-assets.md)
+- [Astro-paritet og produksjonsstatus](docs/astro-parity.md)
+- [Opprydding etter Astro-cutover](docs/astro-cleanup.md)
 
 Repoet har to historiske bildefiler med navnene `Meg.jpg` og `meg.jpg`. De kan ikke begge representeres riktig i en vanlig Windows-kopi. Ikke inkluder den kunstige bildeendringen fra dette i commits; bruk et case-sensitivt filsystem før arbeid på disse bildene.

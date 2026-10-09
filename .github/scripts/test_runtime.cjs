@@ -4,6 +4,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const root = path.resolve(__dirname, '../..');
+const siteRoot = path.join(root, 'dist');
 
 function consent(choice, blocked = false) {
   const elements = new Map();
@@ -33,7 +34,7 @@ function consent(choice, blocked = false) {
     getItem(k) { if (blocked) throw Error('blocked'); return storage.get(k) ?? null; },
     setItem(k, v) { if (blocked) throw Error('blocked'); storage.set(k, v); },
   } };
-  vm.runInNewContext(fs.readFileSync(path.join(root, 'public/samtykke.js'), 'utf8'), { window, document, encodeURIComponent });
+  vm.runInNewContext(fs.readFileSync(path.join(siteRoot, 'samtykke.js'), 'utf8'), { window, document, encodeURIComponent });
   return { window, appendedScripts, elements,
     click(selector) { elements.get('fs-consent-overlay').children[0].buttons[selector].handlers.click(); },
     open() { elements.get('fs-privacy-settings').handlers.click(); },
@@ -61,9 +62,9 @@ assert.equal(blocked.appendedScripts.length, 1);
 console.log('Consent: unknown, rejected, accepted, revoked, repeated acceptance and blocked storage passed.');
 
 async function booking(mode) {
-  const html = fs.readFileSync(path.join(root, 'booking.html'), 'utf8');
+  const html = fs.readFileSync(path.join(siteRoot, 'booking.html'), 'utf8');
   assert.match(html, /<script src="assets\/js\/booking\.js" defer><\/script>/);
-  const script = fs.readFileSync(path.join(root, 'public/assets/js/booking.js'), 'utf8');
+  const script = fs.readFileSync(path.join(siteRoot, 'assets/js/booking.js'), 'utf8');
   let handler;
   const form = { addEventListener: (event, fn) => { assert.equal(event, 'submit'); handler = fn; } };
   const button = { disabled: false }, status = {}, requests = [];
@@ -123,7 +124,7 @@ function siteBehavior() {
     addEventListener(name, fn) { handlers[name] = fn; },
   };
   class FixedDate { getFullYear() { return 2026; } }
-  vm.runInNewContext(fs.readFileSync(path.join(root, 'public/assets/js/site.js'), 'utf8'), { document, Date: FixedDate, Array });
+  vm.runInNewContext(fs.readFileSync(path.join(siteRoot, 'assets/js/site.js'), 'utf8'), { document, Date: FixedDate, Array });
   assert.equal(year.textContent, 2026);
   assert.equal(toggle.attrs['aria-expanded'], 'false');
   toggle.handlers.click();
