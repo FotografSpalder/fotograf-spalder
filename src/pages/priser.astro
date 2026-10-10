@@ -1,6 +1,6 @@
 ---
 import { data, grouped, formatImages, formatPrice, serviceContent } from '../lib/services';
-const { services, extras, digital, rules } = data;
+const { services, extras, digital, restoration, rules } = data;
 ---
 <!DOCTYPE html>
 <html lang="no">
@@ -639,6 +639,14 @@ De fleste velger {services['pet-standard'].name}, Familiefoto eller Favorittpakk
 </div>
 
 <div class="info-grid">
+  <div class="info-box highlight">
+    <h2>Restaurering av gamle bilder</h2>
+    <p>
+      Har du et falmet, ripet eller skadet fotografi – eller et gammelt negativ? Jeg tilbyr digital bilderestaurering med retusjering, detaljforbedring og valgfri fargelegging fra {grouped(restoration.simple.price)} kr.
+    </p>
+    <p><a href="restaurering-gamle-bilder/" style="color:#fde68a;font-weight:800;">Se prosessen og priser for restaurering av gamle bilder →</a></p>
+  </div>
+
   <div class="info-box">
     <h2>Er alle bildene inkludert i fotograferingsprisen?</h2>
     <p>

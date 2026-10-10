@@ -14,6 +14,11 @@ export interface ServicesData {
   schema_version: 2; currency: 'NOK'; categories: Record<CategoryKey, string>;
   services: Record<ServiceKey, Service>;
   booking_groups: Array<{ label: string; services: ServiceKey[] }>;
+  restoration: {
+    simple: { price: number; label: string };
+    standard: { price: number; label: string };
+    advanced: { price: number; label: string };
+  };
   extras: { person: { price: number }; time: { price: number; minutes: number }; travel: { price: number; included_mil: number; origin: string }; express: { price: number; hours: number } };
   digital: { mobile: { price: number }; high_resolution: { price: number }; full_resolution: { price: number }; complete: { price: number; scope: string; separately_quoted: string } };
   rules: { deposit_percent: number; balance_percent: number; delivery_min_weeks: number; delivery_max_weeks: number; cancellation_notice_hours: number; late_minutes: number; deposit_refund_clause: string; weather_policy: string; gallery_provider: string; copy: Record<string, never>; booking_terms: BookingTermKind[] };
@@ -56,6 +61,10 @@ export function validateServicesData(value: unknown): asserts value is ServicesD
   integer(data.digital.mobile.price, 'digital.mobile.price'); integer(data.digital.high_resolution.price, 'digital.high_resolution.price');
   integer(data.digital.full_resolution.price, 'digital.full_resolution.price'); integer(data.digital.complete.price, 'digital.complete.price');
   text(data.digital.complete.scope, 'digital.complete.scope'); text(data.digital.complete.separately_quoted, 'digital.complete.separately_quoted');
+  for (const [key, tier] of Object.entries(data.restoration)) {
+    integer(tier.price, `restoration.${key}.price`);
+    text(tier.label, `restoration.${key}.label`);
+  }
   integer(data.rules.deposit_percent, 'deposit_percent'); integer(data.rules.balance_percent, 'balance_percent');
   if (data.rules.deposit_percent + data.rules.balance_percent !== 100) throw new TypeError('Deposit and balance must sum to 100');
   for (const key of ['delivery_min_weeks','delivery_max_weeks','cancellation_notice_hours','late_minutes'] as const) integer(data.rules[key], key, 1);

@@ -1,0 +1,186 @@
+---
+import { data, grouped } from '../../lib/services';
+const { restoration, currency } = data;
+const canonical = 'https://www.fotograf-spalder.com/restaurering-gamle-bilder/';
+const imageBase = '../images/restaurering-gamle-bilder';
+---
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurering av gamle bilder | Fotograf Spalder</title>
+  <meta name="description" content="Gi gamle fotografier og negativer nytt liv. Fotograf Spalder tilbyr digital restaurering, retusjering, detaljforbedring og valgfri fargelegging av gamle bilder.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Henrik Spalder">
+  <link rel="canonical" href={canonical}>
+  <link rel="icon" type="image/png" href="../Untitled-1.png">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:title" content="Restaurering av gamle bilder | Fotograf Spalder">
+  <meta property="og:description" content="Digital restaurering, retusjering og valgfri fargelegging av gamle fotografier og negativer i Ringsaker og Innlandet.">
+  <meta property="og:image" content="https://www.fotograf-spalder.com/images/restaurering-gamle-bilder/steg-4-ferdig-restaurering.jpg">
+  <meta property="og:image:width" content="1400">
+  <meta property="og:image:height" content="2081">
+  <meta property="og:image:alt" content="Ferdig restaurert og fargelagt portrett fra et gammelt negativ">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonical}>
+  <style is:inline>
+    :root{--bg:#0f172a;--bg2:#111827;--card:rgba(255,255,255,.075);--text:#f8fafc;--muted:#cbd5e1;--line:rgba(255,255,255,.12);--accent:#f59e0b;--accent-light:#fde68a;--max:1160px;--radius:22px;--shadow:0 18px 40px rgba(0,0,0,.25)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top,rgba(245,158,11,.14),transparent 32%),linear-gradient(180deg,#0b1120 0%,var(--bg2) 100%);color:var(--text);line-height:1.65}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.container{width:min(100% - 2rem,var(--max));margin:0 auto}.site-header{position:sticky;top:0;z-index:100;background:rgba(11,17,32,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{display:flex;flex-direction:column}.brand strong{letter-spacing:.04em}.brand span{font-size:.88rem;color:var(--muted)}.nav-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}.nav-links a{font-weight:700;color:var(--muted)}.nav-links a:hover{color:var(--text)}.mobile-toggle{display:none;background:transparent;border:1px solid var(--line);color:var(--text);padding:.65rem .9rem;border-radius:12px;font-weight:800}.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.8rem 1.15rem;border-radius:999px;font-weight:900;border:1px solid transparent;cursor:pointer}.button.primary{background:var(--accent);color:#111827;box-shadow:var(--shadow)}.button.secondary{border-color:var(--line);color:var(--text);background:transparent}.button:hover{filter:brightness(1.08)}.hero{padding:5rem 0 3rem}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:2rem;align-items:center}.eyebrow{display:inline-block;padding:.35rem .75rem;border-radius:999px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.38);color:var(--accent-light);font-weight:800;font-size:.9rem;margin-bottom:1rem}h1,h2,h3{line-height:1.15;margin:0 0 1rem}h1{font-size:clamp(2.2rem,5vw,4.35rem)}h2{font-size:clamp(1.75rem,3vw,2.8rem)}h3{font-size:1.2rem}.lead{font-size:1.08rem;color:var(--muted);max-width:66ch}.hero-actions,.cta-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.4rem}.hero-card,.card,.price-card,.info-box,.process-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.hero-card{padding:1rem}.hero-card img{width:100%;aspect-ratio:2/3;max-height:650px;object-fit:cover;border-radius:calc(var(--radius) - 8px)}section{padding:4rem 0}.section-head{max-width:74ch;margin-bottom:2rem}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem}.card,.price-card,.info-box{padding:1.35rem}.card p,.card li,.price-card p,.price-card li,.info-box p,.info-box li{color:var(--muted)}.card ul,.price-card ul,.info-box ul{padding-left:1.15rem}.service-list{columns:2;column-gap:2.5rem}.service-list li{break-inside:avoid;margin-bottom:.35rem}.process-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}.process-card{overflow:hidden;margin:0}.process-card img{width:100%;aspect-ratio:2/3;object-fit:cover;background:#080d18}.process-copy{padding:1.35rem}.process-copy p{color:var(--muted);margin-bottom:0}.step-label{display:inline-block;color:var(--accent-light);font-weight:900;font-size:.88rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.6rem}.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.price{font-size:1.9rem;font-weight:900;color:var(--accent-light);margin:.25rem 0}.price-note{margin-top:1rem;padding:1.25rem;border-left:4px solid var(--accent);background:rgba(245,158,11,.08);border-radius:0 18px 18px 0;color:var(--muted)}.split{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.highlight{border-color:rgba(245,158,11,.35);background:linear-gradient(180deg,rgba(245,158,11,.10),rgba(255,255,255,.05))}.cta{text-align:center;padding:2rem;background:linear-gradient(180deg,rgba(245,158,11,.12),rgba(255,255,255,.05));border:1px solid rgba(245,158,11,.28);border-radius:28px;box-shadow:var(--shadow)}.cta p{color:var(--muted);max-width:64ch;margin:0 auto}.cta-actions{justify-content:center}.footer{border-top:1px solid var(--line);padding:2rem 0 3rem}.footer-row{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;align-items:center}.footer p{color:var(--muted);margin:0}.footer a,.text-link{color:var(--accent-light);font-weight:800}
+    @media(max-width:920px){.site-header{position:static}.hero-grid,.cards,.price-grid,.split{grid-template-columns:1fr}.mobile-toggle{display:inline-flex}.nav{align-items:flex-start;padding:1rem 0}.nav-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:.7rem}.nav-links{display:none;flex-direction:column;align-items:flex-start;width:100%;padding:1rem;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:18px}.nav-links.open{display:flex}.hero{padding-top:3rem}.hero-card img{max-height:560px}.service-list{columns:1}}
+    @media(max-width:700px){.process-grid{grid-template-columns:1fr}.process-card img{aspect-ratio:auto}}
+    @media(max-width:600px){.container{width:min(100% - 1.4rem,var(--max))}section{padding:2.75rem 0}.hero{padding:2.75rem 0 2rem}.hero-actions .button,.cta-actions .button{width:100%}.card,.price-card,.info-box,.process-copy{padding:1.05rem}}
+  </style>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Restaurering av gamle bilder',
+    description: 'Digital restaurering, retusjering, detaljforbedring og valgfri fargelegging av gamle fotografier og negativer.',
+    provider: {
+      '@type': 'ProfessionalService',
+      name: 'Fotograf Spalder',
+      url: 'https://www.fotograf-spalder.com/'
+    },
+    areaServed: ['Ringsaker', 'Brumunddal', 'Hamar', 'Innlandet'],
+    offers: {
+      '@type': 'Offer',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        minPrice: restoration.simple.price,
+        priceCurrency: currency
+      }
+    },
+    url: canonical
+  })}></script>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script is:inline src="../samtykke.js" defer></script>
+  <script is:inline src="../assets/js/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../index.html" aria-label="Fotograf Spalder hjem"><strong>Fotograf Spalder</strong><span>Familie · portrett · bryllup · kjæledyr</span></a>
+      <div class="nav-wrap">
+        <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Åpne meny" aria-expanded="false" aria-controls="navLinks">Meny</button>
+        <nav class="nav-links" id="navLinks" aria-label="Hovedmeny">
+          <a href="../index.html">Forside</a>
+          <a href="../bryllupsfotograf-ringsaker.html">Bryllup</a>
+          <a href="../portfolio.html">Portefølje</a>
+          <a href="../priser.html">Priser</a>
+          <a class="button primary" href="../booking.html">Send forespørsel</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Bilderestaurering i Ringsaker og Innlandet</span>
+          <h1>Restaurering av gamle bilder</h1>
+          <p class="lead">Gamle fotografier kan være blant de mest verdifulle minnene vi har. Selv bilder som er falmet, ripet, skadet eller bare finnes som gamle negativer kan ofte hentes frem igjen digitalt.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="../booking.html">Send bilde til vurdering</a>
+            <a class="button secondary" href="#prosess">Se prosessen</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src={`${imageBase}/steg-4-ferdig-restaurering.jpg`} width="1400" height="2081" alt="Ferdig restaurert og fargelagt portrett fra et gammelt negativ">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Digital restaurering av fotografier og negativer</h2>
+          <p class="lead">Fotograf Spalder tilbyr digital restaurering av gamle fotografier og negativer. Målet er å bevare motivets særpreg samtidig som skader, svak kontrast og forstyrrelser bearbeides på en kontrollert måte.</p>
+          <p class="lead">Resultatet avhenger alltid av kvaliteten og hvor mye bildeinformasjon som finnes i originalmaterialet.</p>
+        </div>
+        <div class="info-box">
+          <h3>Arbeidet kan inkludere</h3>
+          <ul class="service-list">
+            <li>digitalisering</li>
+            <li>invertering av negativer</li>
+            <li>fjerning av støv og riper</li>
+            <li>reparasjon av mindre skader</li>
+            <li>kontrast- og detaljforbedring</li>
+            <li>forsiktig oppskarping</li>
+            <li>forbedring av ansiktsdetaljer</li>
+            <li>valgfri fargelegging</li>
+            <li>lys- og tonejustering</li>
+            <li>ferdig digital leveranse</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="prosess">
+      <div class="container">
+        <div class="section-head">
+          <h2>Fra gammelt negativ til ferdig bilde</h2>
+          <p class="lead">Eksemplet viser fire ledd i en digital bilderestaurering. Kunstig intelligens kan brukes som et hjelpemiddel til blant annet fargelegging og detaljforbedring, men sluttresultatet kontrolleres og bearbeides manuelt.</p>
+        </div>
+        <div class="process-grid">
+          <figure class="process-card">
+            <img src={`${imageBase}/steg-1-originalt-negativ.jpg`} width="1400" height="2100" loading="lazy" decoding="async" alt="Originalt gammelt negativ fotografert mot lys før digital restaurering">
+            <figcaption class="process-copy"><span class="step-label">Steg 1 – Digitalisering</span><h3>Originalt negativ fotografert mot lys</h3><p>Det gamle negativet fotograferes eller skannes i høyest mulig kvalitet.</p></figcaption>
+          </figure>
+          <figure class="process-card">
+            <img src={`${imageBase}/steg-2-renset-negativ.jpg`} width="1400" height="2081" loading="lazy" decoding="async" alt="Beskåret og renset gammelt negativ klart for videre restaurering">
+            <figcaption class="process-copy"><span class="step-label">Steg 2 – Rensing og klargjøring</span><h3>Beskåret og renset negativ</h3><p>Uønskede kanter, støv, merker og forstyrrelser fjernes før videre arbeid.</p></figcaption>
+          </figure>
+          <figure class="process-card">
+            <img src={`${imageBase}/steg-3-restaurert-fargelagt.jpg`} width="1400" height="2081" loading="lazy" decoding="async" alt="Invertert, restaurert og fargelagt portrett fra gammelt negativ">
+            <figcaption class="process-copy"><span class="step-label">Steg 3 – Restaurering og farge</span><h3>Invertert, restaurert og fargelagt</h3><p>Negativet inverteres og bildet restaureres. Ved ønske kan kunstig intelligens brukes som hjelpemiddel til fargelegging og detaljforbedring.</p></figcaption>
+          </figure>
+          <figure class="process-card highlight">
+            <img src={`${imageBase}/steg-4-ferdig-restaurering.jpg`} width="1400" height="2081" loading="lazy" decoding="async" alt="Ferdig restaurert portrett med forbedret lys og balansert presentasjon">
+            <figcaption class="process-copy"><span class="step-label">Steg 4 – Finpuss og ferdig resultat</span><h3>Forbedret lys og presentasjon</h3><p>Lys, kontrast, detaljer og lokal retusjering justeres manuelt for å skape et naturlig og balansert sluttresultat.</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head"><h2>Priser på bilderestaurering</h2><p class="lead">Omfanget vurderes ut fra originalen, skadegraden og ønsket sluttresultat.</p></div>
+        <div class="price-grid">
+          <article class="price-card"><h3>Enkel restaurering</h3><div class="price">{restoration.simple.label} {grouped(restoration.simple.price)} kr</div><p>Passer til:</p><ul><li>støv</li><li>små riper</li><li>lett kontrastjustering</li><li>enkel oppskarping</li><li>mindre korrigeringer</li></ul></article>
+          <article class="price-card highlight"><h3>Standard restaurering</h3><div class="price">{restoration.standard.label} {grouped(restoration.standard.price)} kr</div><p>Passer til:</p><ul><li>tydelige riper og skader</li><li>lokal retusjering</li><li>forbedring av ansikt og detaljer</li><li>mer omfattende kontrast- og tonearbeid</li><li>ferdig høyoppløselig digital fil</li></ul></article>
+          <article class="price-card"><h3>Avansert restaurering</h3><div class="price">{restoration.advanced.label} {grouped(restoration.advanced.price)} kr</div><p>Passer til:</p><ul><li>kraftig skadede bilder</li><li>større manglende områder</li><li>omfattende retusjering</li><li>vanskelig restaurering</li><li>mye manuelt arbeid</li></ul></article>
+        </div>
+        <div class="price-note"><strong>Fargelegging:</strong> Pris etter vurdering eller som tillegg, avhengig av arbeidsmengde.</div>
+        <p class="price-note">Endelig pris avtales etter at jeg har sett originalbildet eller en god digital kopi. Skadegrad, kvalitet og ønsket sluttresultat påvirker arbeidsmengden.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="info-box">
+          <h2>Dette får du</h2>
+          <ul><li>ferdig restaurert digital fil</li><li>høy oppløsning</li><li>uten vannmerke</li><li>egnet for digital bruk og print</li></ul>
+          <p>Fysiske produkter inngår ikke nødvendigvis i restaureringsprisen. Print og bildeprodukter kan bestilles separat.</p>
+        </div>
+        <div class="info-box">
+          <h2>Viktig informasjon</h2>
+          <ul><li>Originalmateriale behandles forsiktig, og kunden beholder sitt originale bilde eller negativ.</li><li>Resultatet avhenger av hvor mye informasjon som faktisk finnes i originalbildet.</li><li>Enkelte detaljer kan ikke rekonstrueres med full historisk sikkerhet.</li><li>AI-fargelegging er en visuell tolkning og ikke en garanti for historisk korrekte farger.</li><li>Omfang og muligheter vurderes realistisk før arbeidet avtales.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>Har du et gammelt bilde du ønsker å bevare?</h2>
+          <p>Send meg et bilde av originalen eller negativet, så kan jeg gjøre en uforpliktende vurdering av hva som er mulig og hva jobben vil koste.</p>
+          <div class="cta-actions"><a class="button primary" href="../booking.html">Send bilde til vurdering</a><a class="button secondary" href="../priser.html">Se øvrige priser</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-row"><p>© <span id="year"></span> Fotograf Spalder. Alle rettigheter reservert.</p><p><a href="../personvern.html">Personvern og informasjonskapsler</a></p></div></footer>
+</body>
+</html>
