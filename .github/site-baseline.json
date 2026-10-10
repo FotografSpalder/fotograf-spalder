@@ -949,6 +949,7 @@
         "Høyoppløselig digitalt bilde: 500 kr per bilde",
         "Fulloppløselig ferdigredigert JPEG: 700 kr per bilde",
         "Komplett digital pakke – hele det ferdigredigerte galleriet: 6 500 kr ved ordinære fotograferinger og mindre private oppdrag",
+        "Har du et falmet, ripet eller skadet fotografi – eller et gammelt negativ? Jeg tilbyr digital bilderestaurering med retusjering, detaljforbedring og valgfri fargelegging fra 750 kr.",
         "Er alle bildene inkludert i fotograferingsprisen?",
         "Nei. Bare antallet digitale bilder som står oppført på den valgte pakken, er inkludert. Resten av bildene kan ses i kundegalleriet og kjøpes separat.",
         "Dette er et ferdig redigert bilde uten vannmerke. Antallet som er inkludert, står tydelig på hver pakke.",
@@ -1005,6 +1006,65 @@
         "2. Du mottar svar og betaler 30 %Når forespørselen er godkjent, får du betalingsinformasjon. Datoen reserveres når forskuddet på 30 % er betalt.",
         "4. Du betaler de resterende 70 % i FotoSkyNår det private galleriet er klargjort, betales restbeløpet via FotoSky før galleriet kan åpnes.",
         "5. Privatgalleriet åpnesNår restbeløpet er registrert betalt, får du tilgang til galleriet. Der velger du inkluderte bilder og kan kjøpe eventuelle tillegg separat."
+      ],
+      "booking_options": [],
+      "forms": []
+    },
+    "restaurering-gamle-bilder/index.html": {
+      "title": [
+        "Restaurering av gamle bilder | Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "description": "Gi gamle fotografier og negativer nytt liv. Fotograf Spalder tilbyr digital restaurering, retusjering, detaljforbedring og valgfri fargelegging av gamle bilder.",
+        "robots": "index, follow",
+        "author": "Henrik Spalder",
+        "theme-color": "#0f172a",
+        "og:title": "Restaurering av gamle bilder | Fotograf Spalder",
+        "og:description": "Digital restaurering, retusjering og valgfri fargelegging av gamle fotografier og negativer i Ringsaker og Innlandet.",
+        "og:image": "https://www.fotograf-spalder.com/images/restaurering-gamle-bilder/steg-4-ferdig-restaurering.jpg",
+        "og:image:width": "1400",
+        "og:image:height": "2081",
+        "og:image:alt": "Ferdig restaurert og fargelagt portrett fra et gammelt negativ",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/restaurering-gamle-bilder/"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/restaurering-gamle-bilder/"
+      ],
+      "json_ld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Restaurering av gamle bilder",
+          "description": "Digital restaurering, retusjering, detaljforbedring og valgfri fargelegging av gamle fotografier og negativer.",
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "Fotograf Spalder",
+            "url": "https://www.fotograf-spalder.com/"
+          },
+          "areaServed": [
+            "Ringsaker",
+            "Brumunddal",
+            "Hamar",
+            "Innlandet"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 750,
+              "priceCurrency": "NOK"
+            }
+          },
+          "url": "https://www.fotograf-spalder.com/restaurering-gamle-bilder/"
+        }
+      ],
+      "commercial": [
+        "Fra 750 kr",
+        "Ca. 1 500 kr",
+        "Fra 2 500 kr"
       ],
       "booking_options": [],
       "forms": []

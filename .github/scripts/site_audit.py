@@ -88,6 +88,19 @@ def css_refs(text):
     return re.findall(r'url\(\s*[\"\']?([^\"\')\s]+)', text, re.I)
 
 
+def public_url(name):
+    if name == 'index.html':
+        return BASE + '/'
+    if name.endswith('/index.html'):
+        return BASE + '/' + name[:-len('index.html')]
+    return BASE + '/' + name
+
+
+def resolves_to(page, ref, target):
+    resolved = local_path(page, ref)
+    return resolved is not None and resolved[0] == target
+
+
 def audit(root=ROOT):
     root = root.resolve()
     repository_root = root.parent if root.name == 'dist' and (root.parent / '.git').exists() else root
@@ -121,7 +134,7 @@ def audit(root=ROOT):
         meta = {n.attrs.get('name', n.attrs.get('property', '')).lower(): n.attrs.get('content', '') for n in page.tags('meta')}
         titles = [n.normalized() for n in page.tags('title')]
         canonicals = [n.attrs.get('href') for n in page.tags('link') if n.attrs.get('rel', '').lower() == 'canonical']
-        expected = BASE + ('/' if name == 'index.html' else '/' + name)
+        expected = public_url(name)
         noindex = 'noindex' in meta.get('robots', '').lower()
         if len(titles) != 1 or not titles[0]:
             issue('title', name, 'Expected one non-empty title')
@@ -135,11 +148,11 @@ def audit(root=ROOT):
                 issue('og-url', name, 'Expected ' + expected)
         if name == 'takk.html' and not noindex:
             issue('noindex', name, 'Thank-you page must remain noindex')
-        if not any(n.attrs.get('src') == 'samtykke.js' for n in page.tags('script')):
+        if not any(n.attrs.get('src') and resolves_to(name, n.attrs['src'], 'samtykke.js') for n in page.tags('script')):
             issue('consent-script', name, 'Missing shared consent script')
-        if not any(n.attrs.get('src') == 'assets/js/site.js' for n in page.tags('script')):
+        if not any(n.attrs.get('src') and resolves_to(name, n.attrs['src'], 'assets/js/site.js') for n in page.tags('script')):
             issue('shared-js', name, 'Missing shared site script')
-        if not any(n.attrs.get('href') == 'assets/css/site.css' and n.attrs.get('rel', '').lower() == 'stylesheet' for n in page.tags('link')):
+        if not any(n.attrs.get('href') and resolves_to(name, n.attrs['href'], 'assets/css/site.css') and n.attrs.get('rel', '').lower() == 'stylesheet' for n in page.tags('link')):
             issue('shared-css', name, 'Missing shared stylesheet')
         if name == 'booking.html' and not any(n.attrs.get('src') == 'assets/js/booking.js' for n in page.tags('script')):
             issue('booking-script', name, 'Missing booking handler')

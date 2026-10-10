@@ -124,6 +124,18 @@ class RegressionTests(unittest.TestCase):
         self.edit('index.html', '<link rel="canonical"', '<link rel="wrong"')
         self.rejected('canonical')
 
+    def test_nested_index_uses_directory_canonical(self):
+        nested = self.root / 'nested' / 'index.html'
+        nested.parent.mkdir()
+        html = (self.root / 'index.html').read_text(encoding='utf-8')
+        html = html.replace('https://www.fotograf-spalder.com/', 'https://www.fotograf-spalder.com/nested/')
+        html = html.replace('href="assets/', 'href="../assets/')
+        html = html.replace('src="assets/', 'src="../assets/')
+        html = html.replace('src="samtykke.js"', 'src="../samtykke.js"')
+        nested.write_text(html, encoding='utf-8')
+        result = a.audit(self.root)
+        self.assertFalse([f for f in result['findings'] if f['page'] == 'nested/index.html' and f['code'] in {'canonical', 'og-url', 'consent-script', 'shared-js', 'shared-css'}])
+
     def test_title(self):
         self.edit('index.html', '<title>', '<not-title>')
         self.rejected('title')
