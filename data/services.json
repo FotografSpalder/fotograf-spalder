@@ -413,6 +413,20 @@
       ]
     }
   },
+  "restoration": {
+    "simple": {
+      "price": 750,
+      "label": "Fra"
+    },
+    "standard": {
+      "price": 1500,
+      "label": "Ca."
+    },
+    "advanced": {
+      "price": 2500,
+      "label": "Fra"
+    }
+  },
   "booking_groups": [
     {
       "label": "Vanlige fotoshoots",

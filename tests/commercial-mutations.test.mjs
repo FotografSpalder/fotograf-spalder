@@ -37,6 +37,7 @@ test('schema v2 contains structured copy and no generic data tokens', () => {
   assert.equal(data.schema_version, 2);
   assert.equal(text.includes('{{'), false);
   assert.deepEqual(data.rules.booking_terms, ['cancellation','late-arrival','weather','deposit','deposit-refund','balance','gallery','delivery','included-images']);
+  assert.deepEqual(Object.keys(data.restoration), ['simple', 'standard', 'advanced']);
 });
 
 test('Astro authoring sources do not hardcode commercial values', () => {
@@ -59,6 +60,28 @@ test('Astro authoring sources do not hardcode commercial values', () => {
     }
   }
   assert.deepEqual(errors, []);
+});
+
+test('restoration prices propagate through both linked pages', { timeout: 120000 }, () => {
+  const original = fs.readFileSync(dataPath, 'utf8');
+  const data = JSON.parse(original);
+  try {
+    data.restoration.simple.price += 111;
+    data.restoration.standard.price += 222;
+    data.restoration.advanced.price += 333;
+    fs.writeFileSync(dataPath, JSON.stringify(data, null, 2) + '\n');
+    const result = build();
+    assert.equal(result.status, 0, result.stdout + result.stderr);
+    const restoration = page(path.join('restaurering-gamle-bilder', 'index.html'));
+    const prices = page('priser.html');
+    assert.ok(prices.includes(`${grouped(data.restoration.simple.price)} kr`));
+    for (const tier of Object.values(data.restoration)) {
+      assert.ok(restoration.includes(`${tier.label} ${grouped(tier.price)} kr`));
+    }
+  } finally {
+    fs.writeFileSync(dataPath, original);
+    fs.rmSync(output, { recursive: true, force: true });
+  }
 });
 
 test('commercial mutations propagate through the Astro build', { timeout: 120000 }, () => {
