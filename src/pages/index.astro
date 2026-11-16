@@ -651,6 +651,139 @@ body {
 }
 /* MOBILE_LAYOUT_FIX_END */
 
+
+/* WINTER_THEME_START */
+body.winter-theme {
+  background:
+    radial-gradient(circle at 18% 8%, rgba(147,197,253,0.16), transparent 24%),
+    radial-gradient(circle at 82% 14%, rgba(186,230,253,0.10), transparent 26%),
+    radial-gradient(circle at 50% 100%, rgba(224,242,254,0.05), transparent 38%),
+    linear-gradient(180deg, #08111f 0%, #0f172a 48%, #111827 100%);
+}
+
+body.winter-theme .site-header {
+  background: rgba(8,17,31,0.80);
+  border-bottom-color: rgba(186,230,253,0.16);
+}
+
+body.winter-theme .season-card {
+  background:
+    linear-gradient(135deg, rgba(30,64,175,0.18), rgba(255,255,255,0.07)),
+    rgba(15,23,42,0.35);
+  border-color: rgba(186,230,253,0.26);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+body.winter-theme .season-badge,
+body.winter-theme .card,
+body.winter-theme .stat,
+body.winter-theme .faq-item,
+body.winter-theme .hero-card {
+  border-color: rgba(186,230,253,0.15);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.24),
+    inset 0 1px 0 rgba(255,255,255,0.035);
+}
+
+body.winter-theme .season-badge::before {
+  content: "❄";
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #e0f2fe;
+  font-size: 1.35rem;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.winter-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.winter-glow::before,
+.winter-glow::after {
+  content: "";
+  position: absolute;
+  width: 46vw;
+  height: 46vw;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.11;
+}
+
+.winter-glow::before {
+  top: -18vw;
+  left: -8vw;
+  background: #60a5fa;
+}
+
+.winter-glow::after {
+  top: 2vw;
+  right: -18vw;
+  background: #bae6fd;
+}
+
+.snow-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -8vh;
+  left: var(--snow-left);
+  width: var(--snow-size);
+  height: var(--snow-size);
+  border-radius: 50%;
+  background: rgba(255,255,255,var(--snow-opacity));
+  box-shadow: 0 0 8px rgba(224,242,254,0.24);
+  animation:
+    snow-fall var(--snow-duration) linear infinite,
+    snow-drift var(--snow-drift-duration) ease-in-out infinite alternate;
+  animation-delay: var(--snow-delay);
+  will-change: transform;
+}
+
+@keyframes snow-fall {
+  from { transform: translate3d(0, -10vh, 0); }
+  to { transform: translate3d(var(--snow-shift), 112vh, 0); }
+}
+
+@keyframes snow-drift {
+  from { margin-left: -10px; }
+  to { margin-left: 14px; }
+}
+
+@media (max-width: 700px) {
+  .snowflake:nth-child(n+25) { display: none; }
+
+  .winter-glow::before,
+  .winter-glow::after {
+    opacity: 0.07;
+    filter: blur(58px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snowflake {
+    display: none;
+  }
+
+  .winter-glow::before,
+  .winter-glow::after {
+    opacity: 0.05;
+  }
+}
+/* WINTER_THEME_END */
+
 </style>
 <script is:inline type="application/ld+json" set:html={`
 {
@@ -729,7 +862,9 @@ body {
   <script is:inline src="samtykke.js" defer></script>
   <script is:inline src="assets/js/site.js" defer></script>
 </head>
-<body>
+<body class="winter-theme">
+  <div class="winter-glow" aria-hidden="true"></div>
+  <div class="snow-layer" id="snowLayer" aria-hidden="true"></div>
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Fotograf Spalder hjem">
@@ -999,5 +1134,40 @@ Se / legg igjen anmeldelser
       <p><a href="personvern.html" style="color:#fde68a;">Personvern og informasjonskapsler</a></p>
     </div>
   </footer>
+
+<script is:inline>
+  (() => {
+    const layer = document.getElementById('snowLayer');
+    if (!layer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const total = window.matchMedia('(max-width: 700px)').matches ? 24 : 42;
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < total; i += 1) {
+      const flake = document.createElement('span');
+      flake.className = 'snowflake';
+
+      const size = (Math.random() * 4.5 + 2).toFixed(2);
+      const duration = (Math.random() * 9 + 10).toFixed(2);
+      const driftDuration = (Math.random() * 4 + 3).toFixed(2);
+      const delay = (-Math.random() * 18).toFixed(2);
+      const opacity = (Math.random() * 0.5 + 0.28).toFixed(2);
+      const shift = (Math.random() * 90 - 45).toFixed(0);
+
+      flake.style.setProperty('--snow-left', Math.random() * 100 + 'vw');
+      flake.style.setProperty('--snow-size', size + 'px');
+      flake.style.setProperty('--snow-duration', duration + 's');
+      flake.style.setProperty('--snow-drift-duration', driftDuration + 's');
+      flake.style.setProperty('--snow-delay', delay + 's');
+      flake.style.setProperty('--snow-opacity', opacity);
+      flake.style.setProperty('--snow-shift', shift + 'px');
+
+      fragment.appendChild(flake);
+    }
+
+    layer.appendChild(fragment);
+  })();
+</script>
+
 </body>
 </html>
