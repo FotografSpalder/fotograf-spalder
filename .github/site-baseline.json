@@ -221,6 +221,11 @@
       "code": "canonical",
       "page": "takk.html",
       "detail": "Expected https://www.fotograf-spalder.com/takk.html"
+    },
+    {
+      "code": "inline-script",
+      "page": "index.html",
+      "detail": "Executable JavaScript must live under assets/js"
     }
   ],
   "case_collisions": [
@@ -1068,6 +1073,103 @@
       ],
       "booking_options": [],
       "forms": []
+    },
+    "arrangementsfotografering.html": {
+      "title": [
+        "Arrangementsfotograf i Ringsaker og Innlandet | Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "description": "Profesjonell arrangementsfotografering i Ringsaker, Brumunddal, Hamar-regionen og Innlandet. Se portefølje og be Fotograf Spalder om tilbud på eventfoto.",
+        "robots": "index, follow",
+        "author": "Henrik Spalder",
+        "theme-color": "#0f172a",
+        "og:title": "Arrangementsfotograf i Ringsaker og Innlandet | Fotograf Spalder",
+        "og:description": "Dokumentarisk arrangementsfoto av mennesker, stemning, scene, utstillere og de små øyeblikkene som forteller hele historien.",
+        "og:image": "https://www.fotograf-spalder.com/images/arrangementsfotografering/julegrantenning-brumunddal-artister-pa-scenen.jpg",
+        "og:image:width": "2000",
+        "og:image:height": "1383",
+        "og:image:alt": "Artister og publikum under julegrantenningen i Brumunddal",
+        "og:type": "website",
+        "og:url": "https://www.fotograf-spalder.com/arrangementsfotografering.html"
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/arrangementsfotografering.html"
+      ],
+      "json_ld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Arrangementsfotografering i Ringsaker og Innlandet",
+          "description": "Dokumentarisk fotografering av markeder, kulturarrangementer, konserter, åpninger og publikumsarrangementer.",
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "Fotograf Spalder",
+            "url": "https://www.fotograf-spalder.com/",
+            "email": "fotograf.spalder@outlook.com"
+          },
+          "areaServed": [
+            "Ringsaker",
+            "Brumunddal",
+            "Hamar",
+            "Innlandet"
+          ],
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": 4000,
+            "highPrice": 15000,
+            "priceCurrency": "NOK"
+          },
+          "url": "https://www.fotograf-spalder.com/arrangementsfotografering.html"
+        }
+      ],
+      "commercial": [
+        "4 000–7 000 kr",
+        "7 000–15 000 kr"
+      ],
+      "booking_options": [],
+      "forms": []
+    },
+    "mine-bilder.html": {
+      "title": [
+        "Mine bilder | Fotograf Spalder"
+      ],
+      "metadata": {
+        "": "",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "robots": "noindex, follow",
+        "description": "Åpne ditt private bildegalleri hos Fotograf Spalder med bildekoden du har fått."
+      },
+      "canonical": [
+        "https://www.fotograf-spalder.com/mine-bilder.html"
+      ],
+      "json_ld": [],
+      "commercial": [],
+      "booking_options": [],
+      "forms": [
+        {
+          "tag": "form",
+          "action": "https://kuvatilaus.fi/kuvaus",
+          "method": "GET"
+        },
+        {
+          "tag": "input",
+          "id": "gallery-code",
+          "type": "text",
+          "name": "code",
+          "placeholder": "Skriv inn bildekoden",
+          "maxlength": "10",
+          "autocomplete": "off",
+          "spellcheck": "false",
+          "required": null
+        },
+        {
+          "tag": "button",
+          "class": "button primary",
+          "type": "submit"
+        }
+      ]
     }
   }
 }
