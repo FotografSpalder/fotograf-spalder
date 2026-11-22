@@ -7,6 +7,7 @@ BASE = 'https://www.fotograf-spalder.com'
 INDEXABLE = {
     'index.html': '/',
     'portfolio.html': '/portfolio.html',
+    'arrangementsfotografering.html': '/arrangementsfotografering.html',
     'priser.html': '/priser.html',
     'booking.html': '/booking.html',
     'om.html': '/om.html',

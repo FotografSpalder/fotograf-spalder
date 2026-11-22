@@ -1,0 +1,353 @@
+---
+import { data, formatPrice } from '../lib/services';
+
+const canonical = 'https://www.fotograf-spalder.com/arrangementsfotografering.html';
+const imageBase = 'images/arrangementsfotografering';
+const eventHalf = data.services['event-half'];
+const eventFull = data.services['event-full'];
+const eventHalfPrice = formatPrice(eventHalf, { group: true }).replace(/^Fra /, '');
+const eventFullPrice = formatPrice(eventFull, { group: true }).replace(/^Fra /, '');
+
+const portfolioImages = [
+  {
+    file: 'julegrantenning-brumunddal-sceneopptreden',
+    width: 1333,
+    height: 2000,
+    className: 'portrait',
+    alt: 'Artist i rød dress under sceneopptreden på julegrantenningen i Brumunddal',
+    caption: 'Julegrantenning i Brumunddal',
+  },
+  {
+    file: 'julegrantenning-brumunddal-artister-pa-scenen',
+    width: 2000,
+    height: 1383,
+    className: 'wide',
+    alt: 'Artister, julenisse og publikum under sceneprogrammet på julegrantenningen i Brumunddal',
+    caption: 'Julegrantenning i Brumunddal',
+  },
+  {
+    file: 'julegrantenning-brumunddal-opplyst-juletre',
+    width: 1200,
+    height: 1800,
+    className: 'portrait',
+    alt: 'Opplyst juletre mot mørk kveldshimmel under julegrantenningen i Brumunddal',
+    caption: 'Julegrantenning i Brumunddal',
+  },
+  {
+    file: 'sommermarked-vesterlien-oversikt',
+    width: 2000,
+    height: 895,
+    className: 'feature',
+    alt: 'Oversikt over sommermarked med salgsboder og besøkende ved Vesterlien Kunstnerhjem',
+    caption: 'Vesterlien Kunstnerhjem – sommermarked',
+  },
+  {
+    file: 'sommermarked-vesterlien-utstillere',
+    width: 1800,
+    height: 1200,
+    className: 'half',
+    alt: 'Tre utstillere bak en salgsbod med håndlagde varer på sommermarkedet ved Vesterlien Kunstnerhjem',
+    caption: 'Vesterlien Kunstnerhjem – sommermarked',
+  },
+  {
+    file: 'sommermarked-vesterlien-handlagde-produkter',
+    width: 1800,
+    height: 1200,
+    className: 'half',
+    alt: 'Heklede figurer og håndlagde produkter utstilt i en koffert på sommermarked',
+    caption: 'Vesterlien Kunstnerhjem – sommermarked',
+  },
+  {
+    file: 'sommermarked-vesterlien-salgsbod',
+    width: 2000,
+    height: 1333,
+    className: 'wide',
+    alt: 'Salgsbod med lokale matvarer og håndverksprodukter på sommermarkedet ved Vesterlien Kunstnerhjem',
+    caption: 'Vesterlien Kunstnerhjem – sommermarked',
+  },
+  {
+    file: 'sommermarked-vesterlien-publikum',
+    width: 1200,
+    height: 1800,
+    className: 'portrait',
+    alt: 'Besøkende i aktivitet ved en salgsbod på sommermarked',
+    caption: 'Vesterlien Kunstnerhjem – sommermarked',
+  },
+  {
+    file: 'sommermarked-vesterlien-portrett-av-deltakere',
+    width: 1800,
+    height: 1200,
+    className: 'half',
+    alt: 'Fire deltakere samlet til et naturlig gruppeportrett under sommermarkedet',
+    caption: 'Vesterlien Kunstnerhjem – sommermarked',
+  },
+  {
+    file: 'sommermarked-vesterlien-kunstnerhjem-og-boder',
+    width: 2000,
+    height: 1333,
+    className: 'half',
+    alt: 'Vesterlien Kunstnerhjem og markedsboder sett fra høyden i sommerlandskap',
+    caption: 'Vesterlien Kunstnerhjem – sommermarked',
+  },
+  {
+    file: 'fn-dagen-vesterlien-taler',
+    width: 1200,
+    height: 1800,
+    className: 'portrait',
+    alt: 'Mann holder tale med notater under markeringen av FN-dagen ved Vesterlien Kunstnerhjem',
+    caption: 'Vesterlien Kunstnerhjem – FN-dagen',
+  },
+  {
+    file: 'fn-dagen-vesterlien-portrett-i-folkedrakt',
+    width: 1200,
+    height: 1800,
+    className: 'portrait',
+    alt: 'Kvinne i folkedrakt fotografert i det historiske interiøret under FN-dagen ved Vesterlien Kunstnerhjem',
+    caption: 'Vesterlien Kunstnerhjem – FN-dagen',
+  },
+  {
+    file: 'julemarked-vesterlien-lykter',
+    width: 2000,
+    height: 1333,
+    className: 'wide',
+    alt: 'Gamle lykter henger over en utstilling på julemarkedet ved Vesterlien Kunstnerhjem',
+    caption: 'Vesterlien Kunstnerhjem – julemarked',
+  },
+  {
+    file: 'julemarked-vesterlien-utstillere',
+    width: 2000,
+    height: 1333,
+    className: 'wide',
+    alt: 'To utstillere deler et naturlig øyeblikk bak salgsboden på julemarked',
+    caption: 'Vesterlien Kunstnerhjem – julemarked',
+  },
+  {
+    file: 'julemarked-vesterlien-oversikt',
+    width: 2000,
+    height: 1333,
+    className: 'feature',
+    alt: 'Oversikt over julemarkedet og Vesterlien Kunstnerhjem i vinterlandskap',
+    caption: 'Vesterlien Kunstnerhjem – julemarked',
+  },
+  {
+    file: 'julemarked-vesterlien-folkeliv-i-snovaer',
+    width: 2000,
+    height: 1333,
+    className: 'wide',
+    alt: 'Besøkende og utstillere samlet på julemarked mens snøen faller tett',
+    caption: 'Vesterlien Kunstnerhjem – julemarked',
+  },
+  {
+    file: 'julemarked-vesterlien-julenisse',
+    width: 1200,
+    height: 1800,
+    className: 'portrait',
+    alt: 'Julenisse sitter ved et gammelt tømmerhus under julemarkedet ved Vesterlien Kunstnerhjem',
+    caption: 'Vesterlien Kunstnerhjem – julemarked',
+  },
+];
+---
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrangementsfotograf i Ringsaker og Innlandet | Fotograf Spalder</title>
+  <meta name="description" content="Profesjonell arrangementsfotografering i Ringsaker, Brumunddal, Hamar-regionen og Innlandet. Se portefølje og be Fotograf Spalder om tilbud på eventfoto.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Henrik Spalder">
+  <link rel="canonical" href={canonical}>
+  <link rel="icon" type="image/png" href="Untitled-1.png">
+  <meta name="theme-color" content="#0f172a">
+
+  <meta property="og:title" content="Arrangementsfotograf i Ringsaker og Innlandet | Fotograf Spalder">
+  <meta property="og:description" content="Dokumentarisk arrangementsfoto av mennesker, stemning, scene, utstillere og de små øyeblikkene som forteller hele historien.">
+  <meta property="og:image" content="https://www.fotograf-spalder.com/images/arrangementsfotografering/julegrantenning-brumunddal-artister-pa-scenen.jpg">
+  <meta property="og:image:width" content="2000">
+  <meta property="og:image:height" content="1383">
+  <meta property="og:image:alt" content="Artister og publikum under julegrantenningen i Brumunddal">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonical}>
+
+  <style is:inline>
+    :root{--bg:#0f172a;--bg-soft:#111827;--card:rgba(255,255,255,.075);--text:#f8fafc;--muted:#cbd5e1;--line:rgba(255,255,255,.12);--accent:#f59e0b;--accent-light:#fde68a;--max:1200px;--radius:22px;--shadow:0 18px 40px rgba(0,0,0,.25)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top,rgba(245,158,11,.14),transparent 30%),linear-gradient(180deg,#0b1120 0%,var(--bg-soft) 100%);color:var(--text);line-height:1.65}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.container{width:min(100% - 2rem,var(--max));margin:0 auto}.site-header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(12px);background:rgba(11,17,32,.86);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:1rem}.brand{display:flex;flex-direction:column;gap:.15rem}.brand strong{font-size:1.1rem;letter-spacing:.04em}.brand span{color:var(--muted);font-size:.9rem}.nav-wrap{display:flex;align-items:center;gap:.75rem}.nav-links{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}.nav-links a{color:var(--muted);font-weight:700}.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--text)}.mobile-toggle{display:none;background:transparent;border:1px solid var(--line);color:var(--text);padding:.65rem .9rem;border-radius:12px;font-weight:800}.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.82rem 1.2rem;border-radius:999px;font-weight:900;border:1px solid transparent;cursor:pointer}.button.primary{background:var(--accent);color:#111827;box-shadow:var(--shadow)}.button.secondary{border-color:var(--line);background:transparent;color:var(--text)}.button:hover{filter:brightness(1.08)}
+    .hero{padding:4.5rem 0 2.5rem}.hero-copy{max-width:850px;margin-bottom:2rem}.eyebrow{display:inline-block;padding:.35rem .75rem;margin-bottom:1rem;border-radius:999px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.38);color:var(--accent-light);font-weight:800;font-size:.9rem}h1,h2,h3{line-height:1.15;margin:0 0 1rem}h1{font-size:clamp(2.25rem,5.8vw,4.8rem);max-width:16ch;overflow-wrap:anywhere}h2{font-size:clamp(1.75rem,3.5vw,3rem)}h3{font-size:1.2rem}.lead{font-size:clamp(1.03rem,2vw,1.18rem);color:var(--muted);max-width:72ch}.hero-actions,.cta-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}.hero-media{margin:0;position:relative;overflow:hidden;border-radius:28px;border:1px solid var(--line);box-shadow:var(--shadow);background:#080d18}.hero-media img{width:100%;aspect-ratio:21/8;object-fit:cover;object-position:center 58%}.hero-media figcaption{position:absolute;right:1rem;bottom:1rem;padding:.4rem .7rem;border-radius:999px;background:rgba(11,17,32,.78);color:var(--muted);font-size:.82rem;backdrop-filter:blur(8px)}
+    section{padding:4rem 0}.section-head{max-width:76ch;margin-bottom:2rem}.section-head p{color:var(--muted)}.type-list{display:flex;gap:.7rem;flex-wrap:wrap;list-style:none;padding:0;margin:0}.type-list li{padding:.7rem 1rem;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.05);font-weight:700;color:var(--muted)}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1.25rem;align-items:start}.portfolio-grid figure{grid-column:span 4;margin:0;overflow:hidden;border-radius:var(--radius);border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow)}.portfolio-grid figure.feature{grid-column:1/-1}.portfolio-grid figure.wide{grid-column:span 8}.portfolio-grid figure.half{grid-column:span 6}.portfolio-grid figure.portrait{grid-column:span 4}.portfolio-grid img{width:100%;height:auto;background:#080d18}.portfolio-grid figcaption{padding:.75rem 1rem;color:var(--muted);font-size:.88rem}
+    .process-grid,.delivery-grid,.price-grid{display:grid;gap:1rem}.process-grid{grid-template-columns:repeat(3,1fr)}.delivery-grid{grid-template-columns:1.1fr .9fr}.price-grid{grid-template-columns:repeat(2,1fr);max-width:900px}.card,.price-card,.cta{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.card,.price-card{padding:1.4rem}.card p,.card li,.price-card p,.price-card li{color:var(--muted)}.card ul,.price-card ul{padding-left:1.2rem}.step{display:inline-grid;place-items:center;width:2.1rem;height:2.1rem;margin-bottom:1rem;border-radius:50%;background:rgba(245,158,11,.16);color:var(--accent-light);font-weight:900}.price{font-size:clamp(1.7rem,4vw,2.35rem);font-weight:900;color:var(--accent-light);margin:.25rem 0 1rem}.price-note{max-width:900px;margin-top:1rem;padding:1.2rem;border-left:4px solid var(--accent);border-radius:0 18px 18px 0;background:rgba(245,158,11,.08);color:var(--muted)}.cta{padding:clamp(1.5rem,5vw,3rem);text-align:center;background:linear-gradient(180deg,rgba(245,158,11,.12),rgba(255,255,255,.05));border-color:rgba(245,158,11,.28)}.cta p{max-width:68ch;margin:0 auto;color:var(--muted)}.cta-actions{justify-content:center}.footer{border-top:1px solid var(--line);padding:2rem 0 3rem}.footer-row{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;align-items:center}.footer p{color:var(--muted);margin:0}.footer a{color:var(--accent-light);font-weight:800}
+    @media(max-width:1080px){.site-header{position:static}.mobile-toggle{display:inline-flex}.nav{position:relative;align-items:center;padding:1rem 0}.brand{flex-shrink:0}.nav-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:.7rem}.nav-links{display:none;position:absolute;right:0;top:calc(100% - .25rem);z-index:1001;flex-direction:column;align-items:flex-start;width:min(320px,calc(100vw - 2rem));padding:1rem;background:rgba(11,17,32,.98);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.nav-links.open{display:flex}.process-grid,.delivery-grid{grid-template-columns:1fr}.portfolio-grid figure.wide,.portfolio-grid figure.half{grid-column:span 8}.portfolio-grid figure.portrait{grid-column:span 4}}
+    @media(max-width:700px){.hero{padding-top:2.75rem}.hero-media img{aspect-ratio:4/3;object-position:55% center}.hero-media figcaption{position:static;border-radius:0;background:transparent}.portfolio-grid{gap:1rem}.portfolio-grid figure,.portfolio-grid figure.feature,.portfolio-grid figure.wide,.portfolio-grid figure.half,.portfolio-grid figure.portrait{grid-column:1/-1}.price-grid{grid-template-columns:1fr}.hero-actions .button,.cta-actions .button{width:100%}section{padding:3rem 0}}
+    @media(max-width:480px){.container{width:min(100% - 1.35rem,var(--max))}.hero-media{border-radius:18px}.card,.price-card{padding:1.1rem}}
+  </style>
+
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Arrangementsfotografering i Ringsaker og Innlandet',
+    description: 'Dokumentarisk fotografering av markeder, kulturarrangementer, konserter, åpninger og publikumsarrangementer.',
+    provider: {
+      '@type': 'ProfessionalService',
+      name: 'Fotograf Spalder',
+      url: 'https://www.fotograf-spalder.com/',
+      email: 'fotograf.spalder@outlook.com',
+    },
+    areaServed: ['Ringsaker', 'Brumunddal', 'Hamar', 'Innlandet'],
+    offers: {
+      '@type': 'AggregateOffer',
+      lowPrice: eventHalf.price,
+      highPrice: eventFull.max_price,
+      priceCurrency: 'NOK',
+    },
+    url: canonical,
+  })}></script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script is:inline src="samtykke.js" defer></script>
+  <script is:inline src="assets/js/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Fotograf Spalder hjem"><strong>Fotograf Spalder</strong><span>Familie · portrett · bryllup · kjæledyr</span></a>
+      <div class="nav-wrap">
+        <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Åpne meny" aria-expanded="false" aria-controls="navLinks">Meny</button>
+        <nav class="nav-links" id="navLinks" aria-label="Hovedmeny">
+          <a href="index.html">Forside</a>
+          <a href="portfolio.html">Portefølje</a>
+          <a href="priser.html">Priser</a>
+          <a href="om.html">Om</a>
+          <a href="arrangementsfotografering.html" aria-current="page">Arrangement</a>
+          <a href="mine-bilder.html">Mine bilder</a>
+          <a class="button primary" href="booking.html">Send forespørsel</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <span class="eyebrow">Dokumentarisk eventfoto</span>
+          <h1>Arrangements<wbr>fotografering i Ringsaker og Innlandet</h1>
+          <p class="lead">Et arrangement består av mer enn det som skjer på scenen. Det er menneskene, detaljene, stemningen og de små øyeblikkene rundt som forteller hele historien. Jeg dokumenterer arrangementer med fokus på naturlige situasjoner og bilder som kan brukes videre i markedsføring, sosiale medier og dokumentasjon.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="booking.html">Be om et konkret tilbud</a>
+            <a class="button secondary" href="#portefolje">Se arrangementsbilder</a>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <picture>
+            <source srcset={`${imageBase}/julegrantenning-brumunddal-publikum-og-juletre.webp`} type="image/webp">
+            <img src={`${imageBase}/julegrantenning-brumunddal-publikum-og-juletre.jpg`} width="2400" height="523" fetchpriority="high" decoding="async" alt="Folkemengde samlet rundt et opplyst juletre under julegrantenningen i Brumunddal">
+          </picture>
+          <figcaption>Julegrantenning i Brumunddal</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="oppdrag-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="oppdrag-heading">Arrangementer jeg fotograferer</h2>
+          <p>Oppdraget tilpasses programmet, stedet og hva arrangøren trenger bildene til etterpå.</p>
+        </div>
+        <ul class="type-list">
+          <li>Markeder og julemarkeder</li>
+          <li>Kulturarrangementer</li>
+          <li>Konserter og sceneopptredener</li>
+          <li>Åpninger og lokale møteplasser</li>
+          <li>Organisasjons- og næringslivsarrangementer</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="portefolje" aria-labelledby="portfolio-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="portfolio-heading">Fra arrangementer jeg har fotografert</h2>
+          <p>Et utvalg som viser både helheten og detaljene: publikum, scene, utstillere, miljø, naturlige portretter og øyeblikk som oppstår underveis.</p>
+        </div>
+        <div class="portfolio-grid">
+          {portfolioImages.map((image) => (
+            <figure class={image.className}>
+              <picture>
+                <source srcset={`${imageBase}/${image.file}.webp`} type="image/webp">
+                <img src={`${imageBase}/${image.file}.jpg`} loading="lazy" decoding="async" width={image.width} height={image.height} alt={image.alt}>
+              </picture>
+              <figcaption>{image.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="arbeidsmate-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="arbeidsmate-heading">Hvordan jeg arbeider</h2>
+        </div>
+        <div class="process-grid">
+          <article class="card"><span class="step">1</span><h3>Før arrangementet</h3><p>Vi avklarer program, tidspunkt, viktige personer, aktiviteter og hvilke bilder arrangøren trenger.</p></article>
+          <article class="card"><span class="step">2</span><h3>Under arrangementet</h3><p>Jeg arbeider dokumentarisk og fanger både de planlagte høydepunktene og de små øyeblikkene som oppstår underveis.</p></article>
+          <article class="card"><span class="step">3</span><h3>Etter arrangementet</h3><p>Bildene sorteres og ferdigstilles før de leveres digitalt i avtalt format og oppløsning.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="leveranse-heading">
+      <div class="container delivery-grid">
+        <div class="section-head">
+          <h2 id="leveranse-heading">Bilder til videre bruk</h2>
+          <p>Leveransen kan tilpasses behovet til arrangøren. Ferdigredigerte digitale fotografier kan leveres til nettsider, sosiale medier, presse og omtale, annonsering, dokumentasjon og markedsføring av kommende arrangementer.</p>
+          <p>Bruksrettigheter avtales ut fra oppdragets formål.</p>
+        </div>
+        <aside class="card" aria-label="Typiske leveranser">
+          <h3>En helhetlig bildeserie</h3>
+          <ul>
+            <li>Oversiktsbilder og miljø</li>
+            <li>Publikum, deltakere og aktivitet</li>
+            <li>Scene, program og viktige personer</li>
+            <li>Utstillere, produkter og detaljer</li>
+            <li>Naturlige øyeblikk og stemning</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section aria-labelledby="pris-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="pris-heading">Pris</h2>
+          <p>Dette er prisindikasjoner. Du får et konkret tilbud tilpasset arrangementet og leveransen.</p>
+        </div>
+        <div class="price-grid">
+          <article class="price-card"><h3>Halv dag</h3><p class="price">{eventHalfPrice} kr</p><p>For kortere arrangementer eller en avgrenset del av programmet.</p></article>
+          <article class="price-card"><h3>Heldag</h3><p class="price">{eventFullPrice} kr</p><p>For lengre arrangementer der hele dagen og bredden i programmet skal dokumenteres.</p></article>
+        </div>
+        <p class="price-note">Endelig pris avhenger blant annet av varighet, omfang, antall bilder, reise, levering, bruksområde og bruksrettigheter.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="kontakt-heading">
+      <div class="container">
+        <div class="cta">
+          <h2 id="kontakt-heading">Planlegger du et arrangement?</h2>
+          <p>Ta gjerne kontakt dersom du ønsker fotograf til et kommende arrangement. Fortell kort hva slags arrangement det gjelder, dato, sted og omtrent hvor lenge du ønsker fotograf til stede, så kan jeg gi et konkret tilbud.</p>
+          <div class="cta-actions">
+            <a class="button primary" href="booking.html">Send forespørsel</a>
+            <a class="button secondary" href="mailto:fotograf.spalder@outlook.com?subject=Foresp%C3%B8rsel%20om%20arrangementsfotografering">Send e-post</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>© <span id="year"></span> Fotograf Spalder. Alle rettigheter reservert.</p>
+      <p><a href="personvern.html">Personvern og informasjonskapsler</a></p>
+    </div>
+  </footer>
+</body>
+</html>
